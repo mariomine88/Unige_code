@@ -1,0 +1,9 @@
+*.dat
+*.o
+*.out
+*.a
+*.broken
+/bin/pong_server
+/bin/tcp_ping
+/bin/udp_ping
+*png

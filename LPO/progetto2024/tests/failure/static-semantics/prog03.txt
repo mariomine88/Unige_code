@@ -1,0 +1,2 @@
+for(var x of 1){print x} // Static error: Found INT, expected DICT
+

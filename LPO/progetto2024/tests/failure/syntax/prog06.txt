@@ -1,0 +1,2 @@
+for(var v of d print v // Syntax error: on line 1: Expecting CLOSE_PAR, found PRINT('print')
+

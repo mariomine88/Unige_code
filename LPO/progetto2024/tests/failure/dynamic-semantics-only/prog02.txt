@@ -1,0 +1,2 @@
+var d=[1:2][2:] // Dynamic error: Missing key 2
+

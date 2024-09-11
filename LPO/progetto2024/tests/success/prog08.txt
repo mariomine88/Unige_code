@@ -1,0 +1,6 @@
+var d=[3:5][2:4][1:3];
+var i=1;
+for(var p of d){
+   print fst p==i&&snd p==i+2; // prints true three times
+   i=i+1
+}

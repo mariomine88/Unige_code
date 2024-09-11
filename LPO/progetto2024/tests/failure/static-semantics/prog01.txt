@@ -1,0 +1,2 @@
+var d=[true:1] // Static error: Found BOOL, expected INT
+
