@@ -1,29 +1,29 @@
-#include "3esercizio.cpp"
+#include "punto3.cpp"
 
 int main() {
     // Define matrices
-    Matrix A1 = {
+    const Matrix A1 = {
         {3, 1, -1, 0},
         {0, 7, -3, 0},
         {0, -3, 9, -2},
         {0, 0, 4, -10}
     };
 
-    Matrix A2 = {
+    const Matrix A2 = {
         {2, 4, -2, 0},
         {1, 3, 0, 1},
         {3, -1, 1, 2},
         {0, -1, 2, 1}
     };
 
-    Matrix pascalMatrix = createPascalMatrix(10);
+    const Matrix pascalMatrix = createPascalMatrix(10);
 
     // EUGENIO VASSALLO 5577783
     int d0 = 3; 
     int d1 = 8; 
     int n = 10 * (d1 + 1) + d0;
     // Create tridiagonal matrix of size n x n
-    Matrix tridiagonalMatrix = createTridiagonalMatrix(n);
+    const Matrix tridiagonalMatrix = createTridiagonalMatrix(n);
 
 
     // 1esercizio

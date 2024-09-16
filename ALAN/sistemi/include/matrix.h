@@ -6,7 +6,6 @@
 #include <cmath>
 #include <iomanip>
 
-
 using Matrix = std::vector<std::vector<float>>;
 using Vector = std::vector<float>;
 

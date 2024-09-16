@@ -1,5 +1,4 @@
-#include "matrix.h"
-#include "1esercizio.cpp"
+#include "punto1.cpp"
 
 // Function to perform Gaussian elimination with partial pivoting
 Vector gaussianElimination(Matrix A, Vector b) {

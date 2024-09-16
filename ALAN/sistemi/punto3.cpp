@@ -1,6 +1,4 @@
-#include "matrix.h"
-#include "2esercizio.cpp"
-
+#include "punto2.cpp"
 
 // Function to calculate the infinity norm of a vector
 float infinityNorm(const Vector& vec) {
