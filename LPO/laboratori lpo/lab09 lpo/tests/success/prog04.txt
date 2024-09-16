@@ -1,0 +1,6 @@
+var p1=1,true;
+var p2=false,2;
+var p=p1,p2;
+print snd fst p&&true; // prints true
+print - snd snd p * -3 // prints 6
+

@@ -1,0 +1,3 @@
+// Syntax error lab09_04_22.parser.TokenizerException: on line 3 unrecognized token starting at '<=2'
+
+print 1<=2

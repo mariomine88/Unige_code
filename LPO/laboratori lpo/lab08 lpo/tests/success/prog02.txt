@@ -1,0 +1,6 @@
+// MyLangProg(NonEmptyStmtSeq(VarStmt(Variable(x_1),IntLiteral(2)),NonEmptyStmtSeq(VarStmt(Variable(x_2),IntLiteral(4)),NonEmptyStmtSeq(AssignStmt(Variable(x_1),Add(Variable(x_1),IntLiteral(1))),NonEmptyStmtSeq(PrintStmt(Eq(Add(Variable(x_1),IntLiteral(1)),Variable(x_2))),EmptyStmtSeq)))))
+
+var x_1=2;
+var x_2=4;
+x_1=x_1+1;
+print x_1+1==x_2

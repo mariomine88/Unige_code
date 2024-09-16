@@ -1,0 +1,8 @@
+// MyLangProg(NonEmptyStmtSeq(VarStmt(Variable(p1),PairLit(IntLiteral(1),BoolLiteral(true))),NonEmptyStmtSeq(VarStmt(Variable(p2),PairLit(BoolLiteral(false),IntLiteral(2))),NonEmptyStmtSeq(VarStmt(Variable(p),PairLit(Variable(p1),Variable(p2))),NonEmptyStmtSeq(PrintStmt(And(Snd(Fst(Variable(p))),BoolLiteral(true))),NonEmptyStmtSeq(PrintStmt(Mul(Sign(Snd(Snd(Variable(p)))),Sign(IntLiteral(3)))),EmptyStmtSeq))))))
+
+var p1=1,true;
+var p2=false,2;
+var p=p1,p2;
+print snd fst p&&true;
+print - snd snd p * -3
+

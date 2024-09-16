@@ -1,0 +1,4 @@
+var x=10; // inferred type for 'x' is INT
+print -40+5*x; 
+var x=5 // Static error: Variable x already declared
+

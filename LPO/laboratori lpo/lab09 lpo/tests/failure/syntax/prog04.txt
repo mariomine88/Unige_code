@@ -1,0 +1,4 @@
+// Syntax error on line 3: Expecting CLOSE_PAR, found MINUS('-')
+
+print (23-1;
+print true

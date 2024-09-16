@@ -1,0 +1,1 @@
+print fst snd (1,(true,0)) + 3 // Static error: Found BOOL, expected INT

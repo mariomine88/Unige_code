@@ -1,0 +1,10 @@
+var b1=true; var b2=false;
+if(b1&&!b2){
+	print 0 // prints 0
+};
+if(!(b1&&b2)){
+	var x=0;print(x) // prints 0
+}
+else {
+     var x=1;print(x)
+}

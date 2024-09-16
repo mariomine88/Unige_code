@@ -1,0 +1,6 @@
+var x=10; 
+if(x==10){ 
+  var x=x+1,true; 
+  print fst x // prints 11
+};
+print x // prints 10

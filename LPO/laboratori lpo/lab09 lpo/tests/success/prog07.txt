@@ -1,0 +1,7 @@
+var x=1;
+if(x==1){
+   x=x+1;
+   var x=x,true; // prints (2, true)
+   print x
+};
+print x // prints 2

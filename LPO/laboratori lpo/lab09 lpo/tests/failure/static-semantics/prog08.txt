@@ -1,0 +1,1 @@
+print snd (true&&true) // Static error: Found BOOL, expected PAIR

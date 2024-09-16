@@ -1,0 +1,4 @@
+var x=1; // inferred type for 'x' is 'INT'
+if(x==1){var x=true;print x}; // inferred type for nested 'x' is 'BOOL'
+print !x // Static error: Found INT, expected BOOL
+

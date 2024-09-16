@@ -1,0 +1,3 @@
+// Syntax error on line 3: Expecting IDENT, found IF('if')
+
+var if=3

@@ -1,0 +1,2 @@
+print -40+5*x // Static error: Undeclared variable x
+

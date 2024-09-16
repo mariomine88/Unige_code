@@ -1,0 +1,6 @@
+// MyLangProg(NonEmptyStmtSeq(PrintStmt(Add(Sign(IntLiteral(40)),Mul(IntLiteral(5),IntLiteral(3)))),NonEmptyStmtSeq(PrintStmt(Sign(Mul(Add(IntLiteral(40),IntLiteral(5)),IntLiteral(3)))),EmptyStmtSeq)))
+
+print -40+5*3;
+print
+-((40+5)*3)
+

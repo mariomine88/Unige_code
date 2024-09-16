@@ -1,0 +1,12 @@
+// MyLangProg(NonEmptyStmtSeq(VarStmt(Variable(b1),BoolLiteral(true)),NonEmptyStmtSeq(VarStmt(Variable(b2),BoolLiteral(false)),NonEmptyStmtSeq(IfStmt(And(Variable(b1),Not(Variable(b2))),Block(NonEmptyStmtSeq(PrintStmt(IntLiteral(0)),EmptyStmtSeq))),NonEmptyStmtSeq(IfStmt(Not(And(Variable(b1),Variable(b2))),Block(NonEmptyStmtSeq(VarStmt(Variable(x),IntLiteral(0)),NonEmptyStmtSeq(PrintStmt(Variable(x)),EmptyStmtSeq))),Block(NonEmptyStmtSeq(VarStmt(Variable(x),IntLiteral(1)),NonEmptyStmtSeq(PrintStmt(Variable(x)),EmptyStmtSeq)))),EmptyStmtSeq)))))
+
+var b1=true; var b2=false;
+if(b1&&!b2){
+	print 0
+};
+if(!(b1&&b2)){
+	var x=0;print(x)
+}
+else {
+     var x=1;print(x)
+}

@@ -1,0 +1,2 @@
+var p1=true,1;
+print p1==(true&&true,2+-1) && !(p1==(true,0)) // prints true

@@ -4,6 +4,3 @@ Il codice presente in questo repository è stato sviluppato per progetti univers
 Non mi assumo alcuna responsabilità per eventuali usi impropri, inclusa la copiatura o la violazione delle politiche accademiche.
 
 Gran parte del codice dei progetti è stato sviluppato in gruppo con [Eujiin](https://github.com/Eujiin/) e non da me singolarmente.
-
-
-#iDontNeedSexBecauseUniGeFucksMeEveryday

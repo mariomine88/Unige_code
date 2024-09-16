@@ -1,0 +1,4 @@
+// Syntax error on line 4: Expecting EOF, found PRINT('print')
+
+var x=3
+print x
