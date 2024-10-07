@@ -1,3 +1,0 @@
-// Syntax error on line 3: Expecting EOF, found NUM('0')
-
-print 000

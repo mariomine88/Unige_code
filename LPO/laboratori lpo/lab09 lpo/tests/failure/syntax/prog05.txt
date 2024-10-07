@@ -1,5 +1,0 @@
-// Syntax error on line 5: Unexpected token ELSE('else')
-
-var x=1;
-var x=2;
-else {print 1}
