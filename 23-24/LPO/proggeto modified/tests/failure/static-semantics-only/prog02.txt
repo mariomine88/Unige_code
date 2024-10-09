@@ -1,0 +1,4 @@
+print !([1:true]==[1:1]) // Static error: Found INT DICT, expected BOOL DICT
+
+
+

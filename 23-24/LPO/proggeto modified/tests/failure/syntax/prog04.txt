@@ -1,0 +1,1 @@
+for(var v) print v // Syntax error: on line 1: Expecting OF, found CLOSE_PAR(')')

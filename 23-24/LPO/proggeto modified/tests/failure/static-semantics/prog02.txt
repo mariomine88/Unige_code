@@ -1,0 +1,4 @@
+var d=[1:true];
+var b=d[1];
+d=[b:1] // Static error: Found BOOL, expected INT
+

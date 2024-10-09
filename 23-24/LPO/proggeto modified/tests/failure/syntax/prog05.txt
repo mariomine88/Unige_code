@@ -1,0 +1,2 @@
+for(var v of) print v // Syntax error: on line 1: Unexpected token CLOSE_PAR(')')
+

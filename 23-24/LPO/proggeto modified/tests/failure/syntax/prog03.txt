@@ -1,0 +1,3 @@
+for(v of [2:3]) print v // Syntax error: on line 1: Expecting VAR, found IDENT('v')
+
+
