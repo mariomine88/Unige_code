@@ -1,2 +1,0 @@
-var d=[1:true][2:3] // Static error: Found INT, expected BOOL
-

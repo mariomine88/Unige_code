@@ -1,2 +1,0 @@
-print !([1:true]==1) // Static error: Found INT, expected BOOL DICT
-

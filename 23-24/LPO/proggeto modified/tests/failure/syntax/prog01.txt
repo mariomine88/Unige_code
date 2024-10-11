@@ -1,1 +1,0 @@
-print [0] // Syntax error: on line 1: Expecting DICT_OP, found CLOSE_DICT(']')

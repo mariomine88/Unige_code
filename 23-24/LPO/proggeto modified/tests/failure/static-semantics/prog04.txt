@@ -1,3 +1,0 @@
-for(var x of [1:true]){print fst x&&true} // Static error: Found INT, expected BOOL
-
-

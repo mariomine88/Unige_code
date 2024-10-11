@@ -1,6 +1,5 @@
 package progetto2024.visitors.execution;
 
-import java.util.Map;
 import static java.util.Objects.hash;
 import static java.util.Objects.requireNonNull;
 import java.util.TreeMap;
@@ -23,16 +22,15 @@ public class DictValue implements Value {
         return this;
     }
     
-    public Map<Integer, Value> getDict() {
+    public TreeMap<Integer, Value> getDict() {
         return dict;
     }
 
-    public DictValue put(Integer key, Value value) {
+    public TreeMap<Integer, Value> put(Integer key, Value value) {
         requireNonNull(key, "Key cannot be null");
         requireNonNull(value, "Value cannot be null");
-        TreeMap<Integer, Value> newDict = new TreeMap<>(dict);
-        newDict.put(key, value);
-        return new DictValue(newDict);
+        dict.put(key, value);
+        return dict;
     }
 
     private void checkKey(Integer key) {
@@ -46,11 +44,11 @@ public class DictValue implements Value {
         return dict.get(key);
     }
 
-    public DictValue remove(Integer key) {
+    
+    public TreeMap<Integer, Value> remove(Integer key) {
         checkKey(key);
-        TreeMap<Integer, Value> newDict = new TreeMap<>(dict);
-        newDict.remove(key);
-        return new DictValue(newDict);
+        dict.remove(key);
+        return dict;
     }
 
     @Override

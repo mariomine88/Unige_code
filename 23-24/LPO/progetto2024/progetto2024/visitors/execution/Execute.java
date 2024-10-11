@@ -175,12 +175,12 @@ public class Execute implements Visitor<Value> {
 
 	@Override
 	public DictValue visitDictDel(Exp dict, Exp key){
-		return dict.accept(this).toDict().remove(key.accept(this).toInt());
+		return new DictValue(dict.accept(this).toDict().remove(key.accept(this).toInt()));
 	}
 
 	@Override
 	public DictValue visitDictUpdate(Exp dict, Exp key, Exp value){
-		return dict.accept(this).toDict().put(key.accept(this).toInt(),value.accept(this));
+		return new DictValue(dict.accept(this).toDict().put(key.accept(this).toInt(),value.accept(this)));
 	}
 
 }
