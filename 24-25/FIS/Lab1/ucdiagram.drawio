@@ -1,11 +1,11 @@
 <mxfile host="65bd71144e">
     <diagram id="11KYIz2wfZRPv0BPyxRQ" name="Page-1">
-        <mxGraphModel dx="2143" dy="2147" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1050" dy="2278" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="147" value="" style="shape=rect;html=1;verticalAlign=top;fontStyle=1;whiteSpace=wrap;align=center;fillColor=#1D1D1D;" vertex="1" parent="1">
-                    <mxGeometry x="-150" y="-90" width="1140" height="1060" as="geometry"/>
+                <mxCell id="149" value="" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+                    <mxGeometry x="-134.99999999999994" y="-150" width="1160" height="1160" as="geometry"/>
                 </mxCell>
                 <mxCell id="82" value="StreamEveryThing platform" style="shape=rect;html=1;verticalAlign=top;fontStyle=1;whiteSpace=wrap;align=center;" vertex="1" parent="1">
                     <mxGeometry x="70" y="-30" width="750" height="920" as="geometry"/>
