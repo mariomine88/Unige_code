@@ -3,7 +3,7 @@
 ## Breve Descrizione: un utente registrato guarda un film/serie  
 ## Attori primari: utente registrato
 ## Attori secondari: none
-## Precondizioni: l'utente è connesso a internet, è registrato e ha fatto il login
+## Precondizioni: l'utente è connesso a internet ed è registrato
 ## Sequenza degli eventi principale: 
 1. L'utente si autentica sulla piattaforma.
 2. L'utente seleziona un contenuto base.
