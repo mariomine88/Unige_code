@@ -52,7 +52,7 @@ void printResults(std::ofstream &outFile, double x, int ALG) {
 }
 
 int main() {
-    std::ofstream outFile("output.txt", std::ios::trunc); // Open file in truncate mode
+    std::ofstream outFile("errori2es.txt", std::ios::trunc); // Open file in truncate mode
 
     if (outFile.is_open()) {
         double values1[] = {0.5, 30, -0.5, -30};

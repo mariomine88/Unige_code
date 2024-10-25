@@ -2,11 +2,11 @@
 #define punto3_H
 
 #include "matrix.h"
-#include "punto2.h"
+#include <fstream>
 
 float infinityNorm(const Vector& vec);
 Vector createPerturbationVector(const Vector& b);
-void printComparison(const Vector& x, const Vector& xPerturbed, const std::string& matrixName);
+void printComparison(std::ofstream &outFile,const Vector& x, const Vector& xPerturbed, const std::string& matrixName);
 Vector addVectors(const Vector& vec1, const Vector& vec2);
 
 

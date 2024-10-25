@@ -1,4 +1,6 @@
-#include "punto3.cpp"
+#include "punto1.h"
+#include "punto2.h"
+#include "punto3.h"
 
 int main() {
     // Define matrices
@@ -25,16 +27,19 @@ int main() {
     // Create tridiagonal matrix of size n x n
     const Matrix tridiagonalMatrix = createTridiagonalMatrix(n);
 
+    std::ofstream outFile("sistemiout.txt", std::ios::trunc); // Open file in truncate mode
 
+    if (outFile.is_open()){
     // 1esercizio
-    std::cout << "Result of 1 Exercise:" << std::endl;
-    std::cout << "Infinity norm of A1: " << infinityNorm(A1) << std::endl;
-    std::cout << "Infinity norm of A2: " << infinityNorm(A2) << std::endl;
-    std::cout << "Infinity norm of Pascal matrix (10x10): " << infinityNorm(pascalMatrix) << std::endl;
-    std::cout << "Infinity norm of Tridiagonal matrix (" << n << "x" << n << "): " << infinityNorm(tridiagonalMatrix) << std::endl;
-
+    outFile << "Result of 1 Exercise:" << std::endl;
+    outFile << "Infinity norm of A1: " << infinityNorm(A1) << std::endl;
+    outFile << "Infinity norm of A2: " << infinityNorm(A2) << std::endl;
+    outFile << "Infinity norm of Pascal matrix (10x10): " << infinityNorm(pascalMatrix) << std::endl;
+    outFile << "Infinity norm of Tridiagonal matrix (" << n << "x" << n << "): " << infinityNorm(tridiagonalMatrix) << std::endl;
+    outFile << std::endl << "_______________________________________________________________" << std::endl << std::endl;
+    
     // 2esercizio
-    std::cout << "Result of 2 Exercise:" << std::endl;
+    outFile << "Result of 2 Exercise:" << std::endl;
 
     Vector b1 = constructVectorB(A1);
     Vector b2 = constructVectorB(A2);
@@ -44,42 +49,44 @@ int main() {
     Vector x2 = gaussianElimination(A2, b2);
 
     // Output results for A1
-    std::cout << "Solution for A1:" << std::endl;
+    outFile << "Solution for A1:" << std::endl;
     for (float x : x1) {
-        std::cout << std::fixed << std::setprecision(6) << x << " ";
+        outFile << std::fixed << std::setprecision(6) << x << " ";
     }
-    std::cout << std::endl;
+    outFile << std::endl;
 
     // Output results for A2
-    std::cout << "Solution for A2:" << std::endl;
+    outFile << "Solution for A2:" << std::endl;
     for (float x : x2) {
-        std::cout << std::fixed << std::setprecision(6) << x << " ";
+        outFile << std::fixed << std::setprecision(6) << x << " ";
     }
-    std::cout << std::endl;
+    outFile << std::endl;
 
     Vector bPascal = constructVectorB(pascalMatrix);
     Vector xPascal = gaussianElimination(pascalMatrix, bPascal);
 
     // Output results for Pascal matrix
-    std::cout << "Solution for Pascal matrix (10x10):" << std::endl;
+    outFile << "Solution for Pascal matrix (10x10):" << std::endl;
     for (float x : xPascal) {
-        std::cout << std::fixed << std::setprecision(6) << x << " ";
+        outFile << std::fixed << std::setprecision(6) << x << " ";
     }
-    std::cout << std::endl;
+    outFile << std::endl;
 
     Vector bTridiagonal = constructVectorB(tridiagonalMatrix);
     Vector xTridiagonal = gaussianElimination(tridiagonalMatrix, bTridiagonal);
 
     // Output results for Tridiagonal matrix
-    std::cout << "Solution for Tridiagonal matrix (" << n << "x" << n << "):" << std::endl;
+    outFile << "Solution for Tridiagonal matrix (" << n << "x" << n << "):" << std::endl;
     for (float x : xTridiagonal) {
-        std::cout << std::fixed << std::setprecision(6) << x << " ";
+        outFile << std::fixed << std::setprecision(6) << x << " ";
     }
-    std::cout << std::endl;
+    outFile << std::endl;
+    outFile << std::endl << "_______________________________________________________________" << std::endl << std::endl;
+    
 
 
     // 3esercizio
-    std::cout << "Result of 3 Exercise:" << std::endl;
+    outFile << "Result of 3 Exercise:" << std::endl;
 
     // Create perturbation vectors
     Vector deltaB1 = createPerturbationVector(b1);
@@ -90,22 +97,24 @@ int main() {
     Vector xPerturbed2 = gaussianElimination(A2, addVectors(b2, deltaB2));
 
     // Output comparisons for A1 and A2
-    printComparison(x1, xPerturbed1, "Matrix A1");
-    printComparison(x2, xPerturbed2, "Matrix A2");
+    printComparison(outFile,x1, xPerturbed1, "Matrix A1");
+    printComparison(outFile,x2, xPerturbed2, "Matrix A2");
 
     // Create Pascal matrix of size 10x10 and solve systems
     Vector deltaBPascal = createPerturbationVector(bPascal);
     Vector xPerturbedPascal = gaussianElimination(pascalMatrix, addVectors(bPascal, deltaBPascal));
 
     // Output comparison for Pascal matrix
-    printComparison(xPascal, xPerturbedPascal, "Pascal Matrix");
+    printComparison(outFile,xPascal, xPerturbedPascal, "Pascal Matrix");
 
     // Create tridiagonal matrix of size n x n and solve systems
     Vector deltaBTridiagonal = createPerturbationVector(bTridiagonal);
     Vector xPerturbedTridiagonal = gaussianElimination(tridiagonalMatrix, addVectors(bTridiagonal, deltaBTridiagonal));
 
     // Output comparison for Tridiagonal matrix
-    printComparison(xTridiagonal, xPerturbedTridiagonal, "Tridiagonal Matrix");
-    
+    printComparison(outFile,xTridiagonal, xPerturbedTridiagonal, "Tridiagonal Matrix");
+    } else {
+        std::cerr << "Unable to open file";
+    }
     return 0;
 }
