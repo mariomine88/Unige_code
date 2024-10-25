@@ -38,7 +38,7 @@ void printComparison(std::ofstream &outFile, const Vector x, const Vector xPertu
     // Itera su ogni elemento dei vettori x e xPerturbed
     for (size_t i = 0; i < x.size(); ++i) {
         // Stampa l'elemento corrente di x e xPerturbed con una precisione di 6 cifre decimali
-        outFile << std::setw(15) << std::fixed << std::setprecision(6) << x[i]
+        outFile << std::setw(15) << std::fixed << std::setprecision(5) << x[i]
                 << std::setw(20) << xPerturbed[i] << "\n";
     } 
     outFile << std::endl;

@@ -51,14 +51,14 @@ int main() {
     // Output riusultati per A1
     outFile << "Soluzione per A1:" << std::endl;
     for (float x : x1) {
-        outFile << std::fixed << std::setprecision(6) << x << " ";
+        outFile << std::fixed << std::setprecision(3) << x << " ";
     }
     outFile << std::endl;
 
     // Output riusultati per A2
     outFile << "Soluzione per A2:" << std::endl;
     for (float x : x2) {
-        outFile << std::fixed << std::setprecision(6) << x << " ";
+        outFile << std::fixed << std::setprecision(3) << x << " ";
     }
     outFile << std::endl;
 
@@ -68,7 +68,7 @@ int main() {
     // Output riusultati per la matrice di Pascal
     outFile << "Soluzione per la matrice di Pascal (10x10):" << std::endl;
     for (float x : xPascal) {
-        outFile << std::fixed << std::setprecision(6) << x << " ";
+        outFile << std::fixed << std::setprecision(3) << x << " ";
     }
     outFile << std::endl;
 
@@ -78,7 +78,7 @@ int main() {
     // Output riusultati della Tridiagonal matrix
     outFile << "Soluzione per la matrice tridiagonale (" << n << "x" << n << "):" << std::endl;
     for (float x : xTridiagonal) {
-        outFile << std::fixed << std::setprecision(6) << x << " ";
+        outFile << std::fixed << std::setprecision(3) << x << " ";
     }
     outFile << std::endl;
     outFile << std::endl << "_______________________________________________________________" << std::endl << std::endl;

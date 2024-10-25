@@ -3,41 +3,43 @@
 // La funzione gaussianElimination esegue l'eliminazione gaussiana su una matrice A e un vettore b
 // per risolvere il sistema di equazioni lineari Ax = b. Restituisce il vettore soluzione x.
 Vector gaussianElimination(Matrix A, Vector b) {
-    int n = A.size(); // Ottiene la dimensione della matrice A
+     int n = A.size();
+    // Fase di eliminazione
     for (int i = 0; i < n; ++i) {
-        int pivot = i; // Inizializza il pivot alla riga corrente
+        // Trova il pivot massimo nella colonna corrente
+        int pivot = i;
         for (int j = i + 1; j < n; ++j) {
-            // Trova la riga con il massimo valore assoluto nella colonna corrente
             if (std::abs(A[j][i]) > std::abs(A[pivot][i])) {
                 pivot = j;
             }
         }
+
+        // Scambia la riga corrente con la riga pivot, se necessario
         if (pivot != i) {
-            // Scambia la riga corrente con la riga pivot
             std::swap(A[i], A[pivot]);
             std::swap(b[i], b[pivot]);
         }
+        
+        // Elimina le righe sotto la riga corrente
         for (int j = i + 1; j < n; ++j) {
-            // Calcola il fattore di eliminazione per la riga j
-            float factor = A[j][i] / A[i][i];
+            double factor = A[j][i] / A[i][i];
             for (int k = i; k < n; ++k) {
-                // Aggiorna la riga j sottraendo il multiplo della riga i
                 A[j][k] -= factor * A[i][k];
             }
-            // Aggiorna il vettore b
             b[j] -= factor * b[i];
         }
     }
-    Vector x(n); // Inizializza il vettore soluzione x
+
+    // Fase di sostituzione all'indietro
+    Vector x(n);
     for (int i = n - 1; i >= 0; --i) {
-        x[i] = b[i]; // Inizializza x[i] con b[i]
+        x[i] = b[i];
         for (int j = i + 1; j < n; ++j) {
-            // Sottrae i termini già risolti
             x[i] -= A[i][j] * x[j];
         }
-        // Divide per il coefficiente diagonale per ottenere la soluzione
         x[i] /= A[i][i];
     }
+
     return x;
 }
 

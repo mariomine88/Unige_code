@@ -1,16 +1,16 @@
-Esercizio 1
-
+Esercizio 1: 
+  
 For i = 0, (a + b) + c = 0, a + (b + c) = 1
-For i = 1, (a + b) + c = 0, a + (b + c) = 10      
-For i = 2, (a + b) + c = 0, a + (b + c) = 100     
-For i = 3, (a + b) + c = 0, a + (b + c) = 1000    
-For i = 4, (a + b) + c = 0, a + (b + c) = 10000   
+For i = 1, (a + b) + c = 0, a + (b + c) = 10
+For i = 2, (a + b) + c = 0, a + (b + c) = 100
+For i = 3, (a + b) + c = 0, a + (b + c) = 1000
+For i = 4, (a + b) + c = 0, a + (b + c) = 10000
 For i = 5, (a + b) + c = 98304, a + (b + c) = 100000
 For i = 6, (a + b) + c = 1.01581e+06, a + (b + c) = 1e+06
-
+ 
 -------------------------------------------------------------------------
-Esercizio 2
-
+Esercizio 2: 
+ 
 algoritmo 1
 _______________________________________________________________
 Valore x = 0.5
@@ -164,7 +164,7 @@ Errore assoluto 9.357622968840171e-14 - 9.3576229688401748e-14 = -3.786532345060
 Errore relativo -4.0464681657613059e-16
 
 -------------------------------------------------------------------------
-Esercizio 3
-
+Esercizio 3:  
+ 
 Machine epsilon for single precision: 1.19209e-07 = 2^-d where d is: 23
 Machine epsilon for double precision: 2.22045e-16 = 2^-d where d is: 52
