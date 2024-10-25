@@ -1,7 +1,7 @@
 #include "include/punto1.h"
 
 // Function used for debugging
-void printMatrix(const Matrix& matrix) {
+void printMatrix(const Matrix matrix) {
     for (size_t i = 0; i < matrix.size(); i++) {
         for (size_t j = 0; j < matrix[i].size(); j++) {
              std::cout << matrix[i][j] << " ";
@@ -11,14 +11,18 @@ void printMatrix(const Matrix& matrix) {
 }
 
 
-double infinityNorm(const Matrix& matrix) {
+// la funzione ritorna il valore di norma infinito di una matrice
+double infinityNorm(const Matrix matrix) {
+    // La norma infinita e il masimo tra le somma dei moduli di ogni riga della matrice
     double maxRowSum = 0.0;
 
     for (size_t i = 0; i < matrix.size(); i++) {
         double rowSum = 0.0;
         for (size_t j = 0; j < matrix[i].size(); j++) {
+            // Aggiorna la somma massima se la somma corrente è maggiore
             rowSum += std::abs(matrix[i][j]);
         }
+
         if (rowSum > maxRowSum) {
             maxRowSum = rowSum;
         }
@@ -33,22 +37,22 @@ Matrix createPascalMatrix(int n) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             pascalMatrix[i][j] = tgamma(i + j + 1) / (tgamma(i + 1) * tgamma(j + 1)); 
-            // This is the formula (i+j)! / (i! * j!). We add +1 because the index starts at 0.
+        // Questa è la formula (i+j)! / (i! * j!). Aggiungiamo +1 perché l'indice inizia da 0.
         }
     }
 
     return pascalMatrix;
 }
 
-// Function to create a tridiagonal matrix of size n x n
+
 Matrix createTridiagonalMatrix(int n) {
     Matrix tridiagonalMatrix(n, Vector(n, 0.0));
 
     for (int i = 0; i < n; i++) {
-        tridiagonalMatrix[i][i] = 2; // Diagonal elements
+        tridiagonalMatrix[i][i] = 2; // i elementi diagonali
         if (i > 0) {
-            tridiagonalMatrix[i][i - 1] = -1; // Sub-diagonal elements
-            tridiagonalMatrix[i - 1][i] = -1; // Super-diagonal elements
+            tridiagonalMatrix[i][i - 1] = -1; // elementi sotto la diagonale
+            tridiagonalMatrix[i - 1][i] = -1; // elementi sopra la diagonale
         }
     }
 

@@ -4,6 +4,6 @@
 #include "matrix.h"
 
 Vector gaussianElimination(Matrix A, Vector b);
-Vector constructVectorB(const Matrix& A);
+Vector constructVectorB(const Matrix A);
 
 #endif // punto2_H

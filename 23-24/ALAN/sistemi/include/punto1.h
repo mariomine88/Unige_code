@@ -3,8 +3,8 @@
 
 #include "matrix.h"
 
-void printMatrix(const Matrix& matrix);
-double infinityNorm(const Matrix& matrix);
+void printMatrix(const Matrix matrix);
+double infinityNorm(const Matrix matrix);
 Matrix createPascalMatrix(int n);
 Matrix createTridiagonalMatrix(int n);
 

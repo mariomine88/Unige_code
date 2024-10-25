@@ -1,40 +1,40 @@
-Result of 1 Exercise:
-Infinity norm of A1: 14
-Infinity norm of A2: 8
-Infinity norm of Pascal matrix (10x10): 92378
-Infinity norm of Tridiagonal matrix (93x93): 4
+Esercizio 1:Calcolo Norma infinito di una matrice:
+Norma infinito della matrice A1: 14
+Norma infinito della matrice A2: 8
+Norma infinito della matrice di Pascal: (10x10): 92378
+Norma infinito della matrice tridiagonale (93x93): 4
 
 _______________________________________________________________
 
-Result of 2 Exercise:
-Solution for A1:
+Esercizio 2: Soluzione di un sistema lineare:
+Soluzione per A1:
 1.000000 1.000000 1.000000 1.000000 
-Solution for A2:
+Soluzione per A2:
 1.000000 1.000000 1.000000 1.000000 
-Solution for Pascal matrix (10x10):
+Soluzione per la matrice di Pascal (10x10):
 1.319569 -1.613715 10.696677 -20.254835 31.198706 -27.766922 19.345329 -6.545362 2.815009 0.805544 
-Solution for Tridiagonal matrix (93x93):
+Soluzione per la matrice tridiagonale (93x93):
 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 0.999999 0.999999 0.999999 0.999999 0.999999 0.999999 0.999999 0.999999 0.999999 0.999999 0.999999 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 0.999999 0.999999 0.999999 0.999999 0.999999 1.000000 1.000000 1.000000 1.000000 1.000000 1.000001 1.000001 1.000001 1.000001 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000002 1.000001 1.000001 1.000001 1.000001 1.000001 1.000001 1.000000 1.000000 1.000000 1.000000 1.000000 
 
 _______________________________________________________________
 
-Result of 3 Exercise:
-Comparison for Matrix A1:
-              x        Perturbed x
+Esercizio 3: Soluzione di un sistema lineare con pertubazioni:
+Confronto per Matrice A1:
+              x                ˜x
        1.000000            0.975868
        1.000000            1.005702
        1.000000            0.993306
        1.000000            0.991322
 
-Comparison for Matrix A2:
-              x        Perturbed x
+Confronto per Matrice A2:
+              x                ˜x
        1.000000            0.950000
        1.000000            1.015000
        1.000000            1.005000
        1.000000            1.055000
 
-Comparison for Pascal Matrix:
-              x        Perturbed x
+Confronto per matrice di Pascal:
+              x                ˜x
        1.319569     -1342751.000000
       -1.613715     11103801.000000
       10.696677    -41611460.000000
@@ -46,8 +46,8 @@ Comparison for Pascal Matrix:
        2.815009     -7808610.000000
        0.805544       833947.062500
 
-Comparison for Tridiagonal Matrix:
-              x        Perturbed x
+Confronto per matrice tridiagonale:
+              x                ˜x
        1.000000            0.995000
        1.000000            1.000000
        1.000000            0.995000
