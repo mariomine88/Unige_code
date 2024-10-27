@@ -27,19 +27,19 @@ int main() {
 
     const Matrix tridiagonalMatrix = createTridiagonalMatrix(n);
 
-    std::ofstream outFile("sistemiout.txt", std::ios::trunc); // Open file in truncate mode
+    ofstream outFile("sistemiout.txt", ios::trunc); // Open file in truncate mode
 
     if (outFile.is_open()){
     // 1esercizio
-    outFile << "Esercizio 1:Calcolo Norma infinito di una matrice:" << std::endl;
-    outFile << "Norma infinito della matrice A1: " << infinityNorm(A1) << std::endl;
-    outFile << "Norma infinito della matrice A2: " << infinityNorm(A2) << std::endl;
-    outFile << "Norma infinito della matrice di Pascal: (10x10): " << infinityNorm(pascalMatrix) << std::endl;
-    outFile << "Norma infinito della matrice tridiagonale (" << n << "x" << n << "): " << infinityNorm(tridiagonalMatrix) << std::endl;
-    outFile << std::endl << "_______________________________________________________________" << std::endl << std::endl;
+    outFile << "Esercizio 1:Calcolo Norma infinito di una matrice:" << endl;
+    outFile << "Norma infinito della matrice A1: " << infinityNorm(A1) << endl;
+    outFile << "Norma infinito della matrice A2: " << infinityNorm(A2) << endl;
+    outFile << "Norma infinito della matrice di Pascal: (10x10): " << infinityNorm(pascalMatrix) << endl;
+    outFile << "Norma infinito della matrice tridiagonale (" << n << "x" << n << "): " << infinityNorm(tridiagonalMatrix) << endl;
+    outFile << endl << "_______________________________________________________________" << endl << endl;
     
     // 2esercizio
-    outFile << "Esercizio 2: Soluzione di un sistema lineare:" << std::endl;
+    outFile << "Esercizio 2: Soluzione di un sistema lineare:" << endl;
 
     Vector b1 = constructVectorB(A1);
     Vector b2 = constructVectorB(A2);
@@ -49,44 +49,44 @@ int main() {
     Vector x2 = gaussianElimination(A2, b2);
 
     // Output riusultati per A1
-    outFile << "Soluzione per A1:" << std::endl;
+    outFile << "Soluzione per A1:" << endl;
     for (float x : x1) {
-        outFile << std::fixed << std::setprecision(3) << x << " ";
+        outFile << fixed << setprecision(3) << x << " ";
     }
-    outFile << std::endl;
+    outFile << endl;
 
     // Output riusultati per A2
-    outFile << "Soluzione per A2:" << std::endl;
+    outFile << "Soluzione per A2:" << endl;
     for (float x : x2) {
-        outFile << std::fixed << std::setprecision(3) << x << " ";
+        outFile << fixed << setprecision(3) << x << " ";
     }
-    outFile << std::endl;
+    outFile << endl;
 
     Vector bPascal = constructVectorB(pascalMatrix);
     Vector xPascal = gaussianElimination(pascalMatrix, bPascal);
 
     // Output riusultati per la matrice di Pascal
-    outFile << "Soluzione per la matrice di Pascal (10x10):" << std::endl;
+    outFile << "Soluzione per la matrice di Pascal (10x10):" << endl;
     for (float x : xPascal) {
-        outFile << std::fixed << std::setprecision(3) << x << " ";
+        outFile << fixed << setprecision(3) << x << " ";
     }
-    outFile << std::endl;
+    outFile << endl;
 
     Vector bTridiagonal = constructVectorB(tridiagonalMatrix);
     Vector xTridiagonal = gaussianElimination(tridiagonalMatrix, bTridiagonal);
 
     // Output riusultati della Tridiagonal matrix
-    outFile << "Soluzione per la matrice tridiagonale (" << n << "x" << n << "):" << std::endl;
+    outFile << "Soluzione per la matrice tridiagonale (" << n << "x" << n << "):" << endl;
     for (float x : xTridiagonal) {
-        outFile << std::fixed << std::setprecision(3) << x << " ";
+        outFile << fixed << setprecision(3) << x << " ";
     }
-    outFile << std::endl;
-    outFile << std::endl << "_______________________________________________________________" << std::endl << std::endl;
+    outFile << endl;
+    outFile << endl << "_______________________________________________________________" << endl << endl;
     
 
 
     // 3esercizio
-    outFile << "Esercizio 3: Soluzione di un sistema lineare con pertubazioni:" << std::endl;
+    outFile << "Esercizio 3: Soluzione di un sistema lineare con pertubazioni:" << endl;
 
     // Crea vettori di perturbazione
     Vector deltaB1 = createPerturbationVector(b1);
@@ -110,7 +110,7 @@ int main() {
     printComparison(outFile,xTridiagonal, xPerturbedTridiagonal, "matrice tridiagonale");
 
     } else {
-        std::cerr << "Unable to open file";
+        cerr << "Unable to open file";
     }
     return 0;
 }

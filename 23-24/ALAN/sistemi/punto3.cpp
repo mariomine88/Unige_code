@@ -7,7 +7,7 @@ float infinityNorm(const Vector vec) {
     float maxVal = 0.0f; 
     for (float val : vec) {
         // Aggiorna maxVal con il massimo tra maxVal e il valore assoluto dell'elemento corrente
-        maxVal = std::max(maxVal, std::abs(val));
+        maxVal = max(maxVal, abs(val));
     }
     return maxVal;
 }
@@ -29,19 +29,19 @@ Vector createPerturbationVector(const Vector b) {
 
 // La funzione printComparison stampa un confronto tra due vettori x e xPerturbed su un file di output.
 // Il confronto è etichettato con il nome della matrice fornito come parametro.
-void printComparison(std::ofstream &outFile, const Vector x, const Vector xPerturbed, const std::string matrixName) {
+void printComparison(ofstream &outFile, const Vector x, const Vector xPerturbed, const string matrixName) {
     // Stampa l'intestazione del confronto con il nome della matrice
     outFile << "Confronto per " << matrixName << ":\n";
     // Stampa l'intestazione delle colonne
-    outFile << std::setw(15) << "x" << std::setw(20) << "˜x\n";
+    outFile << setw(15) << "x" << setw(20) << "˜x\n";
     
     // Itera su ogni elemento dei vettori x e xPerturbed
     for (size_t i = 0; i < x.size(); ++i) {
         // Stampa l'elemento corrente di x e xPerturbed con una precisione di 6 cifre decimali
-        outFile << std::setw(15) << std::fixed << std::setprecision(5) << x[i]
-                << std::setw(20) << xPerturbed[i] << "\n";
+        outFile << setw(15) << fixed << setprecision(5) << x[i]
+                << setw(20) << xPerturbed[i] << "\n";
     } 
-    outFile << std::endl;
+    outFile << endl;
 }
 
 // Restituisce un nuovo vettore contenente i risultati delle somme.

@@ -6,7 +6,9 @@
 #include <cmath>
 #include <iomanip>
 
-using Matrix = std::vector<std::vector<float>>;
-using Vector = std::vector<float>;
+using namespace std;
+
+using Matrix = vector<vector<float>>;
+using Vector = vector<float>;
 
 #endif // MATRIX_H

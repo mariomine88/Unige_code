@@ -6,8 +6,8 @@
 
 float infinityNorm(const Vector vec);
 Vector createPerturbationVector(const Vector b);
-void printComparison(std::ofstream &outFile,const Vector x, const Vector xPerturbed, const std::string matrixName);
+void printComparison(ofstream &outFile,const Vector x, const Vector xPerturbed, const string matrixName);
 Vector addVectors(const Vector vec1, const Vector vec2);
 
 
-#endif 
+#endif // punto3_H

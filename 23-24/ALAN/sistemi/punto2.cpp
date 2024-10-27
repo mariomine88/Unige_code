@@ -9,15 +9,15 @@ Vector gaussianElimination(Matrix A, Vector b) {
         // Trova il pivot massimo nella colonna corrente
         int pivot = i;
         for (int j = i + 1; j < n; ++j) {
-            if (std::abs(A[j][i]) > std::abs(A[pivot][i])) {
+            if (abs(A[j][i]) > abs(A[pivot][i])) {
                 pivot = j;
             }
         }
 
         // Scambia la riga corrente con la riga pivot, se necessario
         if (pivot != i) {
-            std::swap(A[i], A[pivot]);
-            std::swap(b[i], b[pivot]);
+            swap(A[i], A[pivot]);
+            swap(b[i], b[pivot]);
         }
         
         // Elimina le righe sotto la riga corrente

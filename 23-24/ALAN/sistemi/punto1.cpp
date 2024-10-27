@@ -4,9 +4,9 @@
 void printMatrix(const Matrix matrix) {
     for (size_t i = 0; i < matrix.size(); i++) {
         for (size_t j = 0; j < matrix[i].size(); j++) {
-             std::cout << matrix[i][j] << " ";
+             cout << matrix[i][j] << " ";
             }
-        std::cout << std::endl;
+        cout << endl;
     }
 }
 
@@ -20,7 +20,7 @@ double infinityNorm(const Matrix matrix) {
         double rowSum = 0.0;
         for (size_t j = 0; j < matrix[i].size(); j++) {
             // Aggiorna la somma massima se la somma corrente è maggiore
-            rowSum += std::abs(matrix[i][j]);
+            rowSum += abs(matrix[i][j]);
         }
 
         if (rowSum > maxRowSum) {
