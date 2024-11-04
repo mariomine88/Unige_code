@@ -1,0 +1,42 @@
+/* Stile di base per il corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Stile per l'intestazione */
+h1 {
+    color: #4a90e2;
+    margin-bottom: 20px;
+}
+
+/* Stile per il pulsante */
+button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #357ab7;
+}
+
+/* Stile per il pop-up della calcolatrice (opzionale) */
+.popup {
+    border: 2px solid #4a90e2;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}

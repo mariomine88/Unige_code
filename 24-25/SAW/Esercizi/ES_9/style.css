@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+.calculator {
+    border: 2px solid #4a90e2;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+}
+
+input {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.buttons button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.buttons button:hover {
+    background-color: #357ab7;
+}

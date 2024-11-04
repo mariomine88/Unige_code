@@ -1,0 +1,66 @@
+<!--modifiche:
+1: indentazione migliore
+2: rimosso "type="text/javascript" da <script> perchè non è necessario in html5
+3: nei paragrafi c'era un errore
+4: aggiunto il tag alt per l'immagine e tolto "/" perchè non serve chiudere il tag img
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Registration</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="esercizio4.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="myscript.js"></script>
+</head>
+
+<body>
+
+    <p class="title">Fill the form below to register to the Universal Digital Library</p>
+    <p class="title">After submitting your data you will receive an email to confirm your registration</p>
+
+    <div class="mydiv"> 
+        <div> 
+            <form id="myform" action="#" method="POST"> 
+
+                <i class="fa fa-user ffield"></i>
+                <input type="text" class="no-outline" id="firstname" name="firstname" placeholder="Firstname" aria-label="Nome"><br>
+
+                <i class="fa fa-user ffield"></i>
+                <input type="text" class="no-outline" id="lastname" name="lastname" placeholder="Lastname" aria-label="cognome"><br>
+
+                <i class="fa fa-envelope ffield"></i>
+                <input type="email" id="email" class="no-outline" name="email" placeholder="E-mail" aria-label="email"><br>
+
+                <i class="fa fa-unlock-alt ffield"></i>
+                <input type="password" class="no-outline" id="pass" name="pass" placeholder="Password" aria-label="password"><br>
+
+                <i class="fa fa-unlock-alt ffield"></i>
+                <input type="password" class="no-outline" id="confirm" name="confirm" placeholder="Confirm password" aria-label="conferma password"><br>
+
+                <input type="submit" value="Submit" aria-label="manda">
+
+            </form>
+        </div>
+
+        <div>
+            <img src="books.jpg" width="500" height="500" alt="Libri">
+        </div>
+
+        <div>
+            <p>After registration you will be able to access several services</p>
+            <ul> 
+                <li>Search for books</li>
+                <li>Buy books</li>
+                <li>Borrow books</li>
+                <li>Join the community</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div id="footer">Copyright: the Universal Digital Library - Cookie policy - Feedback</div>
+
+</body>
+</html>

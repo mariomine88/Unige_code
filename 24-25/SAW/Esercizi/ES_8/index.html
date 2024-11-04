@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatrice Pop-up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calcolatrice</h1>
+    <button onclick="apriCalcolatrice()">Apri la Calcolatrice</button>
+
+    <script>
+        function apriCalcolatrice() {
+        // Dimensioni del pop-up
+        let width = 400;
+        let height = 400;
+
+        // Calcola la posizione per centrare la finestra
+        let left = (screen.width / 2) - (width / 2);
+        let top = (screen.height / 2) - (height / 2);
+
+        // Apre la finestra al centro dello schermo
+        window.open("calculator.html", "Calcolatrice", `width=${width},height=${height},left=${left},top=${top}`);
+}
+
+    </script>
+</body>
+</html>

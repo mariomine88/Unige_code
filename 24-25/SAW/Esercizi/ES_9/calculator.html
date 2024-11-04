@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatrice con Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <input type="number" id="val1" placeholder="Val1">
+        <input type="number" id="val2" placeholder="Val2">
+        
+        <div class="buttons">
+            <button onclick="calcola('+')">+</button>
+            <button onclick="calcola('-')">-</button>
+            <button onclick="calcola('*')">*</button>
+            <button onclick="calcola('/')">/</button>
+        </div>
+
+        <input type="text" id="res" placeholder="Res" readonly>
+    </div>
+
+    <script>
+		function calcola(operatore) {
+		// Ottieni i valori dai campi di input
+		let a = Number(document.getElementById("val1").value);
+		let b = Number(document.getElementById("val2").value);
+		let risultato;
+
+		// Esegui l'operazione in base all'operatore
+		switch (operatore) {
+			case '+':
+				risultato = a + b;
+				break;
+			case '-':
+				risultato = a - b;
+				break;
+			case '*':
+				risultato = a * b;
+				break;
+			case '/':
+				if (b === 0) {
+					risultato = "Errore: Divisione per zero";
+				} else {
+					risultato = a / b;
+				}
+				break;
+		}
+
+		// Mostra il risultato nel campo Res
+		document.getElementById("res").value = risultato;
+}
+
+	</script>
+</body>
+</html>

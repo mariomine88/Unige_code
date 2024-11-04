@@ -1,0 +1,46 @@
+/* Stili generali */
+body {
+    background-color: #ff00ff; /* Colore di sfondo terribile */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Il font peggiore! */
+    color: #00ff00; /* Colore del testo fastidioso */
+    margin: 0;
+}
+
+/* Stile per l'intestazione */
+header {
+    background-color: #ffff00; /* Giallo accecante */
+    color: #ff0000; /* Rosso fastidioso */
+    text-align: center;
+    padding: 20px;
+    border-bottom: 5px dotted #0000ff; /* Bordo blu stile anni '90 */
+}
+
+/* Stile per i link fraudolenti */
+.fraud-link {
+    font-family: 'Courier New', Courier, monospace; /* Un altro font a caso */
+    color: #ff4500; /* Colore arancione molto invasivo */
+    background-color: #ffffe0; /* Sfondi che non centrano nulla */
+    text-decoration: underline wavy; /* Linea sottolineata bruttissima */
+    font-size: 2em; /* Font esagerato */
+    padding: 10px;
+    display: inline-block;
+    border: 3px solid #ff00ff; /* Bordo che non centra niente */
+    margin-bottom: 10px;
+}
+
+.fraud-link:hover {
+    color: #0000ff; /* Cambia colore a uno altrettanto orribile */
+    background-color: #ff1493; /* Rosa acceso quando il mouse passa sopra */
+}
+
+/* Stili per il footer */
+footer {
+    background-color: #0000ff;
+    color: #ffff00;
+    text-align: center;
+    padding: 15px;
+    border-top: 5px dashed #ff0000;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

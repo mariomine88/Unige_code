@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Calculator</title>
+  <style>
+  /* change or add CSS rules */
+  body {
+	background-color: #ccc;
+  }
+
+  .container {
+	background-color: white;
+	text-align: center;
+ 	width: 50%;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 50px;
+	border: solid 2px navy;
+	border-radius: 10%;
+  }
+
+  .btn {
+	background-color: orange;
+	padding: 10px;
+	font-size: 20pt;
+	font-weight: bold;
+	border-radius: 10%;
+  }
+  </style>
+</head>
+
+<body>
+
+<!-- Complete the HTML -->
+<div class="container">
+	<input type="button" id="sum" value="+"  class="btn"> 
+	<input type="button" id="sub" value="-"  class="btn"> 
+	<input type="button" id="mult" value="*" class="btn"> 
+	<input type="button" id="divi" value="/" class="btn">
+</div>
+
+
+<script>
+/* For each button, complete the following JS code to implement the corresponding 
+   function and delete the alert() method.
+   Do not worry about things we haven't seen yet, we will discuss in class. */
+	
+let sum = document.getElementById("sum");
+sum.addEventListener("click", () => {
+	a = Number(prompt("Inserisci il primo numero"));
+	b = Number(prompt("Inserisci il secondo numero"));
+	window.alert(a + "+" + b + "=" + (a + b));
+});
+
+let sub = document.getElementById("sub");
+sub.addEventListener("click", () => {
+	a = Number(prompt("Inserisci il primo numero"));
+	b = Number(prompt("Inserisci il secondo numero"));
+	window.alert(a + "-" + b + "=" + (a - b));
+});
+
+let mult = document.getElementById("mult");
+mult.addEventListener("click", () => {
+	a = Number(prompt("Inserisci il primo numero"));
+	b = Number(prompt("Inserisci il secondo numero"));
+	window.alert(a + "*" + b + "=" + (a * b));
+});
+
+let divi = document.getElementById("divi");
+divi.addEventListener("click", () => {
+	a = Number(prompt("Inserisci il primo numero"));
+	b = Number(prompt("Inserisci il secondo numero"));
+
+	if (b == 0) {
+		window.alert("Non puoi dividere per 0");
+
+		return;
+	} else 
+		window.alert(a + "/" + b + "=" + (a / b));
+});
+
+</script>
+
+
+</body>
+</html>

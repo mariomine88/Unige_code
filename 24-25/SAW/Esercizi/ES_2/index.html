@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 2: Form di Registrazione</title>
+</head>
+<body>
+    <h1>Registrazione Utente</h1>
+    <form action="/submit_registration" method="POST">
+        <label for="firstname">Nome:</label>
+        <input type="text" id="firstname" name="firstname" required placeholder="Marco" title="Inserisci il tuo nome"><br><br>
+
+
+        <label for="lastname">Cognome:</label>
+        <input type="text" id="lastname" name="lastname" required placeholder="Rossi" title="inserisci il tuo cognome"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="Marcorossi69420@pizza.com" title="inserisci la tua mail personale"><br><br>
+
+        <label for="pass">Password:</label>
+        <input type="password" id="pass" name="pass" required title="la password deve essere almeno di 8 caratteri, con una maiuscola e un numero"><br><br>
+
+        <label for="confirm">Conferma Password:</label>
+        <input type="password" id="confirm" name="confirm" required><br><br>
+
+        <label for="Mangi la pizza?">Mangi la pizza?</label>
+        <input type="checkbox" id="Mangi la pizza?" name="Mangi la pizza?" value="yes" required><br><br>
+
+        <input type="submit" value="Registrati">
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAW es: 0</title>
+</head>
+<body>
+    <header>
+        <h1>Benvenuto nella mia pagina web</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Chi sono</h2>
+            <p>Mi chiamo Eugenio Vassallo, studente di informatica attualmente al terzo anno a Genova, questo è il mio primo sito web</p>
+            <img src="FotoSiti/WJFzrOG.png" width="200px" height="100px" alt="bella sta foto uagliu">
+        </section>
+
+        <section>
+            <h2>Contattami</h2>
+            <form action="/submit_form" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required><br><br>
+
+                <label for="cognome">Cognome:</label>
+                <input type="text" id="cognome" name="cognome" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="commento">Commento:</label><br>
+                <textarea id="commento" name="commento" rows="4" cols="50" required></textarea><br><br>
+
+                <input type="submit" value="Invia">
+            </form>
+        </section>
+    </main>
+</body>
+</html>
