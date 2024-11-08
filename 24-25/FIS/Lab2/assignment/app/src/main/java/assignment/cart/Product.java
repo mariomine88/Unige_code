@@ -39,6 +39,7 @@ public class Product {
     }
 
     public void setDescription(String description) {
+        this.description = description;
     }
 
     public double getUnitPrice() {
@@ -46,6 +47,7 @@ public class Product {
     }
 
     public void setUnitPrice(double unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
     public int getCategory() {
@@ -53,6 +55,7 @@ public class Product {
     }
 
     public void setCategory(int category) {
+        this.category = category;
     }
 
     public String getBrand() {
@@ -60,6 +63,7 @@ public class Product {
     }
     
     public void setBrand(String brand) {
+        this.brand = brand;
     }
     
     public int getStockQuantity() {
@@ -67,22 +71,28 @@ public class Product {
     }
     
     public void setStockQuantity(int stockQuantity) {
+        this.stockQuantity = stockQuantity;
     }
     
-    public boolean IsAvailable() {
+    public boolean getisAvailable() {
         return isAvailable;
     }
     
     public void setIsAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable; 
     }
 
-    public void setFullDetailedProduct(String id, String name, String description, double unitPrice, 
-            int category, String brand, int stockQuantity, boolean isAvailable) {
+    public void setNecesaryDetailedProduct(String id, String name, String description, double unitPrice, 
+    int category) {
             this.id = id;
             this.name = name;
             this.description = description;
             this.unitPrice = unitPrice;
             this.category = category;
+        }
+
+
+    public void setnotNecesaryDetailedProduct( String brand, int stockQuantity, boolean isAvailable) {
             this.brand = brand;
             this.stockQuantity = stockQuantity;
             this.isAvailable = isAvailable;
