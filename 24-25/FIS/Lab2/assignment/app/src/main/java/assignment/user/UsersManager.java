@@ -5,9 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.ArrayList;
-
+import java.util.List;
 
 import assignment.cart.Cart;
 
@@ -43,24 +42,11 @@ public class UsersManager {
         titles.removeIf(String::isEmpty);
     }
 
-    void addCartToUser(User user, Cart cart) throws Exception{
+    void addCartToUser(User user, Cart cart) throws Exception {
+        try {
             user.linkCart(cart);
-            user.linkCart(cart);
-        } catch (Exception e) {
-            throw e;
-        }
-        user.linkCart(cart);
         } catch (Exception e) {
             throw e;
         }
     }
-
-
-
-
-
-
-
-
-
 }
