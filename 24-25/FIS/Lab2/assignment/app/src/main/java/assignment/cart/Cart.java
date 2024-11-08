@@ -11,11 +11,11 @@ public class Cart {
     }
 
     public void addProduct(Product product, int quantity) {
-        if (quantity > 0)
+        if (quantity > 0) {
             products.put(product, products.getOrDefault(product, 0) + quantity);
-            else 
+        } else { 
         products.put(product, products.getOrDefault(product, 0));
-
+        }
     }
 
     public void removeProduct(Product product) {
@@ -23,12 +23,13 @@ public class Cart {
     }
 
     public void updateProductQuantity(Product product, int quantity) {
-        if (products.containsKey(product)==true)
-            if (quantity <= 0) 
+        if (products.containsKey(product)){
+            if (quantity <= 0) {
                 removeProduct(product);
-            else 
+            } else { 
                 products.put(product, quantity);
-            
+            }
+        }   
     }
 
     public double calculateTotal() {
@@ -42,7 +43,7 @@ public class Cart {
     }
 
     public Map<Product, Integer> getProducts() {
-        return new HashMap<Product, Integer>(products);
+        return new HashMap<>(products);
     }
 
     public void clearCart() {
@@ -50,14 +51,11 @@ public class Cart {
     }
 
     public boolean calc(Cart cart1, Cart cart2) {
-        if(this.calculateTotal() >= cart1.calculateTotal() && this.calculateTotal() >= cart2.calculateTotal())
-            return true;
-        else 
-            return false;
+        return (this.calculateTotal() >= cart1.calculateTotal() && this.calculateTotal() >= cart2.calculateTotal());
     }
 
     public void calcHigher(Cart cart1, Cart cart2) {
-        calc(cart2, cart1);
+        calc(cart1, cart2);
     }
 
 

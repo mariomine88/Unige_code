@@ -1,23 +1,26 @@
 package assignment.user;
 
-
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import assignment.cart.Cart;
 
-import java.util.ArrayList; 
-
 public class User {
-    private String userID; 
-    private String username; 
-    private String firstname; 
+    private static final Logger logger = Logger.getLogger(User.class.getName());
+
+    private String userID;
+    private String username;
+    private String firstname;
     private String lastname;
-    private List<String> titles = new ArrayList<String>();
+    private List<String> titles = new ArrayList<>();
     private String[] roles = new String[5];
     private boolean accountActive;
     private Cart cart;
 
-    public User(String userID, String username, String firstname, String lastname, 
+    public User(String userID, String username, String firstname, String lastname,
                 boolean accountActive, List<String> titles, String[] roles) {
         this.userID = userID;
         this.username = username;
@@ -65,47 +68,42 @@ public class User {
     }
 
     public boolean isActive(){
-        if(accountActive)
-            return true;
-        return false;
+        return (accountActive);
     }
 
     public boolean deactivateAccount(String id) {
-        if (accountActive && this.userID == id) {
+        if (accountActive && this.userID.equals(id)) {
             accountActive = false;
             return true;
         }
         return false;
     }
 
-    public boolean isEquals(User u){
-        return u.userID == this.userID;
+    public boolean isEquals(User u) {
+        return u.userID.equals(this.userID);
     }
 
     public void printUserInfo() {
-        System.out.println("User Info: " + firstname + " " + lastname + " (Username: " + username + ")");
+        logger.log(Level.INFO, "User Info: {0} {1} (Username: {2})", new Object[]{firstname, lastname, username});
     }
 
-    public void linkCart(Cart cart) throws Exception{
-        if(cart == null)
-            throw new Exception();
+    public void linkCart(Cart cart) {
+        if (cart == null)
+            throw new IllegalArgumentException("Cart cannot be null");
         this.cart = cart;
     }
 
-    public Cart getCart(){
+    public Cart getCart() {
         return cart;
     }
 
-    public String printAllRoles(){
-        return roles.toString();
+    public String printAllRoles() {
+        return Arrays.toString(roles);
     }
 
-    public void PrintEveryRole(){
-        for (int i = roles.length; i > 0; i++){
-            System.out.println(roles[i]);
+    public void printEveryRole() {
+        for (int i = roles.length; i > 0; i--) {
+            logger.log(Level.INFO, roles[i]);
         }
     }
-
-
-
 }
