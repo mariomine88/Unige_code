@@ -1,29 +1,66 @@
+/* Importa i font da Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400&display=swap');
+
+/* Sfondo gradiente con SVG animato */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f9;
+    background: linear-gradient(135deg, #4B9FE1, #63BCE5, #7ED5EA); /* Colori principali */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23150234' fill-opacity='0.8' d='M0,224L48,202.7C96,181,192,139,288,138.7C384,139,480,181,576,170.7C672,160,768,96,864,106.7C960,117,1056,203,1152,213.3C1248,224,1344,160,1392,128L1440,96L1440,320L1392,320C1248,320,960,320,576,320C384,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3Cpath fill='%230F2557' fill-opacity='0.6' d='M0,128L48,144C96,160,192,192,288,202.7C384,213,480,203,576,202.7C672,203,768,213,864,208C960,203,1056,181,1152,154.7C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1248,320,960,320,576,320C384,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3Cpath fill='%2328559A' fill-opacity='0.4' d='M0,64L48,69.3C96,75,192,85,288,106.7C384,128,480,160,576,170.7C672,181,768,171,864,144C960,117,1056,75,1152,85.3C1248,96,1344,160,1392,192L1440,224L1440,320L1392,320C1248,320,960,320,576,320C384,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: cover;
+    animation: backgroundMove 20s ease-in-out infinite;
+    justify-content: center;
 }
 
+/* Titolo della pagina */
+body::before {
+    content: "Just1NormalCalculator";
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+    color: #0F2557; /* Colore principale del titolo */
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+/* Contenitore della calcolatrice */
 .calculator {
-    border: 2px solid #4a90e2;
+    position: relative;
+    border: 2px solid #28559A; /* Colore bordo */
     border-radius: 10px;
     padding: 20px;
     text-align: center;
-    background-color: white;
+    background-color: #f3f4f6; /* Colore di sfondo chiaro */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 1s ease-in 0.5s forwards;
 }
 
+/* Stile per i campi di input */
 input {
-    margin: 5px;
+    margin: 10px;
     padding: 10px;
     font-size: 16px;
+    border: 1px solid #28559A; /* Colore bordo input */
+    border-radius: 5px;
+    width: 100px;
+    background-color: #e7f3fa; /* Colore sfondo input */
 }
 
-.buttons button {
-    background-color: #4a90e2;
+#res {
+    font-weight: bold;
+    background-color: #d8ebf5; /* Colore di sfondo per il risultato */
+    color: #0F2557; /* Colore del testo per il risultato */
+    width: 150px;
+}
+
+/* Pulsanti della calcolatrice */
+#buttons button {
+    background-color: #3778C2; /* Colore di sfondo pulsanti */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -31,8 +68,38 @@ input {
     cursor: pointer;
     font-size: 18px;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.buttons button:hover {
-    background-color: #357ab7;
+/* Effetto hover sui pulsanti */
+#buttons button:hover {
+    background-color: #28559A; /* Colore hover pulsanti */
 }
+
+/* Animazione di dissolvenza */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animazione di movimento lento per lo sfondo */
+@keyframes backgroundMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
