@@ -9,7 +9,7 @@ Vector gaussianElimination(Matrix A, Vector b) {
         // Trova il pivot massimo nella colonna corrente
         int pivot = i;
         for (int j = i + 1; j < n; ++j) {
-            if (abs(A[j][i]) > abs(A[pivot][i])) {
+            if (abs(A[j][i]) < abs(A[pivot][i]) && abs(A[j][i]) > 0) {
                 pivot = j;
             }
         }
