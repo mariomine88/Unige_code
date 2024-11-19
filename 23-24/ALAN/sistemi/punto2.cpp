@@ -6,7 +6,7 @@ Vector gaussianElimination(Matrix A, Vector b) {
      int n = A.size();
     // Fase di eliminazione
     for (int i = 0; i < n; ++i) {
-        // Trova il pivot massimo nella colonna corrente
+        // Trova il pivot minore nella colonna corrente
         int pivot = i;
         for (int j = i + 1; j < n; ++j) {
             if (abs(A[j][i]) < abs(A[pivot][i]) && abs(A[j][i]) > 0) {
