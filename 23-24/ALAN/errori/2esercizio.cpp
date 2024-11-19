@@ -35,7 +35,7 @@ void printResults(double x, int ALG) {
     double res = exp(x);
     std::cout << "f(x) = " << res << std::endl<< std::endl<< std::endl;
 
-    std::cout.precision(17);
+    std::cout.precision(10);
     if (ALG == 1) {
         for (int i = 0; i < 5; ++i) {
             printTaylorResults( x, res, N[i]);
