@@ -19,6 +19,6 @@ public class Noleggio {
         return film;
     }
     public double getAmmontare() {
-        return film.getAmmontare(this);
+        return film.getAmmontare(giorniNoleggio);
     }
 }
