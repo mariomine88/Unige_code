@@ -18,4 +18,7 @@ public class Noleggio {
     public Film getFilm() {
         return film;
     }
+    public double getAmmontare() {
+        return film.getAmmontare(this);
+    }
 }

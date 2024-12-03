@@ -1,9 +1,12 @@
 package videostore;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 // 1.0
 public class Cliente {
     
+        @SuppressWarnings("FieldMayBeFinal")
 	private String nome;
     private List<Noleggio> noleggi = new ArrayList<>();
 
@@ -19,43 +22,34 @@ public class Cliente {
         return nome;
     }
 
-    public String rendiconto() {
-       
-    	double ammontareTotale = 0;
-        Iterator<Noleggio> noleggiIt = noleggi.iterator();
-        StringBuilder r = new StringBuilder();
-        r.append("Rendiconto noleggi per " + getNome() + ": ");
+private double getAmmontareTotale() {
+
+    double ammontareTotale = 0;
+    for (Noleggio noleggio : noleggi) {
+        ammontareTotale += noleggio.getAmmontare();
+    }
+    return ammontareTotale;
+    }
+
+public String rendiconto() {
+
+    Iterator<Noleggio> noleggiIt = noleggi.iterator();
+    StringBuilder r = new StringBuilder();
+    r.append("Rendiconto noleggi per " + getNome() + ": ");
+    
+    while (noleggiIt.hasNext()) {
+        Noleggio noleggio = noleggiIt.next();
         
-        while (noleggiIt.hasNext()) {
-            double questoAmmontare = 0;
-            Noleggio noleggio = noleggiIt.next();
-            
-            // calcola ammontare per ogni noleggio
-            switch (noleggio.getFilm().getCodicePrezzo()) {
-            case Film.REGOLARE:
-                questoAmmontare += 2;
-                if (noleggio.getGiorniNoleggio() > 2)
-                    questoAmmontare += (noleggio.getGiorniNoleggio() - 2) * 1.5;
-                break;
-            case Film.NOVITA:
-                questoAmmontare += noleggio.getGiorniNoleggio() * 3;
-                break;
-            default://Film.BAMBINI:
-                questoAmmontare += 1.5;
-                if (noleggio.getGiorniNoleggio() > 3)
-                    questoAmmontare += (noleggio.getGiorniNoleggio() - 3) * 1.5;
-                break;
-            }
-            ammontareTotale += questoAmmontare;
-
-            r.append(noleggio.getFilm().getTitolo())
-            .append(" ")
-            .append(questoAmmontare)
-            .append(" ");   
-            
+        // calcola ammontare per ogni noleggio
+        double questoAmmontare = noleggio.getAmmontare();
+        
+        r.append(noleggio.getFilm().getTitolo())
+        .append(" ")
+        .append(questoAmmontare)
+        .append(" ");
         }
-
-        r.append("L'ammontare dovuto e' ").append(ammontareTotale);
+        
+        r.append("L'ammontare dovuto e' ").append(getAmmontareTotale());
         return r.toString();
     }
 }
