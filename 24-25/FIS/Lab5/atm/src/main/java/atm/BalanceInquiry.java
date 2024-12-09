@@ -11,9 +11,9 @@ public class BalanceInquiry extends Transaction {
       BankDatabase bankDatabase = getBankDatabase();
       Screen screen = getScreen();
       // get the available balance for the account involved
-      double availableBalance = bankDatabase.getAvailableBalance(getAccountNumber());
+      Euro availableBalance = bankDatabase.getAvailableBalance(getAccountNumber());
       // get the total balance for the account involved
-      double totalBalance = bankDatabase.getTotalBalance(getAccountNumber());
+      Euro totalBalance = bankDatabase.getTotalBalance(getAccountNumber());
       // display the balance information on the screen
       screen.displayMessageLine("\nBalance Information:");
       screen.displayMessage(" - Available balance: "); 
