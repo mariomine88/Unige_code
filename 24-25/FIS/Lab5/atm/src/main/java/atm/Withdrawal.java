@@ -17,20 +17,20 @@ public class Withdrawal extends Transaction {
    // perform transaction
    public void execute() {
       boolean cashDispensed = false; // cash was not dispensed yet
-      double availableBalance; // amount available for withdrawal
+      Euro availableBalance; // amount available for withdrawal
       // get references to bank database and screen
       BankDatabase bankDatabase = getBankDatabase(); 
       Screen screen = getScreen();
       // loop until cash is dispensed or the user cancels
       do {
          // obtain a chosen withdrawal amount from the user 
-         double amount = displayMenuOfAmounts();
+         Euro amount = new Euro((double) displayMenuOfAmounts());
          // check whether user chose a withdrawal amount or canceled
-         if (amount != CANCELED) {
+         if (!amount.equalTo(new Euro(CANCELED))) {
             // get available balance of account involved
             availableBalance = bankDatabase.getAvailableBalance(getAccountNumber());
             // check whether the user has enough money in the account 
-            if (amount <= availableBalance) {   
+            if (amount.lessThan(availableBalance)) {  
                // check whether the cash dispenser has enough money
                if (cashDispenser.isSufficientCashAvailable(amount)) {
                   // update the account involved to reflect withdrawal

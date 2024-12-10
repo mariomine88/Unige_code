@@ -17,13 +17,13 @@ public class Deposit extends Transaction {
    public void execute(){
       BankDatabase bankDatabase = getBankDatabase();
       Screen screen = getScreen();
-      double amount = -1;
+      Euro amount = new Euro(-1);
       do{
          amount = promptForDepositAmount(); // get deposit amount from user
       }
-      while(amount <0);
+      while(amount.lessThan(new Euro(0)));
       // check whether user entered a deposit amount or canceled
-      if (amount != CANCELED) {
+      if (!amount.equalTo(new Euro(CANCELED))) {
          // request deposit envelope containing specified amount
          screen.displayMessage("\nPlease insert a deposit envelope containing ");
          screen.displayEuroAmount(amount);
@@ -49,16 +49,16 @@ public class Deposit extends Transaction {
    }
 
    // prompt user to enter a deposit amount in cents 
-   private double promptForDepositAmount() {
+   private Euro promptForDepositAmount() {
       Screen screen = getScreen();
       // display the prompt
       screen.displayMessage("\nPlease enter a valid deposit amount or 0 to cancel: ");
       double input = keypad.getDoubleInput(); // receive input of deposit amount
       // check whether the user canceled or entered a valid amount
       if (input == 0) 
-         return CANCELED;
+         return new Euro(CANCELED);
       else
-         return input; // return euro amount 
+         return new Euro(input); // return euro amount 
    } 
    
 }

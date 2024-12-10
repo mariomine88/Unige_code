@@ -1,7 +1,6 @@
 package atm;
 
 public class Euro {
-
 	private double value;
 
 	public Euro(double v) {
@@ -12,14 +11,12 @@ public class Euro {
 		return value;
 	}
 
-	public Euro sum(Euro e) {
-		this.value = this.value + e.getValue();
-		return this;
+	public void sum(Euro e) {
+		value += e.getValue();
 	}
 
-	public Euro subtract(Euro e) {
-		this.value = this.value - e.getValue();
-		return this;
+	public void subtract(Euro e) {
+		value -= e.getValue();
 	}
 
 	public boolean equalTo(Euro e){
