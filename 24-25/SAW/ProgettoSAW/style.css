@@ -1,0 +1,53 @@
+        /* Stili base, li modificherai in base alla palette scelta */
+        body {
+            font-family: sans-serif;
+            background-color: #f8f9fa; /* Grigio chiaro */
+        }
+
+        .navbar {
+            background-color: #F3F3E0; 
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #0d6efd; /* Blu primary di Bootstrap, personalizzabile */
+        }
+
+        .navbar-brand:hover {
+            color: #0b5ed7;
+        }
+
+        .hero {
+            background: #133E87;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #6c757d;
+        }
+
+        .section-features {
+            padding: 3rem 0;
+        }
+
+        .section-features h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: #ffffff;
+            border-top: 1px solid #dee2e6;
+            text-align: center;
+            padding: 1rem;
+        }
