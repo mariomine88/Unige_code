@@ -20,8 +20,8 @@
                         <a class="nav-link" href="#">Contatti</a>
                     </li>
                     <li class="nav-item ms-3">
-                        <a class="btn btn-outline-primary" href="#login">Login</a>
-                    </li>
+                          <a class="btn btn-outline-primary" href="#login" onclick="window.location.href='Login.php'">Login</a>
+                        </li>
                     <li class="nav-item ms-2">
                         <a class="btn btn-primary" href="#register">Registrati</a>
                     </li>
