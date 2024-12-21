@@ -1,24 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<?php
+    include 'header.php';
+?>
 <body>
-    <h1>Benvenuto su questo sito</h1>
-    <p>Questo è un paragrafo</p>
-    <p>Questo è un altro paragrafo</p>
+    <!-- Navbar -->
+    <?php
+        include 'navbar.php';
+    ?>
 
-    <h2>Questo è un titolo di secondo livello</h2>
-    <p>Questo è un paragrafo</p>
-    <p>Questo è un altro paragrafo</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Trova i collaboratori perfetti per il tuo progetto</h1>
+            <p>Team2Reality ti aiuta a trasformare la tua idea in un progetto concreto, connettendoti con professionisti e appassionati.</p>
+            <a href="#register" class="btn btn-primary btn-lg">Inizia Ora</a>
+        </div>
+    </section>
 
-    <h3>fare un ecomers di sassi non e una buona idea</h3>
+    <!-- Sezione caratteristiche/valori -->
+    <section class="section-features">
+        <div class="container">
+            <h2>Perché scegliere Team2Reality?</h2>
+            <div class="row">
+                <!-- Feature 1 -->
+                <div class="col-md-4 mb-4 text-center">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Crea e Condividi</h5>
+                            <p class="card-text">Pubblica la tua idea in pochi clic e rendila visibile a tutta la community.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="col-md-4 mb-4 text-center">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Trova Talenti</h5>
+                            <p class="card-text">Ricerca membri con competenze specifiche, filtra e scegli i collaboratori ideali.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="col-md-4 mb-4 text-center">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Costruisci la Tua Realtà</h5>
+                            <p class="card-text">Trasforma un’idea in un team, un team in un prototipo, un prototipo in un prodotto reale.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <p>Questo è un paragrafo</p>
+<?php
+    include 'footer.php';
+?>
 
-    <footer>sito fatto da mario & eugenio compani</footer>
-    
-</body>
-</html>
