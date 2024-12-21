@@ -1,11 +1,9 @@
 <?php
     include 'header.php';
+
+    include 'navbar.php';   
 ?>
 <body>
-    <!-- Navbar -->
-    <?php
-        include 'navbar.php';
-    ?>
 
     <!-- Hero Section -->
     <section class="hero">
