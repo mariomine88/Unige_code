@@ -1,3 +1,4 @@
+<?php require_once 'backend/config_session.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +9,13 @@
 
     <!-- Main Content -->
     <div class="container main-content">
-        <h1>Welcome to Our Website</h1>
-        <p class="lead">Join our community today!</p>
+        <?php if (isset($_SESSION["user_username"])) : ?>
+            <h1>Welcome, <?php echo htmlspecialchars($_SESSION["user_username"]); ?>!</h1>
+            <p class="lead">Thanks for being part of our community.</p>
+        <?php else : ?>
+            <h1>Welcome to Our Website</h1>
+            <p class="lead">Join our community today!</p>
+        <?php endif; ?>
     </div>
 
     <?php include 'include/footer.php'; ?>

@@ -21,6 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $errors["invalid_email"] = "Invalid email format!";
     }
 
+    //validate username
+    if (!preg_match("/^[a-zA-Z0-9_\.]+$/", $username)) {
+        $errors["invalid_username"] = "Username can only contain letters and numbers!";
+    }
+
     // Validate password strength
     if (strlen($pwd) < 8) {
         $errors["weak_password"] = "Password must be at least 8 characters long!";
@@ -87,12 +92,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         
         $stmt->execute();
 
+        $pdo = null;
+        $stmt = null;
+
         // Clear any existing errors and set success message
         unset($_SESSION["signup_errors"]);
         unset($_SESSION["signup_data"]);
         $_SESSION["signup_success"] = "Account created successfully! Please login.";
 
-        header("Location: ../pages/login.php");
+        header("Location: ../pages/signup.php");
         die();
 
     } catch (PDOException $e) {

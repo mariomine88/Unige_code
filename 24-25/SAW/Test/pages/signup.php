@@ -71,6 +71,10 @@ require_once '../backend/config_session.php';
                     </div>
                 </form>
                 
+                <div class="text-center mt-3">
+                    <button onclick="window.location.href='../index.php'" class="btn btn-secondary">Return Home</button>
+                </div>
+                
                 <?php
                 // Clear the session data after displaying it
                 if (isset($_SESSION["signup_data"])) {

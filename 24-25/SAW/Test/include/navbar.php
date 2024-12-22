@@ -2,8 +2,12 @@
     <div class="container">
         <a class="navbar-brand" href="index.php">YourBrand</a>
         <div class="ms-auto">
-            <a href="pages/signup.php" class="btn btn-outline-primary me-2">Sign Up</a>
-            <a href="pages/login.php" class="btn btn-primary">Login</a>
+            <?php if (isset($_SESSION["user_username"])) : ?>
+                <a href="backend/logouthandler.php" class="btn btn-outline-danger">Logout</a>
+            <?php else : ?>
+                <a href="pages/signup.php" class="btn btn-outline-primary me-2">Sign Up</a>
+                <a href="pages/login.php" class="btn btn-primary">Login</a>
+            <?php endif; ?>
         </div>
     </div>
 </nav>
