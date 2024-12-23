@@ -1,4 +1,5 @@
 <?php
+    $page_title = 'Home';
     include 'header.php';
 
     include 'navbar.php';   
@@ -10,7 +11,7 @@
         <div class="container">
             <h1>Trova i collaboratori perfetti per il tuo progetto</h1>
             <p>Team2Reality ti aiuta a trasformare la tua idea in un progetto concreto, connettendoti con professionisti e appassionati.</p>
-            <a href="#register" class="btn btn-primary btn-lg">Inizia Ora</a>
+            <a href="registrazione.php" class="btn btn-primary btn-lg">Inizia Ora</a>
         </div>
     </section>
 

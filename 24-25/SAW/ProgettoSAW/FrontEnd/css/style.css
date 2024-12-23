@@ -1,70 +1,34 @@
-        /* Stili base, li modificherai in base alla palette scelta */
-        html, body {
-            height: 100%; /* Assicura che il layout copra tutta l'altezza del browser */
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            font-family: sans-serif;
-            background-color: #f8f9fa; /* Grigio chiaro */
-        }
+/* Stile base per il layout */
+html, body {
+    height: 100%; /* Assicura che il layout occupi l'intera altezza della pagina */
+    margin: 0; /* Rimuove i margini predefiniti */
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif; /* Font semplice e leggibile */
+    background-color: #f8f9fa; /* Sfondo grigio chiaro */
+}
 
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh; /* Altezza intera della finestra */
-            padding: 20px;
-            box-sizing: border-box;
-        }
+/* Contenuto principale */
+.container {
+    flex: 1; /* Occupa tutto lo spazio disponibile tra navbar e footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra il contenuto verticalmente */
+    align-items: center; /* Centra il contenuto orizzontalmente */
+    text-align: center;
+}
 
-        .navbar {
-            background-color: #F3F3E0; 
-        }
+/* Navbar */
+.navbar.container {
+    background-color: white; /* Navbar bianca */
+    border-bottom: 1px solid #ffffff; /* Linea sottile sotto la navbar */
+}
 
-        .navbar-brand {
-            font-weight: bold;
-            color: #0d6efd; /* Blu primary di Bootstrap, personalizzabile */
-        }
-
-        .navbar-brand:hover {
-            color: #0b5ed7;
-        }
-
-        .hero {
-            background: #133E87;
-            padding: 5rem 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #6c757d;
-        }
-
-        .section-features {
-            padding: 3rem 0;
-        }
-
-        .section-features h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .footer {
-            position: absolute;
-            bottom: 0;
-            background-color: #f8f9fa;
-            border-top: 1px solid #dee2e6;
-            text-align: center;
-            padding: 1rem 0;
-            width: 100%;
-           
-        }
+/* Footer */
+.footer {
+    background-color: #f8f9fa; /* Sfondo grigio chiaro */
+    border-top: 1px solid #ffffff; /* Linea sottile sopra il footer */
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+}
