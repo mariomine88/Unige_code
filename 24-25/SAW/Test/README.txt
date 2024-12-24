@@ -5,7 +5,7 @@ include for thhe include in the pages
 js for js
 css for css
 image for image
-backend for the pure php files mosty for the sql querry
+BackEnd for the pure php files mosty for the sql querry
 
 sql
 

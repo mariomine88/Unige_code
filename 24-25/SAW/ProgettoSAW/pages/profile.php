@@ -80,6 +80,20 @@ $user = $_SESSION["profile_data"];
             </div>
             <button type="submit" class="btn btn-primary">Update Profile</button>
         </form>
+        <!-- Add delete account section -->
+        <div class="mt-5 border-top pt-4">
+            <h4 class="text-danger">Delete Account</h4>
+            <p>Warning: This action cannot be undone. All your data will be permanently deleted.</p>
+            <form action="../BackEnd/delete_account.php" method="post" onsubmit="return confirmDelete();">
+                <button type="submit" class="btn btn-danger">Delete Account</button>
+            </form>
+        </div>
     </div>
+
+    <script>
+    function confirmDelete() {
+        return confirm("Are you sure you want to delete your account? This action cannot be undone.");
+    }
+    </script>
 </body>
 </html>

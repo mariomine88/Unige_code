@@ -1,5 +1,5 @@
 <?php 
-require_once '../backend/config_session.php';
+require_once '../BackEnd/config_session.php';
 
 // Redirect if not logged in or no profile data
 if (!isset($_SESSION["user_id"]) || !isset($_SESSION["profile_data"])) {
@@ -42,7 +42,7 @@ $user = $_SESSION["profile_data"];
             <?php unset($_SESSION["profile_updated"]); ?>
         <?php endif; ?>
 
-        <form action="../backend/update_profile.php" method="post" class="mt-4">
+        <form action="../BackEnd/update_profile.php" method="post" class="mt-4">
             <div class="mb-3">
                 <label for="firstname" class="form-label">First Name</label>
                 <input type="text" class="form-control" id="firstname" name="firstname" 
@@ -80,6 +80,21 @@ $user = $_SESSION["profile_data"];
             </div>
             <button type="submit" class="btn btn-primary">Update Profile</button>
         </form>
+
+        <!-- Add delete account section -->
+        <div class="mt-5 border-top pt-4">
+            <h4 class="text-danger">Delete Account</h4>
+            <p>Warning: This action cannot be undone. All your data will be permanently deleted.</p>
+            <form action="../BackEnd/delete_account.php" method="post" onsubmit="return confirmDelete();">
+                <button type="submit" class="btn btn-danger">Delete Account</button>
+            </form>
+        </div>
     </div>
+
+    <script>
+    function confirmDelete() {
+        return confirm("Are you sure you want to delete your account? This action cannot be undone.");
+    }
+    </script>
 </body>
 </html>

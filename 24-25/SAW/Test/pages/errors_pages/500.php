@@ -1,5 +1,5 @@
 <?php
-require_once '../../backend/config_session.php';
+require_once '../../BackEnd/config_session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
