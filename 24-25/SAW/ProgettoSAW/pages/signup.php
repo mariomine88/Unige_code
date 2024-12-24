@@ -1,5 +1,5 @@
 <?php
-require_once '../backend/config_session.php';
+require_once '../BackEnd/config_session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ require_once '../backend/config_session.php';
                 }
                 ?>
 
-                <form action="../backend/signuphandlere.php" method="post">
+                <form action="../BackEnd/signuphandlere.php" method="post">
                     <div class="row mb-3">
                         <div class="col">
                             <label for="firstname" class="form-label">First Name</label>
@@ -57,14 +57,14 @@ require_once '../backend/config_session.php';
                         <div class="col">
                             <label for="pwd" class="form-label">Password</label>
                             <input type="password" class="form-control" id="pwd" name="pwd" required>
-                            <small class="form-text text-muted">
-                                Password must be at least 8 characters long and contain uppercase, lowercase, and numbers.
-                            </small>
                         </div>
                         <div class="col">
                             <label for="cpwd" class="form-label">Confirm Password</label>
                             <input type="password" class="form-control" id="cpwd" name="cpwd" required>
                         </div>
+                        <small class="form-text text-muted">
+                                Password must be at least 8 characters long and contain uppercase, lowercase, and numbers.
+                        </small>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">Sign Up</button>

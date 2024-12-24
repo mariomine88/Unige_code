@@ -1,5 +1,5 @@
 <?php
-require_once '../backend/config_session.php';
+require_once '../BackEnd/config_session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ require_once '../backend/config_session.php';
                 }
                 ?>
 
-                <form action="../backend/signuphandlere.php" method="post">
+                <form action="../BackEnd/signuphandlere.php" method="post">
                     <div class="row mb-3">
                         <div class="col">
                             <label for="firstname" class="form-label">First Name</label>

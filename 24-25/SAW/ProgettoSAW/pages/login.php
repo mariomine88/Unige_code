@@ -1,5 +1,5 @@
 <?php
-require_once '../backend/config_session.php';
+require_once '../BackEnd/config_session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ require_once '../backend/config_session.php';
                 }
                 ?>
 
-                <form action="../backend/loginhandler.php" method="post">
+                <form action="../BackEnd/loginhandler.php" method="post">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username or Email</label>
                         <input type="text" class="form-control" id="username" name="username" 

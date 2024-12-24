@@ -5,7 +5,6 @@ $dbname = 'sawdb';    // Database Name
 $dns = 'mysql:host='.$host.'localhost;dbname='.$dbname;    // Data Source
 $dbusername = "root";    // Database Username
 $dbpassword = "";    // Database Password
-$dns = 'mysql:host=localhost;dbname=sawdb';    // Data Source
 
 try {
     $pdo = new PDO($dns, $dbusername, $dbpassword);

@@ -1,5 +1,5 @@
 <?php 
-require_once '../backend/config_session.php';
+require_once '../BackEnd/config_session.php';
 
 // Redirect if not logged in or no profile data
 if (!isset($_SESSION["user_id"]) || !isset($_SESSION["profile_data"])) {
@@ -42,7 +42,7 @@ $user = $_SESSION["profile_data"];
             <?php unset($_SESSION["profile_updated"]); ?>
         <?php endif; ?>
 
-        <form action="../backend/update_profile.php" method="post" class="mt-4">
+        <form action="../BackEnd/update_profile.php" method="post" class="mt-4">
             <div class="mb-3">
                 <label for="firstname" class="form-label">First Name</label>
                 <input type="text" class="form-control" id="firstname" name="firstname" 
