@@ -1,7 +1,7 @@
 <?php 
     $page_title = 'Login';
 
-    include 'header.php'; 
+    include 'header.php';
 ?>
 <body>
     <div class="container">
