@@ -38,6 +38,10 @@ require_once '../BackEnd/config_session.php';
                         <label for="pwd" class="form-label">Password</label>
                         <input type="password" class="form-control" id="pwd" name="pwd" required>
                     </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                        <label class="form-check-label" for="remember">Remember Me (30 days)</label>
+                    </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">Login</button>
                     </div>

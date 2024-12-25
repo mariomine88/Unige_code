@@ -1,71 +1,77 @@
 <?php
 require_once 'config_session.php';
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+function setRememberMeCookie($userId, $pdo) {
+    $selector = bin2hex(random_bytes(16));
+    $token = random_bytes(32);
+    $hashedToken = password_hash($token, PASSWORD_BCRYPT);
+    $expiry = date('Y-m-d H:i:s', time() + 30 * 24 * 60 * 60); // 30 days
+
+    // Clear existing tokens and save new one
+    $pdo->prepare("DELETE FROM auth_tokens WHERE user_id = :user_id")
+        ->execute([':user_id' => $userId]);
+    
+    $pdo->prepare("INSERT INTO auth_tokens (user_id, selector, token, expires) 
+                   VALUES (:user_id, :selector, :token, :expires)")
+        ->execute([
+            ':user_id' => $userId,
+            ':selector' => $selector,
+            ':token' => $hashedToken,
+            ':expires' => $expiry
+        ]);
+
+    setcookie(
+        'remember_me',
+        $selector . ':' . bin2hex($token),
+        time() + 30 * 24 * 60 * 60
+    );
+}
+
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    header("Location: ../index.php");
+    die();
+}
+
+try {
     $usernameOrEmail = trim($_POST["username"] ?? '');
     $pwd = trim($_POST["pwd"] ?? '');
-
-    $errors = [];
-
-    // Validate empty fields
+    
     if (empty($usernameOrEmail) || empty($pwd)) {
-        $errors["empty_input"] = "All fields are required!";
-    }
-
-    try {
-        require_once 'dbh.php';
-
-        if (empty($errors)) {
-            // Check if input is email or username
-            $query = "SELECT * FROM users WHERE username = :identifier OR email = :identifier;";
-            $stmt = $pdo->prepare($query);
-            $stmt->bindParam(":identifier", $usernameOrEmail);
-            $stmt->execute();
-
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            $pdo = null;
-            $stmt = null;
-            
-            if (!$user) {
-                $errors["login_incorrect"] = "Invalid credentials!";
-            } else {
-                // Verify password
-                if (!password_verify($pwd, $user["password"])) {
-                    $errors["login_incorrect"] = "Invalid credentials!";
-                }
-            }
-        }
-
-        if (!empty($errors)) {
-            $_SESSION["login_errors"] = $errors;
-            $_SESSION["login_data"] = [
-                "username" => $usernameOrEmail
-            ];
-            header("Location: ../pages/login.php");
-            die();
-        }
-
-        session_regenerate_id(); // Regenerate session ID and delete the old one
-
-        // If no errors, log the user in
-        $_SESSION["user_id"] = $user["id"];
-        $_SESSION["user_username"] = $user["username"];
-        
-
-        // Clear any existing errors
-        unset($_SESSION["login_errors"]);
-        unset($_SESSION["login_data"]);
-
-        // Redirect to dashboard or home page
-        header("Location: ../index.php");
-        die();
-
-    } catch (PDOException $e) {
-        header("Location: ../pages/errors_pages/500.php");
+        $_SESSION["login_errors"]["empty_input"] = "All fields are required!";
+        header("Location: ../pages/login.php");
         die();
     }
-} else {
+
+    require_once 'dbh.php';
+    
+    // Check credentials
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :identifier OR email = :identifier");
+    $stmt->execute([':identifier' => $usernameOrEmail]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$user || !password_verify($pwd, $user["password"])) {
+        $_SESSION["login_errors"]["login_incorrect"] = "Invalid credentials!";
+        $_SESSION["login_data"]["username"] = $usernameOrEmail;
+        header("Location: ../pages/login.php");
+        die();
+    }
+
+    // Login successful
+    session_regenerate_id();
+    $_SESSION["user_id"] = $user["id"];
+    $_SESSION["user_username"] = $user["username"];
+
+    // Handle remember me
+    if (isset($_POST["remember"])) {
+        setRememberMeCookie($user["id"], $pdo);
+    }
+
+    // Clear session data and redirect
+    unset($_SESSION["login_errors"], $_SESSION["login_data"]);
     header("Location: ../index.php");
+    die();
+
+} catch (PDOException $e) {
+    header("Location: ../pages/errors_pages/500.php");
     die();
 }

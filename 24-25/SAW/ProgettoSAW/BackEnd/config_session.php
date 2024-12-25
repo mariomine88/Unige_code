@@ -23,3 +23,29 @@ if ($_SESSION['last_regenerate'] < time() - 1800) {
     session_regenerate_id();
     $_SESSION['last_regenerate'] = time();
 }
+
+// Check for remember me cookie
+if (!isset($_SESSION['user_id']) && isset($_COOKIE['remember_me'])) {
+    list($selector, $token) = explode(':', $_COOKIE['remember_me']);
+    
+    try {
+        require_once 'dbh.php';
+        
+        $query = "SELECT auth_tokens.*, users.username FROM auth_tokens 
+                  JOIN users ON auth_tokens.user_id = users.id 
+                  WHERE auth_tokens.selector = :selector AND auth_tokens.expires > NOW()";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([':selector' => $selector]);
+        
+        //if result is found
+        if ($auth = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            if (password_verify(hex2bin($token), $auth['token'])) {
+                $_SESSION['user_id'] = $auth['user_id'];
+                $_SESSION['user_username'] = $auth['username'];
+            }
+        }
+    } catch (PDOException $e) {
+        header("Location: ../pages/errors_pages/500.php");
+        die();
+    }
+}

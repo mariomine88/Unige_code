@@ -24,3 +24,12 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL
 );
 
+
+CREATE TABLE auth_tokens (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    selector CHAR(32) NOT NULL UNIQUE,
+    token CHAR(64) NOT NULL,
+    user_id INT NOT NULL,
+    expires DATETIME NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);

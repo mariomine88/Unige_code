@@ -40,13 +40,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                  VALUES (:firstname, :lastname, :email, :username, :password)";
         $stmt = $pdo->prepare($query);
         
-        $stmt->bindParam(":firstname", $firstname);
-        $stmt->bindParam(":lastname", $lastname);
-        $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":username", $username);
-        $stmt->bindParam(":password", $hashedPwd);
-        
-        $stmt->execute();
+        $stmt->execute([
+            ':firstname' => $firstname,
+            ':lastname' => $lastname,
+            ':email' => $email,
+            ':username' => $username,
+            ':password' => $hashedPwd
+        ]);
 
         // Clear session and set success
         unset($_SESSION["signup_errors"], $_SESSION["signup_data"]);
