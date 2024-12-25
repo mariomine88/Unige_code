@@ -19,7 +19,7 @@ $user = $_SESSION["profile_data"];
 <body>
     <?php include '../include/navbar.php'; ?>
 
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
         <h2>Edit Profile</h2>
         
         <?php if (isset($_SESSION["update_errors"])) : ?>
@@ -89,6 +89,9 @@ $user = $_SESSION["profile_data"];
             </form>
         </div>
     </div>
+
+    <!-- Add spacing at bottom of page -->
+    <div class="mb-5"></div>
 
     <script>
     function confirmDelete() {

@@ -48,7 +48,8 @@ require_once '../BackEnd/config_session.php';
                 </form>
 
                 <div class="text-center mt-3">
-                    <button onclick="window.location.href='../index.php'" class="btn btn-secondary">Return Home</button>
+                <a href="forgot-password.php" class="d-block mb-3">Forgot Password?</a>
+                <button onclick="window.location.href='../index.php'" class="btn btn-secondary">Return Home</button>
                 </div>
 
                 <?php

@@ -49,8 +49,18 @@ try {
     $stmt->execute([':identifier' => $usernameOrEmail]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if (!$user || !password_verify($pwd, $user["password"])) {
-        $_SESSION["login_errors"]["login_incorrect"] = "Invalid credentials!";
+    $error_message = null;
+
+    if (!$user) {
+        $error_message = "Invalid Username or Email!";
+    } elseif ($user["activation_token"] !== null) {
+        $error_message = "Account not activated!";
+    } elseif (!password_verify($pwd, $user["password"])) {
+        $error_message = "Invalid Password!";
+    }
+    
+    if ($error_message) {
+        $_SESSION["login_errors"]["login_incorrect"] = $error_message;
         $_SESSION["login_data"]["username"] = $usernameOrEmail;
         header("Location: ../pages/login.php");
         die();
