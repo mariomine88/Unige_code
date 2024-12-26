@@ -42,7 +42,7 @@ try {
         die();
     }
 
-    require_once '../dbh.php';
+    require_once '../../dbh.php';
     
     // Check credentials
     $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :identifier OR email = :identifier");

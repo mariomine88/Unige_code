@@ -1,6 +1,6 @@
 <?php
 require_once 'config_session.php';
-require_once '../dbh.php';
+require_once '../../dbh.php';
 
 if (!isset($_SESSION["user_id"])) {
     header("Location: ../index.php");

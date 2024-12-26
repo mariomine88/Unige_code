@@ -1,7 +1,7 @@
 <?php
 require_once 'config_session.php';
-require_once '../dbh.php';
-require_once '../mail-init.php';
+require_once '../../dbh.php';
+require_once '../../mail-init.php';
 
 // Redirect if not POST
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {

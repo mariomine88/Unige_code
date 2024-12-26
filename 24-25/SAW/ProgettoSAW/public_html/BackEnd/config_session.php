@@ -29,7 +29,7 @@ if (!isset($_SESSION['user_id']) && isset($_COOKIE['remember_me'])) {
     list($selector, $token) = explode(':', $_COOKIE['remember_me']);
     
     try {
-        require_once '../dbh.php';
+        require_once '../../dbh.php';
         
         $query = "SELECT auth_tokens.*, users.username FROM auth_tokens 
                   JOIN users ON auth_tokens.user_id = users.id 

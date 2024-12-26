@@ -1,6 +1,6 @@
 <?php
 require_once 'config_session.php';
-require_once '../dbh.php';
+require_once '../../dbh.php';
 require_once 'check_imput.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {

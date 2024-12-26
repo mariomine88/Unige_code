@@ -1,8 +1,8 @@
 <?php
 require_once 'config_session.php';
-require_once '../dbh.php';
+require_once '../../dbh.php';
 require_once 'check_imput.php';
-require_once '../mail-init.php'; 
+require_once '../../mail-init.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $firstname = trim($_POST['firstname'] ?? '');
