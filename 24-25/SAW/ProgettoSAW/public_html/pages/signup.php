@@ -26,7 +26,7 @@ require_once '../BackEnd/config_session.php';
                 }
                 ?>
 
-                <form action="../BackEnd/signuphandlere.php" method="post">
+                <form action="../BackEnd/registration.php" method="post">
                     <div class="row mb-3">
                         <div class="col">
                             <label for="firstname" class="form-label">First Name</label>
@@ -56,7 +56,7 @@ require_once '../BackEnd/config_session.php';
                     <div class="row mb-3">
                         <div class="col">
                             <label for="pwd" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="pwd" name="pwd" required>
+                            <input type="password" class="form-control" id="pwd" name="pass" required>
                         </div>
                         <div class="col">
                             <label for="cpwd" class="form-label">Confirm Password</label>

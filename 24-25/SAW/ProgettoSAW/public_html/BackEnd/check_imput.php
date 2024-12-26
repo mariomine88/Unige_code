@@ -3,16 +3,33 @@
 function validateBasicFields($firstname, $lastname, $email, $username) {
     $errors = [];
 
+    // Empty validation checks
     if (empty($firstname) || empty($lastname) || empty($email) || empty($username)) {
         $errors["empty_input"] = "All fields are required!";
     }
 
+    // Email validation checks
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors["invalid_email"] = "Invalid email format!";
     }
 
+    // Username validation checks
     if (!preg_match("/^[a-zA-Z0-9_\.]+$/", $username)) {
         $errors["invalid_username"] = "Username can only contain letters and numbers!";
+    }
+
+    // Length validation checks
+    if (strlen($firstname) > 50) {
+        $errors["firstname_length"] = "First name must be less than 50 characters";
+    }
+    if (strlen($lastname) > 50) {
+        $errors["lastname_length"] = "Last name must be less than 50 characters";
+    }
+    if (strlen($email) > 100) {
+        $errors["email_length"] = "Email must be less than 100 characters";
+    }
+    if (strlen($username) > 50) {
+        $errors["username_length"] = "Username must be less than 50 characters";
     }
 
     return $errors;
@@ -21,6 +38,7 @@ function validateBasicFields($firstname, $lastname, $email, $username) {
 function validatePassword($password, $confirm_password) {
     $errors = [];
 
+    //min 8 characters, at least one uppercase letter, one lowercase letter and one number
     if (strlen($password) < 8) {
         $errors["weak_password"] = "Password must be at least 8 characters long!";
     }
@@ -34,6 +52,7 @@ function validatePassword($password, $confirm_password) {
         $errors["weak_password"] = "Password must contain at least one number!";
     }
 
+    // Password match validation
     if ($password !== $confirm_password) {
         $errors["password_match"] = "Passwords do not match!";
     }

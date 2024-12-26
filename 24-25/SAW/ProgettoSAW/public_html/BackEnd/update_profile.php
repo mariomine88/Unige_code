@@ -4,6 +4,9 @@ require_once '../../dbh.php';
 require_once 'check_imput.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // set to TRUE for testing
+    $test = FALSE;
+    if (!$test) {
     $firstname = trim($_POST['firstname'] ?? '');
     $lastname = trim($_POST['lastname'] ?? '');
     $email = trim($_POST['email'] ?? '');
@@ -12,6 +15,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $new_password = trim($_POST['new_password'] ?? '');
     $confirm_password = trim($_POST['confirm_password'] ?? '');
     $user_id = $_SESSION["user_id"];
+    } else {
+        $firstname = trim($_POST['firstname'] ?? '');
+        $lastname = trim($_POST['lastname'] ?? '');
+        $email = trim($_POST['email'] ?? '');
+        $username = "test";
+        $user_id = $_SESSION["user_id"];
+    }
+
 
     // Validate basic fields
     $errors = validateBasicFields($firstname, $lastname, $email, $username);
@@ -71,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION["user_username"] = $username;
         $_SESSION["profile_updated"] = true;
         
-        header("Location: fetch_profile.php");
+        header("Location: show_profile.php");
         die();
 
     } catch (PDOException $e) {

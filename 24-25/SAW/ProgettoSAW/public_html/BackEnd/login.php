@@ -33,8 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 }
 
 try {
-    $usernameOrEmail = trim($_POST["username"] ?? '');
-    $pwd = trim($_POST["pwd"] ?? '');
+    $usernameOrEmail = trim($_POST["email"] ?? '');
+    $pwd = trim($_POST["pass"] ?? '');
     
     if (empty($usernameOrEmail) || empty($pwd)) {
         $_SESSION["login_errors"]["empty_input"] = "All fields are required!";

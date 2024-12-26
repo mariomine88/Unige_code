@@ -24,8 +24,8 @@ CREATE TABLE users (
     lastname VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     username VARCHAR(50) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    activation_token VARCHAR(100)
+    password VARCHAR(60) NOT NULL,
+    activation_token VARCHAR(64)
 );
 
 
@@ -40,7 +40,7 @@ CREATE TABLE auth_tokens (
 
 CREATE TABLE password_resets (
     email VARCHAR(255) PRIMARY KEY,
-    token VARCHAR(255) NOT NULL UNIQUE,
+    token VARCHAR(60) NOT NULL UNIQUE,
     expires_at TIMESTAMP,
     FOREIGN KEY (email) REFERENCES users(email)
 );

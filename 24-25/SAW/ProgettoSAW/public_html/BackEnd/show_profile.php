@@ -20,7 +20,13 @@ try {
         "email" => $user["email"]
     ];
 
+    //for test uncoment echo and coment header
+    //echo "Email: " . $user["email"] . "\n";
+    //echo "First Name: " . $user["firstname"] . "\n";
+    //echo "Last Name: " . $user["lastname"] . "\n";
     header("Location: ../pages/profile.php");
+    
+    
     die();
 } catch (PDOException $e) {
     $_SESSION["error"] = "Failed to fetch profile data";

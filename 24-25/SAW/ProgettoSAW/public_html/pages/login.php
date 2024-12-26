@@ -26,17 +26,17 @@ require_once '../BackEnd/config_session.php';
                 }
                 ?>
 
-                <form action="../BackEnd/loginhandler.php" method="post">
+                <form action="../BackEnd/login.php" method="post">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username or Email</label>
-                        <input type="text" class="form-control" id="username" name="username" 
+                        <input type="text" class="form-control" id="username" name="email" 
                             placeholder="Enter username or email"
                             value="<?php echo isset($_SESSION["login_data"]["username"]) ? 
                                 htmlspecialchars($_SESSION["login_data"]["username"]) : ''; ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="pwd" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="pwd" name="pwd" required>
+                        <input type="password" class="form-control" id="pwd" name="pass" required>
                     </div>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="remember" name="remember">
