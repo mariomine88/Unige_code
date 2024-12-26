@@ -7,7 +7,7 @@ if (!isset($_SESSION["user_id"])) {
 }
 
 try {
-    require_once 'dbh.php';
+    require_once '../dbh.php';
     $user_id = $_SESSION["user_id"];
     
     $query = "DELETE FROM users WHERE id = :user_id;";

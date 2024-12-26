@@ -3,7 +3,7 @@ require_once 'config_session.php';
 
 try {
     if (isset($_SESSION["user_id"])) {
-        require_once 'dbh.php';
+        require_once '../dbh.php';
         
         // Delete auth tokens from database
         $stmt = $pdo->prepare("DELETE FROM auth_tokens WHERE user_id = :user_id");

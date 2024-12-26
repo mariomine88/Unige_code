@@ -11,6 +11,9 @@ css for css
 image for image
 BackEnd for the pure php files mosty for the sql querry
 
+the dbh.php and mail-init are saved outside the public folder 
+and use the credenzias saved in config.json( that is nn in this repo for obvius resons)
+
 sql
 
 the sql TABLE

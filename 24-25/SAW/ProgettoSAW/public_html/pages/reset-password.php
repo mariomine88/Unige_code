@@ -1,6 +1,6 @@
 <?php
 require_once '../BackEnd/config_session.php';
-require_once '../BackEnd/dbh.php';
+require_once '../../dbh.php';
 
 $token = $_GET['token'] ?? '';
 $validToken = false;
