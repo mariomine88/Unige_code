@@ -11,10 +11,9 @@
 
         <!-- Search Bar -->
         <div class="d-flex flex-grow-1 px-md-4 mx-md-4 mx-2">
-            <form class="w-100" action="search.php" method="GET">
+            <form class="w-100" action="../pages/search.php" method="GET">
                 <div class="input-group">
-                    <input type="text" class="form-control bg-light d-none d-md-block" placeholder="Search Threadit" name="q">
-                    <input type="text" class="form-control bg-light d-md-none" placeholder="Search" name="q">
+                    <input type="text" class="form-control bg-light" placeholder="Search Threadit" name="search">
                     <button class="btn btn-outline-light" type="submit">
                         <i class="bi bi-search"></i>
                         <span class="d-none d-md-inline ms-1">Search</span>

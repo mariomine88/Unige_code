@@ -32,7 +32,9 @@ if (!isset($_SESSION["user_id"])) {
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h5 class="card-title"><?= htmlspecialchars($post['title']) ?></h5>
-                                <h6 class="card-subtitle mb-2 text-muted">By <?= htmlspecialchars($post['username']) ?></h6>
+                                <h6 class="card-subtitle mb-2 text-muted">
+                                    By <a href="https://saw.dibris.unige.it/~s5577783/pages/public_profile.php?UID=<?= htmlspecialchars($post['username']) ?>" class="text-muted"><?= htmlspecialchars($post['username']) ?></a>
+                                </h6>                                
                                 <p class="card-text"><?= htmlspecialchars($post['content']) ?></p>
                                 <p class="text-muted"><?= date('M d, Y H:i', strtotime($post['created_at'])) ?></p>
                                 
