@@ -1,6 +1,5 @@
 <?php
 require_once 'config_session.php';
-require_once '../../dbh.php';
 require_once 'check_imput.php';
 require_once '../../mail-init.php'; 
 
@@ -56,6 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $errors = array_merge($errors, validatePassword($pwd, $cpwd));
 
     try {
+        require_once '../../dbh.php';
         // Check for existing user
         $errors = array_merge($errors, checkExistingUser($pdo, $email, $username));
 

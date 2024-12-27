@@ -2,7 +2,7 @@
 require_once '../BackEnd/config_session.php';
 
 // Redirect if not logged in or no profile data
-if (!isset($_SESSION["user_id"]) || !isset($_SESSION["profile_data"])) {
+if (!isset($_SESSION["user_id"])) {
     header("Location: ../index.php");
     die();
 }
@@ -14,7 +14,6 @@ $user = $_SESSION["profile_data"];
 <html lang="en">
 <head>
     <?php include '../include/header.php'; ?>
-    <title>Profile - My Website</title>
 </head>
 <body>
     <?php include '../include/navbar.php'; ?>

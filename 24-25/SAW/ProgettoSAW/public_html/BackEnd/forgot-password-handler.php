@@ -34,7 +34,7 @@ try {
     }
 
     // Generate token and handle database operations in transaction
-    $token = bin2hex(random_bytes(32));
+    $token = bin2hex(random_bytes(32)); // 32 bytes = 256 bits = 64 hex characters
     $expires = date('Y-m-d H:i:s', strtotime('+1 hour'));
 
     $pdo->beginTransaction();

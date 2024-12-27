@@ -7,7 +7,6 @@ session_set_cookie_params([
     'lifetime' => 1800,
     'domain' => 'saw.dibris.unige.it',
     'path' => '/~s5577783/',
-    'path' => '/',
     'secure' => true,
     'httponly' => true
 ]);
@@ -23,7 +22,6 @@ if ($_SESSION['last_regenerate'] < time() - 1800) {
     session_regenerate_id();
     $_SESSION['last_regenerate'] = time();
 }
-
 // Check for remember me cookie
 if (!isset($_SESSION['user_id']) && isset($_COOKIE['remember_me'])) {
     list($selector, $token) = explode(':', $_COOKIE['remember_me']);

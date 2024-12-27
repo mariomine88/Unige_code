@@ -3,19 +3,50 @@
 <html lang="en">
 <head>
     <?php include '../include/header.php'; ?>
+    <style>
+        .hero-section {
+            padding: 100px 0;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+        .cta-button {
+            margin-top: 20px;
+            padding: 10px 30px;
+            font-size: 1.2em;
+        }
+    </style>
 </head>
 <body>
     <?php include '../include/navbar.php'; ?>
 
-    <!-- Main Content -->
-    <div class="container main-content">
-        <?php if (isset($_SESSION["user_username"])) : ?>
-            <h1>Welcome, <?php echo htmlspecialchars($_SESSION["user_username"]); ?>!</h1>
-            <p class="lead">Thanks for being part of our community.</p>
-        <?php else : ?>
-            <h1>Welcome to Our Website</h1>
-            <p class="lead">Join our community today!</p>
-        <?php endif; ?>
+    <div class="hero-section">
+        <div class="container">
+            <?php if (isset($_SESSION["user_username"])) : ?>
+                <h1 class="display-4">Welcome Back, <?php echo htmlspecialchars($_SESSION["user_username"]); ?>!</h1>
+                <p class="lead">See what's new in your feed today.</p>
+                <a href="feed.php" class="btn btn-primary btn-lg cta-button">Go to Feed</a>
+            <?php else : ?>
+                <h1 class="display-4">Connect with People</h1>
+                <p class="lead">Join our community to share your thoughts and engage with others.</p>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <h3>Share</h3>
+                <p>Share your thoughts with the community</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <h3>Connect</h3>
+                <p>Connect with like-minded people</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <h3>Engage</h3>
+                <p>Engage in meaningful conversations</p>
+            </div>
+        </div>
     </div>
 
     <?php include '../include/footer.php'; ?>
