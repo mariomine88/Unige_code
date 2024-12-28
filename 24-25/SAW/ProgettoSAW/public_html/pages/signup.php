@@ -44,11 +44,11 @@ require_once '../BackEnd/config_session.php';
                     <div class="row mb-3">
                         <div class="col">
                             <label for="pwd" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="pwd" name="pass" required>
+                            <input type="password" class="form-control" id="pwd" name="pass" required minlength="8">
                         </div>
                         <div class="col">
                             <label for="cpwd" class="form-label">Confirm Password</label>
-                            <input type="password" class="form-control" id="cpwd" name="cpwd" required>
+                            <input type="password" class="form-control" id="cpwd" name="cpwd" required minlength="8">
                         </div>
                         <small class="form-text text-muted">
                                 Password must be at least 8 characters long and contain uppercase, lowercase, and numbers.

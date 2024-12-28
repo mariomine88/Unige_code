@@ -37,7 +37,7 @@ try {
     $pwd = trim($_POST["pass"] ?? '');
     
     if (empty($usernameOrEmail) || empty($pwd)) {
-        $_SESSION["errors"] = "All fields are required!";
+        $_SESSION["errors"] = ["All fields are required!"];
         header("Location: ../pages/login.php");
         die();
     }
@@ -60,7 +60,7 @@ try {
     }
     
     if ($error_message) {
-        $_SESSION["errors"] = $error_message;
+        $_SESSION["errors"] = [$error_message];
         $_SESSION["login_data"]["username"] = $usernameOrEmail;
         header("Location: ../pages/login.php");
         die();
