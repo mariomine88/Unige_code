@@ -12,18 +12,7 @@ require_once '../BackEnd/config_session.php';
             <div class="col-md-6">
                 <h3 class="text-center mb-4">Login</h3>
                 
-                <?php
-                if (isset($_SESSION["login_errors"]) && !empty($_SESSION["login_errors"])) {
-                    foreach ($_SESSION["login_errors"] as $error) {
-                        echo '<div class="alert alert-danger" role="alert">' . htmlspecialchars($error) . '</div>';
-                    }
-                    unset($_SESSION["login_errors"]);
-                }
-
-                if (isset($_SESSION["signup_success"])) {
-                    echo '<div class="alert alert-success" role="alert">' . htmlspecialchars($_SESSION["signup_success"]) . '</div>';
-                    unset($_SESSION["signup_success"]);
-                }
+                <?php include '../include/messages.php';
                 ?>
 
                 <form action="../BackEnd/login.php" method="post">

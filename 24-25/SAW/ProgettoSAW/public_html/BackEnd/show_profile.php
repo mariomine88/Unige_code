@@ -1,11 +1,12 @@
 <?php
 require_once 'config_session.php';
-require_once '../../dbh.php';
 
 if (!isset($_SESSION["user_id"])) {
     header("Location: ../index.php");
     die();
 }
+
+require_once '../../dbh.php';
 
 try {
     $stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
@@ -13,7 +14,7 @@ try {
     $user = $stmt->fetch();
 
     // Store user data in session
-    $_SESSION["profile_data"] = [
+    $_SESSION["data"] = [
         "firstname" => $user["firstname"],
         "lastname" => $user["lastname"],
         "username" => $user["username"],
@@ -25,11 +26,8 @@ try {
     //echo "First Name: " . $user["firstname"] . "\n";
     //echo "Last Name: " . $user["lastname"] . "\n";
     header("Location: ../pages/profile.php");
-    
-    
     die();
 } catch (PDOException $e) {
-    $_SESSION["error"] = "Failed to fetch profile data";
-    header("Location: ../index.php");
+    header("Location: ../pages/errors_pages/500.php");
     die();
 }

@@ -44,7 +44,6 @@ try {
             <div class="card-body">
                 <h3 class="card-title"><?php echo htmlspecialchars($user['firstname'] . ' ' . $user['lastname']); ?></h3>
                 <p class="card-text"><strong>Username:</strong> <?php echo htmlspecialchars($user['username']); ?></p>
-                <p class="card-text"><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
             </div>
         </div>
 

@@ -1,13 +1,13 @@
 <?php 
 require_once '../BackEnd/config_session.php';
 
-// Redirect if not logged in or no profile data
 if (!isset($_SESSION["user_id"])) {
     header("Location: ../index.php");
     die();
 }
 
-$user = $_SESSION["profile_data"];
+// Use the new data session variable
+$user = $_SESSION["data"];
 ?>
 
 <!DOCTYPE html>
@@ -21,25 +21,7 @@ $user = $_SESSION["profile_data"];
     <div class="container mt-5 mb-5">
         <h2>Edit Profile</h2>
         
-        <?php if (isset($_SESSION["update_errors"])) : ?>
-            <div class="alert alert-danger">
-                <ul class="mb-0">
-                    <?php 
-                    foreach ($_SESSION["update_errors"] as $error) {
-                        echo "<li>" . htmlspecialchars($error) . "</li>";
-                    }
-                    unset($_SESSION["update_errors"]);
-                    ?>
-                </ul>
-            </div>
-        <?php endif; ?>
-        
-        <?php if (isset($_SESSION["profile_updated"])) : ?>
-            <div class="alert alert-success">
-                Profile updated successfully!
-            </div>
-            <?php unset($_SESSION["profile_updated"]); ?>
-        <?php endif; ?>
+        <?php include '../include/messages.php'; ?>
 
         <form action="../BackEnd/update_profile.php" method="post" class="mt-4">
             <div class="mb-3">

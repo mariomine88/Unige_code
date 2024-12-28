@@ -12,46 +12,34 @@ require_once '../BackEnd/config_session.php';
             <div class="col-md-6">
                 <h3 class="text-center mb-4">Sign Up</h3>
                 
-                <?php
-                if (isset($_SESSION["signup_errors"]) && !empty($_SESSION["signup_errors"])) {
-                    foreach ($_SESSION["signup_errors"] as $error) {
-                        echo '<div class="alert alert-danger" role="alert">' . htmlspecialchars($error) . '</div>';
-                    }
-                    unset($_SESSION["signup_errors"]);
-                }
-                
-                if (isset($_SESSION["signup_success"])) {
-                    echo '<div class="alert alert-success" role="alert">' . htmlspecialchars($_SESSION["signup_success"]) . '</div>';
-                    unset($_SESSION["signup_success"]);
-                }
-                ?>
+                <?php include '../include/messages.php'; ?>
 
                 <form action="../BackEnd/registration.php" method="post">
                     <div class="row mb-3">
                         <div class="col">
                             <label for="firstname" class="form-label">First Name</label>
                             <input type="text" class="form-control" id="firstname" name="firstname" 
-                                value="<?php echo isset($_SESSION["signup_data"]["firstname"]) ? 
-                                    htmlspecialchars($_SESSION["signup_data"]["firstname"]) : ''; ?>" required>
+                                value="<?php echo isset($_SESSION["data"]["firstname"]) ? 
+                                    htmlspecialchars($_SESSION["data"]["firstname"]) : ''; ?>" required>
                         </div>
                         <div class="col">
                             <label for="lastname" class="form-label">Last Name</label>
                             <input type="text" class="form-control" id="lastname" name="lastname" 
-                                value="<?php echo isset($_SESSION["signup_data"]["lastname"]) ? 
-                                    htmlspecialchars($_SESSION["signup_data"]["lastname"]) : ''; ?>" required>
+                                value="<?php echo isset($_SESSION["data"]["lastname"]) ? 
+                                    htmlspecialchars($_SESSION["data"]["lastname"]) : ''; ?>" required>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" id="email" name="email" 
-                            value="<?php echo isset($_SESSION["signup_data"]["email"]) ? 
-                                htmlspecialchars($_SESSION["signup_data"]["email"]) : ''; ?>" required>
+                            value="<?php echo isset($_SESSION["data"]["email"]) ? 
+                                htmlspecialchars($_SESSION["data"]["email"]) : ''; ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
                         <input type="text" class="form-control" id="username" name="username" 
-                            value="<?php echo isset($_SESSION["signup_data"]["username"]) ? 
-                                htmlspecialchars($_SESSION["signup_data"]["username"]) : ''; ?>" required>
+                            value="<?php echo isset($_SESSION["data"]["username"]) ? 
+                                htmlspecialchars($_SESSION["data"]["username"]) : ''; ?>" required>
                     </div>
                     <div class="row mb-3">
                         <div class="col">
@@ -77,8 +65,8 @@ require_once '../BackEnd/config_session.php';
                 
                 <?php
                 // Clear the session data after displaying it
-                if (isset($_SESSION["signup_data"])) {
-                    unset($_SESSION["signup_data"]);
+                if (isset($_SESSION["data"])) {
+                    unset($_SESSION["data"]);
                 }
                 ?>
             </div>

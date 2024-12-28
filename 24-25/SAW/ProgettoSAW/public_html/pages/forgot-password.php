@@ -12,18 +12,7 @@ require_once '../BackEnd/config_session.php';
             <div class="col-md-6">
                 <h3 class="text-center mb-4">Reset Password</h3>
                 
-                <?php
-                if (isset($_SESSION["reset_errors"]) && !empty($_SESSION["reset_errors"])) {
-                    foreach ($_SESSION["reset_errors"] as $error) {
-                        echo '<div class="alert alert-danger" role="alert">' . htmlspecialchars($error) . '</div>';
-                    }
-                    unset($_SESSION["reset_errors"]);
-                }
-
-                if (isset($_SESSION["reset_success"])) {
-                    echo '<div class="alert alert-success" role="alert">' . htmlspecialchars($_SESSION["reset_success"]) . '</div>';
-                    unset($_SESSION["reset_success"]);
-                }
+                <?php include '../include/messages.php';
                 ?>
 
                 <form action="../BackEnd/forgot-password-handler.php" method="post">

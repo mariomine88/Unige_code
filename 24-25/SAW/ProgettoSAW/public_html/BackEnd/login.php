@@ -3,7 +3,7 @@ require_once 'config_session.php';
 
 function setRememberMeCookie($userId, $pdo) {
     $selector = bin2hex(random_bytes(16));
-    $token = random_bytes(32);
+    $token = bin2hex(random_bytes(32)); // Convert to hex string immediately
     $hashedToken = password_hash($token, PASSWORD_BCRYPT);
     $expiry = date('Y-m-d H:i:s', time() + 30 * 24 * 60 * 60); // 30 days
 
@@ -22,7 +22,7 @@ function setRememberMeCookie($userId, $pdo) {
 
     setcookie(
         'remember_me',
-        $selector . ':' . bin2hex($token),
+        $selector . ':' . $token,
         time() + 30 * 24 * 60 * 60
     );
 }
@@ -37,7 +37,7 @@ try {
     $pwd = trim($_POST["pass"] ?? '');
     
     if (empty($usernameOrEmail) || empty($pwd)) {
-        $_SESSION["login_errors"]["empty_input"] = "All fields are required!";
+        $_SESSION["errors"] = "All fields are required!";
         header("Location: ../pages/login.php");
         die();
     }
@@ -60,7 +60,7 @@ try {
     }
     
     if ($error_message) {
-        $_SESSION["login_errors"]["login_incorrect"] = $error_message;
+        $_SESSION["errors"] = $error_message;
         $_SESSION["login_data"]["username"] = $usernameOrEmail;
         header("Location: ../pages/login.php");
         die();
@@ -77,7 +77,7 @@ try {
     }
 
     // Clear session data and redirect
-    unset($_SESSION["login_errors"], $_SESSION["login_data"]);
+    unset($_SESSION["errors"], $_SESSION["login_data"]);
     header("Location: ../index.php");
     die();
 

@@ -15,7 +15,6 @@ try {
     $stmt->bindParam(":user_id", $user_id);
     $stmt->execute();
     
-
     // Clear session and redirect
     session_unset();
     session_destroy();
@@ -23,7 +22,6 @@ try {
     header("Location: ../pages/index.php?deletion=success");
     die();
 } catch (PDOException $e) {
-    $_SESSION["update_errors"] = ["Failed to delete account. Please try again later."];
-    header("Location: ../pages/profile.php");
+    header("Location: ../pages/errors_pages/500.php");
     die();
 }

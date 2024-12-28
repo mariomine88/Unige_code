@@ -1,7 +1,5 @@
 <?php
 require_once 'config_session.php';
-require_once '../../dbh.php';
-require_once '../../mail-init.php';
 
 // Redirect if not POST
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
@@ -15,18 +13,20 @@ $errors = [];
 
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $_SESSION["reset_data"] = ["email" => $email];
-    $_SESSION["reset_errors"] = ["Invalid email address"];
+    $_SESSION["errors"] = ["Invalid email address"];
     header("Location: ../pages/forgot-password.php");
     die();
 }
 
 try {
+    require_once '../../dbh.php';
+    require_once '../../mail-init.php';
     // Check if email exists
     $stmt = $pdo->prepare("SELECT email FROM users WHERE email = :email");
     $stmt->execute([':email' => $email]);
     
     $_SESSION["reset_data"] = ["email" => $email];
-    $_SESSION["reset_errors"] = ["If this email exists, you will receive reset instructions"];
+    $_SESSION["success"] = ["If this email exists, you will receive reset instructions"];
     
     if (!$stmt->fetch()) {
         header("Location: ../pages/forgot-password.php");
