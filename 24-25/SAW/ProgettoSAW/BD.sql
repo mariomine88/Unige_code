@@ -61,11 +61,11 @@ CREATE TABLE comments (
 
 CREATE TABLE follows (
     follower_id INT NOT NULL,
-    community_id INT NOT NULL,
+    followed_id INT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (follower_id, community_id),
+    PRIMARY KEY (follower_id, followed_id),
     FOREIGN KEY (follower_id) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (community_id) REFERENCES community(id) ON DELETE CASCADE
+    FOREIGN KEY (followed_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE community_members (
