@@ -36,10 +36,10 @@
                     
                     <div class="d-flex justify-content-center gap-3">
                         <a href="https://github.com/mariomine88/Unige_code/tree/main/24-25/SAW/ProgettoSAW" class="btn btn-outline-dark" target="_blank">
-                            <i class="fab fa-github"></i> Github
+                            <i class="fa fa-github"></i> Github
                         </a>
                         <a href="https://paypal.me/eugeniovassallo?country.x=IT&locale.x=it_IT" class="btn btn-outline-primary" target="_blank">
-                            <i class="fab fa-paypal"></i> Support Us
+                            <i class="fa fa-paypal"></i> Support Us
                         </a>
                     </div>
                 </div>
