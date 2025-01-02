@@ -54,6 +54,13 @@ require_once '../BackEnd/config_session.php';
                                 Password must be at least 8 characters long and contain uppercase, lowercase, and numbers.
                         </small>
                     </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" name="tos_agree" id="tos_agree" required>
+                        <label class="form-check-label" for="tos_agree">
+                         I have read and agree to the 
+                        <a href="TermsOfService.html" target="_blank">Terms of Service</a>
+                        </label>
+                    </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">Sign Up</button>
                     </div>

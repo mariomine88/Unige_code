@@ -3,7 +3,7 @@
     bottom: 0;
     width: 100%;
     background-color: #f8f9fa;
-    padding: 20px 0;
+    padding: 10px;
     text-align: center;
     transition: transform 0.3s ease-in-out;
     z-index: 1000;
@@ -159,4 +159,9 @@
     white-space: nowrap;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
+}
+
+/* Checkbox of the TOS */
+.form-check-input {
+    border: 5px solid #000;
 }

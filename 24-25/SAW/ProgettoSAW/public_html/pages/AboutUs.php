@@ -35,12 +35,15 @@
                     <p class="mb-4">Help us improve and maintain this platform by contributing or supporting us.</p>
                     
                     <div class="d-flex justify-content-center gap-3">
-                        <a href="https://github.com/mariomine88/Unige_code" class="btn btn-outline-dark" target="_blank">
-                            <i class="fab fa-github"></i> View on GitHub
+                        <a href="https://github.com/mariomine88/Unige_code/tree/main/24-25/SAW/ProgettoSAW" class="btn btn-outline-dark" target="_blank">
+                            <i class="fa fa-github"></i> Github
                         </a>
-                        <a href="https://www.paypal.com/donate/?hosted_button_id=YOUR_BUTTON_ID" class="btn btn-outline-primary" target="_blank">
-                            <i class="fab fa-paypal"></i> Support Us
+                        <a href="https://paypal.me/eugeniovassallo?country.x=IT&locale.x=it_IT" class="btn btn-outline-primary" target="_blank">
+                            <i class="fa fa-paypal"></i> Support Us
                         </a>
+                    </div>
+                    <div class="text-center my-4">
+                        <a href="TermsOfService.html" class="text-muted" style="text-decoration: underline;">Terms of Service</a>
                     </div>
                 </div>
             </div>
