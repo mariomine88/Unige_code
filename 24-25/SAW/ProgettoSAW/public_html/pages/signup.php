@@ -57,7 +57,7 @@ require_once '../BackEnd/config_session.php';
                     <div class="form-check mb-3">
                         <input class="form-check-input" type="checkbox" name="tos_agree" id="tos_agree" required>
                         <label class="form-check-label" for="tos_agree">
-                         I have read and agree to the 
+                         I read and agree the
                         <a href="TermsOfService.html" target="_blank">Terms of Service</a>
                         </label>
                     </div>
