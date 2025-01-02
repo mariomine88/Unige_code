@@ -7,7 +7,7 @@
         .hero-section {
             padding: 100px 0;
             text-align: center;
-            background-color: #f8f9fa;
+            background-color:rgb(255, 255, 255);
         }
         .cta-button {
             margin-top: 20px;

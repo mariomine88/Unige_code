@@ -42,6 +42,9 @@
                             <i class="fa fa-paypal"></i> Support Us
                         </a>
                     </div>
+                    <div class="text-center my-4">
+                        <a href="TermsOfService.html" class="text-muted" style="text-decoration: underline;">Terms of Service</a>
+                    </div>
                 </div>
             </div>
         </div>
