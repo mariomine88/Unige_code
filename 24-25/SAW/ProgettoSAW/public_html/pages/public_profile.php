@@ -18,6 +18,14 @@ try {
         header("Location: errors_pages/404.php");
         die();
     }
+
+    // Check if logged-in user is following this profile
+    $isFollowing = false;
+    if (isset($_SESSION["user_id"])) {
+        $checkFollow = $pdo->prepare("SELECT 1 FROM follows WHERE follower_id = ? AND followed_id = ?");
+        $checkFollow->execute([$_SESSION["user_id"], $user['id']]);
+        $isFollowing = $checkFollow->fetch() !== false;
+    }
 } catch (PDOException $e) {
     header("Location: errors_pages/500.php");
     die();
@@ -36,6 +44,11 @@ try {
             <div class="card-body">
                 <h3 class="card-title"><?php echo htmlspecialchars($user['firstname'] . ' ' . $user['lastname']); ?></h3>
                 <p class="card-text"><strong>Username:</strong> <?php echo htmlspecialchars($user['username']); ?></p>
+                <?php if (isset($_SESSION["user_id"]) && $_SESSION["user_id"] !== $user['id']): ?>
+                    <button id="followButton" class="btn <?php echo $isFollowing ? 'btn-secondary' : 'btn-primary'; ?>">
+                        <?php echo $isFollowing ? 'Unfollow' : 'Follow'; ?>
+                    </button>
+                <?php endif; ?>
             </div>
         </div>
 
@@ -57,7 +70,8 @@ try {
         // Pass user data to JavaScript
         window.userData = {
             username: <?php echo json_encode($user['username']); ?>,
-            userId: <?php echo json_encode($user['id']); ?>
+            userId: <?php echo json_encode($user['id']); ?>,
+            isFollowing: <?php echo json_encode($isFollowing); ?>
         };
     </script>
     <script src="../js/profile.js"></script>

@@ -15,14 +15,19 @@ $limit = isset($_GET['limit']) ? (int)$_GET['limit'] : 10;
 $offset = $page * $limit;
 
 try {
-    // Fetch posts with user information
+    // Query specifically for feed posts (excluding own posts)
     $stmt = $pdo->prepare("
-        SELECT p.*, u.username 
+        SELECT DISTINCT p.*, u.username 
         FROM posts p
-        JOIN users u ON p.user_id = u.id 
+        INNER JOIN users u ON p.user_id = u.id
+        INNER JOIN follows f ON f.followed_id = p.user_id
+        WHERE f.follower_id = :user_id 
+        AND p.user_id != :user_id
         ORDER BY p.created_at DESC 
         LIMIT :limit OFFSET :offset
     ");
+    
+    $stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_INT);
     $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
     $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
     $stmt->execute();

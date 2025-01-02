@@ -2,89 +2,109 @@ let page = 0;
 let loading = false;
 const postsPerPage = 10;
 
-async function loadPosts() {
-    if (loading) return;
+function loadPosts() {
+    if (loading || !window.hasFollows) return;
     loading = true;
 
-    const spinner = document.getElementById('loading-spinner');
-    spinner.classList.remove('d-none');
-
-    try {
-        const response = await fetch(`../BackEnd/get_posts.php?page=${page}&limit=${postsPerPage}`);
-        const result = await response.json();
-
-        if (!response.ok) {
-            throw new Error(result.message || 'Server error');
-        }
-
-        if (!result.data || !Array.isArray(result.data)) {
-            console.error('Invalid data format received:', result);
-            return;
-        }
-
-        if (result.data.length === 0) {
-            spinner.remove();
-            return;
-        }
-
-        const container = document.getElementById('posts-container');
-        result.data.forEach(post => {
-            const postElement = createPostElement(post);
-            container.appendChild(postElement);
-        });
-
-        page++;
-    } catch (error) {
-        console.error('Error loading posts:', error);
-        const container = document.getElementById('posts-container');
-        container.innerHTML += `
-            <div class="alert alert-danger">
-                Failed to load posts. Please try refreshing the page.
-            </div>`;
-    } finally {
-        loading = false;
-        spinner.classList.add('d-none');
+    const $spinner = $('#loading-spinner');
+    const $container = $('#posts-container');
+    
+    if ($spinner.length) {
+        $spinner.removeClass('d-none');
     }
+
+    $.ajax({
+        url: '../BackEnd/get_posts.php',
+        method: 'GET',
+        data: {
+            page: page,
+            limit: postsPerPage
+        },
+        success: function(result) {
+            if (!result.data || result.data.length === 0) {
+                if (page === 0) {
+                    $container.html('<p class="text-muted">No posts from followed users.</p>');
+                }
+                $spinner.remove();
+                return;
+            }
+
+            result.data.forEach(post => {
+                $container.append(createPostHTML(post));
+            });
+            page++;
+        },
+        error: function(xhr, status, error) {
+            console.error('Error loading posts:', error);
+            $container.append(`
+                <div class="alert alert-danger">
+                    Failed to load posts. Please try refreshing the page.
+                </div>`);
+        },
+        complete: function() {
+            loading = false;
+            if ($spinner.length) {
+                $spinner.addClass('d-none');
+            }
+        }
+    });
 }
 
-function createPostElement(post) {
-    const div = document.createElement('div');
-    div.className = 'card mb-4';
-    div.innerHTML = `
-        <div class="card-body">
-            <h5 class="card-title">
-                <a href="post.php?id=${post.id}" class="text-decoration-none text-dark">
-                    ${escapeHtml(post.title)}
-                </a>
-            </h5>
-            <h6 class="card-subtitle mb-2 text-muted">
-                By <a href="public_profile.php?UID=${escapeHtml(post.username)}" class="text-muted">
-                    ${escapeHtml(post.username)}
-                </a>
-            </h6>
-            <p class="card-text">${escapeHtml(post.content.substring(0, 200))}...</p>
-            <p class="text-muted">${new Date(post.created_at).toLocaleDateString()}</p>
-            
-            <div class="comments-section mt-3">
-                ${post.comments.map(comment => `
+function createPostHTML(post) {
+    if (!post) return '';
+    return `
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="post.php?id=${escapeHtml(post.id)}" class="text-decoration-none text-dark">
+                        ${escapeHtml(post.title)}
+                    </a>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    By <a href="public_profile.php?UID=${escapeHtml(post.username)}">
+                        ${escapeHtml(post.username)}
+                    </a>
+                </h6>
+                <p class="card-text">${escapeHtml(post.content ? post.content.substring(0, 200) : '')}...</p>
+                <p class="text-muted">${new Date(post.created_at).toLocaleString()}</p>
+                ${renderComments(post.comments)}
+            </div>
+        </div>`;
+}
+
+function renderComments(comments) {
+    if (!comments || !Array.isArray(comments)) return '';
+    
+    return `
+        <div class="comments-section mt-3">
+            ${comments.map(comment => {
+                if (!comment) return '';
+                return `
                     <div class="comment border-bottom py-2">
                         <div class="d-flex justify-content-between">
-                            <strong class="text-primary">${escapeHtml(comment.username)}</strong>
+                            <strong>
+                                <a href="public_profile.php?UID=${escapeHtml(comment.username)}">
+                                    ${escapeHtml(comment.username)}
+                                </a>
+                            </strong>
                             <small class="text-muted">
-                                ${new Date(comment.created_at).toLocaleDateString()}
+                                ${new Date(comment.created_at).toLocaleString()}
                             </small>
                         </div>
                         <p class="mb-1">${escapeHtml(comment.content)}</p>
                     </div>
-                `).join('')}
-            </div>
-        </div>
-    `;
-    return div;
+                `;
+            }).join('')}
+        </div>`;
 }
 
 function escapeHtml(unsafe) {
-    return unsafe
+    if (unsafe === null || unsafe === undefined) {
+        return '';
+    }
+    // Convert to string in case we get a number or other type
+    const str = String(unsafe);
+    return str
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
@@ -92,12 +112,15 @@ function escapeHtml(unsafe) {
         .replace(/'/g, "&#039;");
 }
 
-// Infinite scroll handler
-window.addEventListener('scroll', () => {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 1000) {
+// Event handlers
+$(document).ready(function() {
+    if (window.hasFollows) {
         loadPosts();
+        
+        $(window).scroll(function() {
+            if ($(window).scrollTop() + $(window).height() > $(document).height() - 1000) {
+                loadPosts();
+            }
+        });
     }
 });
-
-// Initial load
-document.addEventListener('DOMContentLoaded', loadPosts);
