@@ -11,7 +11,7 @@ require_once '../BackEnd/config_session.php';
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="d-flex justify-content-end">
-                    <button onclick="window.location.href='index.php'" class="btn btn-secondary">Return Home</button>
+                    <button onclick="window.location.href='index.php'" class="btn btn-secondary" aria-label="Return Home">Return Home</button>
                 </div>
                 <h3 class="text-center mb-4">Login</h3>
                 
@@ -21,26 +21,26 @@ require_once '../BackEnd/config_session.php';
                 <form action="../BackEnd/login.php" method="post">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username or Email</label>
-                        <input type="text" class="form-control" id="username" name="email" 
+                        <input type="text" class="form-control" id="username" name="email" aria-label="Username or Email"
                             placeholder="Enter username or email"
                             value="<?php echo isset($_SESSION["login_data"]["username"]) ? 
                                 htmlspecialchars($_SESSION["login_data"]["username"]) : ''; ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="pwd" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="pwd" name="pass" required>
+                        <input type="password" class="form-control" id="pwd" name="pass" aria-label="Password" required>
                     </div>
                     <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                        <input type="checkbox" class="form-check-input" id="remember" name="remember" aria-label="Remember Me (30 days)">
                         <label class="form-check-label" for="remember">Remember Me (30 days)</label>
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary" aria-label="Login">Login</button>
                     </div>
                 </form>
 
                 <div class="text-center mt-3">
-                <a href="forgot-password.php" class="d-block mb-3">Forgot Password?</a>
+                <a href="forgot-password.php" class="d-block mb-3" aria-label="Forgot Password">Forgot Password?</a>
                 </div>
 
                 <?php
