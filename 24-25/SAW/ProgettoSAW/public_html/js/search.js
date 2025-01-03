@@ -4,89 +4,112 @@ let loadingUsers = false;
 let loadingPosts = false;
 const itemsPerPage = 10;
 const searchTerm = window.searchData.term;
+let noMoreUsers = false;
+let noMorePosts = false;
 
 // Tab switching
-document.querySelectorAll('.tab-button').forEach(button => {
-    button.addEventListener('click', () => {
-        document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        
-        button.classList.add('active');
-        document.getElementById(button.dataset.tab).classList.add('active');
+$('.tab-button').on('click', function() {
+    $('.tab-button').removeClass('active');
+    $('.tab').removeClass('active');
+    
+    $(this).addClass('active');
+    $(`#${$(this).data('tab')}`).addClass('active');
 
-        // Load content if not already loaded
-        if (button.dataset.tab === 'users' && usersPage === 0) {
-            loadUsers();
-        } else if (button.dataset.tab === 'posts' && postsPage === 0) {
-            loadPosts();
-        } else if (button.dataset.tab === 'communities') {
-            showUnderConstructionMessage();
-        }
-    });
+    if ($(this).data('tab') === 'users' && usersPage === 0) {
+        loadUsers();
+    } else if ($(this).data('tab') === 'posts' && postsPage === 0) {
+        loadPosts();
+    } else if ($(this).data('tab') === 'communities') {
+        showUnderConstructionMessage();
+    }
 });
 
-async function loadUsers() {
-    if (loadingUsers) return;
+function loadUsers() {
+    if (loadingUsers || noMoreUsers) return;
     loadingUsers = true;
 
-    const spinner = document.getElementById('users-loading');
-    spinner.classList.remove('d-none');
+    const $spinner = $('#users-loading');
+    const $container = $('#users-container');
+    
+    $spinner.removeClass('d-none');
 
-    try {
-        const response = await fetch(`../BackEnd/search_users.php?search=${searchTerm}&page=${usersPage}`);
-        const result = await response.json();
-
-        if (!result.data || result.data.length === 0) {
-            if (usersPage === 0) {
-                document.getElementById('users-container').innerHTML = '<div class="alert alert-info">No users found</div>';
+    $.ajax({
+        url: '../BackEnd/search_users.php',
+        method: 'GET',
+        data: {
+            search: searchTerm,
+            page: usersPage
+        },
+        success: function(result) {
+            if (!result.data || result.data.length === 0) {
+                noMoreUsers = true;
+                if (usersPage === 0) {
+                    $container.html('<div class="alert alert-info">No users found</div>');
+                }
+                $spinner.remove(); // Remove spinner completely when no more results
+                return;
             }
-            return;
+
+            result.data.forEach(user => {
+                $container.append(createUserHTML(user));
+            });
+            usersPage++;
+        },
+        error: function(xhr, status, error) {
+            console.error('Error loading users:', error);
+            $container.append('<div class="alert alert-danger">Failed to load users. Please try refreshing the page.</div>');
+        },
+        complete: function() {
+            loadingUsers = false;
+            if (!noMoreUsers) {
+                $spinner.addClass('d-none');
+            }
         }
-
-        const container = document.getElementById('users-container');
-        result.data.forEach(user => {
-            container.insertAdjacentHTML('beforeend', createUserHTML(user));
-        });
-
-        usersPage++;
-    } catch (error) {
-        console.error('Error loading users:', error);
-    } finally {
-        loadingUsers = false;
-        spinner.classList.add('d-none');
-    }
+    });
 }
 
-async function loadPosts() {
-    if (loadingPosts) return;
+function loadPosts() {
+    if (loadingPosts || noMorePosts) return;
     loadingPosts = true;
 
-    const spinner = document.getElementById('posts-loading');
-    spinner.classList.remove('d-none');
+    const $spinner = $('#posts-loading');
+    const $container = $('#posts-container');
+    
+    $spinner.removeClass('d-none');
 
-    try {
-        const response = await fetch(`../BackEnd/search_posts.php?search=${searchTerm}&page=${postsPage}`);
-        const result = await response.json();
-
-        if (!result.data || result.data.length === 0) {
-            if (postsPage === 0) {
-                document.getElementById('posts-container').innerHTML = '<div class="alert alert-info">No posts found</div>';
+    $.ajax({
+        url: '../BackEnd/search_posts.php',
+        method: 'GET',
+        data: {
+            search: searchTerm,
+            page: postsPage
+        },
+        success: function(result) {
+            if (!result.data || result.data.length === 0) {
+                noMorePosts = true;
+                if (postsPage === 0) {
+                    $container.html('<div class="alert alert-info">No posts found</div>');
+                }
+                $spinner.remove(); // Remove spinner completely when no more results
+                return;
             }
-            return;
+
+            result.data.forEach(post => {
+                $container.append(createPostHTML(post));
+            });
+            postsPage++;
+        },
+        error: function(xhr, status, error) {
+            console.error('Error loading posts:', error);
+            $container.append('<div class="alert alert-danger">Failed to load posts. Please try refreshing the page.</div>');
+        },
+        complete: function() {
+            loadingPosts = false;
+            if (!noMorePosts) {
+                $spinner.addClass('d-none');
+            }
         }
-
-        const container = document.getElementById('posts-container');
-        result.data.forEach(post => {
-            container.insertAdjacentHTML('beforeend', createPostHTML(post));
-        });
-
-        postsPage++;
-    } catch (error) {
-        console.error('Error loading posts:', error);
-    } finally {
-        loadingPosts = false;
-        spinner.classList.add('d-none');
-    }
+    });
 }
 
 function createUserHTML(user) {
@@ -121,7 +144,13 @@ function createPostHTML(post) {
                     </a>
                 </h6>
                 <p class="card-text">${escapeHtml(post.content.substring(0, 200))}...</p>
-                <p class="text-muted">${new Date(post.created_at).toLocaleString()}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="text-muted mb-0">${new Date(post.created_at).toLocaleString()}</p>
+                    <span class="text-muted">
+                        <i class="bi bi-hand-thumbs-up"></i> 
+                        ${post.like_count || 0} likes
+                    </span>
+                </div>
             </div>
         </div>
     `;
@@ -143,18 +172,17 @@ function showUnderConstructionMessage() {
 }
 
 // Initial load for active tab
-document.addEventListener('DOMContentLoaded', () => {
+$(document).ready(function() {
     loadUsers();
-});
-
-// Infinite scroll
-window.addEventListener('scroll', () => {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 1000) {
-        const activeTab = document.querySelector('.tab.active').id;
-        if (activeTab === 'users') {
-            loadUsers();
-        } else {
-            loadPosts();
+    
+    $(window).scroll(function() {
+        if ($(window).scrollTop() + $(window).height() > $(document).height() - 1000) {
+            const activeTab = $('.tab.active').attr('id');
+            if (activeTab === 'users' && !noMoreUsers) {
+                loadUsers();
+            } else if (activeTab === 'posts' && !noMorePosts) {
+                loadPosts();
+            }
         }
-    }
+    });
 });
