@@ -19,6 +19,8 @@ document.querySelectorAll('.tab-button').forEach(button => {
             loadUsers();
         } else if (button.dataset.tab === 'posts' && postsPage === 0) {
             loadPosts();
+        } else if (button.dataset.tab === 'communities') {
+            showUnderConstructionMessage();
         }
     });
 });
@@ -132,6 +134,12 @@ function escapeHtml(unsafe) {
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
+}
+
+/* Under Construction Message*/
+function showUnderConstructionMessage() {
+    const container = document.getElementById('communities-container');
+    container.innerHTML = '<div class="alert alert-warning text-center">🚧 We are sorry! This Feature is under construction, be patient 🚧</div>';
 }
 
 // Initial load for active tab

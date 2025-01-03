@@ -24,6 +24,7 @@ $searchTerm = $_GET['search'] ?? '';
         <div class="btn-group mb-4" role="group">
             <button type="button" class="btn btn-outline-primary tab-button active" data-tab="users">Users</button>
             <button type="button" class="btn btn-outline-primary tab-button" data-tab="posts">Posts</button>
+            <button type="button" class="btn btn-outline-primary tab-button" data-tab="communities">Communities</button>
         </div>
 
         <!-- Users Tab -->
@@ -44,6 +45,11 @@ $searchTerm = $_GET['search'] ?? '';
                     <span class="visually-hidden">Loading...</span>
                 </div>
             </div>
+        </div>
+
+        <!-- Communities Tab -->
+        <div class="tab" id="communities">
+            <div id="communities-container"></div>
         </div>
     </div>
 
