@@ -10,6 +10,7 @@
         </a>
 
         <!-- Search Bar -->
+        <?php if (isset($_SESSION["user_username"])) : ?>
         <div class="d-flex flex-grow-1 px-md-4 mx-md-4 mx-2">
             <form class="w-100" action="../pages/search.php" method="GET">
                 <div class="input-group">
@@ -21,6 +22,7 @@
                 </div>
             </form>
         </div>
+        <?php endif; ?>
 
         <!-- Navigation Items -->
         <div class="d-flex align-items-center">

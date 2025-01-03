@@ -67,7 +67,8 @@ require_once '../BackEnd/config_session.php';
                 </form>
                 
                 <div class="text-center mt-3">
-                    <button onclick="window.location.href='../index.php'" class="btn btn-secondary">Return Home</button>
+                    <p><strong>Already have an account?</strong>
+                    <button onclick="window.location.href='login.php'" class="btn btn-secondary btn-sm ms-2">Log In</button></p>
                 </div>
                 
                 <?php

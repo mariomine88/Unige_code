@@ -28,6 +28,7 @@
             <?php else : ?>
                 <h1 class="display-4">Connect with People</h1>
                 <p class="lead">Join our community to share your thoughts and engage with others.</p>
+                <a href="signup.php" class="btn btn-primary btn-lg cta-button">Join Threadit!</a>
             <?php endif; ?>
         </div>
     </div>
