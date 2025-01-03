@@ -10,6 +10,9 @@ require_once '../BackEnd/config_session.php';
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
+                <div class="d-flex justify-content-end">
+                    <button onclick="window.location.href='index.php'" class="btn btn-secondary">Return Home</button>
+                </div>
                 <h3 class="text-center mb-4">Sign Up</h3>
                 
                 <?php include '../include/messages.php'; ?>
