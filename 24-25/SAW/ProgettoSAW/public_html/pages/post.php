@@ -35,7 +35,6 @@ try {
 <html lang="en">
 <head>
     <?php include '../include/header.php'; ?>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
     <?php include '../include/navbar.php'; ?>
