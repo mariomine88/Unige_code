@@ -60,11 +60,6 @@ try {
                 <div class="post-content mt-4">
                     <?php echo nl2br(htmlspecialchars($post['content'])); ?>
                 </div>
-                <div class="mt-3">
-                    <span class="text-muted">
-                        <i class="fa fa-thumbs-up"></i> <?php echo $post['like_count']; ?> likes
-                    </span>
-                </div>
             </div>
         </div>
 
