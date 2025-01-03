@@ -36,7 +36,7 @@ try {
     header("Location: ../pages/feed.php");
     exit();
 } catch (PDOException $e) {
-    header("Location: ../pages/errors/500.php");
+    header("Location: ../pages/errors_pages/500.php");
     exit();
 }
 
