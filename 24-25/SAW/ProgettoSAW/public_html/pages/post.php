@@ -78,7 +78,8 @@ try {
                 <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
                 <div class="form-group">
                     <textarea name="comment" class="form-control" rows="3" 
-                        placeholder="Write a comment..." required></textarea>
+                        placeholder="Write a comment..." required maxlength="65535" id="commentText"></textarea>
+                    <small class="text-muted">Characters remaining: <span id="commentCount">65535</span></small>
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Add Comment</button>
             </form>
@@ -140,5 +141,10 @@ try {
     </div>
 
     <script src="../js/post.js"></script>
+    <script>
+        document.getElementById('commentText').addEventListener('input', function() {
+            document.getElementById('commentCount').textContent = 65535 - this.value.length;
+        });
+    </script>
 </body>
 </html>

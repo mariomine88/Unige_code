@@ -23,6 +23,12 @@ if (empty($comment) || empty($post_id)) {
     exit();
 }
 
+if (strlen($comment) > 65535) {
+    $_SESSION["errors"]["comment"] = "Comment exceeds maximum length";
+    header("Location: ../pages/feed.php");
+    exit();
+}
+
 try {
     require_once '../../dbh.php';
     $query = "INSERT INTO comments (post_id, user_id, content) VALUES (:post_id, :user_id, :content)";
