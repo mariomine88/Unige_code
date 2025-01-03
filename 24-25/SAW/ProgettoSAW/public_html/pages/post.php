@@ -35,6 +35,7 @@ try {
 <html lang="en">
 <head>
     <?php include '../include/header.php'; ?>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
     <?php include '../include/navbar.php'; ?>
@@ -59,6 +60,28 @@ try {
                 </p>
                 <div class="post-content mt-4">
                     <?php echo nl2br(htmlspecialchars($post['content'])); ?>
+                </div>
+                
+                <!-- Like Button -->
+                <div class="mt-3">
+                    <?php
+                    $isLiked = false;
+                    if (isset($_SESSION["user_id"])) {
+                        // Updated query to use post_likes table
+                        $likeStmt = $pdo->prepare("SELECT * FROM post_likes WHERE user_id = ? AND post_id = ?");
+                        $likeStmt->execute([$_SESSION["user_id"], $post_id]);
+                        $isLiked = $likeStmt->rowCount() > 0;
+                    }
+                    
+                    // Get like count directly from posts table since it's maintained by triggers
+                    $likeCount = $post['like_count'];
+                    ?>
+                    
+                    <button id="likeButton" class="btn <?php echo $isLiked ? 'btn-primary' : 'btn-outline-primary'; ?>">
+                        <i class="bi bi-hand-thumbs-up"></i>
+                        Like
+                        <span id="likeCount"><?php echo $likeCount; ?></span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -140,7 +163,14 @@ try {
         </div>
     </div>
 
+    <script>
+        window.postData = {
+            postId: <?php echo json_encode($post_id); ?>,
+            isLiked: <?php echo json_encode($isLiked); ?>
+        };
+    </script>
     <script src="../js/post.js"></script>
+    <script src="../js/likes.js"></script>
     <script>
         document.getElementById('commentText').addEventListener('input', function() {
             document.getElementById('commentCount').textContent = 65535 - this.value.length;

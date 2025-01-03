@@ -1,3 +1,5 @@
+const COMMENT_MAX_LENGTH = 200;
+
 $(document).ready(function() {
     $('#followButton').on('click', handleFollowAction);
     loadUserPosts();
@@ -93,7 +95,13 @@ function createPostHTML(post) {
                     </a>
                 </h5>
                 <p class="card-text">${escapeHtml(post.content.substring(0, 200))}...</p>
-                <p class="text-muted">Posted on ${new Date(post.created_at).toLocaleString()}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="text-muted mb-0">Posted on ${new Date(post.created_at).toLocaleString()}</p>
+                    <span class="text-muted">
+                        <i class="bi bi-hand-thumbs-up"></i> 
+                        ${post.like_count || 0} likes
+                    </span>
+                </div>
                 
                 <div class="comments-section mt-3">
                     ${post.comments ? post.comments.map(comment => `
@@ -108,7 +116,11 @@ function createPostHTML(post) {
                                     ${new Date(comment.created_at).toLocaleString()}
                                 </small>
                             </div>
-                            <p class="mb-1">${escapeHtml(comment.content)}</p>
+                            <p class="mb-1">
+                                ${comment.content.length > COMMENT_MAX_LENGTH 
+                                    ? escapeHtml(comment.content.substring(0, COMMENT_MAX_LENGTH)) + '...'
+                                    : escapeHtml(comment.content)}
+                            </p>
                         </div>
                     `).join('') : ''}
                 </div>
