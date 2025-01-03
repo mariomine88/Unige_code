@@ -71,7 +71,6 @@ $user = $_SESSION["data"];
         </div>
     </div>
 
-    <!-- Add spacing at bottom of page -->
     <div class="mb-5"></div>
 
     <script>

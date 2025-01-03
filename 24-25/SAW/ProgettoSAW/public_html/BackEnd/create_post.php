@@ -24,6 +24,16 @@ if (empty($content) || empty($title)) {
     exit();
 }
 
+if (strlen($title) > 255 || strlen($content) > 65535) {
+    $_SESSION["errors"]["post"] = "Title or content exceeds maximum length";
+    $_SESSION["data"] = [
+        "content" => $content,
+        "title" => $title
+    ];
+    header("Location: ../pages/create_post.php");
+    exit();
+}
+
 try {
     require_once '../../dbh.php';
     $query = "INSERT INTO posts (user_id, title, content) VALUES (:user_id, :title, :content)";

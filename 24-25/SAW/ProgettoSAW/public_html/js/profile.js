@@ -45,7 +45,7 @@ function loadUserPosts() {
     $spinner.removeClass('d-none');
 
     $.ajax({
-        url: `../BackEnd/get_user_posts.php`,
+        url: `../BackEnd/get_posts.php`,  // Updated endpoint
         method: 'GET',
         data: {
             user_id: window.userData.userId,

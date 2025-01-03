@@ -13,28 +13,42 @@ if (!isset($_SESSION["user_id"])) {
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 0;
 $limit = isset($_GET['limit']) ? (int)$_GET['limit'] : 10;
 $offset = $page * $limit;
+$specific_user_id = $_GET['user_id'] ?? null;
 
 try {
-    // Query specifically for feed posts (excluding own posts)
-    $stmt = $pdo->prepare("
-        SELECT DISTINCT p.*, u.username 
-        FROM posts p
-        INNER JOIN users u ON p.user_id = u.id
-        INNER JOIN follows f ON f.followed_id = p.user_id
-        WHERE f.follower_id = :user_id 
-        AND p.user_id != :user_id
-        ORDER BY p.created_at DESC 
-        LIMIT :limit OFFSET :offset
-    ");
+    if ($specific_user_id) {
+        // Query for specific user's posts
+        $stmt = $pdo->prepare("
+            SELECT p.*, u.username 
+            FROM posts p
+            INNER JOIN users u ON p.user_id = u.id
+            WHERE p.user_id = :specific_user_id 
+            ORDER BY p.created_at DESC 
+            LIMIT :limit OFFSET :offset
+        ");
+        $stmt->bindValue(':specific_user_id', $specific_user_id, PDO::PARAM_INT);
+    } else {
+        // Query for feed posts
+        $stmt = $pdo->prepare("
+            SELECT DISTINCT p.*, u.username 
+            FROM posts p
+            INNER JOIN users u ON p.user_id = u.id
+            INNER JOIN follows f ON f.followed_id = p.user_id
+            WHERE f.follower_id = :user_id 
+            AND p.user_id != :user_id
+            ORDER BY p.created_at DESC 
+            LIMIT :limit OFFSET :offset
+        ");
+        $stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_INT);
+    }
     
-    $stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_INT);
     $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
     $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
     $stmt->execute();
     $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if (!$posts) {
-        echo json_encode([]);
+        echo json_encode(['success' => true, 'data' => []]);
         exit();
     }
 
