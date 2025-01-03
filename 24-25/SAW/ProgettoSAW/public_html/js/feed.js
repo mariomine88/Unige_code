@@ -1,6 +1,7 @@
 let page = 0;
 let loading = false;
 const postsPerPage = 10;
+const COMMENT_MAX_LENGTH = 200;
 
 function loadPosts() {
     if (loading || !window.hasFollows) return;
@@ -66,7 +67,13 @@ function createPostHTML(post) {
                     </a>
                 </h6>
                 <p class="card-text">${escapeHtml(post.content ? post.content.substring(0, 200) : '')}...</p>
-                <p class="text-muted">${new Date(post.created_at).toLocaleString()}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="text-muted mb-0">${new Date(post.created_at).toLocaleString()}</p>
+                    <span class="text-muted">
+                        <i class="bi bi-hand-thumbs-up"></i> 
+                        ${post.like_count || 0} likes
+                    </span>
+                </div>
                 ${renderComments(post.comments)}
             </div>
         </div>`;
@@ -91,7 +98,11 @@ function renderComments(comments) {
                                 ${new Date(comment.created_at).toLocaleString()}
                             </small>
                         </div>
-                        <p class="mb-1">${escapeHtml(comment.content)}</p>
+                        <p class="mb-1">
+                            ${comment.content.length > COMMENT_MAX_LENGTH 
+                                ? escapeHtml(comment.content.substring(0, COMMENT_MAX_LENGTH)) + '...'
+                                : escapeHtml(comment.content)}
+                        </p>
                     </div>
                 `;
             }).join('')}
