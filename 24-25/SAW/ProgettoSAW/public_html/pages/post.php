@@ -62,7 +62,7 @@ try {
                 </div>
                 <div class="mt-3">
                     <span class="text-muted">
-                        <i class="fas fa-thumbs-up"></i> <?php echo $post['like_count']; ?> likes
+                        <i class="fa fa-thumbs-up"></i> <?php echo $post['like_count']; ?> likes
                     </span>
                 </div>
             </div>

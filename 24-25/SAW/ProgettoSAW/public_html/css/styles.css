@@ -106,6 +106,7 @@
 
 /* Brand Responsive Styles */
 .navbar-brand svg {
+    color: #0d6efd;
     width: 28px;
     height: 28px;
 }
@@ -161,7 +162,7 @@
     padding-right: 0.75rem;
 }
 
-/* Checkbox of the TOS */
+/* Checkbox of the TOS and Remember me */
 .form-check-input {
-    border: 5px solid #000;
+    border: 1px solid #0d6efd;
 }
