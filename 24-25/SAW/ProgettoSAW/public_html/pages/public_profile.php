@@ -56,9 +56,6 @@ try {
         <div id="posts-container">
             <!-- Posts will be loaded here by JavaScript -->
         </div>
-        <div class="text-center mt-3" id="load-more-container">
-            <button id="loadMorePosts" class="btn btn-outline-primary">Load More Posts</button>
-        </div>
         <div id="loading-spinner" class="text-center d-none">
             <div class="spinner-border" role="status">
                 <span class="visually-hidden">Loading...</span>

@@ -39,7 +39,9 @@
                         <li>
                             <div class="dropdown-header user-header">
                                 <i class="bi bi-person-circle"></i>
+                                <a href="./public_profile.php?UID=<?= htmlspecialchars($_SESSION["user_username"]) ?>">
                                 <span><?= htmlspecialchars($_SESSION["user_username"]) ?></span>
+                                </a>
                             </div>
                         </li>
                         <li><hr class="dropdown-divider"></li>
