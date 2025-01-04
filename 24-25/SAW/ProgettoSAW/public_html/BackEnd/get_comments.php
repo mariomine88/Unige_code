@@ -1,6 +1,10 @@
 <?php
-require_once '../BackEnd/config_session.php';
-require_once '../../dbh.php';
+// Prevent any unwanted output
+error_reporting(E_ALL);
+ini_set('display_errors', 0);
+
+require_once __DIR__ . '/config_session.php';
+require_once __DIR__ . '/../../dbh.php';
 
 header('Content-Type: application/json');
 
@@ -11,10 +15,10 @@ if (!isset($_SESSION["user_id"])) {
 }
 
 $post_id = $_GET['post_id'] ?? null;
-$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 0;  // Changed to default to 0
 $order = isset($_GET['order']) && $_GET['order'] === 'ASC' ? 'ASC' : 'DESC';
 $limit = 10;
-$offset = $page * $limit;
+$offset = $page * $limit;  // Now correctly calculates offset from page 0
 
 try {
     $stmt = $pdo->prepare("

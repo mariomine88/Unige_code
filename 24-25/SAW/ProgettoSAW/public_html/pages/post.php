@@ -2,24 +2,28 @@
 require_once '../BackEnd/config_session.php';
 require_once '../../dbh.php';
 
-// Get post ID from URL
+// Validate post ID
 $post_id = $_GET['id'] ?? null;
-
-if ($post_id === null) {
+if (!$post_id) {
     header("Location: errors_pages/404.php");
     die();
 }
 
 try {
-    // Fetch post details with user and community information
+    // Fetch post data
     $stmt = $pdo->prepare("
-        SELECT p.*, u.username, u.firstname, u.lastname, c.name as community_name 
+        SELECT p.*, u.username, u.firstname, u.lastname, c.name as community_name,
+        CASE WHEN pl.user_id IS NOT NULL THEN 1 ELSE 0 END as is_liked
         FROM posts p
         JOIN users u ON p.user_id = u.id
         LEFT JOIN community c ON p.community_id = c.id
+        LEFT JOIN post_likes pl ON p.id = pl.post_id AND pl.user_id = ?
         WHERE p.id = ?
     ");
-    $stmt->execute([$post_id]);
+    $stmt->execute([
+        $_SESSION["user_id"] ?? null,
+        $post_id
+    ]);
     $post = $stmt->fetch();
 
     if (!$post) {
@@ -40,48 +44,33 @@ try {
     <?php include '../include/navbar.php'; ?>
 
     <div class="container mt-5">
+        <!-- Post Card -->
         <div class="card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h3 class="card-title"><?php echo htmlspecialchars($post['title']); ?></h3>
+                    <h3><?php echo htmlspecialchars($post['title']); ?></h3>
                     <?php if ($post['community_name']): ?>
-                        <span class="badge bg-secondary">
-                            <?php echo htmlspecialchars($post['community_name']); ?>
-                        </span>
+                        <span class="badge bg-secondary"><?php echo htmlspecialchars($post['community_name']); ?></span>
                     <?php endif; ?>
                 </div>
+                
+                <!-- Post Meta -->
                 <p class="text-muted">
-                    Posted by 
-                    <a href="public_profile.php?UID=<?php echo htmlspecialchars($post['username']); ?>">
-                        <?php echo htmlspecialchars($post['firstname'] . ' ' . $post['lastname']); ?>
-                    </a>
+                    Posted by <a href="public_profile.php?UID=<?php echo htmlspecialchars($post['username']); ?>">
+                        <?php echo htmlspecialchars($post['firstname'] . ' ' . $post['lastname']); ?></a>
                     on <?php echo date('M d, Y H:i', strtotime($post['created_at'])); ?>
                 </p>
+                
+                <!-- Post Content -->
                 <div class="post-content mt-4">
                     <?php echo nl2br(htmlspecialchars($post['content'])); ?>
                 </div>
                 
                 <!-- Like Button -->
-                <div class="mt-3">
-                    <?php
-                    $isLiked = false;
-                    if (isset($_SESSION["user_id"])) {
-                        // Updated query to use post_likes table
-                        $likeStmt = $pdo->prepare("SELECT * FROM post_likes WHERE user_id = ? AND post_id = ?");
-                        $likeStmt->execute([$_SESSION["user_id"], $post_id]);
-                        $isLiked = $likeStmt->rowCount() > 0;
-                    }
-                    
-                    // Get like count directly from posts table since it's maintained by triggers
-                    $likeCount = $post['like_count'];
-                    ?>
-                    
-                    <button id="likeButton" class="btn <?php echo $isLiked ? 'btn-primary' : 'btn-outline-primary'; ?>">
-                        <i class="bi bi-hand-thumbs-up"></i>
-                        Like
-                        <span id="likeCount"><?php echo $likeCount; ?></span>
-                    </button>
-                </div>
+                <button id="likeButton" class="btn mt-3 <?php echo $post['is_liked'] ? 'btn-primary' : 'btn-outline-primary'; ?>">
+                    <i class="bi bi-hand-thumbs-up"></i> Like
+                    <span id="likeCount"><?php echo $post['like_count']; ?></span>
+                </button>
             </div>
         </div>
 
@@ -95,7 +84,7 @@ try {
                 </select>
             </div>
 
-            <!-- Add comment form -->
+            <!-- Comment Form -->
             <form action="../BackEnd/add_comment.php" method="post" class="mb-4">
                 <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
                 <div class="form-group">
@@ -106,24 +95,26 @@ try {
                 <button type="submit" class="btn btn-primary mt-2">Add Comment</button>
             </form>
 
-            <div id="comments-container">
-                <!-- Comments will be loaded by JavaScript -->
+            <!-- Loading Spinner -->
+            <div id="comments-loading-spinner" class="text-center mt-3 d-none">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading comments...</span>
+                </div>
             </div>
+
+            <div id="comments-container"></div>
         </div>
     </div>
 
     <script>
-        window.postData = {
-            postId: <?php echo json_encode($post_id); ?>,
-            isLiked: <?php echo json_encode($isLiked); ?>
-        };
+    const postData = {
+        postId: <?php echo json_encode($post_id); ?>,
+        isLiked: <?php echo json_encode((bool)$post['is_liked']); ?>
+    };
     </script>
-    <script src="../js/post.js"></script>
-    <script src="../js/likes.js"></script>
-    <script>
-        document.getElementById('commentText').addEventListener('input', function() {
-            document.getElementById('commentCount').textContent = 65535 - this.value.length;
-        });
-    </script>
+    <script type="module" src="../js/utils.js"></script>
+    <script type="module" src="../js/likes.js"></script>
+    <script type="module" src="../js/comments.js"></script>
+    <script type="module" src="../js/post.js"></script>
 </body>
 </html>
