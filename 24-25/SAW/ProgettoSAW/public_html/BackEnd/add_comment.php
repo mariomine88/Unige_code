@@ -39,7 +39,7 @@ try {
         ':content' => $comment
     ]);
 
-    header("Location: ../pages/feed.php");
+    header("Location: ../pages/post.php?id=$post_id");
     exit();
 } catch (PDOException $e) {
     header("Location: ../pages/errors_pages/500.php");

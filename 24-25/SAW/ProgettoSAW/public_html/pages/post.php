@@ -107,57 +107,7 @@ try {
             </form>
 
             <div id="comments-container">
-            <?php
-            try {
-                $order = isset($_GET['order']) ? $_GET['order'] : 'DESC';
-                $order = in_array($order, ['ASC', 'DESC']) ? $order : 'DESC';
-                
-                $commentStmt = $pdo->prepare("
-                    SELECT c.*, u.username, u.firstname, u.lastname 
-                    FROM comments c
-                    JOIN users u ON c.user_id = u.id 
-                    WHERE c.post_id = ? 
-                    ORDER BY c.created_at " . $order . "
-                    LIMIT 10"
-                );
-                $commentStmt->execute([$post_id]);
-                $comments = $commentStmt->fetchAll();
-
-                if (count($comments) > 0) {
-                    foreach ($comments as $comment) {
-                        ?>
-                        <div class="comment card mt-2">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <strong class="text-primary">
-                                            <a href="public_profile.php?UID=<?php echo htmlspecialchars($comment['username']); ?>">
-                                                <?php echo htmlspecialchars($comment['firstname'] . ' ' . $comment['lastname']); ?>
-                                            </a>
-                                        </strong>
-                                        <small class="text-muted ms-2">
-                                            @<?php echo htmlspecialchars($comment['username']); ?>
-                                        </small>
-                                    </div>
-                                    <small class="text-muted">
-                                        <?php echo date('M d, Y H:i', strtotime($comment['created_at'])); ?>
-                                    </small>
-                                </div>
-                                <p class="mt-2 mb-1"><?php echo htmlspecialchars($comment['content']); ?></p>
-                            </div>
-                        </div>
-                        <?php
-                    }
-                } else {
-                    echo '<p class="text-muted">No comments yet. Be the first to comment!</p>';
-                }
-            } catch (PDOException $e) {
-                echo '<div class="alert alert-warning">Comments temporarily unavailable</div>';
-            }
-            ?>
-            </div>
-            <div class="text-center mt-3" id="load-more-container">
-                <button id="loadMoreComments" class="btn btn-outline-primary">Load More Comments</button>
+                <!-- Comments will be loaded by JavaScript -->
             </div>
         </div>
     </div>
