@@ -166,3 +166,9 @@
 .form-check-input {
     border: 1px solid #0d6efd;
 }
+
+.AdminBadge {
+    font-size: 0.85rem;
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.4rem;
+}

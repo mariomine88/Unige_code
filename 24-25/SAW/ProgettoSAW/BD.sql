@@ -6,6 +6,7 @@ CREATE TABLE users (
     username VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(60) NOT NULL,
     activation_token VARCHAR(64)
+    is_admin BOOLEAN NOT NULL DEFAULT FALSE;
 );
 
 CREATE TABLE auth_tokens (

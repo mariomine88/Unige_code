@@ -10,7 +10,7 @@ if ($user_id === null) {
 }
 
 try {
-    $stmt = $pdo->prepare("SELECT id, firstname, lastname, username FROM users WHERE username = ?");
+    $stmt = $pdo->prepare("SELECT id, firstname, lastname, username, is_admin FROM users WHERE username = ?");
     $stmt->execute([$user_id]);
     $user = $stmt->fetch();
 
@@ -42,7 +42,10 @@ try {
     <div class="container mt-5">
         <div class="card mb-4">
             <div class="card-body">
-                <h3 class="card-title"><?php echo htmlspecialchars($user['firstname'] . ' ' . $user['lastname']); ?></h3>
+                <?php $adminBadge = $user['is_admin'] ? '<span class="badge bg-primary AdminBadge">Admin</span>' : ''; ?>
+                <h3 class="card-title">
+                    <?php echo htmlspecialchars($user['firstname'] . ' ' . $user['lastname']) . ' ' . $adminBadge; ?>
+                </h3>
                 <p class="card-text"><strong>Username:</strong> <?php echo htmlspecialchars($user['username']); ?></p>
                 <?php if (isset($_SESSION["user_id"]) && $_SESSION["user_id"] !== $user['id']): ?>
                     <button id="followButton" class="btn <?php echo $isFollowing ? 'btn-secondary' : 'btn-primary'; ?>">
