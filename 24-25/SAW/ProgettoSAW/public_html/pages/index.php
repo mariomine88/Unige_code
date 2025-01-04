@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5"> <!-- Adjusted margin-bottom -->
         <div class="row">
             <div class="col-md-4 text-center">
                 <h2>Share</h2>
