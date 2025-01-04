@@ -22,14 +22,18 @@ $offset = $page * $limit;  // Now correctly calculates offset from page 0
 
 try {
     $stmt = $pdo->prepare("
-        SELECT c.*, u.username, u.firstname, u.lastname 
+        SELECT c.*, u.username, u.firstname, u.lastname,
+        CASE WHEN cl.user_id IS NOT NULL THEN 1 ELSE 0 END as is_liked,
+        (SELECT COUNT(*) FROM comment_likes WHERE comment_id = c.id) as like_count
         FROM comments c
         JOIN users u ON c.user_id = u.id 
+        LEFT JOIN comment_likes cl ON c.id = cl.comment_id AND cl.user_id = :user_id
         WHERE c.post_id = :post_id 
         ORDER BY c.created_at " . $order . "
         LIMIT :limit OFFSET :offset
     ");
     
+    $stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_INT);
     $stmt->bindValue(':post_id', $post_id, PDO::PARAM_INT);
     $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
     $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);

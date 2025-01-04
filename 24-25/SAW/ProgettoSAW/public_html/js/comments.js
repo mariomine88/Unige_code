@@ -6,7 +6,7 @@ let loading = false;
 const commentsPerPage = 10;
 
 function createCommentHTML(comment) {
-    const isLiked = comment.is_liked === "1";
+    const isLiked = parseInt(comment.is_liked) === 1;  // Fix: properly parse is_liked value
     const commentId = escapeHtml(comment.id);
     return `
         <div class="comment card mt-2" data-comment-id="${commentId}">
@@ -23,9 +23,10 @@ function createCommentHTML(comment) {
                 <p class="mt-2">${escapeHtml(comment.content)}</p>
                 <button type="button" 
                         class="btn ${isLiked ? 'btn-primary' : 'btn-outline-primary'} btn-sm comment-like-btn"
-                        data-liked="${isLiked}">
+                        data-liked="${isLiked}"
+                        data-type="comment">
                     <i class="bi bi-hand-thumbs-up"></i>
-                    <span class="like-count">${comment.like_count || 0}</span>
+                    <span class="like-count">${parseInt(comment.like_count) || 0}</span>
                 </button>
             </div>
         </div>
@@ -93,6 +94,8 @@ export function initComments(postId) {
             const commentDiv = likeBtn.closest('.comment');
             if (commentDiv) {
                 const commentId = commentDiv.dataset.commentId;
+                // Force string to boolean conversion for data-liked attribute
+                likeBtn.setAttribute('data-liked', likeBtn.getAttribute('data-liked') === 'true');
                 handleLike(commentId, 'comment', likeBtn);
             }
         }

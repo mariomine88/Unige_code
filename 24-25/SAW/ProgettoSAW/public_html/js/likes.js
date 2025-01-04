@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const likeButton = document.getElementById('likeButton');
     if (!likeButton) return;
 
+    if (!window.postData?.postId) return;
+
     likeButton.addEventListener('click', function() {
         handleLike(window.postData.postId, 'post', likeButton);
     });
