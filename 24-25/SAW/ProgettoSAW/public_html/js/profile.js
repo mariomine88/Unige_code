@@ -1,5 +1,3 @@
-const COMMENT_MAX_LENGTH = 200;
-
 $(document).ready(function() {
     $('#followButton').on('click', handleFollowAction);
     loadUserPosts();
@@ -73,7 +71,7 @@ function loadUserPosts() {
             }
 
             result.data.forEach(post => {
-                $container.append(createPostHTML(post));
+                $container.append(createPostHTML(post, { showAuthor: false }));
             });
             page++;
         },
@@ -93,68 +91,5 @@ function loadUserPosts() {
     });
 }
 
-function createPostHTML(post) {
-    if (!post) return '';
-    return `
-        <div class="card mb-4">
-            <div class="card-body">
-                <h5 class="card-title">
-                    <a href="post.php?id=${escapeHtml(post.id)}" class="text-decoration-none text-dark">
-                        ${escapeHtml(post.title)}
-                    </a>
-                </h5>
-                <p class="card-text">${escapeHtml(post.content ? post.content.substring(0, 200) : '')}...</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <p class="text-muted mb-0">${new Date(post.created_at).toLocaleString()}</p>
-                    <span class="text-muted">
-                        <i class="bi bi-hand-thumbs-up"></i> 
-                        ${post.like_count || 0} likes
-                    </span>
-                </div>
-                ${renderComments(post.comments)}
-            </div>
-        </div>`;
-}
-
-function renderComments(comments) {
-    if (!comments || !Array.isArray(comments)) return '';
-    
-    return `
-        <div class="comments-section mt-3">
-            ${comments.map(comment => {
-                if (!comment) return '';
-                return `
-                    <div class="comment border-bottom py-2">
-                        <div class="d-flex justify-content-between">
-                            <strong>
-                                <a href="public_profile.php?UID=${escapeHtml(comment.username)}">
-                                    ${escapeHtml(comment.username)}
-                                </a>
-                            </strong>
-                            <small class="text-muted">
-                                ${new Date(comment.created_at).toLocaleString()}
-                            </small>
-                        </div>
-                        <p class="mb-1">
-                            ${comment.content.length > COMMENT_MAX_LENGTH 
-                                ? escapeHtml(comment.content.substring(0, COMMENT_MAX_LENGTH)) + '...'
-                                : escapeHtml(comment.content)}
-                        </p>
-                    </div>
-                `;
-            }).join('')}
-        </div>`;
-}
-
-function escapeHtml(unsafe) {
-    if (unsafe === null || unsafe === undefined) {
-        return '';
-    }
-    const str = String(unsafe);
-    return str
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-}
+// Remove the duplicate functions: createPostHTML, renderComments, and escapeHtml
+// They will be used from utilities.js

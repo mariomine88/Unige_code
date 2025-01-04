@@ -95,7 +95,7 @@ function loadPosts() {
             }
 
             result.data.forEach(post => {
-                $container.append(createPostHTML(post));
+                $container.append(createPostHTML(post)); // Using utility function
             });
             postsPage++;
         },
@@ -127,42 +127,6 @@ function createUserHTML(user) {
             </div>
         </div>
     `;
-}
-
-function createPostHTML(post) {
-    return `
-        <div class="card mb-4">
-            <div class="card-body">
-                <h5 class="card-title">
-                    <a href="post.php?id=${post.id}" class="text-decoration-none text-dark">
-                        ${escapeHtml(post.title)}
-                    </a>
-                </h5>
-                <h6 class="card-subtitle mb-2 text-muted">
-                    By <a href="public_profile.php?UID=${escapeHtml(post.username)}">
-                        ${escapeHtml(post.username)}
-                    </a>
-                </h6>
-                <p class="card-text">${escapeHtml(post.content.substring(0, 200))}...</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <p class="text-muted mb-0">${new Date(post.created_at).toLocaleString()}</p>
-                    <span class="text-muted">
-                        <i class="bi bi-hand-thumbs-up"></i> 
-                        ${post.like_count || 0} likes
-                    </span>
-                </div>
-            </div>
-        </div>
-    `;
-}
-
-function escapeHtml(unsafe) {
-    return unsafe
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
 }
 
 /* Under Construction Message*/
