@@ -168,7 +168,20 @@
 }
 
 .AdminBadge {
-    font-size: 0.85rem;
+    font-size: 0.70rem;
     border-radius: 0.5rem;
     padding: 0.2rem 0.4rem;
+    animation: pulse 2s infinite ease-in-out;
+
+}
+
+/* pulse */
+@keyframes pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
 }
