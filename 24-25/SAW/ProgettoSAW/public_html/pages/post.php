@@ -84,8 +84,11 @@ try {
                 </select>
             </div>
 
+            <!-- Alert Container -->
+            <div id="alertContainer"></div>
+
             <!-- Comment Form -->
-            <form action="../BackEnd/add_comment.php" method="post" class="mb-4">
+            <form id="commentForm" class="mb-4">
                 <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
                 <div class="form-group">
                     <textarea name="comment" class="form-control" rows="3" 
@@ -104,6 +107,7 @@ try {
 
             <div id="comments-container"></div>
         </div>
+        <div class="mb-5"></div>
     </div>
 
     <script>

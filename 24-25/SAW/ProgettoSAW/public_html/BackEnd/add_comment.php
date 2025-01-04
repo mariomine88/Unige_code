@@ -1,48 +1,37 @@
 <?php
 require_once 'config_session.php';
+require_once '../../dbh.php';
 
-// move add coment to js
-
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: ../pages/feed.php");
-    exit();
-}
-
+header('Content-Type: application/json');
 
 if (!isset($_SESSION["user_id"])) {
-    header("Location: ../pages/login.php");
+    echo json_encode(["success" => false, "message" => "Please login to comment"]);
     exit();
 }
 
-$comment = $_POST["comment"] ?? "";
-$post_id = $_POST["post_id"] ?? "";
-
-if (empty($comment) || empty($post_id)) {
-    $_SESSION["errors"]["comment"] = "Comment cannot be empty";
-    header("Location: ../pages/feed.php");
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    echo json_encode(["success" => false, "message" => "Invalid request method"]);
     exit();
 }
 
-if (strlen($comment) > 65535) {
-    $_SESSION["errors"]["comment"] = "Comment exceeds maximum length";
-    header("Location: ../pages/feed.php");
+$post_id = $_POST["post_id"] ?? null;
+$comment = $_POST["comment"] ?? null;
+
+if (!$post_id || !$comment) {
+    echo json_encode(["success" => false, "message" => "Missing required fields"]);
     exit();
 }
 
 try {
-    require_once '../../dbh.php';
-    $query = "INSERT INTO comments (post_id, user_id, content) VALUES (:post_id, :user_id, :content)";
-    $stmt = $pdo->prepare($query);
-    $stmt->execute([
-        ':post_id' => $post_id,
-        ':user_id' => $_SESSION["user_id"],
-        ':content' => $comment
-    ]);
+    $stmt = $pdo->prepare("INSERT INTO comments (post_id, user_id, content) VALUES (?, ?, ?)");
+    $success = $stmt->execute([$post_id, $_SESSION["user_id"], $comment]);
 
-    header("Location: ../pages/post.php?id=$post_id");
-    exit();
+    if ($success) {
+        echo json_encode(["success" => true]);
+    } else {
+        echo json_encode(["success" => false, "message" => "Failed to add comment"]);
+    }
 } catch (PDOException $e) {
-    header("Location: ../pages/errors_pages/500.php");
-    exit();
+    echo json_encode(["success" => false, "message" => "Database error"]);
 }
 

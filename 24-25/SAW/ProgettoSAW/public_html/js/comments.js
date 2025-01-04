@@ -1,5 +1,6 @@
 import { escapeHtml } from './utils.js';
 import { handleLike } from './likes.js';
+import { showAlert } from './utils.js';
 
 let page = 0;  // Changed to start from 0
 let loading = false;
@@ -116,3 +117,46 @@ export function initComments(postId) {
         loadComments(postId, commentOrder.value, true);
     });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const commentForm = document.getElementById('commentForm');
+    const commentsContainer = document.getElementById('comments-container');
+    const loadingSpinner = document.getElementById('comments-loading-spinner');
+
+    commentForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        formData.append('post_id', postData.postId);
+
+        try {
+            const response = await fetch('../BackEnd/add_comment.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                showAlert('success', 'Comment added successfully!');
+                commentForm.reset();
+                
+                // Reset comments container and page counter
+                document.getElementById('comments-container').innerHTML = '';
+                page = 0;
+                
+                // Get current sort order
+                const currentOrder = document.getElementById('commentOrder').value;
+                
+                // Reload comments with current sort order
+                await loadComments(postData.postId, currentOrder, true);
+            } else {
+                showAlert('danger', data.message || 'Error adding comment');
+            }
+        } catch (error) {
+            showAlert('danger', 'An error occurred while adding the comment');
+        }
+    });
+
+    // ... rest of your existing comments.js code ...
+});
