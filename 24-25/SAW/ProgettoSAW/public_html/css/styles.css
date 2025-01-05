@@ -1,10 +1,18 @@
+/*this rule apparently fix the navbar issue (make the mb from 3 to 6) 
+ with the .footer position fixed and bottom 0, so never touch it anymore */
+.mb-5 {
+    margin-bottom: 6rem !important;
+}
+
 .footer {
     width: 100%;
     background-color: #f8f9fa;
     padding: 10px 0;
     text-align: center;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
+
+    position: fixed; 
+    bottom: 0;
 }
 
 .main-content {
