@@ -54,7 +54,7 @@ if (!empty($token)) {
                           </div>';
                 } else {
                 ?>
-                    <form action="../BackEnd/reset-password-handler.php" method="post">
+                    <form action="../BackEnd/reset_password_handler.php" method="post">
                         <input type="hidden" name="token" value="<?php echo htmlspecialchars($token); ?>">
                         <input type="hidden" name="email" value="<?php echo htmlspecialchars($email); ?>">
                         

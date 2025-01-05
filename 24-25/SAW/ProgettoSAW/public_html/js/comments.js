@@ -158,5 +158,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ... rest of your existing comments.js code ...
+
 });
