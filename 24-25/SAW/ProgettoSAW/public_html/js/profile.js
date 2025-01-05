@@ -91,5 +91,4 @@ function loadUserPosts() {
     });
 }
 
-// Remove the duplicate functions: createPostHTML, renderComments, and escapeHtml
-// They will be used from utilities.js
+

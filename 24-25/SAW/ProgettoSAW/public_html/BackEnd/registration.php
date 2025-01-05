@@ -6,10 +6,11 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
 require_once 'config_session.php';
 require_once 'check_imput.php';
-require_once '../../mail-init.php'; 
+
 
 function sendActivationEmail(&$email,&$activation_token) {
     try {
+        require_once '../../mail-init.php'; 
         $activation_token = bin2hex(random_bytes(32));
         $activationLink = "https://saw.dibris.unige.it/~s5577783/pages/activate.php?token=" . $activation_token;
         
@@ -58,6 +59,12 @@ $errors = validateBasicFields($firstname, $lastname, $email, $username);
 
 // Validate password
 $errors = array_merge($errors, validatePassword($pwd, $cpwd));
+
+require_once '../../check_email.php';
+
+if ($response === "invalid") {
+    $errors[] = "Please provide a valid email address";
+}
 
 try {
     require_once '../../dbh.php';

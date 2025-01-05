@@ -35,6 +35,19 @@ try {
     // Check existing user excluding current user
     $errors = array_merge($errors, checkExistingUser($pdo, $email, $username, $user_id));
 
+    $stmt = $pdo->prepare("SELECT email FROM users WHERE id = :id");
+    $stmt->bindParam(":id", $user_id);
+    $stmt->execute();
+    $current_email = $stmt->fetchColumn();
+
+    if ($email !== $current_email) {
+        require_once '../../check_email.php';
+
+        if ($response === "invalid") {
+            $errors[] = "Please provide a valid email address";
+        }
+    }
+
     // Password validation if attempting to change password
     if (!empty($new_password) || !empty($confirm_password) || !empty($old_password)) {
         // Verify old password

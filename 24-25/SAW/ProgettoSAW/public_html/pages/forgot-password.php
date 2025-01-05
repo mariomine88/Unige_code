@@ -15,7 +15,7 @@ require_once '../BackEnd/config_session.php';
                 <?php include '../include/messages.php';
                 ?>
 
-                <form action="../BackEnd/forgot-password-handler.php" method="post">
+                <form action="../BackEnd/forgot_password_handler.php" method="post">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email Address</label>
                         <input type="email" class="form-control" id="email" name="email" 
