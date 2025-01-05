@@ -24,7 +24,7 @@ if ($_SESSION['last_regenerate'] < time() - 1800) {
 }
 // Check for remember me cookie
 if (!isset($_SESSION['user_id']) && isset($_COOKIE['remember_me'])) {
-    list($selector, $token) = explode(':', $_COOKIE['remember_me']);
+    list($selector, $token) = explode(':', urldecode($_COOKIE['remember_me']));
     
     try {
         require_once '../../dbh.php';
@@ -37,7 +37,7 @@ if (!isset($_SESSION['user_id']) && isset($_COOKIE['remember_me'])) {
         
         //if result is found
         if ($auth = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            if (password_verify(hex2bin($token), $auth['token'])) {
+            if (password_verify($token, $auth['token'])) {
                 $_SESSION['user_id'] = $auth['user_id'];
                 $_SESSION['user_username'] = $auth['username'];
             }

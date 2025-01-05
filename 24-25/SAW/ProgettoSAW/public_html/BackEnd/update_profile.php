@@ -1,7 +1,12 @@
 <?php
 require_once 'config_session.php';
 
-if ($_SERVER["REQUEST_METHOD"] !== "POST"  && !isset($_SESSION["user_id"])) {
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../pages/login.php");
+    exit();
+}
+
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: ../pages/index.php");
     die();
 }

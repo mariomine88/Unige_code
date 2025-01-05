@@ -20,10 +20,18 @@ function setRememberMeCookie($userId, $pdo) {
             ':expires' => $expiry
         ]);
 
+    $cookieValue = $selector . ":" . $token; // the value is urlencoded
+    
     setcookie(
         'remember_me',
-        $selector . ':' . $token,
-        time() + 30 * 24 * 60 * 60
+        $cookieValue,
+        [
+            'expires' => time() + 30 * 24 * 60 * 60,
+            'path' => '/~s5577783/',
+            'domain' => 'saw.dibris.unige.it',
+            'secure' => true,
+            'httponly' => true
+        ]
     );
 }
 
