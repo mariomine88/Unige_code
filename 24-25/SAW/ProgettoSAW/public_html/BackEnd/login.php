@@ -3,14 +3,10 @@ require_once 'config_session.php';
 
 function setRememberMeCookie($userId, $pdo) {
     $selector = bin2hex(random_bytes(16));
-    $token = bin2hex(random_bytes(32)); // Convert to hex string immediately
+    $token = bin2hex(random_bytes(32));
     $hashedToken = password_hash($token, PASSWORD_BCRYPT);
     $expiry = date('Y-m-d H:i:s', time() + 30 * 24 * 60 * 60); // 30 days
 
-    // Clear existing tokens and save new one
-    $pdo->prepare("DELETE FROM auth_tokens WHERE user_id = :user_id")
-        ->execute([':user_id' => $userId]);
-    
     $pdo->prepare("INSERT INTO auth_tokens (user_id, selector, token, expires) 
                    VALUES (:user_id, :selector, :token, :expires)")
         ->execute([

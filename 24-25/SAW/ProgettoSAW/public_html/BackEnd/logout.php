@@ -6,7 +6,7 @@ try {
         require_once '../../dbh.php';
         
         // Delete auth tokens from database
-        $stmt = $pdo->prepare("DELETE FROM auth_tokens WHERE user_id = :user_id");
+        $stmt = $pdo->prepare("DELETE FROM auth_tokens WHERE user_id = :user_id AND expires > NOW()");
         $stmt->execute([':user_id' => $_SESSION["user_id"]]);
 
         // Delete remember me cookie with all parameters
