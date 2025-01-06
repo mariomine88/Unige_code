@@ -13,23 +13,26 @@ function createCommentHTML(comment) {
     return `
         <div class="comment card mt-2" data-comment-id="${commentId}">
             <div class="card-body">
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <a href="public_profile.php?UID=${escapeHtml(comment.username)}" class="text-primary">
-                            ${escapeHtml(comment.firstname + ' ' + comment.lastname)}
-                        </a>
-                        <small class="text-muted">@${escapeHtml(comment.username)}</small>
-                    </div>
-                    <small class="text-muted">${timeAgo}</small>                
+                <div>
+                    <a href="public_profile.php?UID=${escapeHtml(comment.username)}" class="text-primary">
+                        ${escapeHtml(comment.username)}
+                    </a>
+                    <small class="text-muted"> · ${timeAgo}</small>                
                 </div>
-                <p class="mt-2">${escapeHtml(comment.content)}</p>
-                <button type="button" 
-                        class="btn ${isLiked ? 'btn-primary' : 'btn-outline-primary'} btn-sm comment-like-btn"
-                        data-liked="${isLiked}"
-                        data-type="comment">
-                    <i class="bi bi-hand-thumbs-up"></i>
-                    <span class="like-count">${parseInt(comment.like_count) || 0}</span>
-                </button>
+                <div class="d-flex justify-content-between align-items-start mt-2" style="gap: 10px;">
+                    <div style="min-width: 0; flex: 1;">
+                        <p class="mb-2" style="word-wrap: break-word; overflow-wrap: break-word;">${escapeHtml(comment.content)}</p>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <button type="button" 
+                                class="btn ${isLiked ? 'btn-primary' : 'btn-outline-primary'} btn-sm comment-like-btn"
+                                data-liked="${isLiked}"
+                                data-type="comment">
+                            <i class="bi bi-hand-thumbs-up"></i>
+                            <span class="like-count">${parseInt(comment.like_count) || 0}</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     `;

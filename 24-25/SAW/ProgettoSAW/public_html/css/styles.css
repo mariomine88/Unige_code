@@ -191,3 +191,13 @@
 .BackArrow {
  padding-top: 0;
 }
+
+a {
+    color: #0d6efd;
+    text-decoration: none;
+    transition: text-decoration 0.2s ease-in-out;
+}
+
+a:hover {
+    text-decoration: underline;
+}

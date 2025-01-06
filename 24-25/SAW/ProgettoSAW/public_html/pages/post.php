@@ -67,10 +67,15 @@ try {
                 </div>
                 
                 <!-- Like Button -->
-                <button id="likeButton" class="btn mt-3 <?php echo $post['is_liked'] ? 'btn-primary' : 'btn-outline-primary'; ?>">
-                    <i class="bi bi-hand-thumbs-up"></i> Like
-                    <span id="likeCount"><?php echo $post['like_count']; ?></span>
-                </button>
+                <div class="mt-3">
+                    <button id="likeButton" class="btn me-2 <?php echo $post['is_liked'] ? 'btn-primary' : 'btn-outline-primary'; ?>">
+                        <i class="bi bi-hand-thumbs-up"></i> Like
+                        <span id="likeCount"><?php echo $post['like_count']; ?></span>
+                    </button>
+                    <button id="shareButton" class="btn btn-outline-secondary">
+                        <i class="bi bi-share"></i> Share
+                    </button>
+                </div>
             </div>
         </div>
 
