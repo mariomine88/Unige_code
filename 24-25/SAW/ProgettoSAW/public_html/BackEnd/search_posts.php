@@ -17,7 +17,8 @@ $offset = $page * $limit;
 
 try {
     $stmt = $pdo->prepare("
-        SELECT p.*, u.username, u.firstname, u.lastname 
+        SELECT p.*, u.username, u.firstname, u.lastname, 
+               (SELECT COUNT(*) FROM comments c WHERE c.post_id = p.id) AS comment_count
         FROM posts p
         JOIN users u ON p.user_id = u.id 
         WHERE p.title LIKE :term 

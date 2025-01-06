@@ -9,6 +9,7 @@ const commentsPerPage = 10;
 function createCommentHTML(comment) {
     const isLiked = parseInt(comment.is_liked) === 1;  // Fix: properly parse is_liked value
     const commentId = escapeHtml(comment.id);
+    const timeAgo = moment(comment.created_at).fromNow(); // Use moment.js to format the time difference
     return `
         <div class="comment card mt-2" data-comment-id="${commentId}">
             <div class="card-body">
@@ -19,7 +20,7 @@ function createCommentHTML(comment) {
                         </a>
                         <small class="text-muted">@${escapeHtml(comment.username)}</small>
                     </div>
-                    <small class="text-muted">${new Date(comment.created_at).toLocaleString()}</small>
+                    <small class="text-muted">${timeAgo}</small>                
                 </div>
                 <p class="mt-2">${escapeHtml(comment.content)}</p>
                 <button type="button" 

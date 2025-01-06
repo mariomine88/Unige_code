@@ -41,6 +41,8 @@ function createPostHTML(post, options = {}) {
                     <span class="text-muted">
                         <i class="bi bi-hand-thumbs-up"></i> 
                         ${post.like_count || 0} likes
+                        <i class="bi bi-chat"></i> 
+                        ${post.comment_count || 0} comments
                     </span>
                 </div>
                 ${post.comments ? renderComments(post.comments) : ''}
