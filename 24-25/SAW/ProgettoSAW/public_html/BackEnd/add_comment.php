@@ -5,12 +5,12 @@ require_once '../../dbh.php';
 header('Content-Type: application/json');
 
 if (!isset($_SESSION["user_id"])) {
-    echo json_encode(["success" => false, "message" => "Please login to comment"]);
+    header("Location: ../index.php");
     exit();
 }
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    echo json_encode(["success" => false, "message" => "Invalid request method"]);
+    echo json_encode(['error' => 'Unauthorized']);
     exit();
 }
 

@@ -2,7 +2,7 @@
 require_once 'config_session.php';
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: ../pages/feed.php");
+    header("Location: ../pages/index.php");
     exit();
 }
 

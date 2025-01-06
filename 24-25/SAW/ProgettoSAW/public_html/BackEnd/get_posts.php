@@ -19,7 +19,7 @@ try {
     if ($specific_user_id) {
         // Query for specific user's posts
         $stmt = $pdo->prepare("
-            SELECT p.*, u.username 
+            SELECT p.*, u.username, (SELECT COUNT(*) FROM comments c WHERE c.post_id = p.id) AS comment_count
             FROM posts p
             INNER JOIN users u ON p.user_id = u.id
             WHERE p.user_id = :specific_user_id 
@@ -30,7 +30,7 @@ try {
     } else {
         // Query for feed posts
         $stmt = $pdo->prepare("
-            SELECT DISTINCT p.*, u.username 
+            SELECT DISTINCT p.*, u.username, (SELECT COUNT(*) FROM comments c WHERE c.post_id = p.id) AS comment_count 
             FROM posts p
             INNER JOIN users u ON p.user_id = u.id
             INNER JOIN follows f ON f.followed_id = p.user_id

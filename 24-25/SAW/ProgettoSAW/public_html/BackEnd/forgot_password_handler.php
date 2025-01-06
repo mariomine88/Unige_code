@@ -3,7 +3,7 @@ require_once 'config_session.php';
 
 // Redirect if not POST
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: ../pages/forgot-password.php");
+    header("Location: ../pages/index.php");
     die();
 }
 

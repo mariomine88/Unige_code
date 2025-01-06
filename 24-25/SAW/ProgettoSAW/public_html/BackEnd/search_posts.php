@@ -2,6 +2,13 @@
 require_once __DIR__ . '/config_session.php';
 require_once __DIR__ . '/../../dbh.php';
 
+// Check if accessed directly via URL
+if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
+    http_response_code(403);
+    echo json_encode(['error' => 'Direct access not allowed']);
+    exit();
+}
+
 header('Content-Type: application/json');
 
 if (!isset($_SESSION["user_id"])) {

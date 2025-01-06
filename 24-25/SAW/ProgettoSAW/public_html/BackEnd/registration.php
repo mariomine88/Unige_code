@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: ../pages/signup.php");
+    header("Location: ../pages/index.php");
     die();
 }
 
@@ -14,7 +14,6 @@ function sendActivationEmail(&$email,&$activation_token) {
         $activation_token = bin2hex(random_bytes(32));
         $activationLink = "https://saw.dibris.unige.it/~s5577783/pages/activate.php?token=" . $activation_token;
         
-        global $mail;
         $mail->setFrom('saws5577783donotreply@gmail.com', 'Account Activation');
         $mail->addAddress($email);
         $mail->isHTML(true);
