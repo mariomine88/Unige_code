@@ -5,7 +5,7 @@
     <?php include '../include/header.php'; ?>
     <style>
         .hero-section {
-            padding: 100px 0;
+            padding: 50px 0;
             text-align: center;
             background-color:rgb(255, 255, 255);
         }
@@ -21,12 +21,13 @@
             align-items: center;
             justify-content: center;
             position: relative;
+            overflow: hidden;
+            flex-direction: column;
         }
         .card h2 {
             z-index: 1;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
+            margin-bottom: 10px; /* Add space between h2 and p */
         }
-
         .card p {
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -36,15 +37,28 @@
             transform: translateX(-50%);
             z-index: 0;
         }
-        .card:hover {
-            border: 1px solid #0d6efd;
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: #0d6efd;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transform-origin: bottom left;
+            transition: transform 1s ease;
+            z-index: 0;
+        }
+        .card:hover::before {
+            transform: translate(-50%, -50%) scale(1);
         }
         .card:hover p {
             opacity: 1;
         }
-        .card:hover h2 {
-            color: #0d6efd;
-            opacity: 0.8;
+        .col-md-4.text-center.cards-index {
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -67,19 +81,19 @@
 
     <div class="container mt-5 mb-5"> <!-- Adjusted margin-bottom -->
         <div class="row">
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 text-center cards-index">
                 <div class="card">
                     <h2>Share</h2>
                     <p>Share your thoughts with the community</p>
                 </div>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 text-center cards-index">
                 <div class="card">
                     <h2>Connect</h2>
                     <p>Connect with like-minded people</p>
                 </div>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 text-center cards-index">
                 <div class="card">
                     <h2>Engage</h2>
                     <p>Engage in meaningful conversations</p>
