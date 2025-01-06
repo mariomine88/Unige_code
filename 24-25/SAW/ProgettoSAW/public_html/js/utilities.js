@@ -33,7 +33,9 @@ function createPostHTML(post, options = {}) {
                         </a>
                     </h6>
                 ` : ''}
-                <p class="card-text">${escapeHtml(post.content ? post.content.substring(0, 200) : '')}...</p>
+                <p class="card-text">${post.content.length > COMMENT_MAX_LENGTH 
+                                ? escapeHtml(post.content.substring(0, COMMENT_MAX_LENGTH)) + '...'
+                                : escapeHtml(post.content)}</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <p class="text-muted mb-0">${new Date(post.created_at).toLocaleString()}</p>
                     <span class="text-muted">
