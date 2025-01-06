@@ -26,6 +26,11 @@ try {
         $checkFollow->execute([$_SESSION["user_id"], $user['id']]);
         $isFollowing = $checkFollow->fetch() !== false;
     }
+
+    // Get followers count
+    $stmt = $pdo->prepare("SELECT COUNT(*) AS followers_count FROM follows WHERE followed_id = ?");
+    $stmt->execute([$user['id']]);
+    $followers_count = $stmt->fetchColumn();
 } catch (PDOException $e) {
     header("Location: errors_pages/500.php");
     die();
@@ -47,6 +52,7 @@ try {
                     <?php echo htmlspecialchars($user['firstname'] . ' ' . $user['lastname']) . ' ' . $adminBadge; ?>
                 </h3>
                 <p class="card-text"><strong>Username:</strong> <?php echo htmlspecialchars($user['username']); ?></p>
+                <p class="text-muted"><?php echo $followers_count; ?> Followers</p>
                 <?php if (isset($_SESSION["user_id"]) && $_SESSION["user_id"] !== $user['id']): ?>
                     <button id="followButton" class="btn <?php echo $isFollowing ? 'btn-secondary' : 'btn-primary'; ?>">
                         <?php echo $isFollowing ? 'Unfollow' : 'Follow'; ?>

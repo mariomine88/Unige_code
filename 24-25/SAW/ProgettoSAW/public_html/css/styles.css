@@ -169,11 +169,12 @@
 }
 
 .AdminBadge {
+    position: relative;
+    top: -4px;
     font-size: 0.70rem;
     border-radius: 0.5rem;
     padding: 0.2rem 0.4rem;
     animation: pulse 2s infinite ease-in-out;
-
 }
 
 /* pulse */

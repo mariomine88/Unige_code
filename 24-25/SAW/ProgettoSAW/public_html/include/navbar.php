@@ -14,7 +14,7 @@
         <div class="d-flex flex-grow-1 px-md-4 mx-md-4 mx-2">
             <form class="w-100" action="../pages/search.php" method="GET">
                 <div class="input-group">
-                    <input type="text" class="form-control bg-light" placeholder="Search Threadit" name="search">
+                    <input type="text" class="form-control bg-light" placeholder="Search" name="search">
                     <button class="btn btn-outline-light" type="submit" aria-label="Search">
                         <i class="bi bi-search"></i>
                         <span class="d-none d-md-inline ms-1">Search</span>
@@ -45,7 +45,7 @@
                             </div>
                         </li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="../BackEnd/show_profile.php" aria-label="Edit Profile">Profile</a></li>
+                        <li><a class="dropdown-item" href="../BackEnd/show_profile.php" aria-label="Edit Profile">Edit</a></li>
                         <li><a class="dropdown-item text-danger" href="../BackEnd/logout.php" aria-label="Log Out">Log Out</a></li>
                     </ul>
                 </div>

@@ -57,7 +57,7 @@ try {
                 <!-- Post Meta -->
                 <p class="text-muted">
                     Posted by <a href="public_profile.php?UID=<?php echo htmlspecialchars($post['username']); ?>">
-                        <?php echo htmlspecialchars($post['firstname'] . ' ' . $post['lastname']); ?></a>
+                        <?php echo htmlspecialchars($post['username']); ?></a>
                     on <?php echo date('M d, Y H:i', strtotime($post['created_at'])); ?>
                 </p>
                 
