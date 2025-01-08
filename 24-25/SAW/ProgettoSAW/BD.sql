@@ -22,7 +22,7 @@ CREATE TABLE password_resets (
     email VARCHAR(255) PRIMARY KEY,
     token VARCHAR(64) NOT NULL UNIQUE,
     expires_at TIMESTAMP NOT NULL,
-    FOREIGN KEY (email) REFERENCES users(email)
+    FOREIGN KEY (email) REFERENCES users(email) ON DELETE CASCADE
 );
 
 CREATE TABLE community (
