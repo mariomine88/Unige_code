@@ -29,7 +29,7 @@ if (!$test) {
     $firstname = trim($_POST['firstname'] ?? '');
     $lastname = trim($_POST['lastname'] ?? '');
     $email = trim($_POST['email'] ?? '');
-    $username = "test";
+    $username = $firstname;
     $user_id = $_SESSION["user_id"];
 }
 
@@ -45,7 +45,7 @@ try {
     $stmt->execute();
     $current_email = $stmt->fetchColumn();
 
-    if ($email !== $current_email) {
+    if ($email !== $current_email && !$test) {
         require_once '../../check_email.php';
 
         if ($response === "invalid") {

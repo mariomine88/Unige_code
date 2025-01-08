@@ -49,8 +49,8 @@ $username = trim($_POST['username'] ?? '');
 $pwd = trim($_POST['pass'] ?? '');
 $cpwd = trim($_POST['cpwd'] ?? '');
 
-//for test uncoment
-//$username = "test";
+//for test uncomment
+//$username = $firstname;
 //$cpwd = $pwd;
 
 // Validate basic fields
@@ -59,7 +59,10 @@ $errors = validateBasicFields($firstname, $lastname, $email, $username);
 // Validate password
 $errors = array_merge($errors, validatePassword($pwd, $cpwd));
 
+
+//for test invert comment
 require_once '../../check_email.php';
+//$response = "valid";
 
 if ($response === "invalid") {
     $errors[] = "Please provide a valid email address";
