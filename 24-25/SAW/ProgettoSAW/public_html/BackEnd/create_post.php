@@ -13,6 +13,7 @@ if (!isset($_SESSION["user_id"])) {
 
 $content = $_POST["content"] ?? "";
 $title = $_POST["title"] ?? "";
+$community_id = !empty($_POST["community_id"]) ? $_POST["community_id"] : null;
 
 if (empty($content) || empty($title)) {
     $_SESSION["errors"]["post"] = "Post title and content cannot be empty";
@@ -36,10 +37,11 @@ if (strlen($title) > 255 || strlen($content) > 65535) {
 
 try {
     require_once '../../dbh.php';
-    $query = "INSERT INTO posts (user_id, title, content) VALUES (:user_id, :title, :content)";
+    $query = "INSERT INTO posts (user_id, community_id, title, content) VALUES (:user_id, :community_id, :title, :content)";
     $stmt = $pdo->prepare($query);
     $stmt->execute([
         ':user_id' => $_SESSION["user_id"],
+        ':community_id' => $community_id,
         ':title' => $title,
         ':content' => $content
     ]);

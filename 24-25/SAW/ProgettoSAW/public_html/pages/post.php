@@ -47,17 +47,28 @@ try {
         <!-- Post Card -->
         <div class="card">
             <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h3><?php echo htmlspecialchars($post['title']); ?></h3>
-                    <?php if ($post['community_name']): ?>
-                        <span class="badge bg-secondary"><?php echo htmlspecialchars($post['community_name']); ?></span>
-                    <?php endif; ?>
-                </div>
+                <?php if ($post['community_name']): ?>
+                    <div class="mb-2">
+                        <a href="community_profile.php?name=<?php echo urlencode($post['community_name']); ?>" 
+                           class="text-decoration-none">
+                            <span class="badge bg-primary fs-6">
+                                <i class="bi bi-people-fill me-1"></i>
+                                <?php echo htmlspecialchars($post['community_name']); ?>
+                            </span>
+                        </a>
+                    </div>
+                <?php endif; ?>
+                
+                <h3><?php echo htmlspecialchars($post['title']); ?></h3>
                 
                 <!-- Post Meta -->
                 <p class="text-muted">
                     Posted by <a href="public_profile.php?UID=<?php echo htmlspecialchars($post['username']); ?>">
                         <?php echo htmlspecialchars($post['username']); ?></a>
+                    <?php if ($post['community_name']): ?>
+                        in <a href="community_profile.php?name=<?php echo urlencode($post['community_name']); ?>">
+                            <?php echo htmlspecialchars($post['community_name']); ?></a>
+                    <?php endif; ?>
                     on <?php echo date('M d, Y H:i', strtotime($post['created_at'])); ?>
                 </p>
                 

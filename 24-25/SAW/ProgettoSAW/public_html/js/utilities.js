@@ -17,6 +17,7 @@ function createPostHTML(post, options = {}) {
     if (!post) return '';
     
     const showAuthor = options.showAuthor !== false;
+    const showCommunity = options.showCommunity !== false;
     
     return `
         <div class="card mb-4">
@@ -26,13 +27,22 @@ function createPostHTML(post, options = {}) {
                         ${escapeHtml(post.title)}
                     </a>
                 </h5>
-                ${showAuthor ? `
-                    <h6 class="card-subtitle mb-2 text-muted">
-                        By <a href="public_profile.php?UID=${escapeHtml(post.username)}">
-                            ${escapeHtml(post.username)}
-                        </a>
-                    </h6>
-                ` : ''}
+                <div class="card-meta text-muted mb-2">
+                    ${showAuthor ? `
+                        <span>
+                            By <a href="public_profile.php?UID=${escapeHtml(post.username)}">
+                                ${escapeHtml(post.username)}
+                            </a>
+                        </span>
+                    ` : ''}
+                    ${showCommunity && post.community_name ? `
+                        <span class="ms-2">
+                            in <a href="community_profile.php?name=${encodeURIComponent(post.community_name)}">
+                                ${escapeHtml(post.community_name)}
+                            </a>
+                        </span>
+                    ` : ''}
+                </div>
                 <p class="card-text">${post.content.length > COMMENT_MAX_LENGTH 
                                 ? escapeHtml(post.content.substring(0, COMMENT_MAX_LENGTH)) + '...'
                                 : escapeHtml(post.content)}</p>

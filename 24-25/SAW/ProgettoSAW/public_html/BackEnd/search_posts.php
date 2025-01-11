@@ -24,14 +24,12 @@ $offset = $page * $limit;
 
 try {
     $stmt = $pdo->prepare("
-        SELECT p.*, u.username, u.firstname, u.lastname, 
-               (SELECT COUNT(*) FROM comments c WHERE c.post_id = p.id) AS comment_count
+        SELECT p.*, u.username, c.name as community_name,
+               (SELECT COUNT(*) FROM comments cm WHERE cm.post_id = p.id) AS comment_count
         FROM posts p
-        JOIN users u ON p.user_id = u.id 
-        WHERE p.title LIKE :term 
-        OR p.content LIKE :term
-        OR u.firstname LIKE :term
-        OR u.lastname LIKE :term
+        INNER JOIN users u ON p.user_id = u.id
+        LEFT JOIN community c ON p.community_id = c.id
+        WHERE p.title LIKE :term OR p.content LIKE :term
         ORDER BY p.created_at DESC
         LIMIT :limit OFFSET :offset
     ");

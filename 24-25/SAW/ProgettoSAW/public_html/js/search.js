@@ -6,6 +6,9 @@ const itemsPerPage = 10;
 const searchTerm = window.searchData.term;
 let noMoreUsers = false;
 let noMorePosts = false;
+let communitiesPage = 0;
+let loadingCommunities = false;
+let noMoreCommunities = false;
 
 // Tab switching
 $('.tab-button').on('click', function() {
@@ -20,7 +23,7 @@ $('.tab-button').on('click', function() {
     } else if ($(this).data('tab') === 'posts' && postsPage === 0) {
         loadPosts();
     } else if ($(this).data('tab') === 'communities') {
-        showUnderConstructionMessage();
+        loadCommunities();
     }
 });
 
@@ -95,7 +98,10 @@ function loadPosts() {
             }
 
             result.data.forEach(post => {
-                $container.append(createPostHTML(post)); // Using utility function
+                $container.append(createPostHTML(post, { 
+                    showAuthor: true,
+                    showCommunity: true 
+                })); 
             });
             postsPage++;
         },
@@ -106,6 +112,63 @@ function loadPosts() {
         complete: function() {
             loadingPosts = false;
             if (!noMorePosts) {
+                $spinner.addClass('d-none');
+            }
+        }
+    });
+}
+
+function loadCommunities() {
+    if (loadingCommunities || noMoreCommunities) return;
+    loadingCommunities = true;
+
+    const $spinner = $('#communities-loading');
+    const $container = $('#communities-container');
+    
+    $spinner.removeClass('d-none');
+    
+    $.ajax({
+        url: '../BackEnd/search_community.php',
+        method: 'GET',
+        data: {
+            search: searchTerm,
+            page: communitiesPage,
+            limit: itemsPerPage
+        },
+        success: function(result) {
+            if (!result.data || result.data.length === 0) {
+                noMoreCommunities = true;
+                if (communitiesPage === 0) {
+                    $container.html('<div class="alert alert-info">No communities found</div>');
+                }
+                $spinner.remove();
+                return;
+            }
+
+            result.data.forEach(community => {
+                $container.append(`
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="community_profile.php?name=${encodeURIComponent(community.name)}">
+                                    ${community.name}
+                                </a>
+                            </h5>
+                            <p class="card-text">${community.description || 'No description available'}</p>
+                            <p class="text-muted">${community.member_count} Members</p>
+                        </div>
+                    </div>
+                `);
+            });
+            communitiesPage++;
+        },
+        error: function(xhr, status, error) {
+            console.error('Error loading communities:', error);
+            $container.append('<div class="alert alert-danger">Failed to load communities. Please try refreshing the page.</div>');
+        },
+        complete: function() {
+            loadingCommunities = false;
+            if (!noMoreCommunities) {
                 $spinner.addClass('d-none');
             }
         }
@@ -129,12 +192,6 @@ function createUserHTML(user) {
     `;
 }
 
-/* Under Construction Message*/
-function showUnderConstructionMessage() {
-    const container = document.getElementById('communities-container');
-    container.innerHTML = '<div class="alert alert-warning text-center">🚧 We are sorry! This Feature is under construction, be patient 🚧</div>';
-}
-
 // Initial load for active tab
 $(document).ready(function() {
     loadUsers();
@@ -146,6 +203,8 @@ $(document).ready(function() {
                 loadUsers();
             } else if (activeTab === 'posts' && !noMorePosts) {
                 loadPosts();
+            } else if (activeTab === 'communities' && !noMoreCommunities) {
+                loadCommunities();
             }
         }
     });

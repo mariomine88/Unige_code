@@ -26,7 +26,7 @@ try {
     //echo "First Name: " . $user["firstname"] . "\n";
     //echo "Last Name: " . $user["lastname"] . "\n";
 
-    header("Location: ../pages/profile.php");
+    header("Location: ../pages/edit_profile.php");
     die();
 } catch (PDOException $e) {
     header("Location: ../pages/errors_pages/500.php");

@@ -27,7 +27,7 @@ CREATE TABLE password_resets (
 
 CREATE TABLE community (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
+    name VARCHAR(100) NOT NULL UNIQUE,
     description TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     member_count INT DEFAULT 0,

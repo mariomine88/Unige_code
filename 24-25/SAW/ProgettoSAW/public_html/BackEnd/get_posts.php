@@ -14,25 +14,43 @@ $page = isset($_GET['page']) ? (int)$_GET['page'] : 0;
 $limit = isset($_GET['limit']) ? (int)$_GET['limit'] : 10;
 $offset = $page * $limit;
 $specific_user_id = $_GET['user_id'] ?? null;
+$community_id = $_GET['community_id'] ?? null;
 
 try {
     if ($specific_user_id) {
         // Query for specific user's posts
         $stmt = $pdo->prepare("
-            SELECT p.*, u.username, (SELECT COUNT(*) FROM comments c WHERE c.post_id = p.id) AS comment_count
+            SELECT p.*, u.username, c.name as community_name,
+                   (SELECT COUNT(*) FROM comments cm WHERE cm.post_id = p.id) AS comment_count
             FROM posts p
             INNER JOIN users u ON p.user_id = u.id
+            LEFT JOIN community c ON p.community_id = c.id
             WHERE p.user_id = :specific_user_id 
             ORDER BY p.created_at DESC 
             LIMIT :limit OFFSET :offset
         ");
         $stmt->bindValue(':specific_user_id', $specific_user_id, PDO::PARAM_INT);
+    } elseif ($community_id) {
+        // Query for community posts
+        $stmt = $pdo->prepare("
+            SELECT p.*, u.username, c.name as community_name,
+                   (SELECT COUNT(*) FROM comments cm WHERE cm.post_id = p.id) AS comment_count
+            FROM posts p
+            INNER JOIN users u ON p.user_id = u.id
+            LEFT JOIN community c ON p.community_id = c.id
+            WHERE p.community_id = :community_id
+            ORDER BY p.created_at DESC 
+            LIMIT :limit OFFSET :offset
+        ");
+        $stmt->bindValue(':community_id', $community_id, PDO::PARAM_INT);
     } else {
         // Query for feed posts
         $stmt = $pdo->prepare("
-            SELECT DISTINCT p.*, u.username, (SELECT COUNT(*) FROM comments c WHERE c.post_id = p.id) AS comment_count 
+            SELECT DISTINCT p.*, u.username, c.name as community_name,
+                   (SELECT COUNT(*) FROM comments cm WHERE cm.post_id = p.id) AS comment_count 
             FROM posts p
             INNER JOIN users u ON p.user_id = u.id
+            LEFT JOIN community c ON p.community_id = c.id
             INNER JOIN follows f ON f.followed_id = p.user_id
             WHERE f.follower_id = :user_id 
             AND p.user_id != :user_id

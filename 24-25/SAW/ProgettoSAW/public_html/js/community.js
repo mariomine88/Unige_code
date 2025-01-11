@@ -1,33 +1,33 @@
 $(document).ready(function() {
-    $('#followButton').on('click', handleFollowAction);
-    loadUserPosts();
+    $('#joinButton').on('click', handleMembershipAction);
+    loadCommunityPosts();
     
     $(window).scroll(function() {
         if ($(window).scrollTop() + $(window).height() > $(document).height() - 1000) {
-            loadUserPosts();
+            loadCommunityPosts();
         }
     });
 });
 
-function handleFollowAction() {
-    const $button = $('#followButton');
-    const action = $button.text().trim() === 'Follow' ? 'follow' : 'unfollow';
+function handleMembershipAction() {
+    const $button = $('#joinButton');
+    const action = $button.text().trim() === 'Join Community' ? 'join' : 'leave';
     
     $.ajax({
-        url: '../BackEnd/follow_handler.php',
+        url: '../BackEnd/follow_handler.php', 
         method: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({
-            userId: window.userData.userId,
+            communityId: window.communityData.id,
             action: action
         }),
         success: function(response) {
             if (response.success) {
-                if (action === 'follow') {
-                    $button.text('Unfollow');
+                if (action === 'join') {
+                    $button.text('Leave Community');
                     $button.removeClass('btn-primary').addClass('btn-secondary');
                 } else {
-                    $button.text('Follow');
+                    $button.text('Join Community');
                     $button.removeClass('btn-secondary').addClass('btn-primary');
                 }
             }
@@ -42,7 +42,7 @@ let page = 0;
 let loading = false;
 const postsPerPage = 10;
 
-function loadUserPosts() {
+function loadCommunityPosts() {
     if (loading) return;
     loading = true;
 
@@ -57,24 +57,25 @@ function loadUserPosts() {
         url: '../BackEnd/get_posts.php',
         method: 'GET',
         data: {
-            user_id: window.userData.userId,
+            community_id: window.communityData.id,
             page: page,
             limit: postsPerPage
         },
         success: function(result) {
             if (!result.data || result.data.length === 0) {
                 if (page === 0) {
-                    $container.html('<p class="text-muted">No posts found.</p>');
+                    $container.html('<p class="text-muted">No posts in this community yet.</p>');
                 }
                 $spinner.remove();
                 return;
             }
 
             result.data.forEach(post => {
-                $container.append(createPostHTML(post, { 
-                    showAuthor: false,
-                    showCommunity: true 
-                }));
+                const postHTML = createPostHTML(post, {
+                    showAuthor: true,
+                    showCommunity: false, 
+                });
+                $container.append(postHTML);
             });
             page++;
         },
@@ -82,7 +83,7 @@ function loadUserPosts() {
             console.error('Error loading posts:', error);
             $container.append(`
                 <div class="alert alert-danger">
-                    Failed to load posts. Please try refreshing the page.
+                    Failed to load community posts. Please try refreshing the page.
                 </div>`);
         },
         complete: function() {
@@ -93,5 +94,4 @@ function loadUserPosts() {
         }
     });
 }
-
 

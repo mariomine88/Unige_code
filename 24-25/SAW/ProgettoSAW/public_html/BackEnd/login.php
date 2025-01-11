@@ -74,7 +74,8 @@ try {
     session_regenerate_id();
     $_SESSION["user_id"] = $user["id"];
     $_SESSION["user_username"] = $user["username"];
-
+    $_SESSION["is_admin"] = $user["is_admin"];
+    
     // Handle remember me
     if (isset($_POST["remember"])) {
         setRememberMeCookie($user["id"], $pdo);

@@ -77,7 +77,7 @@ try {
             "email" => $email,
             "username" => $username
         ];
-        header("Location: ../pages/profile.php");
+        header("Location: ../pages/edit_profile.php");
         die();
     }
 

@@ -27,10 +27,18 @@
         <!-- Navigation Items -->
         <div class="d-flex align-items-center">
             <?php if (isset($_SESSION["user_username"])) : ?>
-                <a href="create_post.php" class="btn btn-primary btn-sm me-2" aria-label="Create Post">
+                <a href="create_post.php<?php echo isset($community['name']) ? '?community_name=' . urlencode($community['name']) : ''; ?>" 
+                   class="btn btn-primary btn-sm me-2" 
+                   aria-label="Create Post">
                     <i class="bi bi-plus-lg"></i>
                     <span class="d-none d-md-inline">Create Post</span>
                 </a>
+                <?php if(isset($_SESSION["is_admin"]) && $_SESSION["is_admin"]): ?>
+                    <a href="create_community.php" class="btn btn-primary btn-sm me-2" aria-label="Create Community">
+                        <i class="bi bi-plus-lg"></i>
+                        <span class="d-none d-md-inline">Create Community</span>
+                    </a>
+                <?php endif; ?>
                 <div class="dropdown">
                     <button class="btn btn-dark profile-btn d-flex align-items-center justify-content-center" type="button" data-bs-toggle="dropdown" aria-label="Profile Menu">
                         <i class="bi bi-person-circle"></i>

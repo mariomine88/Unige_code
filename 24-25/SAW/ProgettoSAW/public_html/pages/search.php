@@ -50,6 +50,11 @@ $searchTerm = $_GET['search'] ?? '';
         <!-- Communities Tab -->
         <div class="tab" id="communities">
             <div id="communities-container"></div>
+            <div id="communities-loading" class="text-center d-none">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
         </div>
     </div>
 
