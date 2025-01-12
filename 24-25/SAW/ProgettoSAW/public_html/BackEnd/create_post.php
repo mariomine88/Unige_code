@@ -46,7 +46,7 @@ try {
         ':content' => $content
     ]);
 
-    header("Location: ../pages/feed.php");
+    header("Location: ../pages/post.php?id=" . $pdo->lastInsertId());
     exit();
 } catch (PDOException $e) {
     $_SESSION["errors"]["post"] = "Something went wrong. Please try again.";

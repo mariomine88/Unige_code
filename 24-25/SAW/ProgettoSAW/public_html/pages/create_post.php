@@ -38,6 +38,7 @@ if ($community_name) {
                         <h2>Create New Post</h2>
                     </div>
                     <div class="card-body">
+                        <?php include '../include/messages.php'; ?>
                         <form action="../BackEnd/create_post.php" method="post" id="createPostForm">
                             <div class="form-group">
                                 <label for="title">Title</label>

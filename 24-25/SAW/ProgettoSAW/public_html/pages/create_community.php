@@ -27,6 +27,7 @@ if ($_SESSION["is_admin"] == 0) {
                         <h2>Create New Community</h2>
                     </div>
                     <div class="card-body">
+                        <?php include '../include/messages.php'; ?>
                         <form action="../BackEnd/create_community.php" method="post">
                             <div class="form-group">
                                 <label for="name">Community Name</label>

@@ -29,7 +29,7 @@ if (!isset($_SESSION['user_id']) && isset($_COOKIE['remember_me'])) {
     try {
         require_once '../../dbh.php';
         
-        $query = "SELECT auth_tokens.*, users.username FROM auth_tokens 
+        $query = "SELECT auth_tokens.*, users.username users.is_admin FROM auth_tokens 
                   JOIN users ON auth_tokens.user_id = users.id 
                   WHERE auth_tokens.selector = :selector AND auth_tokens.expires > NOW()";
         $stmt = $pdo->prepare($query);
@@ -40,6 +40,7 @@ if (!isset($_SESSION['user_id']) && isset($_COOKIE['remember_me'])) {
             if (password_verify($token, $auth['token'])) {
                 $_SESSION['user_id'] = $auth['user_id'];
                 $_SESSION['user_username'] = $auth['username'];
+                $_SESSION['is_admin'] = $auth['is_admin'];
             }
         }
     } catch (PDOException $e) {
