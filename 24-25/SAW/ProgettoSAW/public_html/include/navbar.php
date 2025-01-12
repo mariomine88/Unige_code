@@ -35,7 +35,7 @@
                 </a>
                 <?php if(isset($_SESSION["is_admin"]) && $_SESSION["is_admin"]): ?>
                     <a href="create_community.php" class="btn btn-primary btn-sm me-2" aria-label="Create Community">
-                        <i class="bi bi-plus-lg"></i>
+                        <i class="bi bi-people-fill"></i>
                         <span class="d-none d-md-inline">Create Community</span>
                     </a>
                 <?php endif; ?>

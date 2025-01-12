@@ -47,8 +47,8 @@ try {
         ':name' => $name,
         ':description' => $description
     ]);
-
-    header("Location: ../pages/communities.php");
+    //redirect to the community profile after creating it successfully
+    header("Location: ../pages/community_profile.php?name=" . urlencode($name));
     exit();
 } catch (PDOException $e) {
     if ($e->getCode() == 23000) { // Duplicate entry error

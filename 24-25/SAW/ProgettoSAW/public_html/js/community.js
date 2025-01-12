@@ -64,7 +64,7 @@ function loadCommunityPosts() {
         success: function(result) {
             if (!result.data || result.data.length === 0) {
                 if (page === 0) {
-                    $container.html('<p class="text-muted">No posts in this community yet.</p>');
+                    $container.html('<p class="text-muted">No posts yet!</p>');
                 }
                 $spinner.remove();
                 return;
