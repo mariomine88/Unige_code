@@ -111,8 +111,8 @@ try {
                         placeholder="Write a comment..." required maxlength="65535" id="commentText"></textarea>
                     <small class="text-muted">Characters remaining: <span id="commentCount">65535</span></small>
                 </div>
-                <button type="submit" class="btn btn-primary mt-2">Add Comment
-                <i class="bi bi-chat"></i>
+                <button type="submit" class="btn btn-primary mt-2">
+                <i class="bi bi-chat"></i>Add Comment
                 </button>
             </form>
 
