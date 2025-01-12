@@ -112,7 +112,7 @@ try {
                     <small class="text-muted">Characters remaining: <span id="commentCount">65535</span></small>
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">
-                <i class="bi bi-chat"></i>Add Comment
+                <i class="bi bi-chat"></i> Comment
                 </button>
             </form>
 
