@@ -7,9 +7,13 @@ if (!isset($_SESSION["user_id"])) {
     exit();
 }
 
-// Check if user follows anyone
-$stmt = $pdo->prepare("SELECT COUNT(*) FROM follows WHERE follower_id = ?");
-$stmt->execute([$_SESSION["user_id"]]);
+// Check if user follows anyone or any community
+$stmt = $pdo->prepare("
+    SELECT 
+        (SELECT COUNT(*) FROM follows WHERE follower_id = ?) +
+        (SELECT COUNT(*) FROM community_members WHERE follower_id = ?)
+");
+$stmt->execute([$_SESSION["user_id"], $_SESSION["user_id"]]);
 $followCount = $stmt->fetchColumn();
 ?>
 <!DOCTYPE html>

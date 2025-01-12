@@ -92,21 +92,21 @@ export function initComments(postId) {
     const commentOrder = document.getElementById('commentOrder');
     const commentsContainer = document.getElementById('comments-container');
     
-    // Add event delegation for comment likes
+    // Handle like button clicks
     commentsContainer.addEventListener('click', (e) => {
         const likeBtn = e.target.closest('.comment-like-btn');
         if (likeBtn) {
             const commentDiv = likeBtn.closest('.comment');
             if (commentDiv) {
                 const commentId = commentDiv.dataset.commentId;
-                // Force string to boolean conversion for data-liked attribute
+
                 likeBtn.setAttribute('data-liked', likeBtn.getAttribute('data-liked') === 'true');
                 handleLike(commentId, 'comment', likeBtn);
             }
         }
     });
 
-    // Update scroll handling to match feed.js style
+    // Load more comments when scrolling
     $(window).scroll(function() {
         if ($(window).scrollTop() + $(window).height() > $(document).height() - 1000) {
             loadComments(postId, commentOrder.value);
