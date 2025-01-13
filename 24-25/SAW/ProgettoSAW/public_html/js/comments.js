@@ -52,40 +52,48 @@ async function loadComments(postId, order = 'DESC', reset = false) {
         $spinner.removeClass('d-none');
     }
 
-    try {
-        const response = await fetch(`../BackEnd/get_comments.php?post_id=${postId}&page=${page}&order=${order}`);
-        const result = await response.json();
-        
-        const commentsContainer = document.getElementById('comments-container');
-        
-        if (!result.data || result.data.length === 0) {
-            if (page === 0) {
-                commentsContainer.innerHTML = '<p class="text-muted">No comments yet.</p>';
+    $.ajax({
+        url: '../BackEnd/get_comments.php',
+        method: 'GET',
+        data: {
+            post_id: postId,
+            page: page,
+            order: order
+        },
+        success: function(result) {
+            const commentsContainer = document.getElementById('comments-container');
+            
+            if (!result.data || result.data.length === 0) {
+                if (page === 0) {
+                    commentsContainer.innerHTML = '<p class="text-muted">No comments yet.</p>';
+                }
+                if ($spinner.length) {
+                    $spinner.remove();
+                }
+                return;
             }
-            if ($spinner.length) {
-                $spinner.remove();
-            }
-            return;
-        }
 
-        result.data.forEach(comment => {
-            commentsContainer.insertAdjacentHTML('beforeend', createCommentHTML(comment));
-        });
-        
-        page++;
-    } catch (error) {
-        console.error('Error loading comments:', error);
-        const commentsContainer = document.getElementById('comments-container');
-        commentsContainer.insertAdjacentHTML('beforeend', `
-            <div class="alert alert-danger">
-                Failed to load comments. Please try refreshing the page.
-            </div>`);
-    } finally {
-        loading = false;
-        if ($spinner.length) {
-            $spinner.addClass('d-none');
+            result.data.forEach(comment => {
+                commentsContainer.insertAdjacentHTML('beforeend', createCommentHTML(comment));
+            });
+            
+            page++;
+        },
+        error: function(xhr, status, error) {
+            console.error('Error loading comments:', error);
+            const commentsContainer = document.getElementById('comments-container');
+            commentsContainer.insertAdjacentHTML('beforeend', `
+                <div class="alert alert-danger">
+                    Failed to load comments. Please try refreshing the page.
+                </div>`);
+        },
+        complete: function() {
+            loading = false;
+            if ($spinner.length) {
+                $spinner.addClass('d-none');
+            }
         }
-    }
+    });
 }
 
 export function initComments(postId) {
@@ -127,40 +135,39 @@ document.addEventListener('DOMContentLoaded', function() {
     const commentsContainer = document.getElementById('comments-container');
     const loadingSpinner = document.getElementById('comments-loading-spinner');
 
-    commentForm.addEventListener('submit', async function(e) {
+    commentForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
         const formData = new FormData(this);
         formData.append('post_id', postData.postId);
 
-        try {
-            const response = await fetch('../BackEnd/add_comment.php', {
-                method: 'POST',
-                body: formData
-            });
-
-            const data = await response.json();
-
-            if (data.success) {
-                showAlert('success', 'Comment added successfully!');
-                commentForm.reset();
-                
-                // Reset comments container and page counter
-                document.getElementById('comments-container').innerHTML = '';
-                page = 0;
-                
-                // Get current sort order
-                const currentOrder = document.getElementById('commentOrder').value;
-                
-                // Reload comments with current sort order
-                await loadComments(postData.postId, currentOrder, true);
-            } else {
-                showAlert('danger', data.message || 'Error adding comment');
+        $.ajax({
+            url: '../BackEnd/add_comment.php',
+            method: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false, 
+            success: function(data) {
+                if (data.success) {
+                    showAlert('success', 'Comment added successfully!');
+                    commentForm.reset();
+                    
+                    // Reset comments container and page counter
+                    document.getElementById('comments-container').innerHTML = '';
+                    page = 0;
+                    
+                    // Get current sort order
+                    const currentOrder = document.getElementById('commentOrder').value;
+                    
+                    // Reload comments with current sort order
+                    loadComments(postData.postId, currentOrder, true);
+                } else {
+                    showAlert('danger', data.message || 'Error adding comment');
+                }
+            },
+            error: function(xhr, status, error) {
+                showAlert('danger', 'An error occurred while adding the comment');
             }
-        } catch (error) {
-            showAlert('danger', 'An error occurred while adding the comment');
-        }
+        });
     });
-
-
 });
