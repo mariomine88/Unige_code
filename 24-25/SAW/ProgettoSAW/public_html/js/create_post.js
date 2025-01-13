@@ -41,7 +41,7 @@ $(document).ready(function() {
             $.ajax({
                 url: '../BackEnd/search_community.php',
                 method: 'GET',
-                data: { query: query },
+                data: { search: query},
                 success: function(response) {
                     if (response.success && response.data.length > 0) {
                         $communityResults.removeClass('d-none').html(
