@@ -26,7 +26,8 @@ function setRememberMeCookie($userId, $pdo) {
             'path' => '/~s5577783/',
             'domain' => 'saw.dibris.unige.it',
             'secure' => true,
-            'httponly' => true
+            'httponly' => true,
+            'samesite' => 'Strict'
         ]
     );
 }
