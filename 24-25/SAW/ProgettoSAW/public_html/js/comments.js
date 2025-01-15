@@ -95,7 +95,7 @@ async function loadComments(postId, order = 'DESC', reset = false) {
         }
     });
 }
-
+//comment section for a specific post
 export function initComments(postId) {
     const commentOrder = document.getElementById('commentOrder');
     const commentsContainer = document.getElementById('comments-container');

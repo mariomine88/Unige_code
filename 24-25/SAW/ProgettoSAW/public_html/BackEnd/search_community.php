@@ -2,7 +2,7 @@
 require_once 'config_session.php';
 require_once '../../dbh.php';
 
-// Check if accessed directly via URL
+// Check if accessed directly via URL using AJAX
 if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
     http_response_code(403);
     echo json_encode(['error' => 'Direct access not allowed']);

@@ -78,6 +78,7 @@ function checkExistingUser($pdo, $email, $username, $exclude_id = null) {
     }
     $stmt->execute();
     
+
     if ($stmt->rowCount() > 0) {
         $errors["username_taken"] = "Username already exists!";
     }

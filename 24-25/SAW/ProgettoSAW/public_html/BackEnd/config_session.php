@@ -12,7 +12,7 @@ session_set_cookie_params([
 ]);
 
 session_start();
-session_regenerate_id();
+session_regenerate_id(); //periodically changing the session ID prevents session fixation attacks
 
 if (!isset($_SESSION['last_regenerate'])) {
     $_SESSION['last_regenerate'] = time();

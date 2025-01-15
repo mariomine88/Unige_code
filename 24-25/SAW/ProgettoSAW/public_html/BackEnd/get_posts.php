@@ -10,7 +10,7 @@ if (!isset($_SESSION["user_id"])) {
     exit();
 }
 
-$page = isset($_GET['page']) ? (int)$_GET['page'] : 0;
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 0; //basically if page is not set, default to 0,else cast to int the 'page'
 $limit = isset($_GET['limit']) ? (int)$_GET['limit'] : 10;
 $offset = $page * $limit;
 $specific_user_id = $_GET['user_id'] ?? null;

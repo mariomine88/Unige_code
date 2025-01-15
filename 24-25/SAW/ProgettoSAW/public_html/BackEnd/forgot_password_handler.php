@@ -37,7 +37,7 @@ try {
     $token = bin2hex(random_bytes(32)); // 32 bytes = 256 bits = 64 hex characters
     $expires = date('Y-m-d H:i:s', strtotime('+1 hour'));
 
-    $pdo->beginTransaction();
+    $pdo->beginTransaction(); //transactions are a group of statements executed as a single thing on the db
     
     // Remove old tokens
     $stmt = $pdo->prepare("DELETE FROM password_resets WHERE email = :email");
