@@ -1,0 +1,1071 @@
+,id,title,show_type,release_year,age_certification,runtime,genres,production_countries,seasons,imdb_id,imdb_score,imdb_votes,tmdb_popularity,tmdb_score,director,country,from,rating,duration
+0,tm61729,The Adventures of Ichabod and Mr. Toad,MOVIE,1950,G,68,"['horror', 'fantasy', 'animation', 'comedy', 'family']",['US'],,tt0041094,6.9,16497.0,20.116,6.5,"Jack Kinney, Clyde Geronimi, James Algar",United States,"November 12, 2019",G,69 min
+1,tm61052,Cinderella,MOVIE,1950,G,74,"['fantasy', 'animation', 'family', 'romance']",['US'],,tt0042332,7.3,164222.0,93.547,7.035,"Wilfred Jackson, Hamilton Luske, Clyde Geronimi",United States,"November 12, 2019",G,77 min
+2,tm190870,Cinderella,MOVIE,1997,G,88,"['romance', 'family', 'fantasy']",['US'],,tt0128996,6.7,8944.0,9.493,6.4,"Wilfred Jackson, Hamilton Luske, Clyde Geronimi",United States,"November 12, 2019",G,77 min
+3,tm87946,Dumbo,MOVIE,1941,G,64,"['animation', 'drama', 'family', 'fantasy']",['US'],,tt0033563,7.2,134997.0,54.265,6.999,Tim Burton,"United States, United Kingdom, Australia, Canada","November 12, 2019",PG,117 min
+4,tm207119,Dumbo,MOVIE,2019,PG,112,"['family', 'fantasy', 'action']","['GB', 'US']",,tt3861390,6.3,73010.0,23.271,6.661,Tim Burton,"United States, United Kingdom, Australia, Canada","November 12, 2019",PG,117 min
+5,tm74391,Fantasia,MOVIE,1941,G,119,"['animation', 'fantasy', 'music', 'family']",['US'],,tt0032455,7.7,98737.0,43.609,7.382,"Samuel Armstrong, James Algar, Bill Roberts",United States,"November 12, 2019",G,126 min
+6,tm79357,Bambi,MOVIE,1942,G,70,"['animation', 'drama', 'family']",['US'],,tt0034492,7.3,146219.0,62.71,7.004,David Hand,United States,"November 12, 2019",G,72 min
+7,tm165060,The Tortoise and the Hare,MOVIE,1935,,9,"['animation', 'documentation']",['US'],,,,,9.286,6.686,Wilfred Jackson,United States,"November 12, 2019",TV-G,9 min
+8,tm8579,Ferdinand the Bull,MOVIE,1938,G,8,['comedy'],['US'],,,,,16.0,6.567,Dick Rickard,United States,"November 12, 2019",TV-G,8 min
+9,tm67239,Lonesome Ghosts,MOVIE,1937,,9,['comedy'],['US'],,,,,5.929,6.733,Burt Gillett,United States,"November 12, 2019",TV-Y7,9 min
+10,tm62671,Treasure Island,MOVIE,1950,,96,"['action', 'family']","['GB', 'US']",,tt0043067,6.9,8764.0,8.872,6.5,Byron Haskin,"United Kingdom, United States","November 12, 2019",PG,96 min
+11,tm82546,Pinocchio,MOVIE,1940,G,88,"['animation', 'comedy', 'family', 'fantasy']",['US'],,tt0032910,7.5,150947.0,44.545,7.1,"Ben Sharpsteen, Hamilton Luske",United States,"November 12, 2019",G,90 min
+12,tm1097000,Pinocchio,MOVIE,2022,PG,105,"['fantasy', 'romance', 'animation', 'comedy', 'drama', 'family']",['US'],,tt4593060,5.0,37171.0,129.313,6.549,"Ben Sharpsteen, Hamilton Luske",United States,"November 12, 2019",G,90 min
+13,tm87968,Early to Bed,MOVIE,1941,,8,['animation'],['US'],,,,,4.764,6.713,Jack Kinney,United States,"November 12, 2019",TV-G,9 min
+14,tm89831,Fun and Fancy Free,MOVIE,1948,G,73,"['family', 'music', 'animation', 'fantasy', 'romance', 'comedy']",['US'],,tt0039404,6.4,8679.0,16.388,6.377,"Jack Kinney, W. Roberts, Hamilton Luske",United States,"November 12, 2019",G,74 min
+15,tm77826,The Reluctant Dragon,MOVIE,1941,G,74,"['animation', 'comedy', 'family']",['US'],,tt0034091,6.8,3511.0,8.551,6.7,Alfred Werker,United States,"November 12, 2019",G,74 min
+16,tm77407,Saludos Amigos,MOVIE,1943,,41,"['animation', 'comedy', 'family', 'fantasy']",['US'],,tt0036326,6.1,6506.0,17.547,5.9,"Bill Roberts, Jack Kinney, Ham Luske",United States,"November 12, 2019",TV-PG,42 min
+17,tm4623,The Three Caballeros,MOVIE,1945,G,72,"['animation', 'comedy', 'family', 'fantasy']",['US'],,tt0038166,6.3,14630.0,14.862,6.341,"Norman Ferguson, Clyde Geronimi, Jack Kinney",United States,"November 12, 2019",G,72 min
+18,tm134279,Three Little Pigs,MOVIE,1933,,8,['comedy'],['US'],,,,,10.231,6.846,Burt Gillett,United States,"November 12, 2019",TV-Y7,9 min
+19,tm3616,Steamboat Willie,MOVIE,1928,G,7,['animation'],['US'],,,,,10.068,7.3,"Walt Disney, Ub Iwerks",United States,"November 12, 2019",TV-Y7,8 min
+20,tm100567,The Big Bad Wolf,MOVIE,1934,,9,['animation'],['US'],,,,,10.014,6.5,Burt Gillett,United States,"November 12, 2019",TV-Y7,9 min
+21,tm5822,Melody Time,MOVIE,1948,,75,"['comedy', 'family', 'music', 'animation']",['US'],,tt0040580,6.2,6392.0,9.826,6.3,"Clyde Geronimi, Jack Kinney, Hamilton Luske",United States,"November 12, 2019",TV-PG,76 min
+22,tm8026,Mickey's Trailer,MOVIE,1938,,7,['comedy'],['US'],,,,,9.619,7.32,Ben Sharpsteen,United States,"November 12, 2019",TV-PG,8 min
+23,tm165357,The Band Concert,MOVIE,1935,,9,['comedy'],['US'],,,,,9.226,7.208,"Wilfred Jackson, Walt Disney",United States,"November 12, 2019",TV-Y7,10 min
+24,tm4844,Santa's Workshop,MOVIE,1932,,7,['animation'],['US'],,,,,8.984,6.568,Wilfred Jackson,United States,"November 12, 2019",TV-G,7 min
+25,tm63024,The Old Mill,MOVIE,1937,,9,"['animation', 'thriller', 'family']",['US'],,,,,8.27,7.4,Wilfred Jackson,United States,"November 12, 2019",TV-Y7,9 min
+26,tm4759,Flowers and Trees,MOVIE,1932,,8,['animation'],['US'],,,,,8.141,6.7,Burt Gillett,United States,"November 12, 2019",TV-Y7,8 min
+27,tm330224,The Ugly Duckling,MOVIE,1939,,9,['animation'],['US'],,,,,7.03,6.952,Jack Cutting,United States,"November 12, 2019",TV-Y7,9 min
+28,tm137537,The Pied Piper,MOVIE,1933,,8,['animation'],['US'],,,,,6.728,6.128,Wilfred Jackson,United States,"November 12, 2019",TV-G,8 min
+29,tm64663,Clock Cleaners,MOVIE,1937,,9,['animation'],['US'],,,,,6.541,7.0,Ben Sharpsteen,United States,"November 12, 2019",TV-G,9 min
+30,tm161054,Beach Picnic,MOVIE,1939,,8,['animation'],['US'],,,,,6.398,6.3,Clyde Geronimi,United States,"November 12, 2019",TV-G,9 min
+31,tm160483,Society Dog Show,MOVIE,1939,,8,['comedy'],['US'],,,,,6.186,6.341,Bill Roberts,United States,"November 12, 2019",TV-G,9 min
+32,tm7516,Brave Little Tailor,MOVIE,1938,,9,"['fantasy', 'animation']",['US'],,,,,6.123,6.952,Bill Roberts,United States,"October 1, 2019",TV-PG,9 min
+33,tm87845,Lend a Paw,MOVIE,1941,G,8,"['animation', 'family']",['US'],,,,,5.994,6.8,Clyde Geronimi,United States,"November 12, 2019",TV-Y7,8 min
+34,tm7478,Boat Builders,MOVIE,1938,,7,['animation'],['US'],,,,,5.913,7.0,Ben Sharpsteen,United States,"November 12, 2019",TV-G,8 min
+35,tm76217,Mr. Mouse Takes a Trip,MOVIE,1940,,8,['comedy'],['US'],,,,,5.622,6.563,Clyde Geronimi,United States,"November 12, 2019",TV-G,8 min
+36,tm74440,Mickey's Birthday Party,MOVIE,1942,,8,['comedy'],['US'],,,,,5.611,6.158,Riley Thomson,United States,"November 12, 2019",TV-G,9 min
+37,tm71199,How to Fish,MOVIE,1942,,7,"['animation', 'comedy', 'family']",['US'],,,,,5.584,6.5,Jack Kinney,United States,"November 12, 2019",TV-G,7 min
+38,tm78018,Chef Donald,MOVIE,1941,,7,['animation'],['US'],,,,,5.578,6.81,Jack King,United States,"November 12, 2019",TV-G,8 min
+39,tm97393,The Wise Little Hen,MOVIE,1934,,8,['animation'],['US'],,,,,5.506,6.4,Wilfred Jackson,United States,"November 12, 2019",TV-G,8 min
+40,tm112317,Three Blind Mouseketeers,MOVIE,1936,,9,['animation'],['US'],,,,,5.468,6.583,Dave Hand,United States,"November 12, 2019",TV-Y7,9 min
+41,tm160443,On Ice,MOVIE,1935,,8,['animation'],['US'],,,,,5.422,6.636,Ben Sharpsteen,United States,"April 3, 2020",TV-G,9 min
+42,tm94578,Chip an' Dale,MOVIE,1947,,7,"['animation', 'family']",['US'],,,,,5.184,6.7,Jack Hannah,United States,"November 12, 2019",TV-G,7 min
+43,tm82574,The Little Whirlwind,MOVIE,1941,,8,['comedy'],['US'],,,,,5.15,6.25,Riley Thomas,United States,"November 12, 2019",TV-Y7,9 min
+44,tm161340,The Golden Touch,MOVIE,1935,,10,['comedy'],['US'],,,,,5.054,6.464,Walt Disney,United States,"November 12, 2019",TV-Y7,11 min
+45,tm78040,Canine Caddy,MOVIE,1941,,7,['animation'],['US'],,,,,4.873,6.7,Clyde Geronimi,United States,"November 12, 2019",TV-G,8 min
+46,tm110541,Mickey's Rival,MOVIE,1936,,8,"['romance', 'animation']",['US'],,,,,4.781,6.25,"Wilfred Jackson, Walt Disney",United States,"November 12, 2019",TV-G,9 min
+47,tm112420,Three Little Wolves,MOVIE,1936,,9,['animation'],['US'],,,,,4.722,6.7,Dave Hand,United States,"November 12, 2019",TV-Y7,9 min
+48,tm71616,How to Swim,MOVIE,1942,,8,['animation'],['US'],,,,,4.677,6.7,Jack Kinney,United States,"November 12, 2019",TV-G,8 min
+49,tm8162,Donald's Golf Game,MOVIE,1938,,8,['animation'],['US'],,,,,4.631,6.012,Jack King,United States,"November 12, 2019",TV-G,8 min
+50,tm3021,Babes in the Woods,MOVIE,1932,,8,['animation'],['US'],,,,,4.581,6.0,Burt Gillett,United States,"November 12, 2019",TV-Y7,8 min
+51,tm113865,Donald's Tire Trouble,MOVIE,1943,,7,['comedy'],['US'],,,,,4.442,6.35,Dick Lundy,United States,"November 12, 2019",TV-G,8 min
+52,tm62513,All in a Nutshell,MOVIE,1949,,7,['animation'],['US'],,,,,4.423,6.81,Jack Hannah,United States,"April 3, 2020",TV-G,7 min
+53,tm75668,Mr. Duck Steps Out,MOVIE,1940,,8,['animation'],['US'],,,,,4.381,6.4,Jack King,United States,"November 12, 2019",TV-G,9 min
+54,tm116154,Toby Tortoise Returns,MOVIE,1936,,7,['animation'],['US'],,,,,4.366,6.1,Wilfred Jackson,United States,"November 12, 2019",TV-Y7,8 min
+55,tm63504,Trailer Horn,MOVIE,1950,G,6,['animation'],['US'],,,,,4.361,6.429,Jack Hannah,United States,"November 12, 2019",TV-G,7 min
+56,tm84573,The Art of Skiing,MOVIE,1941,,8,['comedy'],['US'],,,,,4.167,7.0,Jack Kinney,United States,"November 12, 2019",TV-G,8 min
+57,tm64710,Pluto's Sweater,MOVIE,1949,,7,['animation'],['US'],,,,,4.157,7.0,Charles Nichols,United States,"November 12, 2019",TV-G,7 min
+58,tm1454,A Knight for a Day,MOVIE,1946,,7,['animation'],['US'],,,,,4.132,6.6,Jack Hannah,United States,"November 12, 2019",TV-G,7 min
+59,tm7466,Mickey and the Seal,MOVIE,1948,,7,['comedy'],['US'],,,,,4.112,6.789,Charles Nichols,United States,"May 29, 2020",TV-G,7 min
+60,tm65604,Hawaiian Holiday,MOVIE,1937,G,8,['animation'],['US'],,,,,4.05,6.559,Ben Sharpsteen,United States,"November 12, 2019",TV-G,9 min
+61,tm65788,Food for Feudin',MOVIE,1950,,7,['animation'],['US'],,,,,4.021,6.34,Charles Nichols,United States,"November 12, 2019",TV-G,7 min
+62,tm63613,Pluto and the Gopher,MOVIE,1950,,7,['animation'],['US'],,,,,3.924,6.7,Charles Nichols,United States,"November 12, 2019",TV-PG,7 min
+63,tm72295,The Olympic Champ,MOVIE,1942,,7,['comedy'],['US'],,,,,3.861,6.61,Jack Kinney,United States,"November 12, 2019",TV-G,7 min
+64,tm141685,Ye Olden Days,MOVIE,1933,,8,['animation'],['US'],,,,,3.839,6.2,Bert Gillett,United States,"November 12, 2019",TV-Y7,9 min
+65,tm74410,Tugboat Mickey,MOVIE,1940,,7,['animation'],['US'],,,,,3.785,6.22,Clyde Geronimi,United States,"November 12, 2019",TV-G,8 min
+66,tm67092,Winter Storage,MOVIE,1949,,7,['animation'],['US'],,,,,3.778,6.8,Jack Hannah,United States,"November 12, 2019",TV-G,7 min
+67,tm76325,Donald's Dog Laundry,MOVIE,1940,,8,['animation'],['US'],,,,,3.759,6.283,Jack King,United States,"April 3, 2020",TV-G,9 min
+68,tm91651,Double Dribble,MOVIE,1946,,7,['animation'],['US'],,,,,3.538,6.3,Jack Hannah,United States,"April 3, 2020",TV-G,8 min
+69,tm80290,Swiss Family Robinson,MOVIE,1940,,93,"['action', 'family']",['US'],,tt0033124,6.4,713.0,3.254,5.4,Edward Ludwig,United States,"November 12, 2019",PG,94 min
+70,tm58193,Swiss Family Robinson,MOVIE,1960,G,126,"['action', 'family']",['US'],,tt0054357,7.1,16979.0,13.996,6.907,Edward Ludwig,United States,"November 12, 2019",PG,94 min
+71,tm103817,The Goddess of Spring,MOVIE,1934,,9,['animation'],['US'],,,,,3.241,5.927,Wilfred Jackson,United States,"November 12, 2019",TV-Y7,10 min
+72,tm117183,Elmer Elephant,MOVIE,1936,G,8,['animation'],['US'],,,,,3.126,5.924,Wilfred Jaxon,United States,"April 3, 2020",TV-G,8 min
+73,tm89100,Mickey's Delayed Date,MOVIE,1947,,7,['comedy'],['US'],,,,,3.102,6.382,Charles Nichols,United States,"November 12, 2019",TV-G,7 min
+74,tm4872,Bone Bandit,MOVIE,1948,,7,['animation'],['US'],,,,,3.053,6.3,Charles Nichols,United States,"November 12, 2019",TV-G,7 min
+75,tm90592,Rescue Dog,MOVIE,1947,,7,['animation'],['US'],,,,,3.019,6.3,Charles Nichols,United States,"November 12, 2019",TV-G,7 min
+76,tm7388,Mickey Down Under,MOVIE,1948,,7,['animation'],['US'],,,,,2.991,5.955,Charles Nichols,United States,"November 12, 2019",TV-G,7 min
+77,tm95977,Mail Dog,MOVIE,1947,,7,['animation'],['US'],,,,,2.599,6.0,Charles Nichols,United States,"November 12, 2019",TV-G,7 min
+78,tm156870,The Hockey Champ,MOVIE,1939,,7,['animation'],['US'],,,,,2.596,6.821,Jack King,United States,"November 12, 2019",TV-G,9 min
+79,tm60305,Pluto's Surprise Package,MOVIE,1949,,7,['animation'],['US'],,,,,2.512,6.2,Charles Nichols,United States,"November 12, 2019",TV-G,7 min
+80,tm71205,How to Play Baseball,MOVIE,1942,,8,['comedy'],['US'],,,,,2.479,6.8,Jack Kinney,United States,"May 1, 2020",TV-G,8 min
+81,tm164081,Sea Scouts,MOVIE,1939,,8,['animation'],['US'],,,,,2.442,6.2,Dick Lundy,United States,"April 3, 2020",TV-PG,8 min
+82,tm5618,Pluto's Purchase,MOVIE,1948,,7,['animation'],['US'],,,,,2.0,6.8,Charles Nichols,United States,"April 17, 2020",TV-G,7 min
+83,tm88215,The Sound of Music,MOVIE,1965,G,174,"['drama', 'family', 'romance']",['US'],,tt0059742,8.1,240841.0,20.728,7.707,Robert Wise,United States,"November 12, 2019",G,175 min
+84,ts30718,Schoolhouse Rock!,SHOW,1973,,3,"['animation', 'family']",['US'],7.0,tt0069627,8.2,4106.0,3.125,7.8,,United States,"May 17, 2021",TV-G,6 Seasons
+85,tm14236,Bedknobs and Broomsticks,MOVIE,1971,G,117,"['comedy', 'family', 'fantasy', 'animation']",['US'],,tt0066817,7.0,38932.0,18.137,7.0,Robert Stevenson,United States,"October 1, 2019",G,118 min
+86,ts22470,The Muppet Show,SHOW,1976,TV-G,25,"['family', 'comedy', 'music']",['GB'],5.0,tt0074028,8.4,25112.0,13.38,8.047,,"United States, United Kingdom","February 19, 2021",TV-PG,5 Seasons
+87,tm189724,Mary Poppins,MOVIE,1964,G,139,"['fantasy', 'family', 'comedy']",['US'],,tt0058331,7.8,176561.0,23.195,7.569,Robert Stevenson,United States,"November 12, 2019",G,142 min
+88,tm74066,The Muppet Movie,MOVIE,1979,G,97,"['comedy', 'family']",['US'],,tt0079588,7.6,37137.0,12.086,7.1,James Frawley,"United Kingdom, United States","November 12, 2019",G,95 min
+89,tm47427,Darby O'Gill and the Little People,MOVIE,1960,G,93,"['romance', 'family', 'fantasy']",['US'],,tt0052722,7.1,8519.0,10.131,6.847,Robert Stevenson,United States,"November 12, 2019",G,91 min
+90,tm104617,The Living Desert,MOVIE,1953,G,69,"['documentation', 'family']",['US'],,tt0046008,7.4,1600.0,2.972,7.1,James Algar,United States,"November 12, 2019",G,69 min
+91,tm81911,"Hello, Dolly!",MOVIE,1969,G,146,"['comedy', 'romance']",['US'],,tt0064418,7.0,15944.0,11.516,7.008,Gene Kelly,United States,"May 22, 2020",G,147 min
+92,tm51992,Sleeping Beauty,MOVIE,1960,G,75,"['romance', 'comedy', 'family', 'fantasy', 'animation', 'european']",['US'],,tt0053285,7.2,152328.0,65.737,6.9,Clyde Geronimi,United States,"November 12, 2019",G,77 min
+93,tm181425,Emil and the Detectives,MOVIE,1964,,99,"['comedy', 'crime', 'drama', 'family']",['US'],,tt0058056,6.1,764.0,2.915,6.3,Peter Tewksbury,United States,"November 12, 2019",TV-PG,98 min
+94,tm121851,The Jungle Book,MOVIE,1967,G,78,"['animation', 'comedy', 'family', 'fantasy']",['US'],,tt6581956,7.6,176762.0,70.991,7.281,Jon Favreau,"United Kingdom, United States","June 19, 2020",PG,108 min
+95,tm143708,The Jungle Book,MOVIE,2016,PG,107,"['drama', 'family', 'fantasy', 'animation', 'comedy', 'action']","['GB', 'US']",,tt3040964,7.4,271573.0,41.224,6.857,Jon Favreau,"United Kingdom, United States","June 19, 2020",PG,108 min
+96,tm114017,Oklahoma!,MOVIE,1956,G,145,"['western', 'romance', 'comedy', 'drama']",['US'],,tt0048445,7.0,13280.0,14.078,6.6,Fred Zinnemann,United States,"April 30, 2021",TV-PG,148 min
+97,tm186525,Robin Hood,MOVIE,1973,G,83,"['family', 'animation', 'comedy', 'romance']",['US'],,tt0070608,7.5,130702.0,36.069,7.3,Wolfgang Reitherman,United States,"November 12, 2019",G,85 min
+98,tm73079,The Black Hole,MOVIE,1979,PG,98,"['action', 'scifi']",['US'],,tt0078869,5.9,26490.0,11.874,5.813,Gary Nelson,United States,"November 12, 2019",PG,98 min
+99,tm68472,The Computer Wore Tennis Shoes,MOVIE,1969,G,150,"['comedy', 'drama', 'family', 'scifi']",['US'],,tt0065566,5.9,5524.0,10.311,6.178,Robert Butler,United States,"November 12, 2019",G,90 min
+100,tm111159,Lady and the Tramp,MOVIE,1955,G,77,"['romance', 'drama', 'animation', 'comedy', 'family']",['US'],,tt0048280,7.3,139479.0,47.793,7.104,Charlie Bean,United States,"November 12, 2019",PG,111 min
+101,tm405465,Lady and the Tramp,MOVIE,2019,PG,103,"['comedy', 'romance', 'animation', 'drama', 'family']",['US'],,tt8096832,6.2,22632.0,21.866,7.3,Charlie Bean,United States,"November 12, 2019",PG,111 min
+102,tm87467,Freaky Friday,MOVIE,1977,G,95,"['comedy', 'family', 'fantasy']",['US'],,tt0076054,6.3,13315.0,9.067,6.146,Mark Waters,United States,"November 12, 2019",PG,98 min
+103,tm150254,Freaky Friday,MOVIE,2003,PG,97,"['fantasy', 'family', 'music', 'romance', 'comedy']",['US'],,tt0322330,6.3,142616.0,35.69,6.4,Mark Waters,United States,"November 12, 2019",PG,98 min
+104,tm373625,Freaky Friday,MOVIE,2018,G,90,"['comedy', 'fantasy']",['US'],,tt7631348,3.8,1535.0,12.117,5.5,Mark Waters,United States,"November 12, 2019",PG,98 min
+105,tm105286,Peter Pan,MOVIE,1953,G,76,"['animation', 'family', 'fantasy']",['US'],,tt0046183,7.3,143741.0,59.426,7.225,"Hamilton Luske, Clyde Geronimi, Wilfred Jackson",United States,"November 12, 2019",G,79 min
+106,tm32115,The Sword in the Stone,MOVIE,1963,G,80,"['animation', 'comedy', 'family', 'fantasy']",['US'],,tt0057546,7.1,100763.0,52.587,7.2,Wolfgang Reitherman,United States,"October 1, 2019",G,80 min
+107,tm45750,Babes in Toyland,MOVIE,1961,G,106,"['comedy', 'fantasy', 'romance', 'family']",['US'],,tt0054649,6.1,4460.0,7.629,6.029,Jack Donohue,United States,"November 12, 2019",TV-PG,106 min
+108,tm111322,The African Lion,MOVIE,1955,G,75,"['family', 'documentation']",['US'],,tt0047803,7.2,520.0,1.93,7.1,James Algar,United States,"November 12, 2019",G,72 min
+109,tm92967,The Rescuers,MOVIE,1977,G,78,"['action', 'fantasy', 'family', 'animation', 'comedy']",['US'],,tt0076618,6.9,65987.0,25.5,6.8,"Wolfgang Reitherman, John Lounsbery, Art Stevens",United States,"November 12, 2019",G,78 min
+110,tm119319,The Happiest Millionaire,MOVIE,1967,G,141,"['drama', 'comedy', 'family', 'romance']",['US'],,tt0061749,6.6,2253.0,4.365,6.7,Norman Tokar,United States,"June 11, 2021",G,170 min
+111,tm102135,The Aristocats,MOVIE,1970,G,78,"['comedy', 'family', 'animation']",['US'],,tt0065421,7.1,100989.0,53.519,7.29,Wolfgang Reitherman,United States,"November 12, 2019",G,81 min
+112,tm91299,Herbie Goes to Monte Carlo,MOVIE,1977,G,105,"['action', 'romance', 'sport', 'crime', 'comedy', 'family', 'fantasy']",['US'],,tt0076137,5.6,7708.0,9.108,5.9,Vincent McEveety,United States,"November 12, 2019",G,105 min
+113,tm92586,Pete's Dragon,MOVIE,1977,G,128,"['comedy', 'family', 'fantasy', 'animation']",['US'],,tt0076538,6.3,25378.0,15.598,6.364,David Lowery,United States,"November 12, 2019",PG,106 min
+114,tm123155,Pete's Dragon,MOVIE,2016,PG,103,"['fantasy', 'action', 'comedy', 'drama', 'family']",['US'],,tt2788732,6.7,59497.0,19.754,6.4,David Lowery,United States,"November 12, 2019",PG,106 min
+115,tm562,"20,000 Leagues Under the Sea",MOVIE,1955,G,127,"['drama', 'scifi', 'fantasy', 'family']",['US'],,tt0046672,7.2,34943.0,18.232,7.066,Richard Fleischer,United States,"November 12, 2019",G,127 min
+116,tm130611,Alice in Wonderland,MOVIE,1951,G,75,"['family', 'fantasy', 'action', 'animation', 'comedy']",['US'],,tt0043274,7.3,145273.0,60.266,7.2,"Clyde Geronimi, Hamilton Luske, Wilfred Jackson",United States,"November 12, 2019",G,79 min
+117,tm100267,Alice in Wonderland,MOVIE,2010,PG,108,"['fantasy', 'family']",['US'],,tt1014759,6.4,421500.0,53.119,6.616,"Clyde Geronimi, Hamilton Luske, Wilfred Jackson",United States,"November 12, 2019",G,79 min
+118,tm7719,The Prince and the Pauper,MOVIE,1962,,93,[],['US'],,tt1836776,6.3,342.0,6.605,7.6,Don Chaffey,United Kingdom,"November 12, 2019",G,94 min
+119,tm152951,The Prince and the Pauper,MOVIE,1990,G,25,"['animation', 'comedy', 'family']",['US'],,,,,9.723,6.7,Don Chaffey,United Kingdom,"November 12, 2019",G,94 min
+120,tm73745,The Ugly Dachshund,MOVIE,1966,G,90,"['drama', 'comedy', 'family']",['US'],,tt0061135,6.5,4365.0,7.272,6.65,Norman Tokar,United States,"November 12, 2019",TV-G,93 min
+121,tm91105,The Many Adventures of Winnie the Pooh,MOVIE,1977,G,74,"['animation', 'family', 'comedy']",['US'],,tt0076363,7.5,37598.0,32.741,7.2,"Wolfgang Reitherman, John Lounsbery",United States,"November 12, 2019",TV-Y,75 min
+122,tm124852,The Apple Dumpling Gang,MOVIE,1975,G,96,"['western', 'comedy', 'family']",['US'],,tt0072653,6.4,6093.0,9.035,6.581,Norman Tokar,United States,"November 12, 2019",G,100 min
+123,tm42943,The Parent Trap,MOVIE,1961,G,129,"['comedy', 'family', 'romance']",['US'],,tt0055277,7.2,22436.0,16.802,7.112,Nancy Meyers,"United States, United Kingdom","November 12, 2019",PG,129 min
+124,tm57184,The Parent Trap,MOVIE,1998,PG,127,"['comedy', 'drama', 'family', 'romance']",['US'],,tt0120783,6.6,142514.0,80.887,7.1,Nancy Meyers,"United States, United Kingdom","November 12, 2019",PG,129 min
+125,tm106320,Man in Space,MOVIE,1955,,49,['scifi'],['US'],,,,,1.593,6.7,Ward Kimball,United States,"June 26, 2020",TV-PG,49 min
+126,tm120497,Escape to Witch Mountain,MOVIE,1975,G,97,"['fantasy', 'scifi', 'family', 'action']",['US'],,tt0072951,6.3,10737.0,8.713,6.423,John Hough,United States,"November 12, 2019",G,98 min
+127,tm183361,The Moon-Spinners,MOVIE,1964,PG,114,"['thriller', 'family', 'romance']",['US'],,tt0058371,6.5,2803.0,4.093,6.0,James Neilson,United States,"May 29, 2020",PG,119 min
+128,ts24939,Spider-Woman,SHOW,1979,TV-PG,21,"['animation', 'family', 'fantasy', 'action']",['US'],1.0,tt0197911,5.8,872.0,15.315,7.9,,United States,"November 12, 2019",TV-Y7,1 Season
+129,tm123160,Mars and Beyond,MOVIE,1957,,53,['animation'],['US'],,,,,1.702,8.5,Ward Kimball,United States,"June 26, 2020",TV-G,53 min
+130,tm98555,Herbie Goes Bananas,MOVIE,1980,G,110,"['fantasy', 'comedy', 'family']",['US'],,tt0080861,4.9,5934.0,13.101,5.2,Vincent McEveety,United States,"November 12, 2019",G,93 min
+131,tm96700,Candleshoe,MOVIE,1979,PG,101,"['family', 'comedy', 'drama']","['US', 'GB']",,tt0075807,6.7,4625.0,7.953,6.8,Norman Tokar,"United Kingdom, United States","November 12, 2019",G,101 min
+132,tm30426,The Incredible Journey,MOVIE,1963,G,80,"['family', 'action', 'drama', 'comedy']","['US', 'CA']",,tt0057180,7.0,4891.0,5.894,6.8,Fletcher Markle,"Canada, United States","November 12, 2019",G,80 min
+133,tm124682,Old Yeller,MOVIE,1958,,83,"['western', 'drama', 'family']",['US'],,tt0050798,7.3,14145.0,14.445,6.9,Robert Stevenson,United States,"November 12, 2019",G,84 min
+134,tm107435,Herbie Rides Again,MOVIE,1974,G,88,"['fantasy', 'family', 'romance', 'comedy']",['US'],,tt0071607,5.7,8345.0,14.07,6.1,Robert Stevenson,United States,"November 12, 2019",G,89 min
+135,tm12159,Return from Witch Mountain,MOVIE,1978,G,90,"['action', 'fantasy', 'scifi', 'family']",['US'],,tt0078158,5.7,5353.0,9.076,5.9,John Hough,United States,"November 12, 2019",G,94 min
+136,tm124019,The Strongest Man in the World,MOVIE,1975,G,92,"['comedy', 'family', 'scifi']",['US'],,tt0073760,5.9,3450.0,8.227,5.967,Vincent McEveety,United States,"November 12, 2019",G,92 min
+137,tm87512,The Shaggy D.A.,MOVIE,1976,G,88,"['comedy', 'european', 'family', 'fantasy']",['US'],,tt0075200,5.8,3176.0,6.896,5.732,Robert Stevenson,United States,"November 12, 2019",G,92 min
+138,tm41096,The Absent-Minded Professor,MOVIE,1961,G,96,"['scifi', 'comedy', 'family', 'sport']",['US'],,tt0054594,6.7,8691.0,11.118,6.496,Robert Stevenson,United States,"November 12, 2019",G,96 min
+139,tm79567,That Darn Cat!,MOVIE,1965,G,112,"['family', 'comedy', 'crime', 'thriller', 'drama']",['US'],,tt0059793,6.7,7305.0,10.753,6.7,Robert Stevenson,United States,"November 12, 2019",G,116 min
+140,tm15888,Blackbeard's Ghost,MOVIE,1968,G,106,"['comedy', 'family', 'fantasy']",['US'],,tt0062737,6.8,6293.0,10.444,6.718,Robert Stevenson,United States,"October 1, 2019",G,107 min
+141,tm112491,"Davy Crockett, King of the Wild Frontier",MOVIE,1955,PG,93,"['western', 'drama', 'family']",['US'],,tt0047977,6.9,4491.0,10.147,6.6,Norman Foster,United States,"November 12, 2019",PG,93 min
+142,tm18794,The Cat from Outer Space,MOVIE,1978,G,100,"['comedy', 'scifi', 'family']",['US'],,tt0077305,6.0,5509.0,8.709,5.655,Norman Tokar,United States,"October 1, 2019",G,104 min
+143,tm56825,Pollyanna,MOVIE,1960,,128,"['comedy', 'drama', 'family']",['US'],,tt0054195,7.4,10690.0,8.401,7.0,David Swift,United States,"November 12, 2019",G,135 min
+144,tm59473,Pluto's Christmas Tree,MOVIE,1952,G,7,['animation'],['US'],,,,,7.957,7.19,Jack Hannah,United States,"November 12, 2019",TV-Y7,7 min
+145,tm95184,Davy Crockett and the River Pirates,MOVIE,1956,G,81,"['western', 'comedy', 'drama', 'family']",['US'],,tt0049125,6.6,2254.0,7.345,6.5,Norman Foster,United States,"November 12, 2019",G,81 min
+146,tm51953,The Shaggy Dog,MOVIE,1959,,104,"['comedy', 'family', 'fantasy']",['US'],,tt0053271,6.4,5261.0,7.209,6.177,Charles Barton,United States,"November 12, 2019",G,102 min
+147,tm11266,The Million Dollar Duck,MOVIE,1971,G,89,"['family', 'comedy', 'scifi']",['US'],,tt0066728,5.7,2465.0,6.308,5.6,Vincent McEveety,United States,"November 12, 2019",G,93 min
+148,tm61982,Trick or Treat,MOVIE,1952,,8,['comedy'],['US'],,,,,6.155,7.0,Jack Hannah,United States,"September 4, 2020",TV-G,9 min
+149,tm67783,The Apple Dumpling Gang Rides Again,MOVIE,1979,G,88,"['western', 'comedy', 'family']",['US'],,tt0078790,6.0,3010.0,5.715,6.269,Vincent McEveety,United States,"November 12, 2019",G,89 min
+150,tm156939,Snowball Express,MOVIE,1973,G,93,"['comedy', 'family']",['US'],,tt0069291,6.3,1898.0,5.69,6.6,Norman Tokar,United States,"November 12, 2019",G,94 min
+151,tm15819,The Small One,MOVIE,1978,G,26,"['family', 'animation']",['US'],,,,,5.669,6.7,Don Bluth,United States,"April 3, 2020",TV-PG,25 min
+152,tm324940,The Sign of Zorro,MOVIE,1958,,91,"['western', 'drama', 'family', 'romance']",['US'],,tt0054307,6.9,1140.0,5.585,7.4,"Lewis Foster, Norman Foster",United States,"November 12, 2019",G,90 min
+153,tm105638,The Simple Things,MOVIE,1953,,7,['animation'],['US'],,,,,4.926,6.2,Charles Nichols,United States,"November 12, 2019",TV-G,8 min
+154,tm19308,Dragon Around,MOVIE,1954,,7,['animation'],['US'],,,,,4.566,6.95,Jack Hannah,United States,"April 3, 2020",TV-G,7 min
+155,tm60664,Let's Stick Together,MOVIE,1952,,7,['animation'],['US'],,,,,4.544,6.538,Jack Hannah,United States,"April 17, 2020",TV-G,7 min
+156,tm109842,Beezy Bear,MOVIE,1955,,7,['animation'],['US'],,,,,4.429,6.8,Jack Hannah,United States,"November 12, 2019",TV-G,7 min
+157,tm42937,Third Man on the Mountain,MOVIE,1959,,105,"['drama', 'family']",['US'],,tt0053352,7.1,1120.0,4.091,6.6,Ken Annakin,"United States, United Kingdom","April 2, 2021",G,107 min
+158,tm107673,The Castaway Cowboy,MOVIE,1974,G,91,"['western', 'family', 'comedy']",['US'],,tt0071288,5.8,794.0,4.02,6.3,Vincent McEveety,United States,"November 12, 2019",G,91 min
+159,tm107951,The New Neighbor,MOVIE,1953,,7,['animation'],['US'],,,,,3.971,6.515,Jack Hannah,United States,"April 3, 2020",TV-G,7 min
+160,tm60333,Pluto's Party,MOVIE,1952,,7,['animation'],['US'],,,,,3.814,6.3,Milt Schaffer,United States,"April 3, 2020",TV-G,8 min
+161,tm78765,Unidentified Flying Oddball,MOVIE,1979,G,93,"['comedy', 'fantasy', 'scifi', 'family']",['US'],,tt0080062,5.2,1256.0,3.559,5.2,Russ Mayberry,United States,"November 12, 2019",G,93 min
+162,tm102930,Don's Fountain of Youth,MOVIE,1953,,6,['animation'],['US'],,,,,3.483,6.738,Jack Hannah,United States,"April 3, 2020",TV-G,6 min
+163,tm91078,Treasure of Matecumbe,MOVIE,1976,G,110,"['western', 'family']",['US'],,tt0075347,6.1,886.0,3.403,6.3,Vincent McEveety,United States,"November 12, 2019",G,116 min
+164,tm110618,Bearly Asleep,MOVIE,1955,,7,['animation'],['US'],,,,,3.245,6.607,Jack Hannah,United States,"November 12, 2019",TV-PG,7 min
+165,tm129658,Corn Chips,MOVIE,1951,,7,"['animation', 'family']",['US'],,,,,3.153,7.1,Jack Hannah,United States,"November 12, 2019",TV-G,7 min
+166,tm115739,The Adventures of Bullwhip Griffin,MOVIE,1967,PG,108,"['drama', 'action', 'comedy', 'family', 'romance', 'western']",['US'],,tt0061333,6.4,1170.0,3.06,6.522,James Neilson,United States,"November 12, 2019",TV-PG,111 min
+167,tm19229,Grand Canyonscope,MOVIE,1954,,7,['animation'],['US'],,,,,2.853,6.44,C. Nichols,United States,"November 12, 2019",TV-G,7 min
+168,tm88710,Gus,MOVIE,1976,G,96,"['family', 'comedy', 'sport']",['US'],,tt0074599,5.7,2013.0,2.85,5.911,Vincent McEveety,United States,"November 12, 2019",G,97 min
+169,tm19764,The Vanishing Prairie,MOVIE,1955,G,71,"['documentation', 'family']",['US'],,tt0047642,7.2,718.0,2.659,7.3,James Algar,United States,"November 12, 2019",G,71 min
+170,tm47139,Jungle Cat,MOVIE,1960,PG,69,"['family', 'documentation']",['US'],,tt0053977,7.2,378.0,2.593,7.7,James Algar,United States,"November 12, 2019",TV-PG,70 min
+171,tm58414,Water Birds,MOVIE,1952,,30,"['family', 'documentation']",['US'],,,,,2.458,6.5,Ben Sharpsteen,United States,"May 1, 2020",TV-G,31 min
+172,tm133398,Out of Scale,MOVIE,1951,,7,['animation'],['US'],,,,,2.433,7.352,Jack Hannah,United States,"April 3, 2020",TV-G,8 min
+173,tm218826,A Tale of Two Critters,MOVIE,1977,G,48,"['documentation', 'action', 'family']",['US'],,tt0287003,5.9,221.0,2.365,5.778,Jack Speirs,United States,"April 3, 2020",G,48 min
+174,tm10775,Almost Angels,MOVIE,1962,,93,"['comedy', 'family', 'music']",['US'],,tt0055740,6.4,605.0,2.36,6.8,Steve Previn,United States,"November 12, 2019",TV-PG,90 min
+175,tm79554,Those Calloways,MOVIE,1965,PG,131,"['drama', 'family']",['US'],,tt0059796,6.6,770.0,2.333,6.421,Norman Tokar,United States,"October 1, 2019",PG,132 min
+176,tm152094,The Biscuit Eater,MOVIE,1972,G,92,"['drama', 'family']",['US'],,tt0068276,5.7,479.0,2.23,5.9,Vincent McEveety,United States,"November 12, 2019",G,93 min
+177,tm109409,The Bears and I,MOVIE,1974,G,89,"['action', 'drama', 'family']",['CA'],,tt0071199,6.2,507.0,2.074,6.1,Bernard McEveety,United States,"November 12, 2019",TV-PG,83 min
+178,tm24673,Yellowstone Cubs,MOVIE,1963,G,48,"['comedy', 'family']",['US'],,tt0206446,6.8,306.0,1.971,8.0,Charles Draper,United States,"November 12, 2019",TV-PG,48 min
+179,tm124426,Perri,MOVIE,1957,G,75,"['fantasy', 'family', 'romance']",['US'],,tt0050837,6.8,589.0,1.925,6.714,"N. Paul Kenworthy, Ralph Wright",United States,"November 12, 2019",G,75 min
+180,tm260657,The Boy Who Talked to Badgers,MOVIE,1975,,100,['family'],['US'],,tt0072728,5.4,145.0,1.898,6.9,Gary Nelson,United States,"April 3, 2020",TV-PG,90 min
+181,tm109497,Prowlers of the Everglades,MOVIE,1953,,32,['documentation'],[],,,,,1.541,8.5,James Algar,United States,"May 1, 2020",TV-Y7,32 min
+182,tm895685,The Story of the Animated Drawing,MOVIE,1955,G,49,['documentation'],['US'],,,,,1.513,10.0,"Wilfred Jackson, William Beaudine",United States,"June 12, 2020",TV-PG,49 min
+183,tm90286,Secrets of Life,MOVIE,1956,G,70,"['documentation', 'family']",['US'],,tt0049733,7.3,299.0,1.4,7.0,James Algar,United States,"November 12, 2019",TV-PG,70 min
+184,tm137469,Nature's Half Acre,MOVIE,1951,,33,['documentation'],['US'],,,,,1.4,7.2,James Algar,United States,"May 1, 2020",TV-PG,33 min
+185,tm15129,Hacksaw,MOVIE,1971,PG,89,"['western', 'family']",['US'],,tt0067172,5.4,120.0,1.332,6.1,Larry Lansburgh,United States,"January 1, 2020",TV-PG,89 min
+186,tm55594,The Olympic Elk,MOVIE,1952,,27,['documentation'],[],,,,,1.167,8.25,James Algar,United States,"April 24, 2020",TV-G,27 min
+187,tm205517,The Ghosts of Buxley Hall,MOVIE,1980,,120,"['fantasy', 'comedy', 'family', 'horror']",['US'],,tt0080788,5.7,319.0,1.153,5.9,Bruce Bilson,United States,"November 12, 2019",TV-PG,93 min
+188,tm757109,The Mouseketeers at Walt Disney World,MOVIE,1977,,56,"['family', 'drama', 'action']",[],,tt0285749,8.2,36.0,1.02,8.0,John Tracy,United States,"July 17, 2020",TV-PG,56 min
+189,tm94576,Sultan and the Rock Star,MOVIE,1980,,56,['drama'],['US'],,,,,0.914,4.0,Ed Abroms,United States,"November 12, 2019",TV-PG,47 min
+190,tm894355,The Liberty Story,MOVIE,1957,G,48,['drama'],['US'],,,,,0.753,9.0,"Hamilton Luske, Robert Stevenson",United States,"June 12, 2020",TV-PG,48 min
+191,ts20711,The Simpsons,SHOW,1989,TV-MA,27,"['animation', 'comedy']",['US'],36.0,tt0096697,8.7,413140.0,538.281,7.989,,United States,"September 29, 2021",TV-PG,32 Seasons
+192,tm19438,The Princess Bride,MOVIE,1987,PG,98,"['fantasy', 'romance', 'comedy', 'family']",['US'],,tt0093779,8.0,432423.0,21.501,7.7,Rob Reiner,"United Kingdom, United States","May 1, 2020",PG,99 min
+193,tm155184,Home Alone,MOVIE,1990,PG,102,"['comedy', 'family']",['US'],,tt0099785,7.7,599020.0,2.287,7.403,Chris Columbus,United States,"November 13, 2020",PG,103 min
+194,tm49092,Who Framed Roger Rabbit,MOVIE,1988,PG,104,"['fantasy', 'animation', 'comedy', 'crime', 'family']",['US'],,tt0096438,7.7,205507.0,26.918,7.512,Robert Zemeckis,United States,"November 12, 2019",PG,104 min
+195,tm47587,Willow,MOVIE,1988,PG,120,"['fantasy', 'action', 'drama', 'romance']",['US'],,tt0096446,7.2,125684.0,31.639,7.039,,,"November 12, 2021",TV-PG,3 min
+196,ts187000,Willow,SHOW,2022,TV-14,50,"['scifi', 'action', 'romance', 'drama', 'fantasy']",['US'],1.0,tt10278918,5.6,28981.0,261.696,7.147,,,"November 12, 2021",TV-PG,3 min
+197,ts15377,America's Funniest Home Videos,SHOW,1989,TV-PG,50,"['comedy', 'family', 'reality']",['US'],34.0,tt0098740,6.2,5543.0,72.031,6.742,,United States,"April 24, 2020",TV-PG,9 Seasons
+198,tm57222,Ernest Saves Christmas,MOVIE,1988,PG,95,"['family', 'comedy', 'fantasy']",['US'],,tt0095107,5.7,12075.0,9.082,5.4,John Cherry,,"November 26, 2021",PG,91 min
+199,tm66657,Mickey's Christmas Carol,MOVIE,1983,G,64,"['animation', 'fantasy', 'comedy']",['US'],,,,,16.971,7.663,Burny Mattinson,United States,"November 12, 2019",G,26 min
+200,tm131031,Return to Oz,MOVIE,1985,PG,109,"['family', 'fantasy', 'action', 'horror']","['US', 'GB']",,tt0089908,6.7,28471.0,15.473,6.7,Walter Murch,"United Kingdom, United States","November 12, 2019",PG,110 min
+201,tm131193,Turner & Hooch,MOVIE,1989,PG,97,"['comedy', 'crime', 'drama', 'thriller']",['US'],,tt0098536,6.2,72838.0,10.729,6.4,,,"July 21, 2021",TV-PG,1 Season
+202,ts231914,Turner & Hooch,SHOW,2021,TV-PG,48,"['drama', 'family', 'comedy', 'crime', 'action']",['US'],1.0,tt11547014,6.6,3841.0,23.072,7.5,,,"July 21, 2021",TV-PG,1 Season
+203,tm116020,Flight of the Navigator,MOVIE,1986,PG,90,"['scifi', 'comedy', 'family']",['US'],,tt0091059,6.9,49451.0,18.894,6.9,Randal Kleiser,United States,"November 12, 2019",PG,90 min
+204,tm46793,Tron,MOVIE,1982,PG,96,"['action', 'scifi']",['US'],,tt0084827,6.7,124020.0,28.362,6.7,Steven Lisberger,United States,"November 12, 2019",PG,96 min
+205,tm21021,Adventures in Babysitting,MOVIE,1987,PG-13,102,"['comedy', 'romance', 'crime']",['US'],,tt0092513,6.9,45895.0,16.07,6.868,Chris Columbus,United States,"June 25, 2021",TV-PG,102 min
+206,tm225765,Adventures in Babysitting,MOVIE,2016,G,105,"['family', 'comedy']",['US'],,tt4456850,5.9,4224.0,13.593,7.4,Chris Columbus,United States,"June 25, 2021",TV-PG,102 min
+207,ts146,DuckTales,SHOW,1987,TV-Y7,21,"['scifi', 'animation', 'action', 'fantasy', 'comedy', 'family']",['US'],4.0,tt0092345,8.1,33100.0,52.303,7.583,,United States,"April 30, 2021",TV-Y7,3 Seasons
+208,ts57862,DuckTales,SHOW,2017,TV-Y7,24,"['animation', 'family', 'action', 'comedy', 'fantasy', 'scifi']",['US'],3.0,tt5531466,8.3,10538.0,54.431,7.8,,United States,"April 30, 2021",TV-Y7,3 Seasons
+209,tm139255,The Little Mermaid,MOVIE,1989,G,83,"['animation', 'fantasy', 'romance', 'comedy', 'family']",['US'],,tt0097757,7.6,268923.0,111.297,7.3,"Ron Clements, John Musker",United States,"November 12, 2019",G,86 min
+210,ts20699,The Little Mermaid,SHOW,1992,TV-G,23,"['animation', 'comedy', 'drama', 'family', 'fantasy', 'romance']",['US'],3.0,tt0103477,6.7,5392.0,34.875,6.976,"Ron Clements, John Musker",United States,"November 12, 2019",G,86 min
+211,ts22183,TaleSpin,SHOW,1990,TV-G,22,"['crime', 'drama', 'comedy', 'action', 'family', 'fantasy', 'animation']",['US'],1.0,tt0098924,7.5,15257.0,32.619,7.164,,United States,"November 12, 2019",TV-G,1 Season
+212,tm173648,Splash,MOVIE,1984,PG,111,"['comedy', 'fantasy', 'romance']",['US'],,tt0088161,6.3,79136.0,11.506,6.252,Ron Howard,United States,"February 14, 2020",TV-PG,110 min
+213,tm142764,"Honey, I Shrunk the Kids",MOVIE,1989,PG,93,"['comedy', 'family', 'scifi']",['US'],,tt0097523,6.4,158440.0,20.81,6.274,Joe Johnston,"United States, Mexico","November 12, 2019",PG,94 min
+214,tm127019,The Black Cauldron,MOVIE,1985,PG,80,"['animation', 'action', 'family', 'fantasy', 'horror']",['US'],,tt0088814,6.3,37724.0,28.585,6.47,"Ted Berman, Richard Rich","United States, United Kingdom","November 12, 2019",PG,82 min
+215,tm127015,The Great Muppet Caper,MOVIE,1981,G,95,"['comedy', 'thriller', 'music', 'family', 'crime']","['US', 'GB']",,tt0082474,7.1,15896.0,9.961,6.8,Jim Henson,"United Kingdom, United States","November 12, 2019",G,98 min
+216,ts22521,Spider-Man and His Amazing Friends,SHOW,1981,TV-Y7,25,"['action', 'animation', 'scifi', 'comedy', 'crime', 'family']",['US'],3.0,tt0083481,7.2,3725.0,31.586,7.374,,United States,"November 12, 2019",TV-Y7,1 Season
+217,tm125611,Ewoks: The Battle for Endor,MOVIE,1985,G,100,"['scifi', 'fantasy', 'family']",['US'],,tt0089110,5.4,10206.0,16.95,5.3,"Jim Wheat, Ken Wheat",United States,"April 2, 2021",TV-PG,97 min
+218,tm126783,One Magic Christmas,MOVIE,1985,G,88,"['family', 'fantasy']","['US', 'CA']",,tt0089731,6.4,4085.0,8.968,5.799,Phillip Borsos,"Canada, United States","November 12, 2019",G,89 min
+219,ts28737,Star Wars: Ewoks,SHOW,1985,TV-Y7-FV,25,"['scifi', 'action', 'animation', 'family', 'fantasy']","['CA', 'US']",2.0,tt0088515,6.0,2066.0,9.327,6.4,,,"April 2, 2021",TV-Y7-FV,2 Seasons
+220,tm116429,The Great Mouse Detective,MOVIE,1986,G,74,"['animation', 'thriller', 'family']",['US'],,tt0091149,7.1,51207.0,23.11,7.0,"John Musker, Ron Clements, Dave Michener",United States,"October 1, 2019",G,75 min
+221,tm126966,The Fox and the Hound,MOVIE,1981,G,82,"['drama', 'animation', 'family']",['US'],,tt0082406,7.2,95848.0,34.652,7.141,"Art Stevens, Ted Berman, Richard Rich",United States,"November 12, 2019",G,85 min
+222,tm45667,Oliver & Company,MOVIE,1988,G,74,"['comedy', 'animation', 'family']",['US'],,tt0095776,6.6,50002.0,19.546,6.71,George Scribner,United States,"November 12, 2019",G,76 min
+223,tm54457,Big Business,MOVIE,1988,PG,97,['comedy'],['US'],,tt0094739,6.4,14690.0,9.035,6.4,Jim Abrahams,United States,"February 1, 2020",PG,98 min
+224,tm128057,The Journey of Natty Gann,MOVIE,1985,PG,101,"['drama', 'family']",['US'],,tt0089385,7.0,6396.0,10.919,7.0,Jeremy Kagan,United States,"November 12, 2019",PG,101 min
+225,tm156156,The Rescuers Down Under,MOVIE,1990,G,77,"['fantasy', 'drama', 'crime', 'animation', 'comedy', 'family']",['US'],,tt0100477,6.8,44369.0,8.385,6.6,"Hendel Butoy, Mike Gabriel",United States,"November 12, 2019",G,78 min
+226,tm164406,Frankenweenie,MOVIE,1984,PG,29,['comedy'],['US'],,,,,11.996,6.948,Tim Burton,United States,"April 1, 2020",PG,88 min
+227,tm63238,Frankenweenie,MOVIE,2012,PG,87,"['comedy', 'family', 'animation', 'drama', 'horror', 'scifi', 'thriller']",['US'],,tt1142977,6.9,104697.0,24.687,6.939,Tim Burton,United States,"April 1, 2020",PG,88 min
+228,ts21976,The New Adventures of Winnie the Pooh,SHOW,1988,TV-Y,22,"['animation', 'comedy', 'family', 'fantasy']",['US'],4.0,tt0165052,7.6,4380.0,36.321,7.6,,United States,"November 12, 2019",TV-Y,4 Seasons
+229,tm23825,Benji the Hunted,MOVIE,1987,G,88,"['action', 'family']",['US'],,tt0092638,6.2,3196.0,8.01,6.575,Joe Camp,United States,"November 12, 2019",G,89 min
+230,ts22529,Spider-Man,SHOW,1981,TV-Y7,22,"['action', 'family', 'fantasy', 'scifi', 'animation']",['US'],1.0,tt0081938,6.9,1665.0,10.037,7.0,,United States,"May 3, 2021",TV-Y7,5 Seasons
+231,ts21709,Spider-Man,SHOW,1994,TV-Y7,21,"['action', 'romance', 'crime', 'drama', 'animation', 'fantasy', 'thriller', 'family', 'scifi']",['US'],5.0,tt0112175,8.4,32620.0,62.617,8.295,,United States,"May 3, 2021",TV-Y7,5 Seasons
+232,tm46878,Tin Toy,MOVIE,1988,G,5,['animation'],['US'],,,,,7.963,6.2,John Lasseter,United States,"November 12, 2019",TV-G,5 min
+233,tm19762,Red's Dream,MOVIE,1987,G,4,"['family', 'animation']",['US'],,,,,7.821,6.2,John Lasseter,United States,"November 12, 2019",TV-G,4 min
+234,tm111692,Luxo Jr.,MOVIE,1986,G,2,['animation'],['US'],,,,,7.398,7.1,,United States,"November 12, 2019",G,2 min
+235,tm131374,Tummy Trouble,MOVIE,1989,G,7,['comedy'],['US'],,,,,5.251,6.8,"Frank Marshall, Rob Minkoff",United States,"June 19, 2020",TV-G,8 min
+236,tm117853,Casebusters,MOVIE,1986,G,47,['crime'],['US'],,,,,4.085,5.7,Wes Craven,United States,"November 12, 2019",TV-PG,46 min
+237,tm141214,Cheetah,MOVIE,1989,G,83,"['drama', 'family']",['US'],,tt0097053,5.9,1112.0,3.291,6.1,Jeff Blyth,United States,"November 12, 2019",G,84 min
+238,tm123092,Amy,MOVIE,1981,G,100,"['family', 'drama']",['US'],,tt0082017,6.5,523.0,3.161,7.3,Vincent McEveety,United States,"November 12, 2019",G,100 min
+239,tm341045,Mr. Boogedy,MOVIE,1986,,44,"['horror', 'drama', 'comedy', 'family']",['US'],,,,,2.953,6.4,Oz Scott,United States,"November 12, 2019",TV-PG,46 min
+240,tm120337,Fuzzbucket,MOVIE,1986,G,46,['comedy'],['US'],,,,,2.673,5.2,Mick Garris,United States,"November 12, 2019",TV-G,46 min
+241,tm26441,Bride of Boogedy,MOVIE,1987,G,90,['horror'],['US'],,,,,2.616,6.292,Oz Scott,United States,"May 1, 2020",TV-PG,93 min
+242,tm120517,The Christmas Star,MOVIE,1986,,94,"['drama', 'family']",['US'],,tt0090840,6.2,725.0,2.367,5.4,Alan Shapiro,"Canada, United States","November 12, 2019",TV-G,94 min
+243,tm160651,Shipwrecked,MOVIE,1990,PG,89,"['family', 'action', 'european']","['SE', 'US', 'NO']",,tt0099816,6.5,2960.0,1.909,6.5,Nils Gaup,"Norway, Sweden, United States","November 12, 2019",PG,93 min
+244,tm874,10 Things I Hate About You,MOVIE,1999,PG-13,97,"['drama', 'romance', 'comedy']",['US'],,tt0147800,7.3,351998.0,32.094,7.56,Gil Junger,United States,"November 12, 2019",PG-13,98 min
+245,tm7861,While You Were Sleeping,MOVIE,1995,PG,103,"['romance', 'comedy', 'drama']",['US'],,tt0114924,6.8,106774.0,17.065,6.947,Jon Turteltaub,United States,"July 3, 2020",PG,104 min
+246,ts2431,Boy Meets World,SHOW,1993,TV-G,23,"['drama', 'family', 'comedy', 'romance']",['US'],7.0,tt0105958,8.0,41639.0,18.675,8.365,,United States,"November 12, 2019",TV-PG,7 Seasons
+247,tm130837,Home Alone 2: Lost in New York,MOVIE,1992,PG,120,"['comedy', 'crime', 'family']",['US'],,tt0104431,6.8,371433.0,60.281,6.7,Chris Columbus,United States,"November 13, 2020",PG,121 min
+248,ts22158,X-Men,SHOW,1992,TV-Y7,22,"['scifi', 'action', 'family', 'thriller', 'animation']",['US'],5.0,tt0103584,8.4,44413.0,39.879,8.197,Bryan Singer,United States,"August 13, 2021",PG-13,105 min
+249,tm42549,Halloweentown,MOVIE,1998,G,84,"['fantasy', 'comedy', 'family']",['US'],,tt0173886,6.6,19026.0,10.084,6.865,Duwayne Dunham,United States,"November 12, 2019",TV-PG,84 min
+250,tm190165,Hocus Pocus,MOVIE,1993,PG,92,"['fantasy', 'horror', 'comedy', 'family', 'european']",['US'],,tt0107120,6.9,144868.0,39.561,7.1,Kenny Ortega,United States,"November 12, 2019",PG,96 min
+251,tm131129,The Muppet Christmas Carol,MOVIE,1992,G,85,"['music', 'comedy', 'family', 'fantasy', 'drama']","['GB', 'US']",,tt0104940,7.7,63715.0,15.391,7.357,Brian Henson,"United States, United Kingdom","November 12, 2019",G,87 min
+252,tm115014,The Santa Clause,MOVIE,1994,PG,97,"['fantasy', 'drama', 'comedy', 'family']",['US'],,tt0111070,6.5,124222.0,13.529,6.451,John Pasquin,"United States, Canada","November 12, 2019",PG,98 min
+253,tm113629,The Lion King,MOVIE,1994,G,89,"['drama', 'family', 'animation']",['US'],,tt0110357,8.5,1071027.0,147.943,8.258,Jon Favreau,"United States, United Kingdom, South Africa","January 28, 2020",PG,125 min
+254,tm309655,The Lion King,MOVIE,2019,PG,118,"['drama', 'family', 'comedy', 'animation']",['US'],,tt6105098,6.8,249924.0,175.334,7.131,Jon Favreau,"United States, United Kingdom, South Africa","January 28, 2020",PG,125 min
+255,tm105031,James and the Giant Peach,MOVIE,1996,PG,79,"['fantasy', 'action', 'animation', 'family']",['US'],,tt0116683,6.7,69867.0,22.294,6.551,Henry Selick,"United Kingdom, United States","November 12, 2019",PG,81 min
+256,tm19613,Remember the Titans,MOVIE,2000,PG,113,"['drama', 'sport']",['US'],,tt0210945,7.8,219713.0,41.04,7.605,Boaz Yakin,United States,"November 12, 2019",PG,114 min
+257,tm14765,Toy Story,MOVIE,1995,G,81,"['animation', 'action', 'family', 'comedy', 'fantasy']",['US'],,tt0114709,8.3,1005341.0,112.277,7.966,John Lasseter,United States,"November 12, 2019",G,83 min
+258,tm40070,Toy Story 2,MOVIE,1999,G,92,"['comedy', 'animation', 'family', 'fantasy']",['US'],,tt0120363,7.9,589251.0,94.74,7.6,John Lasseter,United States,"November 12, 2019",G,93 min
+259,ts8909,Dinosaurs,SHOW,1991,TV-G,24,"['scifi', 'comedy', 'family', 'fantasy']",['US'],4.0,tt0101081,7.5,20030.0,60.737,7.801,,United States,"January 29, 2021",TV-PG,4 Seasons
+260,tm190696,Cool Runnings,MOVIE,1993,PG,98,"['drama', 'history', 'sport', 'comedy', 'family', 'european']",['US'],,tt0106611,7.0,107084.0,15.346,7.0,Jon Turteltaub,United States,"January 1, 2020",PG,99 min
+261,ts21697,Gargoyles,SHOW,1994,TV-Y7,22,"['scifi', 'action', 'crime', 'thriller', 'drama', 'family', 'romance', 'animation', 'fantasy', 'comedy']",['US'],3.0,tt0108783,8.1,17100.0,38.96,8.145,,United States,"November 12, 2019",TV-Y7,3 Seasons
+262,tm192747,Home Alone 3,MOVIE,1997,PG,102,"['comedy', 'family', 'action', 'crime']",['US'],,tt0119303,4.5,120424.0,25.424,5.284,Raja Gosnell,United States,"November 13, 2020",PG,103 min
+263,tm9378,Mr. Holland's Opus,MOVIE,1996,PG,137,"['family', 'drama', 'music']",['US'],,tt0113862,7.3,40419.0,16.604,7.016,Stephen Herek,United States,"October 2, 2020",PG,143 min
+264,tm55150,The Straight Story,MOVIE,1999,G,112,['drama'],['US'],,tt0166896,8.0,92331.0,10.384,7.739,David Lynch,"France, United Kingdom, United States","April 3, 2020",G,112 min
+265,tm190977,George of the Jungle,MOVIE,1997,PG,93,"['action', 'comedy', 'family', 'romance']",['US'],,tt0119190,5.5,80501.0,26.347,5.6,Sam Weisman,United States,"May 1, 2020",PG,93 min
+266,tm66175,Mulan,MOVIE,1998,G,88,"['animation', 'fantasy', 'war', 'drama', 'comedy', 'family']",['US'],,tt0120762,7.6,294604.0,112.215,7.918,Niki Caro,"United States, Canada, Hong Kong","December 4, 2020",PG-13,117 min
+267,tm266656,Mulan,MOVIE,2020,PG-13,117,"['fantasy', 'drama', 'action', 'family']","['CN', 'US']",,tt4566758,5.7,141848.0,86.355,6.9,Niki Caro,"United States, Canada, Hong Kong","December 4, 2020",PG-13,117 min
+268,tm10470,A Goofy Movie,MOVIE,1995,G,78,"['comedy', 'family', 'romance', 'animation']","['AU', 'CA', 'FR', 'US']",,tt0113198,6.9,57272.0,19.373,6.951,Kevin Lima,"United States, Australia, France, Canada","November 12, 2019",G,81 min
+269,tm26792,The Emperor's New Groove,MOVIE,2000,G,78,"['comedy', 'family', 'fantasy', 'animation']",['US'],,tt0120917,7.4,209449.0,73.4,7.546,Mark Dindal,United States,"November 12, 2019",G,82 min
+270,ts21037,X-Men: Evolution,SHOW,2000,TV-Y7,22,"['scifi', 'drama', 'fantasy', 'romance', 'thriller', 'animation', 'action']",['US'],4.0,tt0247827,7.8,12278.0,104.837,7.971,,United States,"November 12, 2019",TV-Y7,4 Seasons
+271,tm108880,The Hunchback of Notre Dame,MOVIE,1996,G,91,"['drama', 'romance', 'animation', 'family']",['US'],,tt0116583,7.0,161644.0,53.222,7.1,"Gary Trousdale, Kirk Wise","United States, France","November 12, 2019",G,96 min
+272,tm5330,The Rocketeer,MOVIE,1991,PG,108,"['scifi', 'family', 'action']",['US'],,tt0102803,6.5,59194.0,10.203,6.448,,United States,"October 16, 2020",TV-Y,1 Season
+273,ts112728,The Rocketeer,SHOW,2019,TV-Y,23,"['comedy', 'family', 'scifi', 'animation', 'action']",['US'],1.0,tt8068852,5.2,252.0,7.723,10.0,,United States,"October 16, 2020",TV-Y,1 Season
+274,ts21059,The Incredible Hulk,SHOW,1996,TV-Y7,22,"['animation', 'action', 'drama', 'fantasy', 'scifi']",['US'],3.0,tt0115215,6.7,3479.0,18.175,6.2,,United States,"May 10, 2021",TV-Y7,2 Seasons
+275,tm124456,The Mighty Ducks,MOVIE,1992,PG,101,"['family', 'drama', 'comedy', 'sport']",['US'],,tt0104868,6.5,68162.0,11.693,6.567,Stephen Herek,United States,"July 3, 2020",PG,104 min
+276,tm44033,Tarzan,MOVIE,1999,G,88,"['drama', 'music', 'romance', 'animation', 'comedy', 'family']",['US'],,tt0120855,7.3,231693.0,80.082,7.399,"Kevin Lima, Chris Buck",United States,"June 26, 2020",G,93 min
+277,tm191537,Hercules,MOVIE,1997,G,93,"['comedy', 'romance', 'animation', 'family', 'fantasy', 'action', 'european']",['US'],,tt0119282,7.3,237201.0,106.037,7.508,"John Musker, Ron Clements","United States, France","November 12, 2019",G,98 min
+278,ts22023,Hercules,SHOW,1998,TV-Y,23,"['comedy', 'animation', 'action', 'family', 'fantasy']",['US'],2.0,tt0138967,6.6,10794.0,22.583,6.7,"John Musker, Ron Clements","United States, France","November 12, 2019",G,98 min
+279,tm11864,Pocahontas,MOVIE,1995,G,81,"['action', 'animation', 'family', 'romance', 'drama', 'european']",['US'],,tt0114148,6.7,191741.0,46.893,6.934,"Mike Gabriel, Eric Goldberg",United States,"November 12, 2019",G,85 min
+280,tm124857,Sister Act,MOVIE,1992,PG,100,"['comedy', 'family', 'music', 'crime']",['US'],,tt0105417,6.5,102013.0,20.69,6.822,Emile Ardolino,United States,"November 12, 2019",PG,101 min
+281,tm62982,A Bug's Life,MOVIE,1998,G,95,"['comedy', 'animation', 'documentation', 'drama', 'family', 'fantasy']",['US'],,tt0120623,7.2,283444.0,69.991,6.964,John Lasseter,United States,"November 12, 2019",G,98 min
+282,tm191826,"Honey, We Shrunk Ourselves",MOVIE,1997,PG,74,"['comedy', 'family', 'scifi', 'action']",['US'],,tt0119310,4.9,15688.0,17.697,5.449,Dean Cundey,United States,"November 12, 2019",PG,76 min
+283,tm103448,Muppet Treasure Island,MOVIE,1996,G,100,"['action', 'comedy', 'music', 'family', 'romance']","['US', 'GB']",,tt0117110,6.9,25047.0,9.453,6.6,Brian Henson,United States,"November 12, 2019",G,101 min
+284,ts9805,Adventures in Wonderland,SHOW,1992,TV-Y,28,"['comedy', 'scifi', 'fantasy', 'family']",['US'],5.0,tt0088473,7.9,769.0,4.004,8.5,,,"April 30, 2021",TV-G,1 Season
+285,tm9048,Beauty and the Beast,MOVIE,1991,G,84,"['animation', 'fantasy', 'family', 'scifi', 'drama', 'romance']",['US'],,tt0471093,8.0,35.0,81.801,7.732,Bill Condon,United States,"August 21, 2020",PG,138 min
+286,tm195553,Beauty and the Beast,MOVIE,2017,PG,129,"['fantasy', 'family', 'romance']",['US'],,tt2771200,7.1,315229.0,58.103,7.0,Bill Condon,United States,"August 21, 2020",PG,138 min
+287,tm127070,Newsies,MOVIE,1992,PG,121,"['drama', 'family', 'history']",['US'],,tt0104990,6.9,21450.0,10.408,6.6,Kenny Ortega,United States,"November 12, 2019",PG,122 min
+288,tm327916,Newsies,MOVIE,2017,PG,134,"['drama', 'music']",['US'],,tt6346162,8.3,3218.0,9.006,8.2,Kenny Ortega,United States,"November 12, 2019",PG,122 min
+289,tm11036,Heavyweights,MOVIE,1995,PG,100,"['comedy', 'drama', 'family', 'sport']",['US'],,tt0110006,6.6,28891.0,11.112,6.155,Steven Brill,United States,"November 12, 2019",PG,98 min
+290,tm117838,D2: The Mighty Ducks,MOVIE,1994,PG,106,"['drama', 'comedy', 'family', 'sport']",['US'],,tt0109520,6.1,41353.0,16.13,6.2,Sam Weisman,United States,"September 4, 2020",PG,107 min
+291,tm184147,Sister Act 2: Back in the Habit,MOVIE,1993,PG,107,"['music', 'comedy', 'family']","['SK', 'US']",,tt0108147,5.6,55562.0,22.273,6.4,Bill Duke,United States,"November 12, 2019",PG,108 min
+292,tm56602,I'll Be Home for Christmas,MOVIE,1998,PG,86,"['comedy', 'family']","['CA', 'US']",,tt0155753,5.5,11191.0,13.29,5.932,Arlene Sanford,"United States, Canada","November 12, 2019",PG,87 min
+293,tm1695,101 Dalmatians,MOVIE,1996,G,103,"['comedy', 'crime', 'family']","['GB', 'US']",,tt0115433,5.7,113254.0,32.745,5.899,"Wolfgang Reitherman, Hamilton Luske, Clyde Geronimi",United States,"November 12, 2019",G,81 min
+294,tm189771,Homeward Bound: The Incredible Journey,MOVIE,1993,G,84,"['drama', 'comedy', 'family']",['US'],,tt0107131,6.9,48131.0,17.594,6.948,Duwayne Dunham,United States,"May 1, 2020",G,85 min
+295,tm6899,Wild Hearts Can't Be Broken,MOVIE,1991,G,88,"['drama', 'family', 'romance']",['US'],,tt0103262,7.1,5544.0,4.891,7.5,Steve Miner,United States,"May 7, 2021",G,89 min
+296,tm190043,Flubber,MOVIE,1997,PG,93,"['comedy', 'family', 'scifi']",['US'],,tt0119137,5.3,91354.0,16.817,5.635,Les Mayfield,United States,"November 12, 2019",PG,96 min
+297,tm46480,Mickey's Once Upon a Christmas,MOVIE,1999,G,65,['comedy'],['US'],,,,,16.598,7.1,"Bradley Raymond, Jun Falkenstein, Bill Speers",United States,"November 12, 2019",TV-G,67 min
+298,tm62353,Fantasia 2000,MOVIE,1999,G,72,"['music', 'family', 'fantasy', 'comedy', 'animation']",['US'],,tt0120910,7.1,39516.0,16.296,7.0,"Pixote Hunt, Hendel Butoy, Eric Goldberg",United States,"November 12, 2019",G,76 min
+299,ts14804,Darkwing Duck,SHOW,1991,TV-G,22,"['comedy', 'action', 'animation', 'scifi', 'fantasy', 'crime', 'family']",['US'],3.0,tt0101076,7.6,16849.0,26.542,7.3,,United States,"November 12, 2019",TV-Y7,2 Seasons
+300,tm105016,Jack,MOVIE,1996,PG-13,113,"['comedy', 'drama', 'fantasy']",['US'],,tt0116669,5.8,59947.0,14.808,6.3,Francis Coppola,United States,"November 12, 2019",PG-13,113 min
+301,ts20967,So Weird,SHOW,1999,TV-PG,30,"['scifi', 'family', 'thriller']",['US'],3.0,tt0169247,8.4,3099.0,9.698,7.4,,Canada,"November 12, 2019",TV-Y7,3 Seasons
+302,tm51489,Don't Look Under the Bed,MOVIE,1999,PG,93,"['horror', 'family', 'fantasy', 'comedy']",['US'],,tt0208101,6.7,3417.0,8.578,6.5,Kenneth Johnson,United States,"November 12, 2019",TV-PG,93 min
+303,tm104241,First Kid,MOVIE,1996,PG,101,"['comedy', 'family']",['US'],,tt0116311,5.2,11166.0,8.22,5.8,David Evans,United States,"November 12, 2019",PG,102 min
+304,tm12122,Man of the House,MOVIE,1995,PG,95,"['comedy', 'family']",['US'],,tt0113755,5.2,9945.0,9.588,5.283,James Orr,United States,"April 9, 2021",PG,97 min
+305,tm111327,Aladdin and the King of Thieves,MOVIE,1996,G,81,"['action', 'animation', 'family']",['US'],,,,,29.566,6.263,Tad Stones,United States,"November 12, 2019",G,86 min
+306,tm22933,The Tigger Movie,MOVIE,2000,G,77,"['comedy', 'drama', 'family', 'animation']",['US'],,tt0220099,6.3,19432.0,18.324,6.5,Jun Falkenstein,"United States, Japan","November 12, 2019",G,81 min
+307,ts20968,Spider-Man Unlimited,SHOW,1999,TV-Y7,22,"['action', 'family', 'scifi', 'thriller', 'animation', 'crime']",['US'],1.0,tt0207120,6.3,3588.0,26.149,7.417,,"United States, Canada","November 12, 2019",TV-Y7,1 Season
+308,ts21291,Pepper Ann,SHOW,1997,TV-Y,15,"['comedy', 'family', 'animation']",['US'],5.0,tt0128890,7.1,3790.0,12.636,6.87,,United States,"September 8, 2021",TV-Y,3 Seasons
+309,tm63063,Mighty Joe Young,MOVIE,1998,PG,114,"['action', 'thriller', 'family', 'fantasy', 'european']",['US'],,tt0120751,5.7,29765.0,16.169,6.201,Ron Underwood,United States,"November 12, 2019",PG,116 min
+310,tm190949,The Three Musketeers,MOVIE,1993,PG,105,"['comedy', 'european']","['US', 'AT']",,,,,19.787,6.4,Stephen Herek,"Austria, United Kingdom, United States","November 12, 2019",PG,106 min
+311,tm12374,White Fang,MOVIE,1991,PG,107,"['drama', 'action', 'animation', 'family']",['US'],,tt0103247,6.0,71.0,23.157,6.7,Randal Kleiser,United States,"November 12, 2019",PG,109 min
+312,ts22130,Rolie Polie Olie,SHOW,1998,TV-Y,21,"['animation', 'comedy', 'family', 'fantasy', 'scifi']","['GB', 'CA', 'FR', 'US']",6.0,tt0172049,6.3,3011.0,13.848,6.6,,"Canada, United States, France","September 29, 2021",TV-Y,5 Seasons
+313,tm22055,For the Birds,MOVIE,2000,G,3,['animation'],['US'],,,,,8.735,7.5,Ralph Eggleston,United States,"November 12, 2019",G,4 min
+314,tm11400,Operation Dumbo Drop,MOVIE,1995,PG,107,"['action', 'war', 'comedy', 'drama', 'family']",['US'],,tt0114048,5.2,9344.0,6.434,5.1,Simon Wincer,United States,"November 12, 2019",PG,109 min
+315,tm192276,Beauty and the Beast: The Enchanted Christmas,MOVIE,1997,G,72,"['fantasy', 'animation', 'family']","['CA', 'US']",,,,,24.683,6.2,Andy Knight,"Canada, United States","November 12, 2019",G,73 min
+316,tm113048,Homeward Bound II: Lost in San Francisco,MOVIE,1996,G,89,"['comedy', 'drama', 'family', 'romance']","['US', 'CA']",,tt0116552,6.0,14889.0,12.653,6.5,David Ellis,United States,"May 1, 2020",G,90 min
+317,tm104563,Kazaam,MOVIE,1996,PG,93,"['fantasy', 'family', 'comedy']",['US'],,tt0116756,3.1,24791.0,10.671,4.2,Paul Glaser,United States,"November 12, 2019",PG,94 min
+318,ts22263,Timon & Pumbaa,SHOW,1995,TV-Y,22,"['comedy', 'family', 'music', 'animation', 'scifi', 'fantasy']",['US'],8.0,tt0112197,7.0,10504.0,46.69,7.242,,United States,"November 12, 2019",TV-Y,3 Seasons
+319,tm190553,Pooh's Grand Adventure: The Search for Christopher Robin,MOVIE,1997,G,76,"['action', 'animation', 'family']",['US'],,,,,14.71,7.2,Karl Geurs,United States,"November 12, 2019",TV-G,78 min
+320,tm24436,An Extremely Goofy Movie,MOVIE,2000,G,79,['comedy'],"['US', 'AU']",,,,,13.94,6.38,Douglas McCarthy,"United States, Australia","November 12, 2019",G,81 min
+321,tm22497,Dinosaur,MOVIE,2000,PG,82,"['family', 'animation', 'drama', 'fantasy', 'thriller', 'comedy']",['US'],,tt0130623,6.4,62928.0,73.332,6.515,"Ralph Zondag, Eric Leighton",United States,"November 12, 2019",PG,84 min
+322,tm19899,Ready to Run,MOVIE,2000,,88,"['family', 'sport']","['NZ', 'US']",,tt0253550,5.4,383.0,2.668,6.1,Duwayne Dunham,"United States, New Zealand","November 12, 2019",TV-G,89 min
+323,tm118953,Blank Check,MOVIE,1994,PG,93,"['family', 'comedy', 'crime']",['US'],,tt0109287,5.2,21117.0,15.782,5.8,Rupert Wainwright,United States,"November 12, 2019",PG,94 min
+324,tm189008,The Adventures of Huck Finn,MOVIE,1993,PG,108,"['drama', 'comedy', 'family']",['US'],,tt0106223,6.2,8847.0,9.801,6.195,Stephen Sommers,United States,"November 12, 2019",PG,108 min
+325,tm118708,White Fang 2: Myth of the White Wolf,MOVIE,1994,PG,106,"['action', 'family']",['US'],,tt0111701,5.4,2413.0,16.898,6.8,Ken Olin,United States,"April 16, 2021",PG,106 min
+326,tm8912,The Big Green,MOVIE,1995,PG,100,"['comedy', 'family', 'action', 'sport']",['US'],,tt0112499,5.5,10477.0,8.448,5.531,Holly Sloan,United States,"July 3, 2020",PG,100 min
+327,tm49485,Pocahontas II: Journey to a New World,MOVIE,1998,G,72,"['action', 'animation', 'romance', 'family']",['US'],,,,,21.903,5.5,"Bradley Raymond, Tom Ellery",United States,"November 12, 2019",G,77 min
+328,tm119659,Camp Nowhere,MOVIE,1994,PG,96,"['drama', 'comedy', 'family']",['US'],,tt0109369,6.0,10082.0,7.076,5.8,Jonathan Prince,United States,"November 12, 2019",PG,96 min
+329,tm43588,Johnny Tsunami,MOVIE,1999,G,88,"['family', 'drama', 'sport']",['US'],,tt0206064,6.2,5703.0,5.111,5.9,Steve Boyum,United States,"November 12, 2019",TV-G,92 min
+330,tm560,102 Dalmatians,MOVIE,2000,G,100,"['family', 'comedy']",['US'],,tt0211181,4.8,38290.0,19.525,5.474,Kevin Lima,"United States, United Kingdom","November 12, 2019",G,104 min
+331,ts21195,Smart Guy,SHOW,1997,TV-G,30,"['comedy', 'drama', 'family']",['US'],3.0,tt0118466,7.4,5297.0,11.162,8.0,,United States,"October 1, 2019",TV-G,3 Seasons
+332,tm192728,Mr. Magoo,MOVIE,1997,PG,84,"['family', 'comedy']",['US'],,tt0119718,4.0,15601.0,11.397,4.456,Stanley Tong,United States,"November 6, 2020",PG,88 min
+333,tm64295,Zenon: Girl of the 21st Century,MOVIE,1999,G,97,"['comedy', 'family', 'scifi']",['US'],,tt0186726,6.3,7874.0,8.727,6.204,Kenneth Johnson,United States,"November 12, 2019",TV-G,97 min
+334,tm192613,Geri's Game,MOVIE,1997,G,4,"['animation', 'family', 'european']",['US'],,tt0110209,,,6.797,7.7,Jan Pinkava,United States,"November 12, 2019",G,5 min
+335,tm110769,D3: The Mighty Ducks,MOVIE,1996,PG,104,"['comedy', 'drama', 'action', 'family', 'sport']",['US'],,tt0116000,5.4,27618.0,12.495,5.97,Robert Lieberman,United States,"September 4, 2020",PG,104 min
+336,ts21063,Quack Pack,SHOW,1996,,24,"['animation', 'comedy', 'family']",['US'],1.0,tt0136658,6.7,4251.0,11.873,6.9,,United States,"November 12, 2019",TV-Y,1 Season
+337,tm189664,Jungle 2 Jungle,MOVIE,1997,PG,97,"['family', 'comedy']","['FR', 'US']",,tt0119432,5.2,24979.0,9.786,5.3,John Pasquin,"United States, France","November 12, 2019",PG,105 min
+338,tm64787,The Jungle Book: Mowgli's Story,MOVIE,1998,G,77,['family'],['US'],,,,,7.673,5.87,Nick Marck,United States,"November 12, 2019",G,77 min
+339,tm49681,Inspector Gadget,MOVIE,1999,PG,78,"['action', 'comedy', 'crime', 'family', 'scifi']",['US'],,tt0141369,4.1,49158.0,15.29,4.442,David Kellogg,United States,"November 12, 2019",PG,80 min
+340,tm191851,That Darn Cat,MOVIE,1997,PG,89,"['family', 'comedy', 'crime', 'action']",['US'],,tt0120317,4.6,4632.0,8.683,4.9,Bob Spiers,United States,"November 12, 2019",PG,90 min
+341,tm130852,"Honey, I Blew Up the Kid",MOVIE,1992,PG,89,"['action', 'comedy', 'family', 'scifi', 'romance']",['US'],,tt0104437,4.9,45197.0,16.53,5.2,Randal Kleiser,United States,"November 12, 2019",PG,90 min
+342,tm10920,A Kid in King Arthur's Court,MOVIE,1995,PG,89,"['scifi', 'fantasy', 'comedy', 'family', 'romance']",['US'],,tt0113538,4.7,6437.0,10.079,4.9,Michael Gottlieb,"United States, Hungary, United Kingdom","November 12, 2019",PG,90 min
+343,ts43344,Silver Surfer,SHOW,1998,TV-Y7,20,"['action', 'scifi', 'thriller', 'animation', 'family']",['US'],1.0,tt0203268,7.1,2599.0,7.947,7.418,,"United States, Canada","November 12, 2019",TV-Y7,1 Season
+344,ts20689,Goof Troop,SHOW,1992,TV-G,22,"['animation', 'music', 'comedy', 'family']",['US'],2.0,tt0103428,6.8,8948.0,25.278,6.5,,United States,"November 12, 2019",TV-Y7,1 Season
+345,tm39792,My Favorite Martian,MOVIE,1999,PG,94,"['scifi', 'drama', 'comedy', 'family']",['US'],,tt0120764,5.1,13920.0,11.789,5.6,Donald Petrie,United States,"November 12, 2019",PG,94 min
+346,tm61321,The Brave Little Toaster Goes to Mars,MOVIE,1998,G,73,['animation'],['US'],,,,,7.662,5.633,Robert Ramirez,United States,"November 12, 2019",TV-G,73 min
+347,ts21022,Teacher's Pet,SHOW,2000,TV-Y,28,"['comedy', 'fantasy', 'animation', 'family']",['US'],2.0,tt0257325,6.3,557.0,28.819,7.6,Timothy Björklund,United States,"November 12, 2019",PG,75 min
+348,tm84442,Teacher's Pet,MOVIE,2004,PG,74,"['drama', 'animation', 'comedy', 'family', 'fantasy', 'music', 'scifi']",['US'],,tt0350194,5.7,1853.0,5.383,6.0,Timothy Björklund,United States,"November 12, 2019",PG,75 min
+349,ts10198,Even Stevens,SHOW,2000,TV-G,27,"['comedy', 'family']",['US'],3.0,tt0247093,7.6,14867.0,15.777,7.4,,United States,"November 12, 2019",TV-PG,3 Seasons
+350,tm52424,Richie Rich's Christmas Wish,MOVIE,1998,G,85,['comedy'],['US'],,,,,14.892,4.8,John Murlowski,United States,"November 12, 2019",G,85 min
+351,tm113590,Iron Will,MOVIE,1994,PG,108,"['action', 'family']",['US'],,tt0110157,6.6,8904.0,12.29,6.654,Charles Haid,United States,"November 12, 2019",PG,109 min
+352,ts12215,Bonkers,SHOW,1993,TV-Y7,25,"['animation', 'thriller', 'comedy', 'scifi', 'crime', 'family', 'action', 'fantasy', 'western']",['US'],4.0,tt0213334,6.7,1562.0,11.899,6.5,,"United States, Hong Kong, South Korea, France, Canada, China, United Kingdom, Australia, Japan, Taiwan, Philippines","November 12, 2019",TV-G,1 Season
+353,ts5504,Fantastic Four,SHOW,1994,TV-Y7,21,"['action', 'animation', 'scifi']",['US'],2.0,tt0187635,6.4,3669.0,11.392,6.7,Tim Story,"United States, Germany","August 13, 2021",PG-13,106 min
+354,tm170269,Fantastic Four,MOVIE,2005,PG-13,106,"['action', 'fantasy', 'scifi', 'family']","['US', 'DE']",,tt0120667,5.7,333890.0,35.959,5.771,Tim Story,"United States, Germany","August 13, 2021",PG-13,106 min
+355,tm139213,Fantastic Four,MOVIE,2015,PG-13,101,"['scifi', 'action', 'drama']","['DE', 'US', 'GB']",,tt1502712,4.3,170005.0,49.308,4.414,Tim Story,"United States, Germany","August 13, 2021",PG-13,106 min
+356,tm14980,Tom and Huck,MOVIE,1995,PG,97,"['drama', 'action', 'family', 'romance', 'western', 'comedy']",['US'],,tt0112302,5.5,11182.0,9.018,5.338,Peter Hewitt,United States,"November 12, 2019",PG,92 min
+357,tm61632,Brink!,MOVIE,1998,G,99,"['drama', 'family', 'sport']",['US'],,tt0162212,6.9,6512.0,8.5,6.2,Greg Beeman,United States,"November 12, 2019",TV-G,90 min
+358,tm13851,Tall Tale,MOVIE,1995,PG,98,"['western', 'family', 'fantasy']",['US'],,tt0111359,5.9,3777.0,8.369,6.27,Jeremiah Chechik,United States,"November 12, 2019",PG,97 min
+359,ts3540,The Avengers: United They Stand,SHOW,1999,TV-Y7,22,"['animation', 'scifi', 'action']",['US'],1.0,tt0203247,5.3,1017.0,8.303,6.5,,"France, Canada, United States","November 12, 2019",TV-Y7,1 Season
+360,tm61627,The Thirteenth Year,MOVIE,1999,G,89,"['comedy', 'family', 'fantasy']",['US'],,tt0200208,5.9,5685.0,8.163,6.636,Duwayne Dunham,United States,"November 12, 2019",TV-G,89 min
+361,tm51884,Doug's 1st Movie,MOVIE,1999,G,77,"['animation', 'fantasy', 'scifi', 'comedy', 'drama', 'family']",['US'],,tt0187819,4.9,3387.0,7.494,5.445,Maurice Joyce,United States,"November 12, 2019",G,80 min
+362,tm27619,Phantom of the Megaplex,MOVIE,2000,G,89,"['action', 'thriller', 'horror', 'comedy', 'family']","['CA', 'US']",,tt0266850,6.3,3675.0,7.216,6.019,Blair Treu,"United States, Canada","November 12, 2019",TV-G,89 min
+363,tm23725,The Color of Friendship,MOVIE,2000,PG,87,"['drama', 'family']","['CA', 'US']",,tt0213565,7.2,4033.0,7.102,7.059,Kevin Hooks,"Canada, United States","November 12, 2019",TV-G,83 min
+364,tm49771,Meet the Deedles,MOVIE,1998,PG,93,"['comedy', 'family', 'sport']",['US'],,tt0120645,4.0,3049.0,6.926,4.4,Steve Boyum,United States,"November 12, 2019",PG,94 min
+365,tm186295,Trail Mix-Up,MOVIE,1993,G,8,['comedy'],['US'],,,,,6.252,7.0,Barry Cook,United States,"June 19, 2020",TV-G,9 min
+366,tm39132,Horse Sense,MOVIE,1999,G,92,"['drama', 'family']",['US'],,tt0219813,6.1,1964.0,6.143,7.036,Greg Beeman,United States,"November 12, 2019",TV-G,92 min
+367,tm19463,The Ultimate Christmas Present,MOVIE,2000,G,85,"['comedy', 'family']","['CA', 'US']",,tt0256466,5.6,1853.0,5.744,5.5,Greg Beeman,"Canada, United States","November 12, 2019",TV-G,81 min
+368,tm193086,Squanto: A Warrior's Tale,MOVIE,1994,PG,102,"['action', 'drama', 'family']",['US'],,tt0111271,6.0,1332.0,5.558,6.5,Xavier Koller,"United States, Canada","April 9, 2021",PG,102 min
+369,tm53567,Smart House,MOVIE,1999,G,82,"['drama', 'scifi', 'comedy', 'family']",['US'],,tt0192618,6.1,7739.0,5.238,5.867,LeVar Burton,United States,"November 12, 2019",TV-G,82 min
+370,tm60240,Genius,MOVIE,1999,G,82,"['drama', 'documentation', 'comedy', 'family', 'romance', 'scifi']",['US'],,tt0193187,6.1,1988.0,4.59,6.0,Rod Daniel,United States,"November 12, 2019",TV-G,86 min
+371,tm56569,Can of Worms,MOVIE,1999,PG,90,"['comedy', 'family', 'scifi']","['US', 'CA']",,tt0186910,4.9,1146.0,4.492,4.4,Paul Schneider,"United States, Canada","November 12, 2019",TV-PG,84 min
+372,tm19235,Stepsister from Planet Weird,MOVIE,2000,G,85,"['scifi', 'comedy', 'family']",['US'],,tt0250754,5.7,1610.0,4.484,5.5,Steve Boyum,United States,"November 12, 2019",TV-G,86 min
+373,tm65486,Ruby Bridges,MOVIE,1998,PG,96,['drama'],['US'],,,,,4.193,6.3,Euzhan Palcy,United States,"November 12, 2019",TV-PG,90 min
+374,tm24519,Rip Girls,MOVIE,2000,G,87,"['drama', 'family', 'romance']","['AU', 'US']",,tt0244764,5.9,1405.0,3.921,6.456,Joyce Chopra,"Australia, United States","November 12, 2019",TV-G,87 min
+375,tm17610,Quints,MOVIE,2000,G,83,"['drama', 'comedy', 'family']","['US', 'CA']",,tt0245380,5.5,2532.0,3.913,5.519,Bill Corcoran,"Canada, United States","November 12, 2019",TV-G,83 min
+376,tm29703,Miracle in Lane 2,MOVIE,2000,G,89,"['drama', 'comedy', 'family', 'sport']",['US'],,tt0218440,5.9,2213.0,2.817,6.2,Greg Beeman,United States,"November 12, 2019",TV-G,90 min
+377,tm56857,You Lucky Dog,MOVIE,1998,,89,"['comedy', 'family', 'fantasy']",['US'],,tt0153992,4.6,748.0,2.237,5.6,Paul Schneider,United States,"November 12, 2019",TV-G,88 min
+378,ts25438,Out of the Box,SHOW,1998,TV-Y,24,"['fantasy', 'music', 'comedy', 'family', 'sport', 'documentation']",['US'],3.0,tt0277514,7.5,1027.0,2.136,7.8,,United States,"November 12, 2019",TV-G,3 Seasons
+379,tm17532,Frank and Ollie,MOVIE,1995,PG,89,['documentation'],['US'],,tt0113104,7.7,1007.0,2.027,7.38,Theodore Thomas,United States,"November 12, 2019",PG,89 min
+380,tm63109,Miracle at Midnight,MOVIE,1998,,90,['drama'],['US'],,,,,1.857,6.9,Ken Cameron,United States,"November 12, 2019",TV-14,89 min
+381,tm7772,Mark Twain and Me,MOVIE,1991,,93,['drama'],"['US', 'CA']",,tt0102404,6.9,184.0,1.604,7.5,Daniel Petrie,"Canada, United States","April 9, 2021",TV-PG,93 min
+382,tm135853,Avatar,MOVIE,2009,PG-13,162,"['scifi', 'action', 'fantasy']","['US', 'GB']",,tt0499549,7.9,1327824.0,646.339,7.566,James Cameron,United States,"November 12, 2019",PG-13,162 min
+383,ts1,Star Wars: The Clone Wars,SHOW,2008,TV-PG,23,"['action', 'scifi', 'animation', 'drama', 'fantasy']",['US'],7.0,tt0458290,8.4,101935.0,103.571,8.495,,United States,"February 21, 2020",TV-PG,7 Seasons
+384,tm34558,Star Wars: The Clone Wars,MOVIE,2008,PG,98,"['scifi', 'animation', 'action', 'family', 'fantasy']",['US'],,tt1185834,5.9,67810.0,20.059,6.115,,United States,"February 21, 2020",TV-PG,7 Seasons
+385,tm133512,Pirates of the Caribbean: The Curse of the Black Pearl,MOVIE,2003,PG-13,143,"['fantasy', 'action']",['US'],,tt0325980,8.1,1140326.0,134.387,7.783,Gore Verbinski,United States,"November 12, 2019",PG-13,144 min
+386,tm90391,National Treasure,MOVIE,2004,PG,131,"['action', 'thriller', 'family', 'western']",['US'],,tt0368891,6.9,339588.0,40.355,6.595,Jon Turteltaub,United States,"April 30, 2020",PG,132 min
+387,tm70557,Ratatouille,MOVIE,2007,G,111,"['comedy', 'fantasy', 'drama', 'animation', 'family']",['US'],,tt0382932,8.1,752031.0,109.108,7.794,Brad Bird,United States,"November 12, 2019",G,111 min
+388,tm153612,Up,MOVIE,2009,PG,96,"['comedy', 'drama', 'family', 'animation']",['US'],,tt1049413,8.3,1056072.0,84.734,7.943,Pete Docter,United States,"November 12, 2019",PG,96 min
+389,tm84668,Enchanted,MOVIE,2007,PG,103,"['comedy', 'documentation', 'family', 'fantasy', 'romance', 'animation']",['US'],,tt0461770,7.1,208698.0,45.498,6.802,Kevin Lima,United States,"November 12, 2021",PG,110 min
+390,tm90577,Miracle,MOVIE,2004,PG,135,"['drama', 'history', 'sport', 'european']",['US'],,tt0349825,7.4,55951.0,12.633,7.075,Gavin O'Connor,"Canada, United States","November 12, 2019",PG,137 min
+391,tm37560,"Monsters, Inc.",MOVIE,2001,G,88,"['comedy', 'family', 'fantasy', 'animation']",['US'],,tt0198781,8.1,920623.0,142.572,7.827,Pete Docter,United States,"November 12, 2019",G,93 min
+392,tm180742,"The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",MOVIE,2005,PG,143,"['fantasy', 'family']","['GB', 'US']",,tt0363771,6.9,406098.0,367.192,7.12,Andrew Adamson,"United Kingdom, United States","November 12, 2019",PG,147 min
+393,tm22112,Night at the Museum,MOVIE,2006,PG,108,"['fantasy', 'action', 'comedy', 'family']","['GB', 'US']",,tt0477347,6.4,356346.0,35.61,6.6,Shawn Levy,"United States, United Kingdom","April 2, 2021",PG,109 min
+394,tm121010,The Santa Clause 2,MOVIE,2002,G,105,"['fantasy', 'family', 'comedy']",['US'],,tt0304669,5.7,60585.0,13.687,5.919,Michael Lembeck,"United States, Canada","November 12, 2019",G,106 min
+395,ts22052,Phineas and Ferb,SHOW,2007,TV-G,23,"['scifi', 'family', 'action', 'comedy', 'animation']",['US'],4.0,tt4351974,8.3,72.0,71.258,7.9,,"United States, South Korea, China, Taiwan","November 12, 2019",TV-G,4 Seasons
+396,tm135549,Finding Nemo,MOVIE,2003,G,100,"['animation', 'comedy', 'family']",['US'],,tt0266543,8.1,1006067.0,133.989,7.824,Andrew Stanton,"United States, Australia","November 12, 2019",G,103 min
+397,tm84505,The Incredibles,MOVIE,2004,PG,115,"['family', 'action', 'animation']",['US'],,tt0317705,8.0,749820.0,65.374,7.7,Brad Bird,United States,"November 12, 2019",PG,116 min
+398,tm20982,The Santa Clause 3: The Escape Clause,MOVIE,2006,G,98,"['family', 'action', 'comedy', 'fantasy']",['US'],,tt0452681,4.8,40154.0,15.449,5.5,Michael Lembeck,"United States, Canada","November 12, 2019",G,94 min
+399,tm138563,Holes,MOVIE,2003,PG,117,"['drama', 'comedy', 'family']",['US'],,tt0311289,7.0,92331.0,16.301,6.829,Andrew Davis,United States,"January 1, 2020",PG,119 min
+400,tm79327,National Treasure: Book of Secrets,MOVIE,2007,PG,124,"['action', 'thriller', 'family']",['US'],,tt0465234,6.5,242871.0,28.432,6.3,Jon Turteltaub,United States,"November 12, 2019",PG,125 min
+401,tm35022,Glory Road,MOVIE,2006,PG,118,"['drama', 'history', 'sport']",['US'],,tt0385726,7.2,47075.0,11.823,7.4,James Gartner,United States,"December 1, 2019",PG,119 min
+402,tm129800,Bend It Like Beckham,MOVIE,2002,PG-13,112,"['drama', 'romance', 'comedy', 'sport', 'european']","['GB', 'US', 'DE']",,tt0286499,6.7,112362.0,10.903,6.302,Gurinder Chadha,"United Kingdom, Germany, United States","September 18, 2020",PG-13,112 min
+403,tm48427,The Princess Diaries,MOVIE,2001,G,114,"['comedy', 'family', 'romance']",['US'],,tt0247638,6.4,151149.0,36.528,6.9,Garry Marshall,"United States, United Kingdom","November 12, 2019",G,116 min
+404,tm74359,Fantastic Four: Rise of the Silver Surfer,MOVIE,2007,PG-13,92,"['fantasy', 'action', 'thriller', 'scifi', 'family', 'horror']","['GB', 'US', 'DE']",,tt0486576,5.6,269282.0,34.014,5.586,Tim Story,"United States, Germany, United Kingdom","May 7, 2021",PG,93 min
+405,tm31764,Pirates of the Caribbean: Dead Man's Chest,MOVIE,2006,PG-13,151,"['fantasy', 'action']",['US'],,tt0383574,7.3,728882.0,95.856,7.337,Gore Verbinski,United States,"November 12, 2019",PG-13,152 min
+406,tm103874,Treasure Planet,MOVIE,2002,PG,95,"['animation', 'family', 'fantasy', 'scifi']",['US'],,tt0133240,7.2,122745.0,44.984,7.526,"John Musker, Ron Clements",United States,"November 12, 2019",PG,98 min
+407,tm38375,X-Men: The Last Stand,MOVIE,2006,PG-13,105,"['action', 'thriller', 'scifi']",['US'],,tt0376994,6.6,523012.0,2.026,6.403,Brett Ratner,"United States, United Kingdom, Canada","May 14, 2021",PG-13,105 min
+408,tm183058,The Greatest Game Ever Played,MOVIE,2005,PG,120,"['drama', 'sport', 'history']",['US'],,tt0388980,7.4,31644.0,11.672,7.2,Bill Paxton,"United States, Canada","November 12, 2019",PG,122 min
+409,tm68154,Dan in Real Life,MOVIE,2007,PG-13,98,"['drama', 'comedy', 'romance']",['US'],,tt0480242,6.8,104317.0,9.169,6.5,Peter Hedges,United States,"August 27, 2021",PG-13,99 min
+410,tm84873,Pirates of the Caribbean: At World's End,MOVIE,2007,PG-13,169,"['fantasy', 'action']",['US'],,tt0449088,7.1,660178.0,121.032,7.237,Gore Verbinski,United States,"November 12, 2019",PG-13,169 min
+411,tm101226,Toy Story 3,MOVIE,2010,G,102,"['comedy', 'animation', 'family', 'fantasy']",['US'],,tt0435761,8.3,845421.0,75.159,7.8,Lee Unkrich,United States,"November 12, 2019",G,103 min
+412,tm137650,The Haunted Mansion,MOVIE,2003,PG,88,"['thriller', 'comedy', 'family', 'fantasy', 'horror']",['US'],,tt0338094,5.1,50880.0,26.383,5.623,Rob Minkoff,United States,"November 12, 2019",PG,89 min
+413,tm102214,The Sorcerer's Apprentice,MOVIE,2010,PG,109,"['fantasy', 'action', 'family', 'european']",['US'],,tt0963966,6.1,164594.0,22.692,6.1,Jon Turteltaub,United States,"October 30, 2020",PG,111 min
+414,tm31341,Cars,MOVIE,2006,G,117,"['comedy', 'family', 'sport', 'animation']",['US'],,tt0317219,7.2,431496.0,70.655,6.907,John Lasseter,United States,"November 12, 2019",G,117 min
+415,tm88315,The Princess Diaries 2: Royal Engagement,MOVIE,2004,G,113,"['comedy', 'drama', 'romance', 'family']",['US'],,tt0368933,5.8,83716.0,34.887,6.7,Garry Marshall,United States,"November 12, 2019",G,114 min
+416,tm177722,Sky High,MOVIE,2005,PG,100,"['comedy', 'action', 'family', 'scifi']",['US'],,tt0405325,6.3,89436.0,25.922,6.2,Mike Mitchell,United States,"December 4, 2020",PG,101 min
+417,tm26315,Ice Age: The Meltdown,MOVIE,2006,PG,91,"['comedy', 'family', 'fantasy', 'animation']",['US'],,tt0438097,6.8,283204.0,56.793,6.7,Carlos Saldanha,"United States, United Kingdom, Australia","July 23, 2021",PG,94 min
+418,tm50237,Halloweentown II: Kalabar's Revenge,MOVIE,2001,G,81,"['action', 'family', 'fantasy']",['US'],,tt0274761,6.3,9639.0,10.356,6.9,Mary Lambert,United States,"November 12, 2019",TV-PG,81 min
+419,ts3533,The Avengers: Earth's Mightiest Heroes,SHOW,2010,TV-Y7,24,"['animation', 'action', 'family', 'scifi']",['US'],2.0,tt1626038,8.3,15385.0,83.89,8.228,,United States,"November 12, 2019",TV-Y7,2 Seasons
+420,tm136160,X2,MOVIE,2003,PG-13,133,"['action', 'scifi', 'thriller']",['US'],,tt0290334,7.4,556737.0,2.237,7.022,Bryan Singer,"Canada, United States","October 9, 2020",PG-13,134 min
+421,ts20626,Hannah Montana,SHOW,2006,TV-G,24,"['comedy', 'family', 'music']",['US'],4.0,tt0493093,5.2,41394.0,63.967,7.241,,United States,"November 12, 2019",TV-G,4 Seasons
+422,tm118928,The Country Bears,MOVIE,2002,G,88,"['action', 'comedy', 'family', 'documentation', 'music']",['US'],,tt0276033,4.2,5801.0,7.681,4.787,Peter Hastings,United States,"November 12, 2019",G,91 min
+423,tm132504,Prep & Landing,MOVIE,2009,G,22,"['animation', 'fantasy', 'family', 'comedy']",['US'],,tt1474311,7.6,3647.0,6.333,6.9,"Kevin Deters, Stevie Wermers-Skelton",United States,"November 6, 2020",TV-G,23 min
+424,tm100894,Tangled,MOVIE,2010,PG,102,"['animation', 'fantasy', 'romance', 'comedy', 'family']",['US'],,tt0398286,7.7,462347.0,160.484,7.582,"Nathan Greno, Byron Howard",United States,"November 12, 2019",PG,101 min
+425,tm114448,Lilo & Stitch,MOVIE,2002,PG,85,"['family', 'animation', 'comedy', 'drama', 'fantasy', 'scifi']",['US'],,tt0275847,7.3,196044.0,57.766,7.5,"Christopher Sanders, Dean DeBlois",United States,"November 12, 2019",TV-PG,86 min
+426,tm103181,You Again,MOVIE,2010,PG,105,"['romance', 'comedy']",['US'],,tt1414382,5.7,52846.0,15.76,6.3,Andy Fickman,United States,"February 12, 2021",PG,106 min
+427,ts20394,Kim Possible,SHOW,2002,TV-G,21,"['action', 'comedy', 'family', 'romance', 'scifi', 'animation']",['US'],4.0,tt0278866,7.2,29261.0,35.897,7.587,"Adam Stein, Zach Lipovsky",United States,"November 12, 2019",TV-G,88 min
+428,tm411627,Kim Possible,MOVIE,2019,PG,86,"['comedy', 'action']",['US'],,tt7979492,3.7,3328.0,16.726,5.5,"Adam Stein, Zach Lipovsky",United States,"November 12, 2019",TV-G,88 min
+429,tm54852,The Chronicles of Narnia: Prince Caspian,MOVIE,2008,PG,150,"['fantasy', 'action', 'family', 'european']","['PL', 'SI', 'US', 'CZ']",,tt0499448,6.5,214967.0,49.071,6.6,Andrew Adamson,"United States, Poland, Slovenia, Czech Republic, United Kingdom","November 12, 2019",PG,154 min
+430,tm113299,Get a Clue,MOVIE,2002,G,107,"['comedy', 'crime', 'family']",['CA'],,tt0282521,5.0,6774.0,9.711,5.4,Maggie Greenwald,United States,"November 12, 2019",TV-G,84 min
+431,tm164391,The Pacifier,MOVIE,2005,PG,95,"['family', 'action', 'comedy', 'drama']","['US', 'CA']",,tt0395699,5.6,96568.0,24.595,6.0,Adam Shankman,"Canada, United States","June 11, 2021",PG,97 min
+432,tm138383,Confessions of a Shopaholic,MOVIE,2009,PG,104,"['comedy', 'romance']",['US'],,tt1093908,5.8,79914.0,30.752,6.439,P.J. Hogan,United States,"September 17, 2021",PG,106 min
+433,tm35821,Bolt,MOVIE,2008,PG,98,"['comedy', 'family', 'scifi', 'fantasy', 'animation', 'crime', 'drama']",['US'],,tt0397892,6.8,216066.0,58.477,6.482,"Chris Williams, Byron Howard",United States,"November 12, 2019",PG,98 min
+434,tm149656,The Princess and the Frog,MOVIE,2009,G,98,"['animation', 'family', 'fantasy', 'romance', 'comedy']",['US'],,tt0780521,7.1,150689.0,94.727,7.2,"John Musker, Ron Clements",United States,"November 12, 2019",G,99 min
+435,tm89841,Halloweentown High,MOVIE,2004,G,82,"['comedy', 'family', 'fantasy']",['US'],,tt0414078,6.0,7824.0,15.901,6.5,Mark Dippé,United States,"November 12, 2019",TV-G,83 min
+436,tm26890,Aquamarine,MOVIE,2006,PG,104,"['comedy', 'animation', 'family', 'fantasy', 'romance', 'drama']","['US', 'AU']",,tt0429591,5.4,43204.0,26.245,6.362,Elizabeth Allen Rosenbaum,United States,"August 13, 2021",PG,104 min
+437,ts22467,Wizards of Waverly Place,SHOW,2007,TV-G,24,"['comedy', 'scifi', 'drama', 'family', 'fantasy']",['US'],4.0,tt0799922,6.9,35354.0,53.09,8.149,,United States,"November 12, 2019",TV-G,4 Seasons
+438,tm59648,Beverly Hills Chihuahua,MOVIE,2008,PG,91,"['romance', 'comedy', 'family', 'action', 'thriller', 'animation', 'drama']",['US'],,tt1014775,3.9,24898.0,38.756,5.3,Raja Gosnell,"United States, Mexico","October 16, 2020",PG,95 min
+439,ts15388,American Dragon: Jake Long,SHOW,2005,TV-G,22,"['comedy', 'action', 'animation', 'family', 'fantasy']",['US'],2.0,tt0429305,6.6,12496.0,46.741,7.84,,United States,"February 26, 2021",TV-Y7,2 Seasons
+440,tm142670,Race to Witch Mountain,MOVIE,2009,PG,98,"['fantasy', 'thriller', 'family', 'scifi', 'action']",['US'],,tt1075417,5.7,60922.0,15.248,5.8,Andy Fickman,United States,"July 3, 2020",PG,100 min
+441,tm26958,Return to Halloweentown,MOVIE,2005,G,88,"['comedy', 'horror', 'scifi', 'action', 'family', 'fantasy']",['US'],,tt0816520,5.3,7042.0,11.948,6.7,David Jackson,United States,"November 12, 2019",TV-PG,89 min
+442,ts21656,The Proud Family,SHOW,2001,TV-Y,22,"['animation', 'family', 'fantasy', 'comedy']",['US'],3.0,tt0293737,6.5,8023.0,25.868,7.969,,United States,"January 1, 2020",TV-G,2 Seasons
+443,ts21857,The Suite Life of Zack & Cody,SHOW,2005,TV-G,26,"['comedy', 'family']",['US'],3.0,tt0426371,6.6,37538.0,55.413,7.748,,United States,"November 12, 2019",TV-G,3 Seasons
+444,tm135875,The Jungle Book 2,MOVIE,2003,G,72,"['family', 'animation', 'action', 'comedy', 'music', 'fantasy']",['US'],,tt0283426,5.3,16940.0,14.529,5.9,Steve Trenbirth,"United States, Australia","November 12, 2019",G,77 min
+445,tm85690,Empire of Dreams: The Story of the Star Wars Trilogy,MOVIE,2004,,151,['documentation'],['US'],,,,,14.841,7.7,"Edith Becker, Kevin Burns",United States,"November 12, 2019",TV-14,151 min
+446,tm96866,Prince of Persia: The Sands of Time,MOVIE,2010,PG-13,116,"['fantasy', 'action', 'scifi']",['US'],,tt0473075,6.6,293785.0,44.432,6.256,Mike Newell,United States,"August 7, 2020",PG-13,117 min
+447,ts30284,Good Luck Charlie,SHOW,2010,TV-G,23,"['comedy', 'family', 'drama', 'music']","['US', 'GB']",4.0,tt1415889,7.1,22721.0,58.955,7.954,,United States,"November 12, 2019",TV-G,4 Seasons
+448,tm22511,High School Musical,MOVIE,2006,G,98,"['drama', 'music', 'romance', 'comedy', 'family']",['US'],,tt0475293,5.5,90878.0,31.435,6.573,Kenny Ortega,United States,"November 12, 2019",TV-G,100 min
+449,tm167908,Aliens of the Deep,MOVIE,2005,G,95,"['documentation', 'family']",['US'],,tt0417415,6.3,3195.0,9.831,6.139,"James Cameron, Steven Quale",United States,"November 12, 2019",G,100 min
+450,tm174016,Cheaper by the Dozen 2,MOVIE,2005,PG,94,"['comedy', 'family']","['CA', 'US']",,tt0452598,5.5,60285.0,21.5,6.129,Adam Shankman,"United States, Canada","February 19, 2021",PG,95 min
+451,tm145073,Waking Sleeping Beauty,MOVIE,2010,PG,86,"['documentation', 'drama', 'history']",['US'],,tt1159961,7.5,3108.0,7.583,7.3,Don Hahn,United States,"November 12, 2019",PG,87 min
+452,ts21763,That's So Raven,SHOW,2003,TV-G,22,"['comedy', 'scifi', 'family', 'fantasy']",['US'],4.0,tt0300865,6.6,20492.0,39.729,7.273,,United States,"February 8, 2020",TV-G,4 Seasons
+453,tm138521,Inspector Gadget 2,MOVIE,2003,G,89,['comedy'],['AU'],,,,,11.948,4.09,Alex Zamm,United States,"November 12, 2019",G,90 min
+454,tm21946,Invincible,MOVIE,2006,PG,105,"['drama', 'sport']",['US'],,tt0445990,7.0,72544.0,13.695,6.948,Ericson Core,United States,"November 12, 2019",PG,105 min
+455,tm149926,G-Force,MOVIE,2009,PG,88,"['animation', 'action', 'comedy', 'family', 'fantasy', 'scifi']",['US'],,tt0436339,5.1,47734.0,22.046,5.4,Hoyt Yeatman IV,United States,"March 15, 2020",PG,92 min
+456,tm118639,Cadet Kelly,MOVIE,2002,G,101,"['comedy', 'drama', 'family']","['CA', 'US']",,tt0294425,5.5,14671.0,16.336,6.169,Larry Shaw,"United States, Canada","November 12, 2019",TV-G,100 min
+457,tm98015,The Last Song,MOVIE,2010,PG,107,"['drama', 'romance', 'music']",['US'],,tt1294226,6.0,89293.0,15.081,7.242,Julie Robinson,United States,"April 1, 2020",PG,109 min
+458,ts21685,Lizzie McGuire,SHOW,2001,TV-PG,22,"['comedy', 'drama', 'family']",['US'],2.0,tt0273366,6.6,19668.0,33.678,7.4,,United States,"November 12, 2019",TV-G,2 Seasons
+459,tm76049,Around the World in 80 Days,MOVIE,2004,PG,120,"['comedy', 'action', 'western', 'family']","['GB', 'US', 'DE', 'IE']",,tt0327437,5.8,91524.0,19.259,5.905,Frank Coraci,"United States, Germany, Ireland, United Kingdom","February 1, 2020",PG,121 min
+460,tm29915,Atlantis: The Lost Empire,MOVIE,2001,PG,95,"['scifi', 'animation', 'action', 'family', 'fantasy']",['US'],,tt0230011,6.9,123966.0,35.017,7.0,"Gary Trousdale, Kirk Wise",United States,"November 12, 2019",PG,98 min
+461,tm63076,Bedtime Stories,MOVIE,2008,PG,99,"['fantasy', 'romance', 'comedy', 'family', 'scifi']",['US'],,tt0960731,6.0,97180.0,24.69,6.1,Adam Shankman,United States,"March 5, 2020",PG,101 min
+462,tm68147,Meet the Robinsons,MOVIE,2007,G,91,"['comedy', 'fantasy', 'scifi', 'family', 'music', 'drama', 'animation']",['US'],,tt0396555,6.8,103537.0,53.794,6.9,Stephen Anderson,United States,"November 12, 2019",G,97 min
+463,tm133143,The Lizzie McGuire Movie,MOVIE,2003,PG,94,"['comedy', 'family', 'music', 'romance']",['US'],,tt0306841,5.5,40447.0,15.579,6.317,Jim Fall,United States,"November 12, 2019",PG,95 min
+464,tm79318,Underdog,MOVIE,2007,PG,81,"['fantasy', 'scifi', 'documentation', 'family', 'action', 'comedy']",['US'],,tt0467110,4.8,22040.0,12.141,5.4,Frederik Du Chau,United States,"August 27, 2021",PG,85 min
+465,tm119103,Double Teamed,MOVIE,2002,G,92,"['drama', 'family', 'sport']",['US'],,tt0281905,5.9,3729.0,3.864,6.2,Duwayne Dunham,United States,"November 12, 2019",TV-G,93 min
+466,tm185245,Go Figure,MOVIE,2005,G,92,"['comedy', 'drama', 'family', 'romance', 'sport', 'action']",['US'],,tt0447987,5.6,3830.0,11.072,5.9,Francine McDougall,United States,"November 12, 2019",TV-G,89 min
+467,tm84279,The Pixar Story,MOVIE,2007,G,87,['documentation'],['US'],,tt1059955,7.7,6802.0,8.33,7.6,Leslie Iwerks,United States,"November 19, 2021",G,91 min
+468,tm185472,Twitches,MOVIE,2005,PG,86,"['drama', 'comedy', 'family', 'fantasy']",['US'],,tt0467421,5.7,8782.0,21.407,6.74,Stuart Gillard,United States,"November 12, 2019",TV-PG,87 min
+469,tm51636,High School Musical 3: Senior Year,MOVIE,2008,G,112,"['drama', 'comedy', 'romance', 'family', 'music']",['US'],,tt0962726,4.9,64252.0,18.035,6.6,Kenny Ortega,United States,"November 12, 2019",G,121 min
+470,tm30433,The Fox and the Hound 2,MOVIE,2006,G,69,['animation'],['US'],,,,,35.774,6.047,Jim Kammerud,United States,"November 12, 2019",G,73 min
+471,ts21443,Great Migrations,SHOW,2010,TV-PG,50,['documentation'],['US'],1.0,tt1769803,8.0,843.0,10.912,8.1,,United States,"November 12, 2019",TV-PG,1 Season
+472,tm133875,Destino,MOVIE,2003,PG,7,['animation'],['US'],,,,,8.581,7.236,Monfery Dominique,"France, United States","January 10, 2020",PG,6 min
+473,tm87510,Mulan II,MOVIE,2004,G,79,['comedy'],['US'],,,,,53.896,6.484,"Darrell Rooney, Lynne Southerland","United States, South Korea, Singapore, Russia, Malaysia, Kazakhstan, Taiwan, Hong Kong, Japan, China, India, Syria, Iran, Egypt, Pakistan","November 12, 2019",G,82 min
+474,ts22233,Shake It Up,SHOW,2010,TV-G,25,"['comedy', 'family']",['US'],3.0,tt0453993,8.0,88.0,41.672,7.8,,United States,"November 12, 2019",TV-G,3 Seasons
+475,tm179262,Chicken Little,MOVIE,2005,G,81,"['comedy', 'scifi', 'animation', 'family', 'fantasy']",['US'],,tt0371606,5.7,95260.0,47.59,5.9,Mark Dindal,United States,"November 12, 2019",G,84 min
+476,tm42168,Tinker Bell,MOVIE,2008,G,78,['fantasy'],"['US', 'IN']",,,,,46.629,6.83,Bradley Raymond,United States,"November 12, 2019",G,81 min
+477,ts41271,Handy Manny,SHOW,2006,TV-Y,21,"['comedy', 'animation', 'family']",['US'],4.0,tt0451460,5.5,2199.0,25.605,7.2,,"United States, Canada","November 12, 2019",TV-Y,3 Seasons
+478,tm26534,Roving Mars,MOVIE,2006,PG,39,['documentation'],['US'],,,,,3.063,7.3,George Butler,United States,"November 12, 2019",G,41 min
+479,tm40817,College Road Trip,MOVIE,2008,G,83,"['action', 'comedy', 'drama', 'family']",['US'],,tt0997047,4.3,16313.0,10.405,5.559,Roger Kumble,United States,"November 12, 2019",G,84 min
+480,ts20463,Imagination Movers,SHOW,2008,TV-Y,23,"['comedy', 'family']",['US'],3.0,tt1101237,7.0,829.0,5.711,6.6,,United States,,TV-Y,3 Seasons
+481,tm35227,The Wild,MOVIE,2006,G,95,"['family', 'animation', 'comedy']","['CA', 'US']",,tt0405469,5.2,26557.0,29.759,5.536,Steve Williams,"Canada, United States","November 12, 2019",G,86 min
+482,tm184353,Valiant,MOVIE,2005,G,76,"['comedy', 'animation', 'family', 'war']","['GB', 'US']",,tt0361089,5.5,23475.0,17.265,5.472,Gary Chapman,"United Kingdom, United States","November 12, 2019",G,76 min
+483,tm85123,Mickey's Twice Upon a Christmas,MOVIE,2004,G,68,['animation'],['US'],,,,,15.168,7.0,Matthew O'Callaghan,United States,"November 12, 2019",G,70 min
+484,tm149585,Princess Protection Program,MOVIE,2009,G,89,"['drama', 'family', 'comedy']",['US'],,tt1196339,5.6,24985.0,31.729,6.647,Allison Liddi-Brown,United States,"November 12, 2019",TV-G,90 min
+485,tm129695,The Even Stevens Movie,MOVIE,2003,G,94,"['comedy', 'family']",['US'],,tt0327698,6.1,7181.0,8.726,5.8,Sean McNamara,United States,"November 12, 2019",TV-G,94 min
+486,tm80509,The Sandlot: Heading Home,MOVIE,2007,PG,96,['family'],['US'],,,,,7.857,5.9,William Dear,"United States, Canada","March 6, 2020",PG,97 min
+487,tm170370,Lilo & Stitch 2: Stitch Has a Glitch,MOVIE,2005,PG,68,['scifi'],['US'],,,,,40.207,6.623,"Tony Leondis, Michael LaBash",United States,"November 12, 2019",PG,70 min
+488,tm177274,Because of Winn-Dixie,MOVIE,2005,PG,106,"['comedy', 'drama', 'family']",['US'],,tt0317132,6.3,11959.0,13.851,6.372,Wayne Wang,United States,"February 14, 2020",PG,107 min
+489,tm75304,High School Musical 2,MOVIE,2007,G,105,"['comedy', 'drama', 'romance', 'family', 'music']",['US'],,tt0810900,4.7,361.0,22.015,6.5,Kenny Ortega,United States,"November 12, 2019",TV-G,114 min
+490,tm148606,Wizards of Waverly Place: The Movie,MOVIE,2009,PG,98,"['comedy', 'drama', 'action', 'family', 'fantasy', 'animation']",['US'],,tt1369845,6.2,19218.0,20.771,6.6,Lev L. Spiro,United States,"November 12, 2019",TV-G,94 min
+491,tm118930,Cinderella II: Dreams Come True,MOVIE,2002,G,73,"['romance', 'fantasy']","['JP', 'US']",,,,,53.915,6.1,John Kafka,United States,"November 12, 2019",G,77 min
+492,tm102355,Starstruck,MOVIE,2010,G,81,"['romance', 'comedy', 'music', 'family']",['US'],,tt1579247,6.1,16187.0,17.234,7.004,Michael Grossman,United States,"November 12, 2019",TV-G,81 min
+493,tm120806,The Rookie,MOVIE,2002,G,127,"['drama', 'family', 'sport']",['US'],,tt0265662,6.9,35611.0,12.703,6.753,John Hancock,United States,"November 12, 2019",G,129 min
+494,tm28463,Cow Belles,MOVIE,2006,G,88,"['comedy', 'romance', 'family']",['US'],,tt0489007,5.2,6380.0,11.283,5.471,Francine McDougall,United States,"November 12, 2019",TV-G,91 min
+495,tm146421,The Boys: The Sherman Brothers' Story,MOVIE,2009,PG,101,"['music', 'documentation']",['US'],,tt1015971,7.7,1214.0,6.801,7.4,"Jeffrey Sherman, Gregory Sherman",United States,"May 22, 2020",PG,102 min
+496,tm27689,Camp Rock,MOVIE,2008,G,95,"['romance', 'music', 'animation', 'comedy', 'drama', 'family']",['US'],,tt1055366,5.1,34890.0,15.511,6.4,Matthew Diamond,United States,"November 12, 2019",TV-G,96 min
+497,tm140670,Brother Bear,MOVIE,2003,G,85,"['action', 'animation', 'family', 'fantasy', 'comedy', 'drama']",['US'],,tt0328880,6.8,114520.0,72.349,7.254,"Aaron Blaise, Robert Walker",United States,"November 12, 2019",G,90 min
+498,tm97467,Tinker Bell and the Great Fairy Rescue,MOVIE,2010,G,76,"['animation', 'action', 'family', 'fantasy']","['US', 'IN']",,,,,40.948,6.691,Bradley Raymond,United States,"November 12, 2019",G,80 min
+499,tm71993,The Secret of the Magic Gourd,MOVIE,2007,G,85,"['drama', 'family', 'fantasy']","['CN', 'HK', 'US']",,tt0496386,5.1,783.0,20.418,7.369,"朱家欣 , 钟智行","China, Hong Kong, United States","November 12, 2019",G,84 min
+500,tm151507,Tinker Bell and the Lost Treasure,MOVIE,2009,G,81,['animation'],"['IN', 'US']",,,,,55.676,6.796,Klay Hall,United States,"November 12, 2019",G,84 min
+501,tm138513,Trail of the Panda,MOVIE,2009,G,88,['family'],['CN'],,tt1247700,6.3,234.0,2.795,8.1,Zhong Yu,China,"November 12, 2019",G,89 min
+502,tm83783,The Game Plan,MOVIE,2007,PG,110,"['comedy', 'family', 'sport']",['US'],,tt0492956,6.2,83769.0,40.585,6.4,Andy Fickman,United States,"November 12, 2019",PG,112 min
+503,tm164059,Ice Princess,MOVIE,2005,G,98,"['drama', 'comedy', 'family', 'sport']","['US', 'CA']",,tt0396652,6.0,27840.0,13.533,6.393,Tim Fywell,"United States, Canada","November 12, 2019",G,99 min
+504,tm22646,Brother Bear 2,MOVIE,2006,G,73,"['animation', 'family', 'action']",['US'],,,,,42.085,6.662,Benjamin Gluck,United States,"November 12, 2019",G,78 min
+505,tm33681,Eight Below,MOVIE,2006,PG,120,"['drama', 'family', 'action']",['US'],,tt0397313,7.3,66053.0,19.899,7.0,Frank Marshall,United States,"November 12, 2019",PG,122 min
+506,tm114043,George of the Jungle 2,MOVIE,2003,,87,"['comedy', 'family', 'action']","['AU', 'US']",,,,,17.143,4.413,David Grossman,"United States, Australia","December 20, 2019",PG,89 min
+507,tm41971,Snow Buddies,MOVIE,2008,G,87,"['action', 'family']",['US'],,,,,15.605,6.058,Robert Vince,United States,"November 5, 2021",G,91 min
+508,tm130570,Piglet's Big Movie,MOVIE,2003,G,75,"['animation', 'family', 'comedy']",['US'],,tt0323642,6.1,8179.0,14.948,6.715,Francis Glebas,United States,"November 12, 2019",G,78 min
+509,ts22266,Phil of the Future,SHOW,2004,TV-PG,22,"['scifi', 'comedy', 'family']",['US'],2.0,tt0340281,7.0,7707.0,13.51,7.4,,United States,"November 12, 2019",TV-G,2 Seasons
+510,tm36356,Max Keeble's Big Move,MOVIE,2001,G,83,"['comedy', 'family', 'crime']",['US'],,tt0273799,5.4,8333.0,11.835,5.767,Tim Hill,United States,"December 25, 2020",PG,88 min
+511,tm184238,Kronk's New Groove,MOVIE,2005,G,72,['animation'],['US'],,,,,27.597,6.395,"Elliot Bour, Saul Blinkoff",United States,"November 12, 2019",G,78 min
+512,tm144844,Dug's Special Mission,MOVIE,2009,G,5,['comedy'],['US'],,,,,11.103,7.017,Ronnie Del Carmen,United States,"November 12, 2019",TV-PG,6 min
+513,tm36111,Lifted,MOVIE,2006,G,5,"['animation', 'scifi']",['US'],,,,,8.96,7.5,Gary Rydstrom,United States,"November 12, 2019",G,5 min
+514,tm118766,Winnie the Pooh: A Very Merry Pooh Year,MOVIE,2002,G,65,"['animation', 'family', 'comedy', 'drama', 'fantasy']",['US'],,tt0324572,6.6,2755.0,25.594,6.8,"Ed Wexler, Gary Katona, Jamie Mitchell",United States,"November 12, 2019",G,67 min
+515,tm163905,Pooh's Heffalump Movie,MOVIE,2005,G,68,"['animation', 'comedy', 'fantasy', 'family']",['US'],,tt0407121,6.4,7875.0,20.605,6.788,Frank Nissen,United States,"November 12, 2019",G,73 min
+516,tm130398,Atlantis: Milo's Return,MOVIE,2003,G,70,"['fantasy', 'scifi', 'action']",['US'],,,,,20.444,6.3,"Tad Stones, Toby Shelton, Victor Cook",United States,"November 12, 2019",G,83 min
+517,tm90911,Day & Night,MOVIE,2010,G,6,['animation'],['US'],,,,,7.402,7.729,Teddy Newton,United States,"November 12, 2019",G,8 min
+518,tm90465,Winnie the Pooh: Springtime with Roo,MOVIE,2004,G,65,['animation'],['US'],,,,,21.164,6.7,"Elliot Bour, Saul Blinkoff",United States,"November 12, 2019",G,70 min
+519,tm84173,Twitches Too,MOVIE,2007,PG,83,"['drama', 'thriller', 'family', 'fantasy', 'horror']",['US'],,tt1017465,5.7,5285.0,16.773,6.744,Stuart Gillard,United States,"November 12, 2019",TV-PG,84 min
+520,tm78798,Confessions of a Teenage Drama Queen,MOVIE,2004,PG,89,"['comedy', 'family', 'music', 'romance', 'european']","['DE', 'US']",,tt0361467,4.6,30010.0,15.558,5.6,Sara Sugarman,"Germany, United States","November 12, 2019",PG,91 min
+521,ts5776,Fantastic Four: World's Greatest Heroes,SHOW,2006,TV-Y7,23,"['action', 'animation', 'family', 'scifi']",['US'],1.0,tt0830298,6.8,2341.0,13.915,7.603,,United States,"November 12, 2019",TV-Y7,1 Season
+522,tm48496,Presto,MOVIE,2008,G,5,['animation'],['US'],,,,,13.337,7.8,Doug Sweetland,United States,"November 12, 2019",G,5 min
+523,ts21235,The Replacements,SHOW,2007,TV-G,25,"['animation', 'comedy', 'family', 'scifi']",['US'],3.0,tt0816401,5.8,3048.0,12.862,6.667,,United States,"November 12, 2019",TV-G,1 Season
+524,tm116982,Tuck Everlasting,MOVIE,2002,PG,90,"['drama', 'family', 'fantasy', 'romance']",['US'],,tt0283084,6.6,24449.0,11.795,6.6,Jay Russell,United States,"November 12, 2019",PG,91 min
+525,ts20637,Special Agent Oso,SHOW,2009,TV-Y,20,"['animation', 'action', 'family']",['US'],2.0,tt1124354,5.1,679.0,11.384,8.6,,"United States, United Kingdom, South Korea","May 14, 2021",TV-Y,2 Seasons
+526,tm78580,Jump In!,MOVIE,2007,,85,"['drama', 'sport', 'comedy', 'family', 'romance']",['US'],,tt0805559,5.4,7985.0,6.119,6.3,Paul Hoen,United States,"November 12, 2019",TV-G,86 min
+527,tm133130,Stitch! The Movie,MOVIE,2003,G,60,"['action', 'family', 'animation', 'comedy']",['US'],,,,,24.715,6.5,"Tony Craig, Bobs Gannaway",United States,"November 12, 2019",G,62 min
+528,tm84562,"Mickey, Donald, Goofy: The Three Musketeers",MOVIE,2004,G,68,['comedy'],['US'],,,,,23.852,6.6,Donovan Cook,United States,"November 12, 2019",G,71 min
+529,tm33025,Bambi II,MOVIE,2006,G,75,"['animation', 'drama']",['US'],,,,,22.747,6.5,Brian Pimental,United States,"November 12, 2019",G,75 min
+530,tm42665,Recess: School's Out,MOVIE,2001,G,82,"['animation', 'family', 'scifi', 'comedy']",['US'],,tt0265632,6.6,10377.0,19.367,6.546,Chuck Sheetz,"United States, Japan","November 12, 2019",G,87 min
+531,tm26303,The Little Matchgirl,MOVIE,2006,G,7,"['drama', 'fantasy', 'animation']",['US'],,,,,10.515,7.5,Roger Allers,United States,"November 12, 2021",G,7 min
+532,ts21940,Kick Buttowski: Suburban Daredevil,SHOW,2010,TV-Y7,23,"['action', 'comedy', 'family', 'thriller', 'animation']",['US'],2.0,tt1600757,6.7,5499.0,68.161,8.2,,United States,"April 9, 2021",TV-Y7,2 Seasons
+533,tm41029,Leroy & Stitch,MOVIE,2006,G,73,['comedy'],['US'],,,,,26.527,6.58,"Roberts Gannaway, Tony Craig",United States,"November 12, 2019",G,76 min
+534,tm113905,Mike's New Car,MOVIE,2002,G,3,"['animation', 'comedy', 'family', 'fantasy']",['US'],,,,,20.778,6.89,"Pete Docter, Roger Gould",United States,"November 12, 2019",TV-G,5 min
+535,tm166137,Tarzan II,MOVIE,2005,G,72,['animation'],['US'],,,,,18.27,6.068,Brian Smith,United States,"June 26, 2020",G,75 min
+536,tm115095,Tarzan & Jane,MOVIE,2002,G,72,['animation'],['US'],,,,,15.708,6.012,Steve Loter,United States,"November 12, 2019",TV-PG,78 min
+537,tm138227,The Cheetah Girls,MOVIE,2003,G,100,"['comedy', 'drama', 'family', 'music']","['US', 'CA']",,tt0338852,4.8,8278.0,12.445,6.019,Oz Scott,"Canada, United States","November 12, 2019",TV-G,94 min
+538,tm80921,Stuck in the Suburbs,MOVIE,2004,G,89,"['comedy', 'family', 'music']",['US'],,tt0410696,5.5,4202.0,10.29,6.0,Savage Holland,United States,"November 12, 2019",TV-G,79 min
+539,tm43035,Walt & El Grupo,MOVIE,2008,PG,106,"['documentation', 'family']","['US', 'BR']",,tt1223150,6.4,434.0,1.422,5.9,Theodore Thomas,United States,"June 12, 2020",PG,108 min
+540,tm74862,Cinderella III: A Twist in Time,MOVIE,2007,G,70,['romance'],['US'],,,,,46.624,6.531,Frank Nissen,United States,"November 12, 2019",G,79 min
+541,tm53948,Morning Light,MOVIE,2009,PG,97,"['documentation', 'sport', 'drama']",['US'],,tt1198405,5.7,403.0,0.627,6.0,Mark Monroe,United States,"September 18, 2020",PG,99 min
+542,tm109078,The Hunchback of Notre Dame II,MOVIE,2002,G,66,"['animation', 'family', 'comedy']",['US'],,,,,24.84,5.4,Bradley Raymond,United States,"November 12, 2019",G,69 min
+543,ts29942,Pair of Kings,SHOW,2010,TV-Y7,25,"['action', 'scifi', 'family', 'fantasy', 'comedy']",['US'],3.0,tt1571313,5.8,4265.0,12.516,8.024,,United States,"February 26, 2021",TV-Y7,3 Seasons
+544,tm27800,The Cheetah Girls 2,MOVIE,2006,G,96,"['family', 'comedy', 'drama', 'music']",['US'],,tt0800318,5.0,6545.0,11.03,6.3,Kenny Ortega,United States,"November 12, 2019",TV-G,98 min
+545,tm80896,Tiger Cruise,MOVIE,2004,PG,88,"['drama', 'family']",['US'],,tt0397113,5.9,1536.0,4.453,6.0,Duwayne Dunham,United States,"November 12, 2019",TV-PG,88 min
+546,tm218654,Tick Tock Tale,MOVIE,2010,G,7,['animation'],['US'],,,,,4.408,7.6,Dean Wellins,United States,"November 12, 2021",G,6 min
+547,tm81543,Sacred Planet,MOVIE,2004,G,40,['documentation'],['US'],,,,,2.915,6.6,Jon Long,"Canada, Malaysia, United States","November 12, 2019",G,47 min
+548,tm27265,Mater and the Ghostlight,MOVIE,2006,G,7,['horror'],['US'],,,,,10.373,6.2,John Lasseter,United States,"November 12, 2019",TV-Y7,8 min
+549,tm172969,Jack-Jack Attack,MOVIE,2005,,5,"['animation', 'family', 'action']",['US'],,,,,9.508,7.3,Brad Bird,United States,"November 12, 2019",G,6 min
+550,ts26491,Wild Russia,SHOW,2008,TV-PG,45,"['documentation', 'european']",['DE'],2.0,tt1489868,8.4,626.0,3.718,7.8,,,"January 15, 2020",TV-PG,1 Season
+551,tm2125,101 Dalmatians II: Patch's London Adventure,MOVIE,2002,G,70,['comedy'],['US'],,,,,38.069,6.0,"Jim Kammerud, Brian Smith",United States,"November 12, 2019",G,77 min
+552,tm43840,Lady and the Tramp II: Scamp's Adventure,MOVIE,2001,G,69,['romance'],"['US', 'AU']",,,,,29.79,6.389,Darrell Rooney,"United States, Australia","October 1, 2019",G,73 min
+553,ts22091,My Friends Tigger & Pooh,SHOW,2007,TV-Y,25,"['drama', 'action', 'family', 'animation']",['US'],3.0,tt7925670,5.8,448.0,21.47,6.8,,United States,"November 12, 2019",TV-Y,2 Seasons
+554,ts22399,Higglytown Heroes,SHOW,2004,TV-Y,24,"['animation', 'family']",['US'],3.0,tt0406419,4.8,597.0,18.825,8.7,,"United States, South Korea","April 2, 2021",TV-Y,2 Seasons
+555,tm32146,Wendy Wu: Homecoming Warrior,MOVIE,2006,G,91,"['action', 'family', 'fantasy', 'romance', 'scifi']",['US'],,tt0790781,5.4,6896.0,15.875,6.191,John Laing,United States,"November 12, 2019",TV-PG,91 min
+556,tm156660,Partly Cloudy,MOVIE,2009,G,5,['animation'],['US'],,,,,14.006,7.833,Peter Sohn,United States,"November 12, 2019",G,6 min
+557,tm75293,Your Friend the Rat,MOVIE,2007,G,11,"['family', 'animation']",['US'],,,,,13.036,6.7,Jim Capobianco,United States,"November 12, 2019",TV-G,13 min
+558,ts5254,Fish Hooks,SHOW,2010,TV-G,23,"['comedy', 'animation', 'family']",['US'],3.0,tt1725902,4.9,3768.0,12.995,6.6,,United States,"April 3, 2020",TV-G,3 Seasons
+559,tm33408,The Cheetah Girls: One World,MOVIE,2008,G,90,"['family', 'comedy', 'drama', 'music', 'romance', 'war', 'animation']",['US'],,tt1013542,4.6,4606.0,12.642,6.1,Paul Hoen,United States,"November 12, 2019",TV-G,85 min
+560,tm138168,Boundin',MOVIE,2003,G,5,['animation'],['US'],,,,,12.09,6.6,Bud Luckey,United States,"November 12, 2019",G,6 min
+561,tm28759,Minutemen,MOVIE,2008,G,98,"['comedy', 'family', 'romance', 'scifi', 'thriller']",['US'],,tt1072755,5.8,6209.0,12.047,5.728,Lev Spiro,United States,"November 12, 2019",TV-G,91 min
+562,tm89348,Camp Rock 2: The Final Jam,MOVIE,2010,PG,97,"['comedy', 'romance', 'family', 'music']",['US'],,tt1252380,5.2,19288.0,11.692,6.33,Paul Hoen,United States,"November 12, 2019",TV-G,101 min
+563,tm33904,Read It and Weep,MOVIE,2006,G,90,"['drama', 'comedy', 'animation', 'family', 'romance']",['US'],,tt0494716,5.5,5651.0,9.493,5.742,Paul Hoen,United States,"November 12, 2019",TV-G,85 min
+564,tm147121,Dadnapped,MOVIE,2009,G,84,"['action', 'family', 'comedy', 'crime']",['US'],,tt1090750,4.8,3152.0,9.018,5.288,Paul Hoen,United States,"November 12, 2019",TV-G,85 min
+565,tm77963,Johnny Kapahala: Back on Board,MOVIE,2007,,90,"['comedy', 'drama', 'family', 'sport']",['US'],,tt0942378,5.4,2271.0,8.965,5.983,Eric Bross,United States,"November 12, 2019",TV-G,93 min
+566,tm149604,Space Buddies,MOVIE,2009,G,84,"['drama', 'family', 'comedy', 'action']","['US', 'CA']",,,,,8.894,5.857,Robert Vince,"United States, Canada","November 5, 2021",G,87 min
+567,tm168266,One Man Band,MOVIE,2005,G,4,['animation'],['US'],,,,,8.751,7.3,"Mark Andrews, Andrew Jimenez",United States,"November 12, 2019",G,5 min
+568,tm186208,The Proud Family Movie,MOVIE,2005,G,90,"['comedy', 'animation', 'family', 'fantasy', 'scifi']",['US'],,tt0448090,5.3,1925.0,8.723,5.9,Bruce Smith,United States,"November 12, 2019",TV-G,95 min
+569,tm100013,The Search for Santa Paws,MOVIE,2010,G,89,"['family', 'action']",['CA'],,,,,8.711,6.3,Robert Vince,Canada,"November 5, 2021",G,101 min
+570,ts14113,The Book of Pooh,SHOW,2001,TV-Y,26,"['family', 'comedy', 'western', 'fantasy', 'animation']",['US'],3.0,tt0274240,6.2,502.0,7.502,6.9,,United States,"November 12, 2019",TV-Y,2 Seasons
+571,tm150525,Jonas Brothers: The Concert Experience,MOVIE,2009,G,76,"['documentation', 'music', 'family']",['US'],,tt1229827,1.6,17503.0,7.295,6.3,Bruce Hendricks,United States,"November 12, 2019",G,89 min
+572,tm143422,Hatching Pete,MOVIE,2009,PG,90,"['comedy', 'family']",['US'],,tt1222818,5.3,2868.0,6.877,5.642,Stuart Gillard,United States,"November 12, 2019",TV-G,90 min
+573,tm30856,Motocrossed,MOVIE,2001,G,91,"['comedy', 'drama', 'family', 'sport', 'action']",['US'],,tt0273842,6.5,5292.0,6.808,6.122,Steve Boyum,United States,"November 12, 2019",TV-G,92 min
+574,tm34566,Zenon: The Zequel,MOVIE,2001,G,89,"['scifi', 'family', 'comedy']","['US', 'NZ']",,tt0271271,5.7,4003.0,6.468,5.7,Manny Coto,"United States, New Zealand","November 12, 2019",TV-G,89 min
+575,tm140455,Full-Court Miracle,MOVIE,2003,,90,"['family', 'sport', 'drama']",['US'],,tt0382142,5.7,1070.0,6.338,5.6,Stuart Gillard,United States,"November 12, 2019",TV-G,95 min
+576,tm153529,Super Rhino,MOVIE,2009,G,5,['animation'],['US'],,,,,6.167,6.0,Nathan Greno,United States,"January 1, 2020",G,4 min
+577,tm142089,Kingdom of the Blue Whale,MOVIE,2009,PG,96,['documentation'],['US'],,tt1403075,6.7,216.0,6.081,5.9,,United States,"November 12, 2019",TV-PG,94 min
+578,tm42235,Jumping Ship,MOVIE,2001,G,92,"['drama', 'family', 'comedy']",['US'],,tt0271172,6.0,1941.0,5.949,6.5,Michael Lange,"Australia, United States","November 12, 2019",TV-G,93 min
+579,ts22490,Super Robot Monkey Team Hyperforce Go!,SHOW,2004,TV-Y7,30,"['action', 'comedy', 'family', 'fantasy', 'scifi', 'animation']","['JP', 'US']",4.0,tt0423746,6.4,2505.0,5.943,7.308,,"United States, Japan","July 17, 2020",TV-Y7,2 Seasons
+580,tm144792,Right on Track,MOVIE,2003,G,85,"['drama', 'family']",['US'],,tt0323810,6.1,1435.0,5.759,6.4,Duwayne Dunham,United States,"November 12, 2019",TV-G,88 min
+581,tm141309,Skyrunners,MOVIE,2009,G,92,"['comedy', 'family', 'scifi', 'drama', 'action']",['US'],,tt1479534,5.0,1369.0,5.757,4.988,Ralph Hemecker,United States,"November 12, 2019",TV-PG,93 min
+582,tm79179,Pixel Perfect,MOVIE,2004,,90,"['comedy', 'music', 'family', 'scifi', 'fantasy']",['US'],,tt0393596,5.6,3742.0,5.143,5.3,Mark Dippé,United States,"November 12, 2019",TV-G,90 min
+583,tm167139,Buffalo Dreams,MOVIE,2005,,90,"['drama', 'family']",['US'],,tt0430932,5.6,568.0,5.062,5.2,David Jackson,United States,"November 12, 2019",TV-G,90 min
+584,tm93041,Zenon: Z3,MOVIE,2004,,81,"['comedy', 'family', 'scifi']",['US'],,tt0379060,5.2,2785.0,4.855,5.6,Steve Rash,United States,"November 12, 2019",TV-G,81 min
+585,tm135648,Recess: All Growed Down,MOVIE,2003,G,61,['animation'],[],,,,,4.705,6.1,"Howy Parkins, Chuck Sheetz",United States,"November 12, 2019",G,61 min
+586,tm115596,The Scream Team,MOVIE,2002,,88,"['fantasy', 'horror', 'comedy', 'family']",['US'],,tt0313634,6.3,1313.0,4.232,6.38,Stuart Gillard,United States,"November 12, 2019",TV-PG,88 min
+587,tm112696,A Ring of Endless Light,MOVIE,2002,,88,"['drama', 'family', 'romance']",['US'],,tt0282123,5.8,1338.0,4.165,6.5,Greg Beeman,United States,"November 12, 2019",TV-G,88 min
+588,tm130492,You Wish!,MOVIE,2003,,87,"['family', 'fantasy', 'drama', 'comedy']","['NZ', 'US']",,tt0329783,6.0,1957.0,4.105,5.767,Paul Hoen,"New Zealand, United States","November 12, 2019",TV-G,88 min
+589,tm33832,Hounded,MOVIE,2001,,91,"['comedy', 'drama', 'family']",['US'],,tt0274557,5.0,1069.0,4.007,5.2,Neal Israel,United States,"November 12, 2019",TV-G,92 min
+590,tm103939,Tru Confessions,MOVIE,2002,G,83,"['drama', 'family', 'comedy']","['CA', 'US']",,tt0296251,7.4,3287.0,3.751,6.5,Paul Hoen,"United States, Canada","November 12, 2019",TV-G,83 min
+591,tm51679,The Poof Point,MOVIE,2001,PG,79,"['comedy', 'family', 'scifi']",['US'],,tt0274728,4.5,591.0,3.515,5.3,Neal Israel,United States,"November 12, 2019",TV-G,80 min
+592,tm77376,Going to the Mat,MOVIE,2004,,96,"['drama', 'sport', 'family']",['US'],,tt0399104,6.7,1463.0,2.455,6.8,Stuart Gillard,United States,"November 12, 2019",TV-G,92 min
+593,tm155287,Journey to Shark Eden,MOVIE,2009,,60,['documentation'],['US'],,,,,2.115,7.6,,United States,"November 12, 2019",TV-G,47 min
+594,tm885767,Secrets of the King Cobra,MOVIE,2010,PG,46,['documentation'],[],,,,,1.4,4.5,,India,"November 12, 2019",TV-PG,47 min
+595,ts20630,Once Upon a Time,SHOW,2011,TV-PG,43,"['drama', 'scifi', 'fantasy', 'romance']",['US'],7.0,tt1843230,7.7,227577.0,139.578,7.299,,United States,"September 18, 2020",TV-PG,7 Seasons
+596,ts21221,Kickin' It,SHOW,2011,TV-Y7,23,"['action', 'drama', 'family', 'comedy']",['US'],4.0,tt1765622,6.5,6106.0,31.109,8.307,,United States,"November 12, 2019",TV-PG,4 Seasons
+597,tm167877,We Bought a Zoo,MOVIE,2011,PG,124,"['drama', 'comedy', 'family']",['US'],,tt1389137,7.1,145942.0,18.396,6.739,Cameron Crowe,United States,"July 16, 2021",PG,125 min
+598,tm173805,Pirates of the Caribbean: On Stranger Tides,MOVIE,2011,PG-13,137,"['fantasy', 'action']","['US', 'GB']",,tt1298650,6.6,535820.0,156.708,6.528,Rob Marshall,"United States, United Kingdom","September 10, 2021",PG-13,140 min
+599,tm30584,Wreck-It Ralph,MOVIE,2012,PG,103,"['animation', 'comedy', 'family', 'fantasy', 'scifi']",['US'],,tt1772341,7.7,430566.0,78.317,7.321,Rich Moore,United States,"November 12, 2019",PG,103 min
+600,tm72333,John Carter,MOVIE,2012,PG-13,132,"['action', 'scifi', 'european']",['US'],,tt0401729,6.6,276727.0,50.039,6.268,Andrew Stanton,United States,"May 2, 2020",PG-13,134 min
+601,tm170071,The Big Year,MOVIE,2011,PG,100,['comedy'],['US'],,tt1053810,6.2,46199.0,9.309,5.963,David Frankel,"United States, Canada","April 2, 2021",PG,101 min
+602,tm176113,Rio,MOVIE,2011,G,96,"['animation', 'comedy', 'family', 'music', 'crime', 'drama']",['US'],,tt1436562,6.9,233303.0,64.0,6.713,Carlos Saldanha,"United States, Brazil","April 16, 2021",G,99 min
+603,tm51645,Brave,MOVIE,2012,PG,100,"['comedy', 'family', 'fantasy', 'animation']",['US'],,tt1217209,7.1,418919.0,69.99,7.006,"Mark Andrews, Brenda Chapman","United States, United Kingdom","November 12, 2019",PG,94 min
+604,ts35950,Wicked Tuna,SHOW,2012,TV-14,45,"['reality', 'action']",['US'],12.0,tt2191567,6.5,994.0,12.049,8.2,,United States,"May 28, 2021",TV-14,10 Seasons
+605,tm164345,The Muppets,MOVIE,2011,PG,103,"['comedy', 'family']",['US'],,tt1204342,7.1,93942.0,19.286,6.653,James Bobin,United States,"November 12, 2019",PG,108 min
+606,ts36431,The Muppets,SHOW,2015,TV-PG,21,"['comedy', 'family']",['US'],1.0,tt4651824,7.4,6923.0,8.941,7.1,James Bobin,United States,"November 12, 2019",PG,108 min
+607,ts4693,Brain Games,SHOW,2011,TV-PG,29,"['documentation', 'reality', 'comedy', 'drama', 'family']",['US'],8.0,tt2078690,8.2,3398.0,10.897,7.7,,United States,"April 17, 2020",TV-G,8 Seasons
+608,ts9795,Austin & Ally,SHOW,2011,TV-G,23,"['romance', 'comedy', 'drama', 'family', 'music']",['US'],4.0,tt1830491,5.9,12128.0,48.059,8.065,,United States,"January 1, 2020",TV-G,4 Seasons
+609,ts20635,Jessie,SHOW,2011,TV-G,26,"['comedy', 'drama', 'family']",['US'],4.0,tt1865769,6.0,16704.0,51.926,8.139,,United States,"November 12, 2019",TV-PG,4 Seasons
+610,tm178393,Ice Age: A Mammoth Christmas,MOVIE,2011,PG,26,['animation'],['US'],,,,,15.763,6.4,Karen Disher,United States,"November 26, 2021",TV-G,23 min
+611,tm171776,Cars 2,MOVIE,2011,G,106,"['comedy', 'scifi', 'crime', 'animation', 'family', 'sport', 'drama', 'fantasy']",['US'],,tt1216475,6.2,196756.0,109.501,6.047,John Lasseter,United States,"November 12, 2019",G,107 min
+612,ts7273,Doc McStuffins,SHOW,2012,TV-G,22,"['animation', 'family', 'fantasy', 'music']",['US'],6.0,tt1710295,6.6,2547.0,35.228,5.8,,"United States, Ireland","May 22, 2020",TV-Y7,5 Seasons
+613,tm37884,Red Tails,MOVIE,2012,PG-13,125,"['drama', 'action', 'history', 'war']",['US'],,tt0485985,5.9,36158.0,32.221,6.494,Anthony Hemingway,United States,"June 4, 2021",PG-13,126 min
+614,ts34163,The Incredible Dr. Pol,SHOW,2011,TV-PG,44,"['reality', 'documentation']",['US'],22.0,tt2136396,8.5,1830.0,34.13,8.652,,United States,"September 8, 2021",TV-14,19 Seasons
+615,tm160213,Winnie the Pooh,MOVIE,2011,G,63,"['animation', 'fantasy', 'comedy', 'drama', 'family', 'european']",['US'],,tt1449283,7.1,26223.0,18.853,6.9,"Stephen Anderson, Don Hall",United States,"November 12, 2019",G,68 min
+616,ts22188,Violetta,SHOW,2012,TV-G,44,"['drama', 'family', 'music', 'romance']",['AR'],3.0,tt2171665,5.2,2582.0,30.628,8.173,,Argentina,"September 18, 2020",TV-G,3 Seasons
+617,ts20422,Lab Rats,SHOW,2012,TV-Y7,24,"['scifi', 'comedy', 'drama', 'family', 'action']",['US'],4.0,tt1991564,6.6,6475.0,34.963,8.343,,United States,"November 12, 2019",TV-Y7,4 Seasons
+618,tm183353,Gnomeo & Juliet,MOVIE,2011,G,84,"['animation', 'family', 'comedy', 'fantasy', 'romance']","['US', 'GB']",,tt0377981,5.9,54964.0,26.189,5.8,Kelly Asbury,"United Kingdom, United States, Canada, Ireland","March 26, 2021",G,86 min
+619,tm170713,Beverly Hills Chihuahua 2,MOVIE,2011,G,84,['comedy'],['US'],,,,,13.354,5.827,Alex Zamm,United States,"August 6, 2021",G,88 min
+620,tm42177,Paperman,MOVIE,2012,,7,"['romance', 'animation', 'family', 'thriller']",['US'],,tt3727208,7.1,38.0,9.194,8.006,John Kahrs,United States,"November 12, 2021",G,7 min
+621,tm69592,Tangled Ever After,MOVIE,2012,G,6,"['animation', 'comedy', 'action', 'family']",['US'],,,,,34.572,7.2,"Nathan Greno, Byron Howard",United States,"November 12, 2021",G,9 min
+622,tm160178,"Good Luck Charlie, It's Christmas!",MOVIE,2011,,85,"['comedy', 'drama', 'family']",['US'],,tt1828976,6.3,6688.0,11.095,6.665,Arlene Sanford,United States,"November 12, 2019",TV-G,82 min
+623,tm167801,Geek Charming,MOVIE,2011,PG,99,"['drama', 'family', 'romance', 'comedy']",['US'],,tt1835977,6.3,12962.0,12.181,6.648,Jeffrey Hornaday,United States,"November 12, 2019",TV-G,99 min
+624,tm165063,Sharpay's Fabulous Adventure,MOVIE,2011,G,86,"['family', 'music']","['CA', 'US']",,,,,15.556,6.039,Michael Lembeck,United States,"November 12, 2019",TV-G,92 min
+625,ts38437,Great Barrier Reef,SHOW,2012,TV-G,59,"['documentation', 'european']",['GB'],1.0,tt2185885,8.3,769.0,1.4,8.0,,,"September 29, 2021",TV-PG,1 Season
+626,tm184724,Diary of a Wimpy Kid: Rodrick Rules,MOVIE,2011,PG,99,"['comedy', 'family', 'animation']",['US'],,tt1650043,6.5,32959.0,21.952,6.589,David Bowers,United States,"July 3, 2020",PG,100 min
+627,tm1150379,Diary of a Wimpy Kid: Rodrick Rules,MOVIE,2022,PG,74,"['comedy', 'family', 'animation', 'drama']",['US'],,tt15847828,5.1,986.0,307.519,6.815,David Bowers,United States,"July 3, 2020",PG,100 min
+628,tm56951,Frenemies,MOVIE,2012,PG,86,"['drama', 'comedy', 'family']","['US', 'CA']",,tt1865368,5.0,5042.0,14.31,5.9,Daisy Mayer,United States,"November 12, 2019",TV-G,88 min
+629,tm72065,The Odd Life of Timothy Green,MOVIE,2012,PG,105,"['drama', 'comedy', 'family', 'fantasy']",['US'],,tt1462769,6.6,47487.0,10.327,6.968,Peter Hedges,United States,"April 1, 2020",PG,106 min
+630,tm162604,Lemonade Mouth,MOVIE,2011,G,103,"['drama', 'comedy', 'family', 'music']",['US'],,tt1648204,6.9,18730.0,11.453,7.5,Patricia Riggen,United States,"November 12, 2019",TV-G,110 min
+631,tm176323,The Suite Life Movie,MOVIE,2011,G,100,"['comedy', 'crime', 'drama', 'family', 'scifi']",['US'],,tt1754799,5.1,4199.0,10.43,6.177,Sean McNamara,United States,"November 12, 2019",TV-G,81 min
+632,ts171975,Birth of Europe,SHOW,2012,,45,['documentation'],['NL'],1.0,tt2125050,7.1,90.0,0.745,6.5,,United Kingdom,"May 1, 2020",TV-G,1 Season
+633,tm168978,Mars Needs Moms,MOVIE,2011,PG,88,"['animation', 'family', 'scifi', 'action']",['US'],,tt1305591,5.4,23008.0,23.32,6.056,Simon Wells,United States,"April 1, 2020",PG,91 min
+634,tm71403,Santa Paws 2: The Santa Pups,MOVIE,2012,G,88,"['family', 'fantasy', 'action']",['US'],,tt2414212,4.7,1477.0,13.191,6.131,Robert Vince,United States,"November 12, 2019",G,92 min
+635,tm166883,Spooky Buddies,MOVIE,2011,PG,88,[],"['CA', 'US']",,,,,12.695,6.2,Robert Vince,"United States, Canada","September 24, 2021",G,93 min
+636,tm181060,Prom,MOVIE,2011,PG,104,"['romance', 'comedy', 'drama', 'family']",['US'],,tt1604171,5.4,15446.0,16.86,6.15,Joe Nussbaum,United States,"April 1, 2020",PG,105 min
+637,ts237475,Fury Files,SHOW,2012,TV-Y7,2,"['animation', 'fantasy', 'scifi', 'action']",['US'],1.0,tt12433310,5.3,37.0,1.4,5.333,,,"May 21, 2021",TV-Y7,1 Season
+638,ts6220,Crash & Bernstein,SHOW,2012,TV-PG,23,"['comedy', 'family']",['US'],2.0,tt2273734,5.0,823.0,19.621,8.44,,United States,"November 12, 2019",TV-Y7,2 Seasons
+639,tm35507,Treasure Buddies,MOVIE,2012,G,93,"['action', 'family']","['CA', 'US']",,,,,11.069,6.2,Robert Vince,"United States, Canada","April 16, 2021",G,96 min
+640,ts34269,So Random!,SHOW,2011,TV-G,23,"['comedy', 'family']",['US'],1.0,tt1934818,4.5,2466.0,9.19,7.5,,United States,"July 14, 2021",TV-G,1 Season
+641,tm33264,The Legend of Mor'du,MOVIE,2012,G,7,['animation'],['US'],,,,,9.125,6.1,Brian Larsen,United States,"November 12, 2019",TV-G,8 min
+642,tm166745,Prep & Landing: Naughty vs. Nice,MOVIE,2011,G,22,"['animation', 'comedy', 'family', 'fantasy']",['US'],,tt2069885,7.3,2047.0,8.966,6.9,"Kevin Deters, Stevie Wermers-Skelton",United States,"November 6, 2020",TV-G,23 min
+643,tm184543,The Ballad of Nessie,MOVIE,2011,G,6,"['fantasy', 'animation', 'family']",['US'],,,,,6.361,6.7,"Stevie Wermers-Skelton, Kevin Deters",,"November 12, 2021",G,8 min
+644,tm274612,Winged Seduction: Birds of Paradise,MOVIE,2012,,45,['documentation'],['US'],,tt2543062,6.4,56.0,2.568,4.0,Molly Hermann,United States,"November 12, 2019",TV-PG,45 min
+645,ts170651,Unlikely Animal Friends,SHOW,2012,TV-PG,47,['documentation'],['US'],5.0,tt2181679,7.4,111.0,2.079,5.0,,United States,"May 1, 2020",TV-G,3 Seasons
+646,tm68188,Cesar Millan: The Real Story,MOVIE,2012,,45,['documentation'],['US'],,tt3249810,7.1,79.0,1.988,8.3,Doug Shultz,United States,"April 9, 2021",TV-PG,45 min
+647,tm895746,America's Greatest Animals,MOVIE,2012,,96,['documentation'],['US'],,,,,1.813,10.0,,United States,"June 5, 2020",TV-PG,90 min
+648,ts78066,Secrets of Wild India,SHOW,2012,TV-PG,49,['documentation'],['GB'],1.0,tt2718652,8.0,180.0,1.204,6.0,,United Kingdom,"June 5, 2020",TV-PG,1 Season
+649,ts20726,Star Wars Rebels,SHOW,2014,TV-Y7,23,"['action', 'scifi', 'drama', 'family', 'fantasy', 'animation']",['US'],4.0,tt2930604,8.0,46172.0,41.607,7.666,,United States,"November 12, 2019",TV-Y7,4 Seasons
+650,ts20731,Running Wild with Bear Grylls,SHOW,2014,TV-PG,43,"['action', 'reality', 'comedy']",['US'],6.0,tt3816666,7.6,2864.0,10.335,7.286,,United States,"June 25, 2021",TV-PG,2 Seasons
+651,ts35339,The Evermoor Chronicles,SHOW,2014,TV-PG,22,"['action', 'fantasy', 'family']",['GB'],2.0,tt3602560,6.3,774.0,7.611,6.9,,"United Kingdom, United States","May 29, 2020",TV-PG,2 Seasons
+652,tm181359,Frozen,MOVIE,2013,PG,102,"['animation', 'fantasy', 'comedy', 'family']",['US'],,tt2294629,7.4,633006.0,97.537,7.25,"Chris Buck, Jennifer Lee",United States,"November 12, 2019",PG,105 min
+653,tm157149,Into the Woods,MOVIE,2014,PG,125,"['comedy', 'drama', 'fantasy']",['US'],,tt2180411,5.9,143357.0,11.777,5.754,Rob Marshall,United States,"December 18, 2020",PG,126 min
+654,tm159620,Toy Story of Terror!,MOVIE,2013,G,22,"['comedy', 'family', 'fantasy', 'horror', 'animation']",['US'],,tt2446040,7.5,16474.0,1.219,7.206,Angus MacLane,United States,"October 23, 2020",TV-G,22 min
+655,tm148170,Big Hero 6,MOVIE,2014,PG,102,"['comedy', 'family', 'scifi', 'drama', 'animation', 'action']",['US'],,tt2245084,7.8,469323.0,126.633,7.742,"Don Hall, Chris Williams",United States,"November 12, 2019",PG,105 min
+656,ts20822,Liv and Maddie,SHOW,2013,TV-G,23,"['comedy', 'family', 'drama']",['US'],4.0,tt2794380,6.3,8117.0,41.904,8.123,,United States,"April 23, 2021",TV-G,4 Seasons
+657,ts20839,Life Below Zero,SHOW,2013,TV-PG,45,"['reality', 'documentation']",['US'],20.0,tt2964642,7.9,2067.0,12.469,7.797,,United States,"September 15, 2021",TV-14,16 Seasons
+658,ts20027,Once Upon a Time in Wonderland,SHOW,2013,TV-PG,43,"['scifi', 'drama', 'fantasy', 'romance']",['US'],1.0,tt2802008,6.9,12547.0,20.526,7.076,,"Canada, United States","November 27, 2020",TV-PG,1 Season
+659,tm145004,"Alexander and the Terrible, Horrible, No Good, Very Bad Day",MOVIE,2014,PG,81,"['comedy', 'family', 'drama', 'fantasy', 'european']",['US'],,tt1698641,6.2,45051.0,13.72,6.2,Miguel Arteta,United States,"November 27, 2020",PG,83 min
+660,tm99086,Secretariat,MOVIE,2013,PG,123,"['drama', 'documentation', 'sport', 'family', 'history']",['US'],,tt1028576,7.2,29186.0,17.314,7.4,Randall Wallace,United States,"November 12, 2019",PG,124 min
+661,tm180359,Big Shot,MOVIE,2013,,77,['documentation'],['US'],,,,,0.697,7.3,,,"April 16, 2021",TV-PG,1 Season
+662,ts226439,Big Shot,SHOW,2021,TV-PG,39,"['comedy', 'drama', 'sport']",['US'],2.0,tt11238096,7.5,4873.0,18.86,8.059,,,"April 16, 2021",TV-PG,1 Season
+663,ts34355,Mighty Med,SHOW,2013,TV-Y7,25,"['comedy', 'family', 'scifi']",['US'],2.0,tt2573338,6.5,2205.0,13.581,7.9,,United States,"June 12, 2020",TV-Y7,2 Seasons
+664,tm186511,Monsters University,MOVIE,2013,G,104,"['animation', 'family', 'comedy', 'fantasy', 'horror']",['US'],,tt1453405,7.2,366699.0,65.673,7.0,Dan Scanlon,United States,"November 12, 2019",G,104 min
+665,ts38704,"Dr. Oakley, Yukon Vet",SHOW,2014,TV-PG,44,['reality'],['US'],10.0,tt3593456,8.4,639.0,5.54,5.5,,United States,"November 17, 2021",TV-PG,10 Seasons
+666,tm150979,Muppets Most Wanted,MOVIE,2014,PG,107,"['comedy', 'action', 'crime', 'family']","['GB', 'US']",,tt2281587,6.4,35447.0,17.448,6.315,James Bobin,United States,"November 12, 2019",PG,111 min
+667,ts20133,Girl Meets World,SHOW,2014,TV-G,23,"['family', 'comedy', 'music', 'drama']",['US'],3.0,tt2543796,7.1,15150.0,36.79,8.43,,United States,"November 12, 2019",TV-G,3 Seasons
+668,ts159834,When Sharks Attack,SHOW,2013,TV-14,44,['documentation'],['US'],9.0,tt3097686,6.1,130.0,4.596,10.0,,United States,"July 9, 2021",TV-14,7 Seasons
+669,tm168780,Saving Mr. Banks,MOVIE,2013,PG-13,125,"['history', 'comedy', 'drama', 'music']","['US', 'AU', 'GB']",,tt2140373,7.5,164527.0,11.859,7.347,John Hancock,"United States, United Kingdom, Australia","November 12, 2019",PG-13,129 min
+670,tm149931,Jingle All the Way 2,MOVIE,2014,PG,93,"['comedy', 'family']",['US'],,,,,11.466,5.586,Alex Zamm,United States,"November 5, 2021",PG,91 min
+671,tm166468,Planes,MOVIE,2013,PG,92,"['animation', 'comedy', 'family', 'sport']",['US'],,tt1691917,5.7,46354.0,29.112,5.9,Klay Hall,United States,"November 20, 2020",PG,94 min
+672,tm163543,Marvel One-Shot: All Hail the King,MOVIE,2014,PG-13,14,"['fantasy', 'thriller', 'action']",['US'],,,,,12.41,6.8,Drew Pearce,United States,"August 27, 2021",TV-14,14 min
+673,tm176868,Captain Sparky vs. The Flying Saucers,MOVIE,2013,PG,3,['animation'],['US'],,,,,1.563,7.2,Mark Waring,United States,"April 1, 2020",TV-G,2 min
+674,ts75141,Wild Hawaii,SHOW,2014,,44,['documentation'],['US'],1.0,tt4380034,7.0,161.0,4.62,9.0,,United States,"June 5, 2020",TV-PG,1 Season
+675,tm139597,Tinker Bell and the Legend of the NeverBeast,MOVIE,2014,G,77,"['family', 'action', 'animation', 'fantasy']",['US'],,,,,96.28,7.2,Steve Loter,United States,"May 21, 2021",G,79 min
+676,tm134986,How to Build a Better Boy,MOVIE,2014,G,90,"['family', 'scifi', 'comedy']",['US'],,tt3098874,5.3,3388.0,10.236,6.4,Paul Hoen,United States,"November 12, 2019",TV-G,94 min
+677,tm145734,Planes: Fire & Rescue,MOVIE,2014,PG,83,"['comedy', 'documentation', 'family', 'sport', 'fantasy', 'animation', 'drama']",['US'],,tt2980706,6.0,17741.0,27.623,6.1,Bobs Gannaway,United States,"November 20, 2020",PG,85 min
+678,ts35453,Wander Over Yonder,SHOW,2013,TV-Y7,18,"['scifi', 'fantasy', 'animation', 'comedy', 'family']",['US'],2.0,tt2252938,7.3,4451.0,14.689,7.7,,"United States, Canada, Ireland","May 7, 2021",TV-Y7,2 Seasons
+679,ts20859,Sheriff Callie's Wild West,SHOW,2013,TV-Y,21,"['western', 'comedy', 'family', 'animation', 'action']","['KR', 'US', 'FR']",2.0,tt2769458,6.3,719.0,6.823,7.0,,"United States, South Korea, France","December 1, 2019",TV-Y,2 Seasons
+680,tm165905,Teen Beach Movie,MOVIE,2013,PG,96,"['comedy', 'family', 'fantasy']",['US'],,tt2325989,5.9,12609.0,13.268,6.9,Jeffrey Hornaday,United States,"November 12, 2019",TV-G,97 min
+681,tm152954,Zapped,MOVIE,2014,,102,"['comedy', 'family', 'fantasy']",['CA'],,tt3544734,5.0,5742.0,12.426,6.1,Peter DeLuise,"Canada, United States","November 12, 2019",TV-G,95 min
+682,tm142414,Lava,MOVIE,2014,G,7,['animation'],['US'],,,,,8.282,7.306,James Murphy,United States,"November 12, 2019",G,9 min
+683,tm141959,Feast,MOVIE,2014,G,6,"['comedy', 'drama', 'horror']",['US'],,tt4282670,8.1,46.0,8.022,7.8,Patrick Osborne,United States,"November 12, 2021",G,8 min
+684,tm143693,Party Central,MOVIE,2014,PG,6,['animation'],['US'],,,,,9.457,6.8,Kelsey Mann,United States,"November 12, 2019",PG,7 min
+685,tm188534,The Wizards Return: Alex vs. Alex,MOVIE,2013,PG,60,"['family', 'action', 'comedy', 'drama', 'romance', 'animation', 'fantasy']",['US'],,tt2448374,6.3,6756.0,9.807,6.933,Victor Gonzalez,United States,"November 12, 2019",TV-G,59 min
+686,tm188208,Phineas and Ferb: Mission Marvel,MOVIE,2013,G,45,"['family', 'comedy', 'animation']",['US'],,,,,9.804,6.6,"Robert Hughes, Sue Perrotto",,"November 12, 2019",TV-G,46 min
+687,tm165250,Super Buddies,MOVIE,2013,G,81,"['family', 'comedy']",['US'],,,,,9.112,6.0,Robert Vince,United States,"November 12, 2019",G,83 min
+688,tm159764,Cloud 9,MOVIE,2014,G,90,"['drama', 'action', 'sport', 'family']",['US'],,tt2762970,6.4,5169.0,8.499,6.9,Paul Hoen,United States,"November 12, 2019",TV-G,89 min
+689,tm163710,The Blue Umbrella,MOVIE,2013,G,7,['animation'],['US'],,,,,8.498,7.6,Saschka Unseld,United States,"November 12, 2019",G,7 min
+690,tm178844,Get a Horse!,MOVIE,2013,G,6,"['animation', 'family', 'comedy']",['US'],,,,,6.868,7.7,Lauren MacMullan,United States,"November 12, 2021",G,7 min
+691,tm162567,Miracle Landing on the Hudson,MOVIE,2014,,90,"['documentation', 'drama']",['US'],,tt3067436,6.4,192.0,4.25,7.2,,United States,"November 12, 2019",TV-G,44 min
+692,ts39826,Henry Hugglemonster,SHOW,2013,TV-Y,24,"['animation', 'family', 'fantasy', 'music']",['US'],2.0,tt2746314,5.2,401.0,3.78,6.8,,"Ireland, United Kingdom, United States, South Korea, Canada","December 1, 2019",TV-Y,2 Seasons
+693,tm330785,LEGO Star Wars: The New Yoda Chronicles - Clash of the Skywalkers,MOVIE,2014,,22,['fantasy'],[],,,,,3.385,6.8,Michael Hegner,United States,"November 12, 2019",TV-Y7,24 min
+694,tm375069,LEGO Star Wars: The New Yoda Chronicles - Raid on Coruscant,MOVIE,2014,,22,['scifi'],[],,,,,2.4,6.4,Michael Hegner,"Denmark, China","November 12, 2019",TV-Y7,24 min
+695,ts222742,Wild Congo,SHOW,2014,,44,['documentation'],['DE'],1.0,tt19767844,7.5,25.0,1.76,9.0,,,"July 24, 2020",TV-PG,1 Season
+696,tm858669,Kingdom of the Apes: Battle Lines,MOVIE,2014,PG,44,['documentation'],['US'],,,,,0.6,5.1,,,"November 12, 2019",TV-PG,44 min
+697,tm236713,Hidden Figures,MOVIE,2016,PG,127,"['drama', 'history']",['US'],,tt4846340,7.8,236479.0,104.182,8.1,Theodore Melfi,United States,"September 25, 2020",PG,128 min
+698,tm120376,Miss Peregrine's Home for Peculiar Children,MOVIE,2016,PG-13,127,"['fantasy', 'drama', 'family', 'thriller', 'european']","['GB', 'US', 'BE']",,tt1935859,6.7,177793.0,64.206,6.8,Tim Burton,"United States, United Kingdom, Belgium, Canada","March 12, 2021",PG-13,127 min
+699,tm202481,Rogue One: A Star Wars Story,MOVIE,2016,PG-13,134,"['scifi', 'action']",['US'],,tt3748528,7.8,649065.0,39.712,7.487,Gareth Edwards,United States,"November 12, 2019",PG-13,134 min
+700,tm135902,Inside Out,MOVIE,2015,PG,95,"['family', 'action', 'drama', 'comedy', 'animation', 'scifi', 'fantasy']",['US'],,tt2096673,8.2,725113.0,103.404,7.925,Pete Docter,United States,"November 12, 2019",PG,95 min
+701,ts21913,Marvel's Agent Carter,SHOW,2015,TV-PG,42,"['drama', 'scifi', 'action', 'crime']",['US'],2.0,tt3475734,7.9,85130.0,44.823,7.531,,United States,"November 12, 2019",TV-14,2 Seasons
+702,ts42554,Port Protection Alaska,SHOW,2015,TV-14,46,"['drama', 'reality']",['US'],7.0,tt4838586,8.2,556.0,8.203,6.4,,United States,"November 24, 2021",TV-14,2 Seasons
+703,tm122337,Zootopia,MOVIE,2016,PG,109,"['action', 'family', 'comedy', 'animation', 'crime']",['US'],,tt2948356,8.0,474046.0,111.664,7.746,"Byron Howard, Rich Moore",United States,"November 12, 2019",PG,109 min
+704,tm120111,Moana,MOVIE,2016,PG,103,"['comedy', 'animation', 'family', 'fantasy']",['US'],,tt3521164,7.6,344015.0,20.887,7.565,"John Musker, Ron Clements",United States,"November 12, 2019",PG,108 min
+705,tm143917,The Peanuts Movie,MOVIE,2015,G,93,"['family', 'comedy', 'animation', 'drama']",['US'],,tt2452042,7.0,47222.0,20.671,6.9,Steve Martino,United States,"August 7, 2020",G,89 min
+706,tm122347,X-Men: Apocalypse,MOVIE,2016,PG-13,144,"['action', 'scifi', 'fantasy']",['US'],,tt3385516,6.9,419033.0,68.256,6.515,Bryan Singer,United States,"July 17, 2020",PG-13,144 min
+707,tm155402,X-Men: Days of Future Past,MOVIE,2015,PG-13,131,"['action', 'scifi', 'fantasy', 'thriller']",['US'],,tt1877832,7.9,719670.0,62.77,7.523,Bryan Singer,"United States, United Kingdom, Canada","July 10, 2020",PG-13,132 min
+708,tm239761,Queen of Katwe,MOVIE,2016,PG,124,"['drama', 'sport']",['US'],,tt4341582,7.4,16959.0,11.121,7.253,Mira Nair,United States,"November 12, 2019",PG,125 min
+709,ts42687,PJ Masks,SHOW,2015,TV-G,14,"['fantasy', 'scifi', 'animation', 'action', 'comedy', 'family', 'european']",['GB'],5.0,tt4148744,5.3,1367.0,66.348,4.6,,"France, United Kingdom","October 20, 2021",TV-Y7,5 Seasons
+710,ts37907,Goldie & Bear,SHOW,2015,TV-Y,24,"['animation', 'family', 'fantasy', 'music']",['US'],2.0,tt4475060,6.3,405.0,6.696,6.188,,United States,"November 6, 2020",TV-Y,2 Seasons
+711,tm123374,Finding Dory,MOVIE,2016,PG,97,"['animation', 'comedy', 'family', 'drama']",['US'],,tt2277860,7.3,282461.0,40.368,7.045,"Andrew Stanton, Angus MacLane",United States,"November 12, 2019",PG,98 min
+712,ts58006,Ice Road Rescue,SHOW,2015,TV-14,44,"['documentation', 'reality']",['GB'],7.0,tt5270356,7.9,313.0,8.891,8.2,,United Kingdom,"May 21, 2021",TV-14,5 Seasons
+713,tm138110,"McFarland, USA",MOVIE,2015,PG,128,"['drama', 'sport']",['US'],,tt2097298,7.4,39864.0,13.783,7.4,Niki Caro,United States,"October 29, 2021",PG,131 min
+714,tm124355,The Finest Hours,MOVIE,2016,PG-13,117,"['action', 'drama', 'history', 'thriller']",['US'],,tt2025690,6.7,68029.0,15.814,6.6,Craig Gillespie,United States,"March 6, 2020",PG-13,119 min
+715,tm120502,Ice Age: Collision Course,MOVIE,2016,PG,94,"['family', 'comedy', 'scifi', 'action', 'animation', 'romance', 'drama', 'fantasy']",['US'],,tt3416828,5.6,69143.0,48.956,6.1,Mike Thurmeier,"United States, United Kingdom, Australia","July 3, 2020",PG,97 min
+716,ts86270,Supercar Megabuild,SHOW,2016,,43,"['reality', 'documentation']",['GB'],2.0,tt12535708,4.5,101.0,3.611,8.3,,United States,"December 1, 2019",TV-PG,2 Seasons
+717,ts42179,Elena of Avalor,SHOW,2016,TV-G,25,"['comedy', 'drama', 'family', 'fantasy', 'animation', 'action']",['US'],3.0,tt4549142,6.5,1668.0,32.251,6.7,,United States,"January 15, 2021",TV-Y7,3 Seasons
+718,ts52911,Continent 7: Antarctica,SHOW,2016,TV-PG,47,['documentation'],['US'],1.0,tt6244108,7.3,213.0,1.744,5.8,,United States,"January 15, 2020",TV-PG,1 Season
+719,ts43132,Primal Survivor,SHOW,2016,TV-14,43,"['documentation', 'reality', 'action']","['GB', 'US']",6.0,tt5538644,8.0,468.0,5.29,8.4,,United States,"April 16, 2021",TV-PG,5 Seasons
+720,ts80321,America's National Parks,SHOW,2015,TV-PG,44,['documentation'],['US'],1.0,tt4622802,7.7,242.0,1.96,7.0,,United States,"January 15, 2020",TV-14,1 Season
+721,ts381523,America's National Parks,SHOW,2022,TV-PG,45,['documentation'],['US'],1.0,tt21622396,7.5,44.0,2.816,2.0,,United States,"January 15, 2020",TV-14,1 Season
+722,tm1941,Alice Through the Looking Glass,MOVIE,2016,PG,113,"['fantasy', 'european']","['US', 'GB']",,,,,40.24,6.55,James Bobin,"United States, United Kingdom","August 28, 2020",PG,115 min
+723,tm197779,Frozen Fever,MOVIE,2015,G,7,['animation'],['US'],,,,,38.333,6.8,"Chris Buck, Jennifer Lee",United States,"November 12, 2021",G,11 min
+724,ts42911,The Greeks,SHOW,2016,,54,"['documentation', 'sport', 'history']",['US'],1.0,tt5848928,7.7,234.0,1.074,5.5,,United States,"June 5, 2020",TV-PG,1 Season
+725,tm425918,Disney's Broadway Hits at London's Royal Albert Hall,MOVIE,2016,,115,['music'],['GB'],,tt6544912,7.6,177.0,2.308,7.8,Jay Hatcher,,"September 17, 2021",TV-G,116 min
+726,tm141414,The Good Dinosaur,MOVIE,2015,PG,99,"['animation', 'fantasy', 'comedy', 'drama', 'family']",['US'],,tt1979388,6.7,118889.0,50.517,6.741,Peter Sohn,United States,"November 12, 2019",PG,94 min
+727,ts16202,Animal ER,SHOW,2016,TV-14,44,"['reality', 'documentation']",['US'],2.0,tt1911706,8.0,80.0,2.088,9.4,,United States,"July 3, 2020",TV-PG,2 Seasons
+728,tm136025,Strange Magic,MOVIE,2015,PG,99,"['animation', 'fantasy', 'romance', 'comedy', 'family']",['US'],,tt4319336,5.7,11562.0,19.148,7.056,Gary Rydstrom,"United States, Canada, United Kingdom, Singapore, Australia, Thailand","June 11, 2021",PG,101 min
+729,tm268063,Before the Flood,MOVIE,2016,PG,93,['documentation'],['US'],,tt5929776,8.2,28192.0,13.236,7.697,Fisher Stevens,United States,"November 12, 2019",TV-14,96 min
+730,ts37130,LEGO Star Wars: Droid Tales,SHOW,2015,TV-Y,24,"['animation', 'action', 'comedy', 'scifi']",['US'],2.0,tt4855868,7.4,940.0,3.685,6.5,,United States,"November 12, 2019",TV-Y7,1 Season
+731,ts35597,Best Friends Whenever,SHOW,2015,TV-G,24,"['scifi', 'comedy', 'family']",['US'],2.0,tt4507442,5.8,1870.0,17.966,8.3,,United States,"November 12, 2019",TV-G,2 Seasons
+732,tm212899,Sanjay's Super Team,MOVIE,2015,PG,7,['fantasy'],['US'],,,,,5.74,6.516,Sanjay Patel,United States,"November 12, 2019",PG,7 min
+733,ts42258,LEGO Star Wars: The Freemaker Adventures,SHOW,2016,TV-Y,22,"['animation', 'scifi', 'fantasy', 'comedy', 'drama', 'action', 'family']",['US'],3.0,tt5459566,7.4,1244.0,11.72,7.2,,United States,"November 12, 2019",TV-Y7,2 Seasons
+734,tm1832,Alvin and the Chipmunks: The Road Chip,MOVIE,2015,,86,"['family', 'action', 'animation', 'comedy', 'fantasy', 'music']",['US'],,tt2974918,4.9,20594.0,26.877,6.024,Walt Becker,United States,"October 1, 2021",PG,92 min
+735,tm242665,Piper,MOVIE,2016,G,7,['animation'],['US'],,,,,13.149,8.172,Alan Barillaro,United States,"November 12, 2019",G,6 min
+736,ts38952,Soy Luna,SHOW,2016,,46,"['music', 'documentation', 'comedy', 'family']",['AR'],3.0,tt5189554,6.5,1535.0,159.736,7.937,,"Argentina, Mexico","September 18, 2020",TV-G,3 Seasons
+737,ts52902,The Lodge,SHOW,2016,TV-G,22,"['drama', 'thriller', 'family', 'reality']",['GB'],2.0,tt6176812,6.2,632.0,7.308,8.1,,United Kingdom,"January 15, 2020",TV-G,2 Seasons
+738,tm225769,Invisible Sister,MOVIE,2015,G,77,"['comedy', 'family', 'fantasy']",['US'],,tt4420110,5.9,3415.0,13.468,6.8,Paul Hoen,United States,"November 12, 2019",TV-G,79 min
+739,tm244485,Ice Age: The Great Egg-Scapade,MOVIE,2016,PG,25,"['animation', 'comedy', 'family']",['US'],,tt5480340,5.9,3674.0,29.498,6.4,Ricardo Curtis,United States,"November 12, 2019",TV-G,26 min
+740,tm196874,Teen Beach 2,MOVIE,2015,G,104,"['fantasy', 'drama', 'family']",['US'],,tt3764966,5.9,5439.0,13.033,6.8,Jeffrey Hornaday,United States,"November 12, 2019",TV-G,106 min
+741,tm266783,The Swap,MOVIE,2016,PG,89,"['comedy', 'family', 'fantasy']",['US'],,tt5653444,6.0,2217.0,10.831,6.9,Jay Karas,United States,"November 12, 2019",TV-G,91 min
+742,tm245709,Inner Workings,MOVIE,2016,G,7,['comedy'],['US'],,,,,9.33,7.889,Leo Matsuda,United States,"November 12, 2019",G,6 min
+743,tm361444,Drain The Ocean: WWII,MOVIE,2016,PG,45,"['documentation', 'history']",['US'],,tt6141006,6.9,163.0,4.411,6.7,Mike Slee,United States,"January 1, 2020",TV-PG,44 min
+744,ts56081,Walk the Prank,SHOW,2016,TV-Y7,22,"['comedy', 'family', 'reality']",['US'],3.0,tt5486088,4.1,505.0,4.141,6.8,,United States,"April 2, 2021",TV-Y7,3 Seasons
+745,ts142375,Future-Worm!,SHOW,2015,TV-Y7,22,"['animation', 'comedy', 'family', 'scifi']",['US'],1.0,tt4715134,5.4,270.0,3.488,5.0,,United States,"April 9, 2021",TV-Y7,1 Season
+746,tm289079,Mega Hammerhead,MOVIE,2016,,60,['documentation'],['US'],,tt5828074,6.5,95.0,2.449,5.3,"Brandon Hill, Marc Ostrick",United States,"January 1, 2021",TV-PG,43 min
+747,ts217981,Wild Yellowstone,SHOW,2015,TV-PG,52,['documentation'],['US'],1.0,tt11669950,7.4,126.0,2.112,9.3,,Germany,"November 12, 2019",TV-PG,1 Season
+748,tm543420,How Dogs Got Their Shapes,MOVIE,2016,,44,['documentation'],['US'],,tt5648768,6.7,150.0,1.96,7.0,,United States,"November 12, 2019",TV-PG,44 min
+749,tm443975,Duck the Halls: A Mickey Mouse Christmas Special,MOVIE,2016,G,22,"['animation', 'comedy', 'action', 'family', 'fantasy']",['US'],,tt24580526,7.2,26.0,1.245,9.0,"Alonso Ramirez Ramos, Dave Wasson",,"November 26, 2021",TV-G,23 min
+750,tm833134,World's Greatest Dogs,MOVIE,2015,,43,[],[],,,,,1.096,,,United States,"November 12, 2019",TV-PG,44 min
+751,tm891332,Incredible! The Story of Dr. Pol,MOVIE,2015,PG,44,['documentation'],['US'],,,,,0.965,6.0,,,"December 1, 2019",TV-14,44 min
+752,ts80444,Nature Boom Time,SHOW,2016,,6,[],['US'],1.0,,,,0.887,,,United States,"August 14, 2020",TV-G,1 Season
+753,tm921369,Big Cat Games,MOVIE,2015,,44,"['family', 'documentation']",['US'],,,,,0.867,,Jeremy Turner,,"July 31, 2020",TV-PG,44 min
+754,ts86847,Marvel Funko Shorts,SHOW,2016,TV-G,1,['animation'],['US'],1.0,,,,0.84,5.0,,,"July 31, 2020",TV-Y7,2 Seasons
+755,ts237993,The Book of Once Upon a Time,SHOW,2015,TV-G,4,[],['US'],4.0,,,,0.6,,,,"November 12, 2019",TV-Y,4 Seasons
+756,ts269031,Party Animals,SHOW,2016,,3,['documentation'],['US'],1.0,,,,0.6,,,,"November 27, 2020",TV-G,1 Season
+757,tm1018704,Shanghai Disney Resort Grand Opening Gala,MOVIE,2016,G,25,['music'],"['US', 'CN']",,,,,0.6,3.5,,,"February 26, 2021",TV-G,24 min
+758,tm479849,Egypt's Treasure Guardians,MOVIE,2016,,44,"['documentation', 'history']",['GB'],,tt7264462,6.2,82.0,,,"Ben Allen, Tom Jenner",United Kingdom,"June 19, 2020",TV-PG,44 min
+759,ts84270,Bluey,SHOW,2018,TV-Y,8,"['animation', 'family']",['AU'],3.0,tt7678620,9.5,13370.0,114.829,8.167,,"Australia, United Kingdom","May 28, 2021",TV-Y,2 Seasons
+760,tm120596,The Greatest Showman,MOVIE,2017,PG,105,['drama'],['US'],,tt1485796,7.5,288303.0,42.708,7.9,Michael Gracey,United States,"August 14, 2020",PG,106 min
+761,tm220546,Coco,MOVIE,2017,PG,109,"['animation', 'fantasy', 'comedy', 'drama', 'family', 'music', 'european']","['US', 'MX']",,tt2380307,8.4,521181.0,132.092,8.2,Lee Unkrich,United States,"November 29, 2019",PG,105 min
+762,tm327380,The Nutcracker and the Four Realms,MOVIE,2018,PG,99,"['action', 'family', 'fantasy']",['US'],,tt5523010,5.6,35040.0,32.134,6.077,"Lasse Hallström, Joe Johnston",United States,"December 4, 2020",PG,101 min
+763,tm244151,Isle of Dogs,MOVIE,2018,PG-13,101,"['action', 'comedy', 'animation', 'scifi', 'fantasy', 'drama', 'european']","['US', 'DE']",,tt5104604,7.8,173569.0,26.248,7.862,Wes Anderson,"United States, Germany, United Kingdom","January 15, 2021",PG-13,102 min
+764,tm407114,Free Solo,MOVIE,2018,PG-13,100,"['documentation', 'action', 'sport']",['US'],,tt7775622,8.1,70779.0,13.023,7.9,"Elizabeth Vasarhelyi, Jimmy Chin",United States,"November 12, 2019",TV-PG,101 min
+765,ts52967,Marvel's Inhumans,SHOW,2017,TV-PG,42,"['scifi', 'action']",['US'],1.0,tt4154858,4.9,27434.0,19.319,6.089,,United States,"November 12, 2019",TV-14,1 Season
+766,tm399,Incredibles 2,MOVIE,2018,PG,118,"['action', 'animation', 'comedy', 'family', 'scifi']",['US'],,tt3606756,7.6,303926.0,58.328,7.491,Brad Bird,United States,"July 31, 2020",PG,118 min
+767,tm387,Pirates of the Caribbean: Dead Men Tell No Tales,MOVIE,2017,PG-13,128,"['action', 'fantasy']",['US'],,tt1790809,6.5,319158.0,85.865,6.646,"Joachim Rønning, Espen Sandberg",United States,"July 24, 2020",PG-13,129 min
+768,ts43192,Marvel's Runaways,SHOW,2017,TV-14,28,"['scifi', 'action', 'crime', 'drama', 'documentation']",['US'],3.0,tt1236246,6.9,27049.0,51.688,7.5,,United States,"January 10, 2020",TV-14,3 Seasons
+769,tm349784,Christopher Robin,MOVIE,2018,PG,104,"['fantasy', 'action', 'comedy', 'family', 'animation', 'drama']","['US', 'GB']",,tt5664542,7.2,79813.0,18.62,7.337,Marc Forster,"United Kingdom, United States","September 11, 2020",PG,109 min
+770,tm310197,Descendants 2,MOVIE,2017,G,111,"['romance', 'action', 'family', 'fantasy']",['US'],,tt5117876,7.5,366.0,37.483,7.4,Kenny Ortega,United States,"November 12, 2019",TV-G,114 min
+771,tm230984,Ferdinand,MOVIE,2017,PG,106,"['animation', 'family', 'action', 'comedy', 'drama', 'fantasy']",['US'],,tt3411444,6.7,59203.0,43.054,7.2,Carlos Saldanha,"United States, Spain","January 8, 2021",PG,111 min
+772,tm240627,Ralph Breaks the Internet,MOVIE,2018,PG,112,"['family', 'animation', 'comedy', 'action', 'drama', 'fantasy', 'scifi']",['US'],,tt5848272,7.0,151237.0,65.557,7.214,"Rich Moore, Phil Johnston",United States,"December 11, 2020",PG,116 min
+773,tm215172,Solo: A Star Wars Story,MOVIE,2018,PG-13,135,"['scifi', 'action', 'fantasy']",['US'],,tt3778644,6.9,325266.0,46.12,6.565,Ron Howard,United States,"July 10, 2020",PG-13,135 min
+774,tm266693,Diary of a Wimpy Kid: The Long Haul,MOVIE,2017,PG,90,"['comedy', 'family', 'animation']",['US'],,tt6003368,4.3,9737.0,21.738,5.3,David Bowers,United States,"July 17, 2020",PG,92 min
+775,ts77420,One Strange Rock,SHOW,2018,TV-G,47,['documentation'],['US'],2.0,tt7651892,8.7,8010.0,6.836,7.934,,United States,"January 1, 2020",TV-PG,1 Season
+776,tm227992,Cars 3,MOVIE,2017,G,90,"['animation', 'comedy', 'family', 'sport', 'drama', 'fantasy']",['US'],,tt3606752,6.7,105355.0,106.248,6.8,Brian Fee,United States,"November 12, 2019",G,103 min
+777,ts56986,Disney's Fairy Tale Weddings,SHOW,2017,TV-PG,40,"['documentation', 'reality']",['US'],2.0,tt6974848,6.7,187.0,1.875,6.0,Chris Wilson,,"November 12, 2019",TV-PG,64 min
+778,tm266646,A Wrinkle in Time,MOVIE,2018,PG,109,"['scifi', 'fantasy', 'family']",['US'],,tt1620680,4.2,45876.0,20.032,5.102,Ava DuVernay,United States,"March 25, 2020",PG,112 min
+779,tm324105,Olaf's Frozen Adventure,MOVIE,2017,G,23,['comedy'],['US'],,,,,27.626,6.4,"Stevie Wermers-Skelton, Kevin Deters",United States,"November 12, 2019",G,25 min
+780,ts80686,Star Wars Resistance,SHOW,2018,TV-Y7,23,"['action', 'animation', 'comedy', 'drama', 'family', 'fantasy', 'scifi']",['US'],2.0,tt8336476,5.2,6435.0,24.364,6.4,,United States,"February 25, 2020",TV-Y7,2 Seasons
+781,tm348282,Jane,MOVIE,2017,PG,90,['documentation'],['US'],,tt7207238,7.8,5272.0,7.001,7.5,Brett Morgen,United States,"November 12, 2019",PG,90 min
+782,ts55686,Andi Mack,SHOW,2017,TV-G,25,"['drama', 'comedy', 'family']",['US'],3.0,tt5195114,7.3,2383.0,20.952,8.13,,United States,"November 12, 2019",TV-G,3 Seasons
+783,ts57584,Puppy Dog Pals,SHOW,2017,TV-Y,20,"['animation', 'comedy', 'drama', 'family']",['US'],6.0,tt6688750,6.8,1147.0,29.054,6.8,,"United States, India","June 11, 2021",TV-G,4 Seasons
+784,tm240623,Mary Poppins Returns,MOVIE,2018,PG,131,"['fantasy', 'family', 'comedy', 'animation']",['US'],,tt5028340,6.7,85576.0,21.062,6.523,Rob Marshall,"United States, United Kingdom","January 15, 2021",PG,140 min
+785,tm363498,Science Fair,MOVIE,2018,PG,90,"['documentation', 'action', 'drama', 'fantasy', 'scifi']",['US'],,tt7153434,7.5,621.0,1.751,7.2,"Cristina Costantini, Darren Foster",United States,"November 12, 2019",PG,91 min
+786,ts55504,Origins: The Journey of Humankind,SHOW,2017,TV-14,29,"['documentation', 'thriller', 'drama', 'action', 'history', 'comedy', 'scifi', 'horror', 'romance']",['US'],3.0,tt6091694,6.4,15.0,2.753,7.8,,United States,"November 12, 2019",TV-14,1 Season
+787,ts57135,Year Million,SHOW,2017,TV-14,47,"['scifi', 'documentation', 'drama']",['US'],1.0,tt6945708,7.3,646.0,3.687,8.2,,United States,"January 1, 2020",TV-PG,1 Season
+788,tm406066,Howard,MOVIE,2018,,93,"['documentation', 'music']",['US'],,tt7682430,7.5,1232.0,6.31,7.0,Don Hahn,United States,"August 7, 2020",TV-PG,95 min
+789,ts8698,Drain the Oceans,SHOW,2018,TV-PG,47,"['documentation', 'history']",['US'],5.0,tt8676618,7.5,601.0,11.329,8.143,,"United Kingdom, Australia","October 6, 2021",TV-PG,4 Seasons
+790,ts82155,Big City Greens,SHOW,2018,TV-Y7,18,"['comedy', 'family', 'thriller', 'animation']",['US'],3.0,tt7165904,7.4,2538.0,37.977,7.9,,"United States, South Korea","May 21, 2021",TV-Y7,2 Seasons
+791,tm356966,Z-O-M-B-I-E-S,MOVIE,2018,G,94,"['comedy', 'family', 'fantasy', 'romance']",['US'],,tt6878820,6.0,6234.0,20.242,7.333,Paul Hoen,United States,"November 12, 2019",TV-G,97 min
+792,tm286174,Lou,MOVIE,2017,G,7,['animation'],['US'],,,,,7.006,7.584,Dave Mullins,United States,"November 12, 2019",G,7 min
+793,tm420056,700 Sharks,MOVIE,2018,,92,['documentation'],['FR'],,tt10902050,6.7,126.0,3.746,6.3,Luc Marescot,France,"January 1, 2021",TV-PG,45 min
+794,tm406868,Bao,MOVIE,2018,G,8,"['animation', 'fantasy']","['CA', 'US']",,,,,11.95,7.602,Domee Shi,"United States, Canada","November 12, 2019",G,8 min
+795,ts81034,Alaska's Grizzly Gauntlet,SHOW,2018,TV-PG,44,['documentation'],['US'],1.0,tt8415880,6.6,56.0,1.849,,,United States,"June 5, 2020",TV-PG,1 Season
+796,ts254582,Best Job Ever,SHOW,2018,TV-G,2,['documentation'],['US'],1.0,,,,0.852,,,,"July 31, 2020",TV-G,1 Season
+797,tm470101,Dolphin Reef,MOVIE,2018,G,77,"['documentation', 'family']",['US'],,tt10055028,6.7,194.0,26.957,6.0,Keith Scholey,United States,"April 3, 2020",G,78 min
+798,tm430584,Marvel Rising: Secret Warriors,MOVIE,2018,,80,"['scifi', 'animation', 'action', 'comedy', 'fantasy']",['US'],,tt7728344,5.4,1384.0,11.636,6.9,Alfred Gimeno,United States,"November 12, 2019",TV-Y7-FV,80 min
+799,ts81382,Coop & Cami Ask The World,SHOW,2018,TV-G,23,"['comedy', 'family']",['US'],2.0,tt21799214,5.8,544.0,9.106,8.4,,United States,"September 18, 2020",TV-G,2 Seasons
+800,tm432143,Auntie Edna,MOVIE,2018,,5,['scifi'],['US'],,,,,8.568,7.2,Ted Mathot,United States,"November 12, 2019",TV-G,7 min
+801,ts96393,Marvel Super Hero Adventures,SHOW,2017,TV-Y,4,"['animation', 'action', 'family']",['US'],4.0,tt7726152,5.9,166.0,6.565,7.5,,United States,"October 23, 2020",TV-Y,4 Seasons
+802,tm411403,Into the Okavango,MOVIE,2018,PG,94,['documentation'],['US'],,tt7573844,7.6,499.0,6.486,7.5,Neil Gelinas,"United States, Angola, Botswana, Namibia, South Africa","November 12, 2019",TV-PG,94 min
+803,tm975587,The Scariest Story Ever: A Mickey Mouse Halloween Spooktacular,MOVIE,2017,PG,22,"['horror', 'animation']",[],,,,,6.334,7.3,"Alonso Ramirez Ramos, Eddie Trigueros, Dave Wasson",,"October 1, 2021",TV-G,22 min
+804,tm320517,Atlantis Rising,MOVIE,2017,,93,"['documentation', 'action', 'thriller']",['CA'],,tt6467274,6.4,604.0,4.184,6.0,Simcha Jacobovici,Canada,"November 12, 2019",TV-PG,94 min
+805,ts85902,Disney Junior Music Nursery Rhymes,SHOW,2017,TV-Y,3,"['animation', 'family', 'music']",['US'],2.0,tt9277788,6.4,23.0,3.527,10.0,,,"November 12, 2019",TV-Y,2 Seasons
+806,tm285590,Sea of Hope: America's Underwater Treasures,MOVIE,2017,,60,['documentation'],['US'],,tt6348518,7.7,51.0,3.107,6.3,Robert Nixon,United States,"November 12, 2019",TV-PG,47 min
+807,tm326895,Earth Live,MOVIE,2017,PG,120,['documentation'],['US'],,tt7008868,5.2,69.0,3.006,4.9,Glenn Weiss,United States,"November 12, 2019",TV-PG,94 min
+808,tm833136,The Flood,MOVIE,2018,PG,88,['documentation'],['US'],,tt9154632,7.6,210.0,2.837,5.6,Brad Bestelink,United States,"November 12, 2019",TV-PG,93 min
+809,tm363833,Decorating Disney: Holiday Magic,MOVIE,2017,PG,58,"['music', 'documentation', 'reality']",['US'],,tt7775248,6.8,146.0,2.776,7.7,,United States,"November 12, 2019",TV-PG,42 min
+810,ts81805,Tut's Treasures: Hidden Secrets,SHOW,2018,TV-PG,44,['documentation'],['GB'],1.0,,,,2.031,7.333,,United Kingdom,"April 10, 2020",TV-PG,1 Season
+811,tm833135,Tree Climbing Lions,MOVIE,2018,PG,44,['documentation'],['US'],,,,,1.956,7.2,,,"November 12, 2019",TV-PG,45 min
+812,tm425336,Drain Alcatraz,MOVIE,2017,,45,['documentation'],['US'],,tt7823038,6.0,262.0,1.886,6.8,Wayne Abbott,United States,"January 1, 2020",TV-PG,47 min
+813,ts251352,Fearless Adventures with Jack Randall,SHOW,2018,,4,['documentation'],['AU'],1.0,,,,1.593,,,,"July 31, 2020",TV-PG,1 Season
+814,tm833132,Planet of the Birds,MOVIE,2018,,44,['documentation'],['US'],,,,,1.586,7.8,,,"November 12, 2019",TV-PG,45 min
+815,tm351023,Breaking2,MOVIE,2017,PG,55,"['documentation', 'reality']",['US'],,tt7816784,7.3,387.0,1.55,8.188,Martin Roe,United States,"November 12, 2019",TV-PG,55 min
+816,ts254331,"Weirdest, Bestest, Truest",SHOW,2018,TV-G,2,[],['US'],1.0,,,,1.4,,,,"August 21, 2020",TV-G,1 Season
+817,ts68223,Paradise Islands,SHOW,2017,TV-PG,44,"['documentation', 'drama', 'family', 'action', 'comedy']",['GB'],1.0,tt2851344,4.4,11.0,1.299,8.0,,,"April 10, 2020",TV-PG,1 Season
+818,tm505107,Man Among Cheetahs,MOVIE,2017,PG,44,['documentation'],['US'],,tt7974952,6.8,73.0,1.293,7.0,,United States,"November 12, 2019",TV-PG,44 min
+819,tm431848,Giants of the Deep Blue,MOVIE,2017,PG,44,['documentation'],[],,tt14277172,,,1.293,6.6,Ken Corben,,"November 12, 2019",TV-PG,45 min
+820,tm987733,Big Sharks Rule,MOVIE,2018,PG,44,['documentation'],['US'],,,,,1.265,,,,"January 1, 2021",TV-14,45 min
+821,tm983642,Wild Uganda,MOVIE,2018,PG,45,['documentation'],[],,,,,1.25,,Harald Pokieser,,"January 22, 2021",TV-PG,45 min
+822,tm939308,Oil Spill of The Century,MOVIE,2018,PG-13,44,['documentation'],['FR'],,,,,1.015,6.3,,,"October 9, 2020",TV-PG,45 min
+823,ts251053,Animal Showdown,SHOW,2018,TV-G,4,"['family', 'documentation', 'reality']",['US'],1.0,tt21798874,,,0.891,,,,"July 31, 2020",TV-G,1 Season
+824,tm462384,Drain The Sunken Pirate City,MOVIE,2017,,47,"['documentation', 'history']",['GB'],,tt7964284,6.4,136.0,0.863,6.0,Sophie Harris,United Kingdom,"January 1, 2020",TV-14,48 min
+825,ts92367,Rocky Mountain Animal Rescue,SHOW,2018,,38,"['reality', 'documentation']",['US'],1.0,tt9395780,7.8,24.0,0.859,,,United States,"November 12, 2019",TV-PG,1 Season
+826,ts80440,What Sam Sees,SHOW,2018,TV-G,7,[],['US'],1.0,tt13326050,,,0.676,,,,"July 31, 2020",TV-G,1 Season
+827,ts237134,Love & Vets,SHOW,2017,TV-PG,44,['documentation'],['US'],1.0,,,,0.662,,,United States,"May 1, 2020",TV-PG,1 Season
+828,ts213957,Mexico Untamed,SHOW,2018,,44,['documentation'],['NZ'],1.0,tt10389464,7.4,31.0,0.6,,,,"March 19, 2021",TV-PG,1 Season
+829,ts80441,Awesome Animals,SHOW,2017,,14,[],['US'],1.0,tt12204682,8.0,5.0,0.6,,,,"May 1, 2020",TV-PG,1 Season
+830,ts254154,Sam's Zookeeper Challenge,SHOW,2018,,3,[],['US'],1.0,tt13325238,,,0.6,,,United States,"August 14, 2020",TV-G,1 Season
+831,ts254161,Scuba Sam's World,SHOW,2018,,2,[],['US'],1.0,tt13399116,,,0.6,,,United States,"August 14, 2020",TV-G,1 Season
+832,ts251368,Destination World,SHOW,2018,,2,"['documentation', 'family']",['US'],1.0,tt14630178,,,0.6,,,,"July 31, 2020",TV-G,1 Season
+833,ts109332,Howie Mandel's Animals Doing Things,SHOW,2018,TV-14,33,['comedy'],['US'],2.0,tt8598154,3.6,65.0,,,,United States,"June 5, 2020",TV-PG,2 Seasons
+834,ts84392,The Mandalorian,SHOW,2019,TV-14,40,"['war', 'scifi', 'action', 'drama', 'western', 'fantasy']",['US'],3.0,tt8111088,8.7,501619.0,373.026,8.474,,United States,"October 30, 2020",TV-14,2 Seasons
+835,tm319217,Noelle,MOVIE,2019,G,100,"['fantasy', 'romance', 'comedy', 'family']",['US'],,tt5097410,6.3,23974.0,13.932,6.6,Marc Lawrence,United States,"November 12, 2019",G,105 min
+836,tm375501,Soul,MOVIE,2020,PG,101,"['fantasy', 'drama', 'music', 'scifi', 'animation', 'comedy', 'family']",['US'],,tt2948372,8.0,338153.0,84.899,8.16,Pete Docter,United States,"December 25, 2020",PG,107 min
+837,ts87334,High School Musical: The Musical: The Series,SHOW,2019,TV-PG,33,"['drama', 'comedy']",['US'],4.0,tt8510382,7.1,7568.0,40.415,8.044,,United States,"November 12, 2019",TV-PG,2 Seasons
+838,tm439596,Hamilton,MOVIE,2020,PG-13,160,"['drama', 'history', 'music']",['US'],,tt8503618,8.4,83182.0,13.786,8.2,Thomas Kail,United States,"July 3, 2020",PG-13,160 min
+839,tm375500,Onward,MOVIE,2020,PG,102,"['comedy', 'animation', 'drama', 'family', 'fantasy']",['US'],,tt7146812,7.4,153845.0,33.697,7.752,Dan Scanlon,United States,"April 3, 2020",PG,103 min
+840,tm914379,Black Is King,MOVIE,2020,PG,85,"['music', 'fantasy', 'drama']",['US'],,tt12607910,5.8,9051.0,9.632,7.4,Beyoncé Knowles-Carter,United States,"July 31, 2020",TV-14,86 min
+841,tm931709,Clouds,MOVIE,2020,PG-13,121,"['drama', 'music']",['US'],,tt6473066,7.5,10724.0,15.904,8.299,Justin Baldoni,United States,"October 16, 2020",PG-13,122 min
+842,ts187275,The World According to Jeff Goldblum,SHOW,2019,TV-PG,26,"['documentation', 'comedy']",['US'],2.0,tt10196390,7.6,2879.0,8.585,7.0,,United States,"November 12, 2019",TV-PG,2 Seasons
+843,tm350097,Artemis Fowl,MOVIE,2020,PG,94,"['action', 'scifi', 'family', 'fantasy']",['US'],,tt3089630,4.2,26966.0,25.238,5.6,Kenneth Branagh,United States,"June 12, 2020",PG,96 min
+844,tm841282,Togo,MOVIE,2019,PG,113,"['action', 'family', 'european', 'drama', 'history']",['US'],,tt5116302,7.9,50862.0,29.078,8.2,Ericson Core,United States,"December 20, 2019",PG,117 min
+845,tm319189,The Kid Who Would Be King,MOVIE,2019,PG,120,"['fantasy', 'action', 'family']",['GB'],,tt6811018,6.1,17512.0,20.756,6.1,Joe Cornish,"United Kingdom, United States","April 16, 2021",PG,121 min
+846,tm473071,The One and Only Ivan,MOVIE,2020,PG,93,"['comedy', 'drama', 'family', 'fantasy', 'animation']",['US'],,tt3661394,6.5,12676.0,13.246,7.5,Thea Sharrock,United States,"August 21, 2020",PG,95 min
+847,tm423725,Maleficent: Mistress of Evil,MOVIE,2019,PG,118,"['family', 'fantasy', 'action']",['US'],,tt4777008,6.6,99344.0,98.502,7.345,Joachim Rønning,"United States, United Kingdom, Canada","May 15, 2020",PG,121 min
+848,tm319237,Magic Camp,MOVIE,2020,PG,100,"['comedy', 'fantasy', 'family']",['US'],,tt3979300,6.3,4581.0,8.911,7.0,Mark Waters,United States,"August 14, 2020",PG,101 min
+849,ts228562,On Pointe,SHOW,2020,TV-PG,45,['documentation'],['US'],1.0,tt11097576,7.9,391.0,2.908,8.0,,United States,"December 18, 2020",TV-PG,1 Season
+850,ts287331,Gordon Ramsay: Uncharted,SHOW,2019,TV-14,45,"['documentation', 'reality']",['US'],3.0,tt9165706,7.7,1597.0,6.631,7.909,,United States,"June 4, 2021",TV-14,3 Seasons
+851,tm827478,One Day at Disney,MOVIE,2019,,59,['documentation'],['US'],,tt11550148,7.0,502.0,4.783,6.719,Fritz Mitchell,United States,"December 3, 2019",TV-PG,62 min
+852,ts220233,One Day at Disney,SHOW,2019,TV-PG,6,['documentation'],['US'],1.0,tt10854760,7.3,552.0,5.784,7.7,Fritz Mitchell,United States,"December 3, 2019",TV-PG,62 min
+853,tm374091,Descendants 3,MOVIE,2019,PG,120,"['fantasy', 'family', 'thriller', 'action', 'drama', 'reality']",['US'],,tt8022928,6.4,8936.0,46.658,7.779,Kenny Ortega,United States,"February 2, 2020",TV-G,109 min
+854,ts235604,Disney Insider,SHOW,2020,TV-PG,19,['documentation'],['US'],1.0,tt11998854,6.6,316.0,3.515,7.3,,United States,"March 20, 2020",TV-PG,1 Season
+855,ts254339,The Wonderful World of Mickey Mouse,SHOW,2020,TV-G,10,"['animation', 'family', 'scifi', 'western', 'comedy', 'fantasy']",['US'],2.0,tt13089270,7.9,1157.0,23.36,7.5,,United States,"November 18, 2020",TV-G,1 Season
+856,ts267890,Disney Gallery / Star Wars: The Mandalorian,SHOW,2020,TV-PG,33,['documentation'],['US'],2.0,tt12162902,8.4,3011.0,18.735,7.538,,United States,"December 25, 2020",TV-PG,2 Seasons
+857,ts224501,Walt Disney Animation Studios: Short Circuit Experimental Films,SHOW,2020,TV-PG,5,"['animation', 'comedy', 'family']",['US'],2.0,tt12579042,7.5,612.0,7.12,8.13,,,"August 4, 2021",PG,2 Seasons
+858,ts256051,Inside Pixar,SHOW,2020,TV-G,10,"['documentation', 'family']",['US'],4.0,tt13302848,7.3,660.0,4.321,7.2,,United States,"November 13, 2020",TV-PG,1 Season
+859,tm11948,Toy Story 4,MOVIE,2019,G,90,"['comedy', 'documentation', 'animation', 'family', 'fantasy']",['US'],,tt1979376,7.7,233342.0,72.285,7.5,Josh Cooley,United States,"February 5, 2020",G,101 min
+860,tm857985,Stargirl,MOVIE,2020,PG,107,"['drama', 'fantasy', 'romance', 'comedy', 'family']",['US'],,tt4858674,6.2,5079.0,17.565,7.523,Julia Hart,United States,"March 13, 2020",PG,107 min
+861,ts222773,The Imagineering Story,SHOW,2019,TV-PG,63,['documentation'],['US'],1.0,,,,4.022,8.258,,United States,"November 12, 2019",TV-PG,1 Season
+862,tm937152,Burrow,MOVIE,2020,G,6,"['family', 'comedy', 'animation']",['US'],,tt13167288,,,7.629,7.5,Madeline Sharafian,United States,"December 25, 2020",G,6 min
+863,ts237729,Zenimation,SHOW,2020,TV-G,10,"['animation', 'scifi', 'family']",['US'],2.0,tt12372034,7.5,457.0,4.609,7.889,,United States,"June 11, 2021",TV-G,2 Seasons
+864,tm974117,Godmothered,MOVIE,2020,PG,113,"['fantasy', 'drama', 'family', 'comedy']",['US'],,tt11681250,6.1,13061.0,35.296,6.884,Sharon Maguire,United States,"December 4, 2020",PG,113 min
+865,ts219040,Muppets Now,SHOW,2020,TV-PG,27,"['comedy', 'family', 'reality']",['US'],1.0,tt10857210,5.9,1233.0,6.187,5.6,,United States,"July 31, 2020",TV-PG,1 Season
+866,ts252296,Becoming,SHOW,2020,TV-14,24,"['documentation', 'family', 'history', 'sport', 'drama']",['US'],1.0,tt12944764,7.1,66.0,3.115,8.0,,United States,"September 18, 2020",TV-PG,1 Season
+867,ts88328,Hostile Planet,SHOW,2019,TV-PG,47,['documentation'],['US'],1.0,tt8390274,8.3,824.0,4.152,8.0,,United States,"November 12, 2019",TV-PG,1 Season
+868,ts220883,Pick of the Litter,SHOW,2019,TV-PG,32,"['documentation', 'family']",['US'],1.0,tt10855726,8.0,165.0,3.406,7.0,,United States,"December 20, 2019",TV-PG,1 Season
+869,ts225757,Shop Class,SHOW,2020,,43,['reality'],['US'],1.0,,,,3.85,8.5,,,"February 28, 2020",TV-G,1 Season
+870,ts250807,Rogue Trip,SHOW,2020,,37,['documentation'],['US'],1.0,,,,2.432,8.0,,,"July 24, 2020",TV-PG,1 Season
+871,tm916669,Upside-Down Magic,MOVIE,2020,G,96,[],"['CA', 'US']",,,,,42.004,7.189,Joe Nussbaum,"United States, Canada","February 5, 2021",TV-PG,97 min
+872,ts266669,Marvel Battleworld: Mystery of the Thanostones,SHOW,2020,,3,"['action', 'animation']",['US'],1.0,tt12583300,5.8,107.0,1.044,5.0,,United States,"February 12, 2021",TV-Y7-FV,1 Season
+873,ts222496,Earth to Ned,SHOW,2020,,25,[],['US'],1.0,,,,2.904,6.7,,United States,"September 4, 2020",TV-PG,1 Season
+874,tm898825,Surviving the Mount St. Helens Disaster,MOVIE,2020,,45,"['documentation', 'history']",['GB'],,tt12453440,7.3,122.0,1.937,4.5,Sophie Harris,United Kingdom,"July 31, 2020",TV-PG,44 min
+875,tm845773,Timmy Failure: Mistakes Were Made,MOVIE,2020,PG,99,"['family', 'thriller', 'comedy', 'fantasy', 'drama']",['US'],,tt6820324,6.0,3129.0,10.166,6.2,Tom McCarthy,United States,"February 7, 2020",PG,103 min
+876,ts237251,X-Ray Earth,SHOW,2020,TV-14,44,['documentation'],['GB'],1.0,tt12988062,6.7,59.0,1.894,8.3,,United States,"October 30, 2020",TV-PG,1 Season
+877,ts101535,Diary of a Future President,SHOW,2020,TV-PG,30,"['family', 'comedy', 'drama']",['US'],2.0,tt9695266,6.5,1150.0,14.685,7.7,,United States,"January 17, 2020",TV-PG,2 Seasons
+878,tm452729,Kitbull,MOVIE,2019,PG,9,['drama'],['US'],,,,,7.686,8.036,Rosana Sullivan,United States,"November 12, 2019",PG,9 min
+879,tm945431,Black Beauty,MOVIE,2020,PG,110,"['drama', 'family']","['US', 'FR', 'GB', 'ZA', 'DE']",,tt8484160,6.4,3952.0,12.211,8.1,Ashley Avis,United States,"November 27, 2020",TV-PG,111 min
+880,tm468061,Lamp Life,MOVIE,2020,G,7,['animation'],['US'],,tt10167262,,,11.508,7.3,Valerie LaPointe,United States,"January 31, 2020",TV-G,11 min
+881,ts216001,Out There with Jack Randall,SHOW,2019,TV-14,44,['documentation'],['US'],1.0,tt10583412,6.1,83.0,0.665,8.5,,,"January 1, 2020",TV-14,1 Season
+882,ts115108,Encore!,SHOW,2019,TV-PG,54,['reality'],['US'],1.0,tt7759016,7.6,659.0,2.873,7.1,,United States,"November 12, 2019",TV-14,1 Season
+883,ts249303,Spaced Out,SHOW,2019,,20,"['reality', 'scifi', 'documentation']",['US'],1.0,tt8884276,,,0.6,,,,"August 14, 2020",TV-G,1 Season
+884,ts218364,Kingdom of the White Wolf,SHOW,2019,TV-PG,44,['documentation'],['US'],1.0,tt10704300,8.0,249.0,2.041,9.5,,United States,"November 12, 2019",TV-PG,1 Season
+885,tm842501,Marvel Studios: Expanding the Universe,MOVIE,2019,PG,12,['documentation'],['US'],,,,,4.895,5.7,,,"November 12, 2019",TV-PG,13 min
+886,ts188374,Be Our Chef,SHOW,2020,TV-G,24,['reality'],['US'],1.0,tt10219416,6.5,185.0,1.198,5.6,,,"March 27, 2020",TV-G,1 Season
+887,tm931428,Once Upon a Snowman,MOVIE,2020,G,10,"['comedy', 'family', 'animation']",['US'],,,,,59.898,6.9,"Dan Abraham, Trent Correy",United States,"October 23, 2020",TV-PG,12 min
+888,ts269854,Disney Parks Sunrise Series,SHOW,2020,TV-G,59,[],['US'],1.0,,,,1.399,10.0,,,"December 18, 2020",TV-G,1 Season
+889,ts105720,Bia,SHOW,2019,TV-G,37,"['comedy', 'drama', 'family', 'music', 'romance', 'action']","['AR', 'BR']",4.0,tt9168904,6.8,208.0,30.829,7.9,,Argentina,"November 20, 2020",TV-G,1 Season
+890,ts90413,Gigantosaurus,SHOW,2019,TV-G,11,['animation'],"['US', 'FR']",3.0,tt9636800,6.6,201.0,12.586,7.0,,France,"August 25, 2021",TV-Y,2 Seasons
+891,tm961182,Expedition Everest,MOVIE,2020,PG,42,['documentation'],[],,tt13009970,6.5,155.0,3.333,6.7,Katie Bauer Murdock,United States,"February 5, 2021",TV-PG,45 min
+892,ts252988,Life Below Zero: Next Generation,SHOW,2020,TV-14,44,['reality'],['US'],5.0,tt13049144,5.3,265.0,3.945,8.7,,United States,"August 25, 2021",TV-14,2 Seasons
+893,tm946363,Disney Channel Halloween House Party,MOVIE,2020,,23,"['comedy', 'family']",['US'],,tt13845674,6.0,18.0,1.568,8.5,Trevor Moore,United States,"October 30, 2020",TV-G,23 min
+894,tm973637,From Our Family to Yours,MOVIE,2020,,3,"['animation', 'drama']",['US'],,,,,1.4,10.0,Angela Affinita,United Kingdom,"November 27, 2020",TV-G,3 min
+895,ts77182,101 Dalmatian Street,SHOW,2019,TV-Y7,17,"['animation', 'family', 'comedy']",['GB'],1.0,tt7019028,6.0,418.0,17.398,7.5,,"United Kingdom, United States, Canada","February 28, 2020",TV-Y7,1 Season
+896,tm863958,Back to the Titanic,MOVIE,2020,PG,45,['documentation'],['US'],,tt12100782,6.2,360.0,5.323,6.2,,United Kingdom,"August 21, 2020",TV-PG,44 min
+897,tm893036,Lost on Everest,MOVIE,2020,PG-13,60,['documentation'],['US'],,tt12660966,6.6,408.0,6.737,7.8,Renan Ozturk,United States,"October 16, 2020",TV-14,60 min
+898,ts249928,Gathering Storm,SHOW,2020,,44,['documentation'],['GB'],1.0,tt12760500,7.7,55.0,1.875,,,United States,"October 23, 2020",TV-PG,1 Season
+899,tm850243,Mars: One Day on the Red Planet,MOVIE,2020,,88,['documentation'],['US'],,tt12611334,7.0,411.0,5.655,6.1,Martin Johnson,United States,"August 21, 2020",TV-PG,88 min
+900,tm823347,Expedition Amelia,MOVIE,2019,,95,"['documentation', 'history']","['US', 'KI']",,tt10719984,7.2,248.0,3.502,7.2,Chad Cohen,United States,"December 1, 2019",TV-PG,94 min
+901,ts271634,Mickey Go Local,SHOW,2019,,3,"['comedy', 'animation']",['US'],1.0,tt13845582,5.7,67.0,1.793,7.3,,,"February 26, 2021",TV-G,1 Season
+902,tm974034,Safety,MOVIE,2020,PG,122,"['drama', 'sport']",['US'],,tt10649016,6.8,4281.0,8.793,7.5,Reginald Hudlin,United States,"December 11, 2020",PG,123 min
+903,ts271343,High School Musical: The Musical: The Series: The Sing-Along,SHOW,2019,TV-PG,30,['drama'],['US'],1.0,,,,2.964,9.2,,,"January 17, 2020",TV-PG,1 Season
+904,ts237067,The Big Fib,SHOW,2020,,23,['reality'],['US'],1.0,,,,2.436,6.5,,United States,"May 22, 2020",TV-PG,1 Season
+905,tm468064,Loop,MOVIE,2020,PG,10,['animation'],['US'],,,,,8.324,6.8,Erica Milsom,United States,"January 10, 2020",PG,12 min
+906,tm984389,Dory's Reef Cam,MOVIE,2020,G,182,"['animation', 'comedy', 'family']",['US'],,tt13496400,3.6,296.0,40.998,6.1,Michal Makarewicz,United States,"December 18, 2020",TV-G,182 min
+907,tm882857,In the Footsteps of Elephant,MOVIE,2020,G,88,"['documentation', 'family']",['US'],,tt12100044,7.2,226.0,5.825,8.0,Vanessa Berlowitz,United States,"April 3, 2020",G,88 min
+908,tm468063,Wind,MOVIE,2019,G,8,['animation'],['US'],,tt10538136,,,4.946,7.229,Edwin Chang,United States,"December 13, 2019",G,9 min
+909,ts286382,Secrets of the Zoo: Tampa,SHOW,2020,TV-PG,44,"['documentation', 'family']",['US'],4.0,tt11708046,8.6,82.0,25.545,9.6,,United States,"November 24, 2021",TV-PG,2 Seasons
+910,tm882856,Elephant,MOVIE,2020,G,86,"['family', 'documentation']",['US'],,tt12036052,7.2,2310.0,9.664,7.8,Mark Linfield,United States,"April 3, 2020",G,89 min
+911,ts235499,Critter Fixers: Country Vets,SHOW,2020,TV-14,44,"['family', 'documentation']",['US'],5.0,tt11929804,8.8,192.0,7.361,10.0,,United States,"July 28, 2021",TV-14,2 Seasons
+912,ts268033,Secrets of the Zoo: North Carolina,SHOW,2020,TV-14,44,"['documentation', 'reality']",['US'],1.0,tt13528684,8.1,55.0,0.6,,,,"October 13, 2021",TV-14,1 Season
+913,ts287032,The Right Stuff,SHOW,2020,TV-14,44,"['drama', 'history']",['US'],1.0,tt7423322,6.8,3989.0,15.534,7.3,,United States,"October 9, 2020",TV-14,1 Season
+914,tm461535,Marvel Rising: Heart of Iron,MOVIE,2019,,44,"['animation', 'scifi', 'action']",['US'],,tt9073746,4.7,1259.0,11.57,7.1,,United States,"December 1, 2019",TV-Y7,46 min
+915,ts235731,"Mira, Royal Detective",SHOW,2020,TV-Y,22,[],['US'],3.0,,,,10.231,3.0,,United States,"September 8, 2021",TV-Y,2 Seasons
+916,tm452731,Purl,MOVIE,2019,PG,12,['comedy'],['US'],,,,,7.665,6.7,Kristen Lester,United States,"November 12, 2019",PG,12 min
+917,tm894133,Out,MOVIE,2020,PG,9,"['animation', 'drama', 'fantasy', 'family', 'romance', 'comedy', 'horror']",['US'],,,,,7.151,7.49,Steven Hunter,United States,"May 22, 2020",PG,12 min
+918,tm452733,Smash and Grab,MOVIE,2019,PG,7,"['animation', 'scifi']",['US'],,,,,6.853,6.7,Brian Larsen,United States,"November 12, 2019",PG,8 min
+919,tm468066,Float,MOVIE,2019,PG,7,"['animation', 'drama', 'family']",['US'],,,,,6.698,7.3,Bobby Rubio,United States,"November 12, 2019",PG,10 min
+920,tm882855,Diving with Dolphins,MOVIE,2020,G,79,['documentation'],['US'],,tt12100080,7.0,198.0,6.464,7.8,Keith Scholey,United States,"April 3, 2020",G,79 min
+921,tm941826,High School Musical: The Musical: The Holiday Special,MOVIE,2020,,45,"['documentation', 'music', 'comedy', 'drama']",['US'],,tt13290168,5.7,420.0,5.966,7.5,,United States,"December 11, 2020",TV-G,46 min
+922,tm454706,Marvel Rising: Chasing Ghosts,MOVIE,2019,,22,"['action', 'animation', 'family']",['US'],,tt9073748,5.2,566.0,5.961,7.1,,United States,"December 1, 2019",TV-Y7-FV,24 min
+923,tm944621,The Real Right Stuff,MOVIE,2020,PG,90,"['history', 'documentation']",['US'],,tt13237174,7.2,572.0,4.8,6.3,,United States,"November 20, 2020",TV-PG,90 min
+924,ts281895,Magic of Disney's Animal Kingdom,SHOW,2020,TV-PG,41,"['documentation', 'reality']",['US'],2.0,tt10196378,8.2,378.0,4.684,7.2,,United Kingdom,"September 25, 2020",TV-PG,1 Season
+925,tm835342,Marvel Rising: Operation Shuri,MOVIE,2019,,22,"['scifi', 'animation', 'action']",['US'],,tt11113964,5.0,391.0,4.491,6.5,Chris Rutkowski,United States,"February 21, 2020",TV-Y7,23 min
+926,ts222776,Marvel's Ultimate Comics,SHOW,2019,,3,[],['US'],1.0,,,,3.842,,,,"November 12, 2019",TV-Y7,1 Season
+927,tm460582,Into the Grand Canyon,MOVIE,2019,PG,84,['documentation'],['US'],,tt9822474,7.2,496.0,3.729,7.7,Pete McBride,United States,"November 12, 2019",TV-PG,82 min
+928,ts109657,Lost Treasures of the Maya,SHOW,2019,TV-14,29,"['documentation', 'history']","['GT', 'US']",1.0,tt10276578,6.6,271.0,3.398,9.0,,"United States, Guatemala","November 12, 2019",TV-PG,1 Season
+929,tm885652,A Celebration of the Music from Coco,MOVIE,2020,,47,"['documentation', 'music']",['US'],,tt12076020,7.0,267.0,3.396,7.2,Ron de Moraes,United States,"April 10, 2020",TV-PG,48 min
+930,tm448006,Mission to the Sun,MOVIE,2019,PG,44,['documentation'],['US'],,tt9165688,6.6,228.0,3.275,6.5,Daniel Smith,United States,"November 12, 2019",TV-PG,44 min
+931,tm914724,Adventure Thru the Walt Disney Archives,MOVIE,2020,PG,60,['documentation'],['US'],,tt15222206,7.2,122.0,3.252,7.0,John Gleim,,"November 19, 2021",TV-PG,59 min
+932,ts254539,Wild Nordic,SHOW,2019,,44,['documentation'],['US'],1.0,tt14072300,7.5,76.0,3.251,,,,"December 18, 2020",TV-PG,1 Season
+933,tm516136,Sharks of Lost Island,MOVIE,2019,PG,45,['documentation'],['US'],,tt7217020,5.6,138.0,3.15,5.8,,United States,"November 12, 2019",TV-PG,45 min
+934,ts189132,Marvel's Hero Project,SHOW,2019,TV-G,26,"['documentation', 'reality', 'action', 'scifi']",['US'],1.0,tt10163846,6.8,171.0,2.945,7.1,,United States,"November 12, 2019",TV-PG,1 Season
+935,ts360108,Mickey Mouse Mixed-Up Adventures,SHOW,2019,TV-Y,23,"['comedy', 'family', 'sport', 'animation']",['US'],1.0,tt6264782,6.0,625.0,2.811,9.5,,United States,"July 7, 2021",TV-Y,1 Season
+936,tm674489,The Lost Tomb of Alexander the Great,MOVIE,2019,PG,44,"['history', 'documentation']",['GB'],,tt10290670,6.4,378.0,2.766,6.8,Duncan Singh,United Kingdom,"November 12, 2019",TV-PG,44 min
+937,tm916470,The Undefeated Presents: Hamilton In-Depth,MOVIE,2020,,33,[],[],,,,,2.744,,,United States,"July 5, 2020",TV-PG,33 min
+938,tm881728,Born Wild: The Next Generation,MOVIE,2020,G,60,['documentation'],['US'],,tt12194646,7.9,30.0,2.665,8.0,Liliana Olszewski,United States,"April 28, 2020",TV-PG,44 min
+939,ts237076,It's a Dog's Life with Bill Farmer,SHOW,2020,TV-G,22,['documentation'],['US'],1.0,tt12105232,7.9,98.0,2.642,9.0,,United States,"May 15, 2020",TV-PG,1 Season
+940,tm963593,Shark vs. Whale,MOVIE,2020,,45,['documentation'],"['ZA', 'US']",,tt12820178,5.5,54.0,2.615,8.0,,,"July 23, 2021",TV-PG,44 min
+941,tm933514,Buried Truth of the Maya,MOVIE,2019,PG,47,"['thriller', 'documentation']",['US'],,tt12794742,5.5,213.0,2.393,5.5,,United States,"December 18, 2020",TV-PG,48 min
+942,ts225082,"Heartland Docs, DVM",SHOW,2020,TV-PG,44,"['documentation', 'reality']",['US'],4.0,tt11783490,8.8,148.0,2.389,8.5,,United States,"June 18, 2021",TV-14,3 Seasons
+943,ts328156,Dog: Impossible,SHOW,2019,TV-PG,43,['documentation'],['US'],2.0,,,,2.295,7.8,,United States,"September 22, 2021",TV-PG,2 Seasons
+944,ts237232,Kingdom of the Mummies,SHOW,2020,TV-14,44,['documentation'],"['GB', 'US']",1.0,tt12366196,7.2,129.0,2.292,7.0,,United States,"September 18, 2020",TV-14,1 Season
+945,tm976257,Disney Holiday Magic Quest,MOVIE,2020,G,45,[],['US'],,tt13522634,6.5,41.0,2.034,9.0,,United States,"December 11, 2020",TV-G,46 min
+946,tm924794,India's Wild Leopards,MOVIE,2020,,44,['documentation'],['IN'],,,,,2.024,,,India,"August 14, 2020",TV-14,45 min
+947,tm995974,Myth: A Frozen Tale,MOVIE,2019,G,8,"['animation', 'fantasy']",['US'],,,,,2.005,6.8,Jeff Gipson,United States,"February 26, 2021",TV-G,12 min
+948,ts225533,Wild Cats of India,SHOW,2020,,44,['documentation'],['IN'],1.0,tt11920706,7.6,60.0,1.96,9.0,,United States,"August 14, 2020",TV-PG,1 Season
+949,tm978794,The Disney Holiday Singalong,MOVIE,2020,,45,"['music', 'comedy', 'family']",[],,tt13392122,5.9,192.0,1.959,8.1,,United States,"December 4, 2020",TV-G,45 min
+950,ts94668,Prairie Dog Manor,SHOW,2019,,22,"['reality', 'documentation']",['US'],1.0,tt8316986,8.0,57.0,1.901,10.0,,United States,"May 1, 2020",TV-PG,1 Season
+951,tm942473,Wild Portugal,MOVIE,2020,PG-13,44,['documentation'],['DE'],,tt16043106,7.1,42.0,1.883,6.0,Christian Baumeister,,"October 9, 2020",TV-14,45 min
+952,tm954191,Being the Queen,MOVIE,2020,PG-13,45,['documentation'],"['US', 'GB']",,tt13237134,6.6,134.0,1.863,7.0,Tom Jennings,United States,"April 23, 2021",TV-14,44 min
+953,ts280148,The Wizard of Paws,SHOW,2020,,23,"['family', 'reality']",['US'],5.0,tt13897634,9.3,56.0,1.858,,,,"October 13, 2021",TV-PG,1 Season
+954,ts238237,Alaska Animal Rescue,SHOW,2020,,44,"['reality', 'documentation']",['US'],2.0,tt12188528,8.8,53.0,1.812,9.7,,United States,"September 1, 2021",TV-PG,2 Seasons
+955,tm983647,Texas Storm Squad,MOVIE,2020,PG-13,44,['documentation'],['US'],,,,,1.572,,Natalie Hewit,,"January 29, 2021",TV-14,44 min
+956,tm902037,Chasing the Equinox,MOVIE,2020,,45,['documentation'],['US'],,tt12413186,6.5,120.0,1.52,7.0,Kenny Scott,,"June 5, 2020",TV-PG,45 min
+957,tm936946,The Giant Robber Crab,MOVIE,2019,,44,['documentation'],['US'],,,,,1.47,5.5,Moritz Katz,United States,"September 25, 2020",TV-PG,44 min
+958,tm848055,High School Musical: The Musical: The Series: The Special,MOVIE,2019,,23,"['documentation', 'music', 'drama', 'comedy']",['US'],,tt11448424,7.0,225.0,1.443,8.6,Clayton Cogswell,United States,"December 20, 2019",TV-G,23 min
+959,tm995604,Jade Eyed Leopard,MOVIE,2020,PG,45,['documentation'],[],,,,,1.439,,,,"September 17, 2021",TV-PG,44 min
+960,tm920883,Sharkcano,MOVIE,2020,,45,['documentation'],[],,tt21300912,,,1.4,2.0,Andy Seestedt,,"July 16, 2021",TV-PG,44 min
+961,tm1075291,Most Wanted Sharks,MOVIE,2020,,44,['documentation'],[],,,,,1.4,5.0,,,"July 16, 2021",TV-PG,44 min
+962,tm1030667,What the Shark?,MOVIE,2020,PG-13,44,['documentation'],[],,,,,1.361,,,,"July 23, 2021",TV-PG,44 min
+963,ts223546,"Dr. T, Lone Star Vet",SHOW,2019,TV-PG,44,['reality'],['US'],1.0,tt11018282,8.1,103.0,1.288,,,United States,"November 12, 2019",TV-PG,1 Season
+964,tm959308,Secrets of the Bull Shark,MOVIE,2020,,44,['documentation'],['US'],,tt13130602,6.1,10.0,1.229,7.0,,,"July 16, 2021",TV-14,44 min
+965,tm1064056,Shark Attack Investigation: The Paige Winter Story,MOVIE,2020,PG-13,44,['documentation'],['US'],,,,,1.156,,,,"July 16, 2021",TV-14,44 min
+966,ts225756,Disney Family Sundays,SHOW,2019,TV-G,7,['reality'],['US'],1.0,,,,1.109,5.3,,United States,"November 12, 2019",TV-G,1 Season
+967,tm981436,Doc McStuffins: The Doc Is In,MOVIE,2020,,24,"['animation', 'family', 'fantasy']",['US'],,tt13522660,,,1.084,7.0,Chris Hamilton,,"March 12, 2021",TV-Y,24 min
+968,tm876282,Viking Warrior Women,MOVIE,2019,PG,45,"['documentation', 'history']",['US'],,tt11676420,5.6,82.0,0.974,6.0,Stuart Strickson,United Kingdom,"February 28, 2020",TV-PG,44 min
+969,tm822278,Man vs. Shark,MOVIE,2019,PG,44,['documentation'],['US'],,tt10644346,6.2,64.0,0.919,8.0,,United States,"December 4, 2020",TV-PG,45 min
+970,tm1018677,Disney My Music Story: Perfume,MOVIE,2020,,71,"['documentation', 'music']",['JP'],,tt14096790,6.6,10.0,0.899,8.0,Kentaro Takayanagi,,"March 19, 2021",,53 min
+971,tm983746,Great Shark Chow Down,MOVIE,2019,PG,44,['documentation'],[],,tt21618728,5.7,8.0,0.853,,Mark Woodward,,"January 1, 2021",TV-PG,45 min
+972,tm947813,Petra: Secrets of the Ancient Builders,MOVIE,2019,G,44,['documentation'],['US'],,,,,0.84,8.3,"Thierry Fessard, Yohann Thiriet",United Arab Emirates,"November 13, 2020",TV-G,45 min
+973,tm845561,Okavango: River of Dreams,MOVIE,2019,,94,['documentation'],['BW'],,,,,0.84,7.0,"Dereck Joubert, Beverly Joubert","Austria, South Africa","February 26, 2021",TV-PG,95 min
+974,tm1016993,The Hidden Kingdoms of China,MOVIE,2020,PG,88,['documentation'],['CN'],,tt13975730,6.9,57.0,0.762,8.0,"Ben Wallis, Emma Fraser, Jess Tombs",United States,"August 7, 2020",TV-PG,88 min
+975,tm1202308,Puppy for Hanukkah,MOVIE,2020,,3,[],[],,,,,0.65,,,,"November 19, 2021",TV-G,4 min
+976,tm958703,Shark vs. Surfer,MOVIE,2020,,44,['documentation'],['NZ'],,tt13161852,6.1,24.0,0.642,5.0,Phil Stebbing,,"July 23, 2021",TV-14,44 min
+977,ts225712,Jungle Animal Rescue,SHOW,2020,TV-PG,44,['documentation'],['US'],1.0,tt12690880,6.8,14.0,0.633,6.0,,United States,"August 14, 2020",TV-PG,1 Season
+978,ts251052,Disney Junior Music Lullabies,SHOW,2019,TV-Y,1,['animation'],['US'],1.0,,,,0.6,10.0,,,"July 17, 2020",TV-Y,1 Season
+979,tm963702,The Last Ice,MOVIE,2020,,83,['documentation'],[],,tt12812506,7.4,121.0,,,Scott Ressler,United States,"April 2, 2021",TV-14,82 min
+980,ts219048,Obi-Wan Kenobi,SHOW,2022,TV-14,44,"['action', 'drama', 'scifi']",['US'],1.0,tt8466564,7.1,200368.0,78.102,7.303,,,"November 12, 2021",TV-PG,1 min
+981,ts86474,Loki,SHOW,2021,TV-14,48,"['drama', 'scifi', 'fantasy', 'action']",['US'],1.0,tt9140554,8.2,328138.0,111.593,8.173,,,"June 9, 2021",TV-14,1 Season
+982,ts86795,WandaVision,SHOW,2021,TV-14,39,"['scifi', 'drama', 'romance', 'action', 'comedy', 'fantasy']",['US'],1.0,tt9140560,7.9,332662.0,99.622,8.288,,United States,"January 15, 2021",TV-14,1 Season
+983,ts299852,The Beatles: Get Back,SHOW,2021,,156,"['music', 'documentation']","['GB', 'NZ', 'US']",1.0,tt9735318,9.0,23969.0,11.192,8.397,,,"November 25, 2021",,1 Season
+984,ts270815,Limitless with Chris Hemsworth,SHOW,2022,TV-14,53,"['action', 'documentation']","['US', 'GB']",1.0,tt11714334,8.1,2661.0,16.831,9.1,,,"November 12, 2021",TV-14,2 min
+985,ts89837,Hawkeye,SHOW,2021,TV-14,47,"['action', 'drama', 'comedy', 'crime', 'scifi']",['US'],1.0,tt10160804,7.5,188435.0,104.481,8.032,,,"November 24, 2021",TV-14,1 Season
+986,ts89898,The Falcon and The Winter Soldier,SHOW,2021,TV-14,51,"['action', 'scifi', 'drama']",['US'],1.0,tt9208876,7.2,227531.0,83.717,7.724,,,"March 19, 2021",TV-14,1 Season
+987,ts189749,What If...?,SHOW,2021,TV-14,32,"['animation', 'action', 'scifi', 'fantasy']",['US'],3.0,tt10168312,7.4,120178.0,67.719,8.272,,,"August 11, 2021",TV-14,1 Season
+988,ts234955,The Mysterious Benedict Society,SHOW,2021,TV-PG,41,"['action', 'comedy', 'drama', 'family']",['US'],2.0,tt11875316,7.6,4886.0,17.253,7.6,,United States,"June 25, 2021",TV-PG,1 Season
+989,ts243370,Just Beyond,SHOW,2021,TV-PG,28,"['comedy', 'drama', 'fantasy', 'horror', 'scifi', 'thriller']",['US'],1.0,tt12286434,6.2,1740.0,23.27,7.2,,,"October 13, 2021",TV-PG,1 Season
+990,ts269711,The Mighty Ducks: Game Changers,SHOW,2021,TV-PG,31,"['family', 'comedy', 'sport', 'drama']",['US'],2.0,tt7939768,7.3,5424.0,30.792,8.2,,,"March 26, 2021",TV-PG,1 Season
+991,tm439797,Black Widow,MOVIE,2021,PG-13,134,"['action', 'scifi']",['US'],,tt3480822,6.7,367819.0,103.532,7.362,Cate Shortland,United States,"October 6, 2021",PG-13,135 min
+992,tm1040854,Muppets Haunted Mansion,MOVIE,2021,PG,52,"['comedy', 'family', 'fantasy']",['US'],,tt14602326,6.3,7194.0,17.73,6.5,Kirk Thatcher,,"October 8, 2021",TV-PG,53 min
+993,tm344880,Jungle Cruise,MOVIE,2021,PG-13,127,"['action', 'comedy', 'fantasy', 'family']",['US'],,tt0870154,6.6,196044.0,85.076,7.464,Jaume Collet-Serra,United States,"November 12, 2021",PG-13,129 min
+994,ts269529,Baymax!,SHOW,2022,TV-PG,9,"['animation', 'action', 'comedy', 'family', 'scifi', 'fantasy']",['US'],1.0,tt13622958,7.1,7317.0,29.342,8.0,,,"November 12, 2021",TV-G,1 min
+995,tm240625,Cruella,MOVIE,2021,PG-13,134,"['comedy', 'crime', 'drama']","['GB', 'US']",,tt3228774,7.3,239882.0,155.737,8.086,Craig Gillespie,"United States, United Kingdom","August 27, 2021",PG-13,137 min
+996,ts269561,Star Wars: Visions,SHOW,2021,TV-PG,16,"['scifi', 'action', 'animation', 'drama', 'fantasy', 'documentation']","['JP', 'US']",2.0,tt13622982,7.0,19269.0,23.517,7.3,,,"September 22, 2021",TV-PG,1 Season
+997,tm867361,Home Sweet Home Alone,MOVIE,2021,PG,93,"['action', 'comedy', 'crime', 'family', 'drama']","['GB', 'US']",,tt11012066,3.6,18412.0,50.401,5.011,Dan Mazer,United States,"November 12, 2021",PG,95 min
+998,ts269588,Pixar Popcorn,SHOW,2021,TV-G,4,"['comedy', 'family', 'animation']",['US'],1.0,tt13634444,6.5,2144.0,10.649,7.3,,United States,"January 22, 2021",TV-PG,1 Season
+999,ts269590,Dug Days,SHOW,2021,TV-G,10,"['animation', 'comedy', 'family']",['US'],1.0,tt13624054,8.1,4534.0,21.875,7.422,,United States,"September 1, 2021",TV-PG,1 Season
+1000,tm375874,Luca,MOVIE,2021,PG,95,"['comedy', 'family', 'fantasy', 'animation']",['US'],,tt12801262,7.5,138610.0,132.456,7.9,Enrico Casarosa,United States,"June 18, 2021",PG,101 min
+1001,ts222989,Behind the Attraction,SHOW,2021,TV-PG,42,['documentation'],['US'],1.0,tt11069436,7.7,881.0,3.054,7.8,,,"July 21, 2021",TV-PG,1 Season
+1002,ts330252,The Proud Family: Louder and Prouder,SHOW,2022,TV-PG,25,"['comedy', 'animation', 'family']",['US'],2.0,tt11871764,2.8,4357.0,47.399,6.9,,,"November 12, 2021",TV-G,1 min
+1003,tm417522,Raya and the Last Dragon,MOVIE,2021,PG,117,"['action', 'animation', 'drama', 'family', 'fantasy', 'comedy']",['US'],,tt10862682,7.3,135105.0,130.894,7.936,"Don Hall, Carlos López Estrada",United States,"June 4, 2021",PG,112 min
+1004,ts243681,"Doogie Kamealoha, M.D.",SHOW,2021,TV-PG,34,"['comedy', 'drama', 'family']",['US'],2.0,tt12225230,6.7,2244.0,20.011,7.8,,United States,"September 8, 2021",TV-PG,1 Season
+1005,ts109714,Monsters at Work,SHOW,2021,TV-G,22,"['comedy', 'fantasy', 'animation', 'family']",['US'],2.0,tt8610082,7.0,7545.0,38.759,7.179,,United States,"July 7, 2021",TV-G,1 Season
+1006,tm1039905,Star Wars Biomes,MOVIE,2021,,18,['scifi'],['US'],,,,,4.61,6.3,,,"May 4, 2021",TV-G,18 min
+1007,ts270222,Disney Intertwined,SHOW,2021,TV-14,45,"['drama', 'scifi', 'comedy', 'family', 'fantasy']",['AR'],1.0,tt13891870,6.8,317.0,27.489,7.5,,,"November 12, 2021",TV-PG,1 Season
+1008,ts227297,Secrets of Sulphur Springs,SHOW,2021,TV-PG,24,"['drama', 'family']",['US'],3.0,tt10329642,7.6,3220.0,24.83,8.2,,United States,"February 26, 2021",TV-PG,1 Season
+1009,tm1094572,Fauci,MOVIE,2021,PG-13,104,"['documentation', 'history']",['US'],,tt13984924,6.5,12632.0,4.004,3.1,"John Hoffman, Janet Tobias",United States,"October 6, 2021",PG-13,105 min
+1010,ts280057,America the Beautiful,SHOW,2022,TV-PG,47,['documentation'],['US'],1.0,tt13891702,8.0,246.0,6.956,7.0,,,"November 12, 2021",TV-PG,2 min
+1011,ts310270,Olaf Presents,SHOW,2021,TV-Y,3,"['comedy', 'family', 'fantasy', 'animation']",['US'],1.0,tt15475608,7.3,3326.0,15.452,7.2,,,"November 12, 2021",TV-PG,1 Season
+1012,ts251844,Secrets of the Whales,SHOW,2021,TV-PG,48,['documentation'],['US'],1.0,tt12824750,8.4,731.0,5.453,7.9,,,"April 22, 2021",TV-PG,1 Season
+1013,ts302359,Disney Presents Goofy in How to Stay at Home,SHOW,2021,TV-G,3,"['animation', 'comedy', 'family']",['US'],1.0,tt15118926,6.8,481.0,7.643,6.1,,,"August 11, 2021",TV-G,1 Season
+1014,ts309765,Among the Stars,SHOW,2021,TV-PG,46,['documentation'],['US'],1.0,tt15428794,7.8,271.0,1.664,9.333,,,"October 6, 2021",TV-PG,1 Season
+1015,tm949574,Flora & Ulysses,MOVIE,2021,PG,95,"['family', 'comedy', 'fantasy']",['US'],,tt8521736,6.2,6323.0,17.47,6.5,Lena Khan,United States,"February 19, 2021",PG,95 min
+1016,tm1077151,Happier Than Ever: A Love Letter to Los Angeles,MOVIE,2021,PG,65,"['music', 'documentation']",['US'],,tt15094392,7.3,1512.0,13.431,8.0,"Robert Rodriguez, Patrick Osborne",United States,"September 3, 2021",TV-14,66 min
+1017,ts272675,Breaking Bobby Bones,SHOW,2021,TV-14,22,['documentation'],['US'],1.0,,,,0.896,,,United States,"July 7, 2021",TV-14,1 Season
+1018,tm1094653,Under Wraps,MOVIE,2021,PG,91,"['fantasy', 'romance', 'comedy', 'family']",['US'],,tt13464350,4.8,1100.0,13.273,6.9,Alex Zamm,,"October 8, 2021",TV-G,92 min
+1019,tm1104315,Ciao Alberto,MOVIE,2021,PG,7,['comedy'],['US'],,,,,47.272,7.5,McKenna Harris,,"November 12, 2021",TV-PG,8 min
+1020,ts312155,Star Wars Galaxy of Sounds,SHOW,2021,TV-PG,7,['scifi'],['US'],1.0,tt15516280,7.0,337.0,4.557,6.0,,,"September 29, 2021",TV-PG,1 Season
+1021,ts284902,Earth Moods,SHOW,2021,TV-G,30,['documentation'],['US'],1.0,tt14260676,8.0,195.0,1.744,8.5,,,"April 16, 2021",TV-G,1 Season
+1022,tm983783,Playing with Sharks,MOVIE,2021,PG-13,91,['documentation'],['AU'],,tt11226258,7.5,553.0,4.66,7.6,,,"July 23, 2021",TV-14,91 min
+1023,tm1064162,Stuntman,MOVIE,2021,PG-13,87,['documentation'],['US'],,tt6539830,6.6,396.0,1.786,6.4,Kurt Mattila,,"July 23, 2021",TV-14,87 min
+1024,tm1104702,The Simpsons in Plusaversary,MOVIE,2021,G,5,"['animation', 'fantasy']",['US'],,tt15829632,5.0,,83.027,6.6,David Silverman,,"November 12, 2021",TV-PG,6 min
+1025,tm1031474,22 vs. Earth,MOVIE,2021,G,9,"['fantasy', 'animation']",['US'],,tt14499632,,,29.662,7.1,Kevin Nolting,,"April 30, 2021",TV-PG,9 min
+1026,tm1082540,LEGO Star Wars Terrifying Tales,MOVIE,2021,G,45,"['action', 'horror', 'animation', 'scifi', 'comedy', 'fantasy', 'family']","['CA', 'DK', 'US']",,tt15164924,6.1,2457.0,30.456,6.8,Ken Cunningham,,"October 1, 2021",TV-Y7-FV,47 min
+1027,ts218548,The Ghost and Molly McGee,SHOW,2021,TV-Y7,21,"['family', 'fantasy', 'music', 'animation', 'comedy', 'horror', 'thriller', 'scifi']",['US'],3.0,tt10684374,7.4,1225.0,15.257,8.5,,United States,"October 6, 2021",TV-Y7,1 Season
+1028,tm1104734,Under the Helmet: The Legacy of Boba Fett,MOVIE,2021,PG,21,['documentation'],['US'],,tt15715890,7.2,1539.0,4.377,6.983,,,"November 12, 2021",TV-PG,22 min
+1029,ts271690,Race to the Center of the Earth,SHOW,2021,TV-14,53,['reality'],['US'],1.0,tt10370752,6.5,221.0,4.628,8.5,,United States,"May 14, 2021",TV-14,1 Season
+1030,ts258072,Mickey Mouse Funhouse,SHOW,2021,TV-G,19,"['animation', 'comedy', 'family', 'fantasy', 'romance', 'action']",['US'],6.0,tt13262134,5.7,232.0,15.221,8.0,,United States,"July 28, 2021",TV-Y,1 Season
+1031,tm1042356,Wolfgang,MOVIE,2021,,78,['documentation'],['US'],,tt11146690,6.9,420.0,2.715,7.5,David Gelb,,"June 25, 2021",TV-PG,80 min
+1032,tm989837,Becoming Cousteau,MOVIE,2021,PG-13,94,['documentation'],['US'],,tt10334438,7.1,1216.0,2.615,6.6,Liz Garbus,United States,"November 24, 2021",PG-13,94 min
+1033,tm1127595,Pixar 2021 Disney+ Day Special,MOVIE,2021,G,4,['documentation'],['US'],,,,,5.937,5.818,,,"November 12, 2021",G,5 min
+1034,tm1076825,Twenty Something,MOVIE,2021,,7,"['drama', 'animation']",['US'],,,,,6.129,7.4,Aphton Corbin,United States,"September 10, 2021",PG,11 min
+1035,ts296914,Storm Rising,SHOW,2021,,43,['documentation'],['US'],1.0,,,,1.657,8.0,,,"November 3, 2021",TV-14,1 Season
+1036,tm1076889,Nona,MOVIE,2021,,7,['animation'],['US'],,,,,5.494,6.3,Louis Gonzales,,"September 17, 2021",G,9 min
+1037,tm996838,Marvel's Behind the Mask,MOVIE,2021,PG-13,64,['documentation'],['US'],,tt13885628,6.4,480.0,8.047,7.2,,,"February 12, 2021",TV-14,65 min
+1038,ts288962,Turning the Tables with Robin Roberts,SHOW,2021,,27,"['drama', 'reality']",['US'],2.0,tt14598810,6.8,55.0,7.576,2.0,,,"July 28, 2021",TV-PG,1 Season
+1039,tm999348,Own the Room,MOVIE,2021,PG,91,['documentation'],['US'],,tt14017018,6.7,237.0,3.668,6.4,"Cristina Costantini, Darren Foster",,"March 12, 2021",TV-14,91 min
+1040,ts270701,Dino Ranch,SHOW,2021,TV-Y,14,"['animation', 'action', 'family', 'western', 'comedy']","['CA', 'US']",2.0,tt13858416,6.6,171.0,44.469,10.0,,Canada,"June 18, 2021",TV-Y,1 Season
+1041,tm1092563,Mickey's Tale of Two Witches,MOVIE,2021,G,46,"['animation', 'action', 'comedy', 'family', 'fantasy']",['US'],,tt15470224,6.2,145.0,24.202,7.1,Jeff Gordon,,"October 8, 2021",TV-Y,47 min
+1042,tm1034939,The Little Prince(ss),MOVIE,2021,,19,"['family', 'drama']",['US'],,,,,18.435,7.2,Moxie Peng,,"May 28, 2021",PG,19 min
+1043,tm1066442,Us Again,MOVIE,2021,G,6,"['animation', 'drama', 'family']",['US'],,,,,6.522,7.9,Zach A. Parrish,,"June 4, 2021",G,7 min
+1044,tm1054074,Spin,MOVIE,2021,G,93,"['drama', 'comedy', 'family', 'music', 'romance']",['US'],,tt12969826,6.1,933.0,5.699,6.8,Manjari Makijany,,"November 12, 2021",TV-G,94 min
+1045,tm1109460,The Most Magical Story on Earth: 50 Years of Walt Disney World,MOVIE,2021,PG,84,"['documentation', 'music']",['US'],,tt15534640,7.4,141.0,4.498,9.0,Dave Hoffman,,"October 8, 2021",TV-PG,85 min
+1046,tm886783,Jane Goodall: The Hope,MOVIE,2022,,88,"['documentation', 'action']",['US'],,tt12137534,7.9,190.0,3.924,6.7,"Elizabeth Leiter, Kimberly Woodard",United States,"April 22, 2020",TV-14,89 min
+1047,tm1034999,Growing Fangs,MOVIE,2021,,19,['drama'],['US'],,,,,3.723,6.6,Ann Marie Pace,,"May 28, 2021",TV-PG,20 min
+1048,tm1076899,A Spark Story,MOVIE,2021,,87,"['documentation', 'animation']",['US'],,tt11963126,6.5,166.0,3.575,7.7,"Jason Sterman, Leanne Dare",,"September 24, 2021",TV-PG,88 min
+1049,ts272834,America's Funniest Home Videos: Animal Edition,SHOW,2021,TV-PG,45,"['reality', 'family']",['US'],2.0,tt15758162,7.8,32.0,3.549,6.0,,,"August 11, 2021",TV-PG,1 Season
+1050,tm1044329,Flooded Tombs of the Nile,MOVIE,2021,PG,44,"['history', 'documentation']",['US'],,tt15286970,6.3,110.0,3.108,7.0,Katie Bauer Murdock,,"September 17, 2021",TV-PG,44 min
+1051,ts293637,Disney's Magic Bake-Off,SHOW,2021,TV-G,46,"['reality', 'family']",['US'],1.0,tt14539670,6.2,75.0,3.065,8.0,,United States,"September 29, 2021",TV-G,1 Season
+1052,tm1091117,Smoky Mountain Park Rangers,MOVIE,2021,PG,42,['documentation'],['US'],,tt21987160,6.3,14.0,2.932,,,,"September 17, 2021",TV-PG,42 min
+1053,ts287664,Star Wars Vehicle Flythroughs,SHOW,2021,TV-G,4,['scifi'],['US'],1.0,tt14578626,6.3,404.0,2.798,6.8,,,"May 4, 2021",TV-G,1 Season
+1054,ts280067,Growing Up Animal,SHOW,2021,TV-G,49,['documentation'],['GB'],1.0,tt13891272,8.0,121.0,2.753,7.0,,,"August 18, 2021",TV-PG,1 Season
+1055,tm1034995,American Eid,MOVIE,2021,G,21,['drama'],['US'],,,,,2.75,7.3,Aqsa Altaf,,"May 28, 2021",G,21 min
+1056,tm1035015,Dinner Is Served,MOVIE,2021,,21,['drama'],['US'],,,,,2.648,5.9,Hao Zheng,,"May 28, 2021",TV-PG,21 min
+1057,tm1034897,The Last of the Chupacabras,MOVIE,2021,,14,['fantasy'],['US'],,,,,2.614,6.1,Jessica Mendez Siqeiros,,"May 28, 2021",TV-PG,14 min
+1058,tm852528,Arendelle Castle Yule Log,MOVIE,2021,G,180,"['drama', 'animation']",['US'],,tt16678934,7.2,48.0,2.586,3.2,,United States,"December 18, 2020",TV-G,180 min
+1059,tm1002614,Built for Mars: The Perseverance Rover,MOVIE,2021,PG-13,88,['documentation'],['US'],,tt13932270,6.9,80.0,2.495,7.2,Mark J Davis,,"July 30, 2021",TV-PG,88 min
+1060,tm1034867,Let's Be Tigers,MOVIE,2021,PG,15,['drama'],['US'],,,,,2.331,7.2,Stephanie Abel Horowitz,,"May 28, 2021",PG,15 min
+1061,tm1064170,Shark Gangs,MOVIE,2021,PG-13,44,['documentation'],['US'],,tt14811278,6.7,38.0,2.132,8.0,"Jacob Cobi Benattia, Pete Berg, James Buchanan",,"July 9, 2021",TV-14,44 min
+1062,tm1063646,The Croc That Ate Jaws,MOVIE,2021,PG-13,44,['documentation'],['US'],,,,,1.866,7.3,Mark Woodward,,"July 9, 2021",TV-14,44 min
+1063,tm1123813,The Queen Family Singalong,MOVIE,2021,,41,['music'],['US'],,tt15716286,5.7,109.0,1.848,6.5,Hamish Hamilton,,"November 26, 2021",TV-PG,41 min
+1064,ts296175,Shark Attack Files,SHOW,2021,TV-14,42,['documentation'],['US'],2.0,tt14811706,6.1,27.0,1.741,10.0,,,"July 16, 2021",TV-14,1 Season
+1065,ts271728,The Wild Life of Dr. Ole,SHOW,2021,TV-PG,43,"['documentation', 'reality']",['US'],1.0,tt14232200,8.1,30.0,1.582,,,,"October 20, 2021",TV-PG,1 Season
+1066,ts302664,Unknown Waters with Jeremy Wade,SHOW,2021,,44,['documentation'],['GB'],1.0,tt17890420,8.3,43.0,1.271,8.5,,,"September 15, 2021",TV-14,1 Season
+1067,ts285348,Kingdom of the Polar Bears,SHOW,2021,,44,['documentation'],['CA'],1.0,tt19304264,,,1.254,,,,"May 28, 2021",TV-PG,1 Season
+1068,ts301923,The Hatcher Family Dairy,SHOW,2021,,44,['documentation'],['US'],1.0,tt15058696,9.0,76.0,1.065,,,,"September 29, 2021",TV-14,1 Season
+1069,tm1081279,Bob Ballard: An Explorer's Life,MOVIE,2022,PG,44,['documentation'],['US'],,tt15111904,6.8,33.0,1.06,8.0,,,"October 29, 2021",TV-PG,44 min
