@@ -3,12 +3,13 @@
 int main()
 {
     // Create window with SFML 3.0 syntax
-    sf::RenderWindow window(sf::VideoMode({800, 600}), "GLSL Shader Demo", sf::State::Windowed);
+    //sf::RenderWindow window(sf::VideoMode({800, 600}), "GLSL Shader Demo", sf::State::Windowed);
+    sf::RenderWindow window(sf::VideoMode::getFullscreenModes().front(), "GLSL Shader Demo", sf::State::Fullscreen);
     window.setFramerateLimit(60);
 
     // Load fragment shader
     sf::Shader shader;
-    if (!shader.loadFromFile("../../src/shader.frag", sf::Shader::Type::Fragment))
+    if (!shader.loadFromFile("../../src/marioshader.frag", sf::Shader::Type::Fragment))
     {
         return -1;
     }
@@ -21,6 +22,14 @@ int main()
     // Main loop with SFML 3.0 event handling
     while (window.isOpen())
     {
+        window.handleEvents(
+            [&](const sf::Event::Closed&) { window.close(); },
+            [&](const sf::Event::KeyPressed& keyEvent) {
+                if (keyEvent.scancode == sf::Keyboard::Scancode::Escape)
+                    window.close();
+            },
+            [](const auto&) {}  // Catch-all
+        );
         // Handle events using new callback style
         window.handleEvents(
             [&](const sf::Event::Closed&) { window.close(); },
