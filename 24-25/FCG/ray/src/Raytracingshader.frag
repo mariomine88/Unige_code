@@ -1,8 +1,11 @@
 uniform float time;
 uniform vec2 resolution;
-uniform vec3 sphereCenter;
-uniform float sphereRadius;
+uniform int numSpheres;
 
+// Define maximum number of spheres (must match C++ code)
+#define MAX_SPHERES 30
+uniform vec3 sphereCenters[MAX_SPHERES];
+uniform float sphereRadii[MAX_SPHERES];
 
 // Ray structure e come quelli di fisica dove l'origine è il punto di partenza e la direzione è la direzione del raggio
 // direction è normalizzato cioè la lunghezza è 1
@@ -16,10 +19,19 @@ struct Ray {
     }
 };
 
+struct RayTracingMaterial{
+	vec3 colour;
+	vec3 emissionColour;
+	vec3 specularColour;
+	float emissionStrength;
+	float smoothness;
+	float specularProbability;
+};
 
-struct Sphere {
-    vec3 center;
-    float radius;
+struct Sphere{
+    vec3 position;
+	float radius;
+	RayTracingMaterial material;
 };
 
 // Ray-sphere intersection function
@@ -45,24 +57,51 @@ void main() {
     vec3 RO = vec3(0.0, 0.0, 0.0); // Ray Origin
     vec3 RD = normalize(vec3(uv, -1.0)); // Ray Direction
     
-    // Create sphere using the uniform values
-    Sphere sphere;
-    sphere.center = sphereCenter;
-    sphere.radius = sphereRadius;
-    
-    // Ray-sphere intersection test
+    // Create ray
     Ray ray = Ray(RO, RD);
-    float t = intersectSphere(ray, sphere);
+    
+    // Variables to track closest intersection
+    float closestT = 1e30; // Very large number
+    int hitSphereIndex = -1;
+    
+    // Check intersection with all spheres
+    for (int i = 0; i < numSpheres; i++) {
+        Sphere sphere;
+        sphere.center = sphereCenters[i];
+        sphere.radius = sphereRadii[i];
+        
+        float t = intersectSphere(ray, sphere);
+        if (t > 0.0 && t < closestT) {
+            closestT = t;
+            hitSphereIndex = i;
+        }
+    }
     
     vec3 finalColor;
-    if (t > 0.0) {
-        // Sphere hit - calculate normal and basic shading
-        vec3 hitPoint = ray.at(t);
-        vec3 normal = normalize(hitPoint - sphere.center);
-        finalColor = normal * 0.5 + 0.5; // Normal visualization
-        vec3 lightDir = vec3(1.0, 0.0, 0.0);  // Light direction
+    if (hitSphereIndex >= 0) {
+        // We hit a sphere
+        vec3 hitPoint = ray.at(closestT);
+        vec3 sphereCenter = sphereCenters[hitSphereIndex];
+        vec3 normal = normalize(hitPoint - sphereCenter);
+        
+        // Different coloring based on which sphere was hit
+        if (hitSphereIndex == 0) {
+            // First sphere - red with normal shading
+            vec3 baseColor = vec3(1.0, 0.2, 0.2); 
+            finalColor = baseColor * (normal * 0.5 + 0.5);
+        } else if (hitSphereIndex == 1) {
+            // Second sphere - blue with normal shading
+            vec3 baseColor = vec3(0.2, 0.4, 1.0);
+            finalColor = baseColor * (normal * 0.5 + 0.5);
+        } else {
+            // Any other spheres - normal visualization
+            finalColor = normal * 0.5 + 0.5;
+        }
+        
+        // Add basic lighting
+        vec3 lightDir = normalize(vec3(1.0, 1.0, 1.0));
         float diff = max(dot(normal, lightDir), 0.0);
-        //finalColor = vec3(1.0, 0.2, 0.2) * (diff * 0.8 + 0.2); // Red sphere with diffuse shading
+        finalColor = finalColor * (diff * 0.6 + 0.4); // Diffuse + ambient
     } else {
         // Background - sky gradient
         float t = (uv.y + 1.0) * 0.5;

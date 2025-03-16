@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Vector3.hpp>
+#include <vector>
 
 struct vec3 {
     float x, y, z;
@@ -31,8 +32,13 @@ int main()
     // Create fullscreen rectangle
     sf::RectangleShape fullscreenQuad(sf::Vector2f(window.getSize()));
 
-    // Create a sphere
-    Sphere sphere(vec3(0.0f, 0.0f, -5.0f), 1.0f);
+    // Create multiple spheres
+    std::vector<Sphere> spheres;
+    spheres.push_back(Sphere(vec3(0.0f, 0.0f, -5.0f), 1.0f));     // First sphere
+    spheres.push_back(Sphere(vec3(2.0f, 0.5f, -6.0f), 0.7f));     // Second sphere
+
+    // Define maximum number of spheres (must match shader)
+    const int MAX_SPHERES = 10;
 
     sf::Clock clock;
 
@@ -52,12 +58,24 @@ int main()
         shader.setUniform("time", clock.getElapsedTime().asSeconds());
         shader.setUniform("resolution", sf::Vector2f(window.getSize()));
         
-        // Pass sphere data to shader
-        shader.setUniform("sphereCenter", sf::Glsl::Vec3(sphere.center.x, sphere.center.y, sphere.center.z));
-        shader.setUniform("sphereRadius", sphere.radius);
+        // Pass sphere count to shader
+        shader.setUniform("numSpheres", static_cast<int>(spheres.size()));
+        
+        // Prepare arrays for sphere data
+        std::vector<sf::Glsl::Vec3> sphereCenters;
+        std::vector<float> sphereRadii;
+        
+        // Fill arrays with sphere data
+        for (const auto& sphere : spheres) {
+            sphereCenters.push_back(sf::Glsl::Vec3(sphere.center.x, sphere.center.y, sphere.center.z));
+            sphereRadii.push_back(sphere.radius);
+        }
+        
+        // Pass arrays to shader
+        shader.setUniformArray("sphereCenters", sphereCenters.data(), sphereCenters.size());
+        shader.setUniformArray("sphereRadii", sphereRadii.data(), sphereRadii.size());
 
         // Draw with shader
-        window.clear(sf::Color::Black);
         window.draw(fullscreenQuad, &shader);
         window.display();
     }
