@@ -1,4 +1,18 @@
 #include <SFML/Graphics.hpp>
+#include <SFML/System/Vector3.hpp>
+
+struct vec3 {
+    float x, y, z;
+    
+    vec3(float x, float y, float z) : x(x), y(y), z(z) {}
+};
+
+struct Sphere {
+    vec3 center;
+    float radius;
+    
+    Sphere(const vec3& c, float r) : center(c), radius(r) {}
+};
 
 int main()
 {
@@ -9,13 +23,16 @@ int main()
 
     // Load fragment shader
     sf::Shader shader;
-    if (!shader.loadFromFile("../src/marioshader.frag", sf::Shader::Type::Fragment))
+    if (!shader.loadFromFile("../src/Raytracingshader.frag", sf::Shader::Type::Fragment))
     {
         return -1;
     }
 
     // Create fullscreen rectangle
     sf::RectangleShape fullscreenQuad(sf::Vector2f(window.getSize()));
+
+    // Create a sphere
+    Sphere sphere(vec3(0.0f, 0.0f, -5.0f), 1.0f);
 
     sf::Clock clock;
 
@@ -30,15 +47,14 @@ int main()
             },
             [](const auto&) {}  // Catch-all
         );
-        // Handle events using new callback style
-        window.handleEvents(
-            [&](const sf::Event::Closed&) { window.close(); },
-            [](const auto&) {} // Catch-all for other events
-        );
-
+        
         // Update shader uniforms
         shader.setUniform("time", clock.getElapsedTime().asSeconds());
         shader.setUniform("resolution", sf::Vector2f(window.getSize()));
+        
+        // Pass sphere data to shader
+        shader.setUniform("sphereCenter", sf::Glsl::Vec3(sphere.center.x, sphere.center.y, sphere.center.z));
+        shader.setUniform("sphereRadius", sphere.radius);
 
         // Draw with shader
         window.clear(sf::Color::Black);
