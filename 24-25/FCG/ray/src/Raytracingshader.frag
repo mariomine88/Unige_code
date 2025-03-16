@@ -41,25 +41,21 @@ vec3 randomHemisphereDirection(vec3 normal, vec2 seed) {
         randVec = -randVec;
     }
     
-    return randVec;
+    return normalize(randVec);
 }
 
-
-
-
+// Ray structure
 // Ray structure e come quelli di fisica dove l'origine è il punto di partenza e la direzione è la direzione del raggio
 // direction è normalizzato cioè la lunghezza è 1
 struct Ray {
     vec3 origin;
     vec3 direction;
-    vec3 color;
 
     // Function to get point at distance t along the ray
     vec3 at(float t) {
         return origin + t * direction;
     }
 };
-
 
 
 struct RayTracingMaterial {
@@ -95,50 +91,6 @@ float intersectSphere(Ray ray, Sphere sphere) {
     }
 }
 
-vec3 trace(Ray ray, int depth) {
-    if (depth == 0) {
-        return vec3(0.0);
-    }
-    // Check intersection with all spheres
-    for (int i = 0; i < numSpheres; i++) {
-        Sphere sphere;
-        sphere.center = sphereCenters[i];
-        sphere.radius = sphereRadii[i];
-        
-        // We don't need to set material here as we'll use the arrays directly
-        
-        float t = intersectSphere(ray, sphere);
-        if (t > 0.0 && t < closestT) {
-            closestT = t;
-            hitSphereIndex = i;
-        }
-    }
-    
-    vec3 HitColor;
-    if (hitSphereIndex >= 0) {
-        // We hit a sphere
-        vec3 hitPoint = ray.at(closestT);
-        vec3 normal = normalize(hitPoint - sphereCenters[hitSphereIndex]);
-        
-        // Get material properties for the hit sphere
-        vec3 baseColor = sphereColors[hitSphereIndex];
-        vec3 emissionColor = sphereEmissionColors[hitSphereIndex];
-        float emissionStrength = sphereEmissionStrengths[hitSphereIndex];
-        
-        HitColor = baseColor;
-        
-        Ray ray = randomHemisphereDirection(normal, ray.origin.xy * time);
-
-        return 0.5 * trace(ray, depth-1).color * HitColor;
-
-    } else {
-        // Background - sky gradient
-        float t = (uv.y + 1.0) * 0.5;
-        HitColor = mix(vec3(1.0, 1.0, 1.0), vec3(0.5, 0.7, 1.0), t);
-        return 0.5 * ray.color * HitColor;
-    }
-
-}
 
 
 void main() {
@@ -146,11 +98,42 @@ void main() {
 
     vec3 RO = vec3(0.0, 0.0, 0.0); // Ray Origin
     vec3 RD = normalize(vec3(uv, -1.0)); // Ray Direction
+    Ray ray = Ray(RO, RD);
     
-    // Create ray
-    Ray ray = Ray(RO, RD , vec3(1.0));
+    vec3 color = vec3(0.0);
+    vec3 throughput = vec3(1.0);
 
-    // Trace the ray
-    vec3 color = trace(ray, maxDepth);
+    for (int depth = 0; depth < maxDepth; depth++) {
+        int hitIndex = -1;
+        // Find closest sphere intersection
+        for (int i = 0; i < numSpheres; i++) {
+            float t = intersectSphere(ray, Sphere(sphereCenters[i], sphereRadii[i] , RayTracingMaterial(sphereColors[i], sphereEmissionColors[i], sphereSpecularColors[i], sphereEmissionStrengths[i], sphereSmoothness[i], sphereSpecularProbs[i])));
+            if (t > 0.0 && t < closestT) {
+                closestT = t;
+                hitIndex = i;
+            }
+        }
+        
+        if (hitIndex == -1) {
+            // Apply background color with accumulated throughput
+            float t = (uv.y + 1.0) * 0.5;
+            vec3 HitColor = mix(vec3(1.0, 1.0, 1.0), vec3(0.5, 0.7, 1.0), t);
+            color += throughput  * HitColor;
+            break;
+        }
+        
+        // Calculate surface interaction
+        vec3 hitPoint = ray.at(closestT);
+        vec3 normal = normalize(hitPoint - sphereCenters[hitIndex]);
+        
+        // Update color throughput
+        throughput *= 0.5 * sphereColors[hitIndex];
+        
+        // Generate new ray direction with surface offset
+        vec2 seed = uv * (float(depth) + time);
+        vec3 newDir = randomHemisphereDirection(normal, seed);
+        ray = Ray(hitPoint + normal * 0.001, newDir);
+    }
+
     gl_FragColor = vec4(color, 1.0);
 }
