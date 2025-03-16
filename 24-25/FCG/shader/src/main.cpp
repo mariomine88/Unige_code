@@ -9,7 +9,7 @@ int main()
 
     // Load fragment shader
     sf::Shader shader;
-    if (!shader.loadFromFile("../../src/marioshader.frag", sf::Shader::Type::Fragment))
+    if (!shader.loadFromFile("../src/rayyyyyyy.frag", sf::Shader::Type::Fragment))
     {
         return -1;
     }
