@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include <random>
 
 struct vec3 {
     float x, y, z;
@@ -38,6 +39,10 @@ int main() {
     sf::ContextSettings settings;
     settings.antiAliasingLevel = antiAliasingLevel;
 
+    // Setup random number generation
+    static std::mt19937 rng(std::random_device{}());
+    std::uniform_int_distribution<uint32_t> dist(0, UINT32_MAX);
+
     // Create main window with anti-aliasing
     sf::RenderWindow window(sf::VideoMode::getFullscreenModes().front(), 
                           "GLSL Shader Demo", sf::State::Fullscreen, settings);
@@ -72,13 +77,13 @@ int main() {
     std::vector<Sphere> spheres{
         {vec3(0.0f, 0.0f, -3.0f), 1.0f, 
             Material(vec3(1.0f, 0.2f, 0.2f), vec3(1.0f, 0.1f, 0.1f), 
-                    vec3(1.0f, 1.0f, 1.0f), 0.2f, 1.0f, 0.1f)},
+                    vec3(1.0f, 1.0f, 1.0f), 0.2f, 7.0f, 0.1f)},
         {vec3(2.0f, 0.0f, -3.0f), 0.7f,
             Material(vec3(0.2f, 0.4f, 1.0f), vec3(0.0f, 0.0f, 0.0f),
-                    vec3(1.0f, 1.0f, 1.0f), 0.0f, 0.0f, 0.8f)},
+                    vec3(1.0f, 1.0f, 1.0f), 0.0f, 5.0f, 0.8f)},
         {vec3(0.0f, -101.0f, -3.0f), 100.0f,
             Material(vec3(0.2f, 0.8f, 0.2f), vec3(0.1f, 0.6f, 0.1f),
-                    vec3(0.8f, 1.0f, 0.8f), 0.4f, 0.0f, 0.2f)}
+                    vec3(0.8f, 1.0f, 0.8f), 0.4f, 3.0f, 0.2f)}
     };
 
     sf::Clock clock;
@@ -96,10 +101,12 @@ int main() {
             }
         );
 
+
         shader.setUniform("time", clock.getElapsedTime().asSeconds());
         shader.setUniform("resolution", sf::Vector2f(window.getSize()));
         shader.setUniform("numSpheres", static_cast<int>(spheres.size()));
         shader.setUniform("frameCount", static_cast<float>(frameCount - 1));
+        shader.setUniform("randomSeed", static_cast<int>(dist(rng)));
 
         std::vector<sf::Glsl::Vec3> sphereCenters;
         std::vector<float> sphereRadii;

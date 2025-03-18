@@ -1,9 +1,17 @@
+#version 420 core
+#pragma extension GL_EXT_shader_explicit_arithmetic_types : require
+
+out vec4 FragColor;
+
 uniform float time;
 uniform vec2 resolution;
 uniform int numSpheres;
 
 uniform sampler2D accumulatedTex;
 uniform float frameCount;
+
+uniform int randomSeed;
+uint Gstate = uint(randomSeed);
 
 // Define maximum number of spheres (must match C++ code)
 #define MAX_SPHERES 30
@@ -24,26 +32,42 @@ int hitSphereIndex = -1;
 #define maxDepth 10
 
 
-float rand(vec2 co) {
-    return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
+uint pcg_hash(inout uint state){
+    state = state * 747796405u + 2891336453u;
+    uint word = ((state >> ((state >> 28u) + 4u)) ^ state) * 277803737u;
+    return (word >> 22u) ^ word;
+}
+
+float randomValue(inout uint state){
+    return float(pcg_hash(state)) / 4294967295.0;
+}
+
+
+// Random number generator functions from 0 to 1
+float RandomValueNormalDistribution(inout uint state){
+	// Thanks to https://stackoverflow.com/a/6178290
+	float theta = 2 * 3.1415926 * randomValue(state);
+	float rho = sqrt(-2 * log(randomValue(state)));
+	return rho * cos(theta);
+}
+
+vec3 randomUnitVector(inout uint state)
+{
+    vec3 p;
+    normalize(vec3(RandomValueNormalDistribution(state), RandomValueNormalDistribution(state), RandomValueNormalDistribution(state)));
+    return p;
 }
 
 // Simpler version for random hemisphere direction
-vec3 randomHemisphereDirection(vec3 normal, vec2 seed) {
+vec3 randomHemisphereDirection(vec3 normal) {
     // Create a random direction
-    vec3 randVec = vec3(
-        rand(seed) * 2.0 - 1.0,
-        rand(seed + vec2(1.0, 2.0)) * 2.0 - 1.0,
-        rand(seed + vec2(3.0, 4.0)) * 2.0 - 1.0
-    );
-    
+    vec3 randVec = randomUnitVector(Gstate);
     // Normalize and ensure it's in the correct hemisphere
-    randVec = normalize(randVec);
     if (dot(randVec, normal) < 0.0) {
         randVec = -randVec;
     }
     
-    return normalize(randVec);
+    return normalize(randVec + randomUnitVector(Gstate));
 }
 
 // Ray structure
@@ -80,16 +104,16 @@ struct Sphere {
 //cioè calcola la distanza tra il punto di origine del raggio e il punto di intersezione con la sfera
 float intersectSphere(Ray ray, Sphere sphere) {
     // Using sphere.center property to match struct definition
-    vec3 oc = ray.origin - sphere.center;
+    vec3 oc = sphere.center - ray.origin;
     float a = dot(ray.direction, ray.direction);
-    float b = 2.0 * dot(oc, ray.direction);
-    float c = dot(oc, oc) - sphere.radius * sphere.radius;
-    float discriminant = b*b - 4.0*a*c;
+    float h = dot(oc, ray.direction);
+    float c = dot(oc,oc) - sphere.radius * sphere.radius;
+    float discriminant = h*h - a*c;
     
     if (discriminant < 0.0) {
         return -1.0;
     } else {
-        return (-b - sqrt(discriminant)) / (2.0*a);
+        return (h - sqrt(discriminant)) / a;
     }
 }
 
@@ -133,22 +157,26 @@ void main() {
         throughput *= 0.4 * sphereColors[hitIndex];
         
 
-        // Generate new ray direction with surface offset
+        // Generate new ray direction with in base of surface properties
         vec3 newDir;
-        if (sphereSmoothness[hitIndex] == 1.0) {
-            // Diffuse reflection
+        float threshold = randomValue(Gstate);
+        if (sphereSmoothness[hitIndex] > threshold) {
+            // specular reflection
             newDir = ray.direction - 2.0 * dot(ray.direction, normal) * normal;
         } else {
-            vec2 seed = uv * (float(depth) + time);
-            newDir = randomHemisphereDirection(normal, seed);
+            // lambertian reflection
+            newDir = randomHemisphereDirection(normal);
         }
+
+        // Update ray
         ray = Ray(hitPoint + normal * 0.0001, newDir);
     }
 
     vec2 texCoord = gl_FragCoord.xy / resolution;
-    vec3 accumulatedColor = texture2D(accumulatedTex, texCoord).rgb;
-    float samples = frameCount + 1.0;
-    color = pow(color, vec3(1.0/2.));
-    vec3 finalColor = (accumulatedColor * frameCount + color) / samples;
-    gl_FragColor = vec4(finalColor, 1.0);
+    ivec2 fragCoord = ivec2(gl_FragCoord.xy);
+    vec3 accumulatedColor = texelFetch(accumulatedTex, fragCoord, 0).rgb;
+    color = pow(color, vec3(1.0/2));
+    float a = 1.0 / (frameCount + 1.0);
+    vec3 finalColor = mix(accumulatedColor, color, a);
+    FragColor = vec4(finalColor, 1.0);
 }
