@@ -10,8 +10,7 @@ uniform int numSpheres;
 uniform sampler2D accumulatedTex;
 uniform float frameCount;
 
-uniform int randomSeed;
-uint Gstate = uint(randomSeed);
+uniform int randomN;
 
 // Define maximum number of spheres (must match C++ code)
 #define MAX_SPHERES 30
@@ -36,22 +35,24 @@ float rand(vec2 co) {
     return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
 }
 
+// Random unit vector
+vec3 randomUnitVector(vec2 seed) {
+    return normalize(vec3(rand(seed) * 2.0 - 1.0,
+        rand(seed + vec2(1.0, 2.0)) * 2.0 - 1.0,
+        rand(seed + vec2(3.0, 4.0)) * 2.0 - 1.0));
+}
+
 // Simpler version for random hemisphere direction
 vec3 randomHemisphereDirection(vec3 normal, vec2 seed) {
     // Create a random direction
-    vec3 randVec = vec3(
-        rand(seed) * 2.0 - 1.0,
-        rand(seed + vec2(1.0, 2.0)) * 2.0 - 1.0,
-        rand(seed + vec2(3.0, 4.0)) * 2.0 - 1.0
-    );
+    vec3 randVec = randomUnitVector(seed);
     
     // Normalize and ensure it's in the correct hemisphere
-    randVec = normalize(randVec);
     if (dot(randVec, normal) < 0.0) {
         randVec = -randVec;
     }
     
-    return normalize(randVec);
+    return normalize(randVec + randomUnitVector(seed));
 }
 
 // Ray structure
@@ -105,6 +106,9 @@ float intersectSphere(Ray ray, Sphere sphere) {
 
 void main() {
     vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / resolution.y;
+
+    //uint rngState = uint(uint(randomSeed) * uint(resolution.x) * uint(1973) + uint(resolution.y) * uint(9277) + uint(frameCount) * uint(26699)) | uint(1);
+    
 
     vec3 RO = vec3(0.0, 0.0, 0.0); // Ray Origin
     vec3 RD = normalize(vec3(uv, -1.0)); // Ray Direction
