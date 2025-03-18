@@ -20,9 +20,8 @@ uniform float sphereSpecularProbs[MAX_SPHERES];
 
 
 // Variables to track closest intersection
-float closestT = 1e30; // Very large number
 int hitSphereIndex = -1;
-#define maxDepth 100
+#define maxDepth 10
 
 
 float rand(vec2 co) {
@@ -107,6 +106,7 @@ void main() {
     vec3 throughput = vec3(1.0);
 
     for (int depth = 0; depth < maxDepth; depth++) {
+        float closestT = 1e30; // Very large number
         int hitIndex = -1;
         // Find closest sphere intersection
         for (int i = 0; i < numSpheres; i++) {
@@ -130,7 +130,7 @@ void main() {
         vec3 normal = normalize(hitPoint - sphereCenters[hitIndex]);
         
         // Update color throughput
-        throughput *= 0.5 * sphereColors[hitIndex];
+        throughput *= 0.4 * sphereColors[hitIndex];
         
 
         // Generate new ray direction with surface offset
@@ -142,12 +142,13 @@ void main() {
             vec2 seed = uv * (float(depth) + time);
             newDir = randomHemisphereDirection(normal, seed);
         }
-        ray = Ray(hitPoint, newDir);
+        ray = Ray(hitPoint + normal * 0.0001, newDir);
     }
 
     vec2 texCoord = gl_FragCoord.xy / resolution;
     vec3 accumulatedColor = texture2D(accumulatedTex, texCoord).rgb;
     float samples = frameCount + 1.0;
+    color = pow(color, vec3(1.0/2.));
     vec3 finalColor = (accumulatedColor * frameCount + color) / samples;
     gl_FragColor = vec4(finalColor, 1.0);
 }

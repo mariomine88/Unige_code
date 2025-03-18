@@ -30,9 +30,17 @@ struct Sphere {
 };
 
 int main() {
-    // Create main window
+    // Configure anti-aliasing settings
+    const unsigned int desiredAntiAliasing = 8;
+    const unsigned int maxAntiAliasing = sf::RenderTexture::getMaximumAntiAliasingLevel();
+    const unsigned int antiAliasingLevel = std::min(desiredAntiAliasing, maxAntiAliasing);
+    
+    sf::ContextSettings settings;
+    settings.antiAliasingLevel = antiAliasingLevel;
+
+    // Create main window with anti-aliasing
     sf::RenderWindow window(sf::VideoMode::getFullscreenModes().front(), 
-                          "GLSL Shader Demo", sf::State::Fullscreen);
+                          "GLSL Shader Demo", sf::State::Fullscreen, settings);
     window.setFramerateLimit(60);
 
     // Load shader
@@ -41,17 +49,14 @@ int main() {
         return -1;
     }
 
-    // Create accumulation textures
+    // Create accumulation textures with anti-aliasing
     sf::RenderTexture accumTex0, accumTex1;
     const sf::Vector2u windowSize = window.getSize();
     
-    // Check texture resizing results
-    if (!accumTex0.resize(windowSize)) {
-        // Handle error (e.g., log message, fallback behavior)
+    if (!accumTex0.resize(windowSize, settings)) {
         return -1;
     }
-    if (!accumTex1.resize(windowSize)) {
-        // Handle error
+    if (!accumTex1.resize(windowSize, settings)) {
         return -1;
     }
     
@@ -63,11 +68,11 @@ int main() {
     // Create fullscreen quad
     sf::RectangleShape fullscreenQuad(sf::Vector2f(window.getSize()));
 
-    // Setup scene
+    // Setup scene (unchanged)
     std::vector<Sphere> spheres{
         {vec3(0.0f, 0.0f, -3.0f), 1.0f, 
             Material(vec3(1.0f, 0.2f, 0.2f), vec3(1.0f, 0.1f, 0.1f), 
-                    vec3(1.0f, 1.0f, 1.0f), 0.2f, 0.0f, 0.1f)},
+                    vec3(1.0f, 1.0f, 1.0f), 0.2f, 1.0f, 0.1f)},
         {vec3(2.0f, 0.0f, -3.0f), 0.7f,
             Material(vec3(0.2f, 0.4f, 1.0f), vec3(0.0f, 0.0f, 0.0f),
                     vec3(1.0f, 1.0f, 1.0f), 0.0f, 0.0f, 0.8f)},
@@ -83,7 +88,6 @@ int main() {
     while (window.isOpen()) {
         frameCount++;
 
-        // SFML 3.0 event handling
         window.handleEvents(
             [&](const sf::Event::Closed&) { window.close(); },
             [&](const sf::Event::KeyPressed& keyPressed) {
@@ -92,13 +96,11 @@ int main() {
             }
         );
 
-        // Update shader uniforms
         shader.setUniform("time", clock.getElapsedTime().asSeconds());
         shader.setUniform("resolution", sf::Vector2f(window.getSize()));
         shader.setUniform("numSpheres", static_cast<int>(spheres.size()));
         shader.setUniform("frameCount", static_cast<float>(frameCount - 1));
 
-        // Prepare sphere data
         std::vector<sf::Glsl::Vec3> sphereCenters;
         std::vector<float> sphereRadii;
         std::vector<sf::Glsl::Vec3> sphereColors, sphereEmissionColors, sphereSpecularColors;
@@ -119,7 +121,6 @@ int main() {
             sphereSpecularProbs.push_back(sphere.material.specularProbability);
         }
 
-        // Set shader uniforms
         shader.setUniformArray("sphereCenters", sphereCenters.data(), sphereCenters.size());
         shader.setUniformArray("sphereRadii", sphereRadii.data(), sphereRadii.size());
         shader.setUniformArray("sphereColors", sphereColors.data(), sphereColors.size());
@@ -129,7 +130,6 @@ int main() {
         shader.setUniformArray("sphereSmoothness", sphereSmoothness.data(), sphereSmoothness.size());
         shader.setUniformArray("sphereSpecularProbs", sphereSpecularProbs.data(), sphereSpecularProbs.size());
 
-        // Update accumulation buffers
         auto& prevTex = useFirstTexture ? accumTex0 : accumTex1;
         auto& currTex = useFirstTexture ? accumTex1 : accumTex0;
         
@@ -138,7 +138,6 @@ int main() {
         currTex.draw(fullscreenQuad, &shader);
         currTex.display();
 
-        // Draw to main window
         window.clear();
         sf::Sprite finalSprite(currTex.getTexture());
         window.draw(finalSprite);
