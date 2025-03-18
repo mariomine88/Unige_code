@@ -50,7 +50,7 @@ int main() {
 
     // Load shader
     sf::Shader shader;
-    if (!shader.loadFromFile("../src/Raytracingshader.frag", sf::Shader::Type::Fragment)) {
+    if (!shader.loadFromFile("../src/Raytracingshader2.frag", sf::Shader::Type::Fragment)) {
         return -1;
     }
 
@@ -75,24 +75,31 @@ int main() {
 
     // Setup scene (unchanged)
     std::vector<Sphere> spheres{
-        {vec3(1.0f, 0.0f, -4.0f), 1.0f, 
+        {vec3(1.5f, 0.0f, -4.0f), 1.0f, 
             Material(vec3(1.0f, 0.2f, 0.2f), vec3(1.0f, 0.1f, 0.1f), 
-                    vec3(1.0f, 1.0f, 1.0f), 0.0f, 0.7f, 0.1f)},
+                    vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.f, 0.1f)},
                     {vec3(4.0f, 0.0f, -4.0f), 1.0f, 
                         Material(vec3(1.2f, 0.2f, 0.2f), vec3(1.0f, 0.1f, 0.1f), 
                                 vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.0f, 0.1f)},
-                                {vec3(-1.0f, 0.0f, -4.0f), 1.0f, 
+                                {vec3(-1.5f, 0.0f, -4.0f), 1.0f, 
                                     Material(vec3(1.2f, 0.2f, 0.2f), vec3(1.0f, 0.1f, 0.1f), 
-                                            vec3(1.0f, 1.0f, 1.0f), 0.0f, 0.6f, 0.1f)},
+                                            vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.f, 0.1f)},
                                             {vec3(-4.0f, 0.0f, -4.0f), 1.0f, 
                                                 Material(vec3(1.0f, 0.2f, 0.2f), vec3(1.0f, 0.1f, 0.1f), 
-                                                        vec3(1.0f, 1.0f, 1.0f), 0.0f, 0.4f, 0.1f)},
+                                                        vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.f, 0.1f)},
+                                                        {vec3(-0.0f, 1.0f, -6.0f), 2.0f, 
+                                                            Material(vec3(.3f, 0.0f, .5f), vec3(1.0f, 0.1f, 0.1f), 
+                                                                    vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.0f, 0.1f)},
         {vec3(0.0f, -101.0f, -3.0f), 100.0f,
             Material(vec3(0.2f, 0.8f, 0.2f), vec3(0.1f, 0.6f, 0.1f),
-                    vec3(0.8f, 1.0f, 0.8f), 0.0f, .99f, 0.2f)},
-        {vec3(0.0f, 2.0f, -3.0f), 1.5f,
+                    vec3(0.8f, 1.0f, 0.8f), 0.1f, 1.0f, 0.2f)},
+        {vec3(0.0f, 3.0f, -3.0f), 1.5f,
             Material(vec3(0.2f, 0.2f, 0.8f), vec3(1.0f, 1.0f, 1.0f),
-                    vec3(0.0f, 1.0f, 1.0f), 10.0f, 0.0f, 0.0f)}
+                    vec3(0.0f, 1.0f, 1.0f), 0.0f, 1.0f, 0.0f)},
+                    {vec3(-100.0f, 30.0f, 0.0f), 50.f,
+                        Material(vec3(0.2f, 0.2f, 0.8f), vec3(1.0f, 1.0f, 1.0f),
+                                vec3(0.0f, 1.0f, 1.0f), 70.0f, 0.0f, 0.0f)}
+        
     };
 
     sf::Clock clock;
