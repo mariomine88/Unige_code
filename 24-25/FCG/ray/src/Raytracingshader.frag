@@ -2,6 +2,9 @@ uniform float time;
 uniform vec2 resolution;
 uniform int numSpheres;
 
+uniform sampler2D accumulatedTex;
+uniform float frameCount;
+
 // Define maximum number of spheres (must match C++ code)
 #define MAX_SPHERES 30
 uniform vec3 sphereCenters[MAX_SPHERES];
@@ -19,7 +22,7 @@ uniform float sphereSpecularProbs[MAX_SPHERES];
 // Variables to track closest intersection
 float closestT = 1e30; // Very large number
 int hitSphereIndex = -1;
-#define maxDepth 5
+#define maxDepth 100
 
 
 float rand(vec2 co) {
@@ -118,7 +121,7 @@ void main() {
             // Apply background color with accumulated throughput
             float t = (uv.y + 1.0) * 0.5;
             vec3 HitColor = mix(vec3(1.0, 1.0, 1.0), vec3(0.5, 0.7, 1.0), t);
-            color += throughput  * HitColor;
+            color += throughput*1.1 * HitColor;
             break;
         }
         
@@ -129,11 +132,22 @@ void main() {
         // Update color throughput
         throughput *= 0.5 * sphereColors[hitIndex];
         
+
         // Generate new ray direction with surface offset
-        vec2 seed = uv * (float(depth) + time);
-        vec3 newDir = randomHemisphereDirection(normal, seed);
-        ray = Ray(hitPoint + normal * 0.001, newDir);
+        vec3 newDir;
+        if (sphereSmoothness[hitIndex] == 1.0) {
+            // Diffuse reflection
+            newDir = ray.direction - 2.0 * dot(ray.direction, normal) * normal;
+        } else {
+            vec2 seed = uv * (float(depth) + time);
+            newDir = randomHemisphereDirection(normal, seed);
+        }
+        ray = Ray(hitPoint, newDir);
     }
 
-    gl_FragColor = vec4(color, 1.0);
+    vec2 texCoord = gl_FragCoord.xy / resolution;
+    vec3 accumulatedColor = texture2D(accumulatedTex, texCoord).rgb;
+    float samples = frameCount + 1.0;
+    vec3 finalColor = (accumulatedColor * frameCount + color) / samples;
+    gl_FragColor = vec4(finalColor, 1.0);
 }
