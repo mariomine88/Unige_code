@@ -28,8 +28,53 @@ uniform float sphereSpecularProbs[MAX_SPHERES];
 
 // Variables to track closest intersection
 int hitSphereIndex = -1;
-#define maxDepth 10
+#define maxDepth 50
 
+// Ray structure
+// Ray structure e come quelli di fisica dove l'origine è il punto di partenza e la direzione è la direzione del raggio
+// direction è normalizzato cioè la lunghezza è 1
+struct Ray {
+    vec3 origin;
+    vec3 direction;
+
+    // Function to get point at distance t along the ray
+    vec3 at(float t) {
+        return origin + t * direction;
+    }
+};
+
+// Add these uniforms at the top of your shader
+bool environmentEnabled = true;
+vec3 skyColorHorizon = vec3(0.7, 0.8, 1.0); 
+vec3 skyColorZenith = vec3(0.3, 0.5, 0.8);
+vec3 groundColor = vec3(0.4, 0.3, 0.2);
+vec3 sunDirection = vec3(0.0, 0.7, -0.7); // Equivalent to _WorldSpaceLightPos0
+float sunFocus = 128.0;
+float sunIntensity = 1.0;
+
+vec3 GetEnvironmentLight(Ray ray) {
+    if (!environmentEnabled) {
+        return vec3(0.0);
+    }
+    // old one 
+            /*if (hitIndex == -1) {
+            // Apply background color with accumulated throughput
+            float t = (uv.y + 1.0) * 0.5;
+            vec3 HitColor = mix(vec3(1.0, 1.0, 1.0), vec3(0.5, 0.7, 1.0), t);
+            color += throughput*1.1 * HitColor;
+            break;
+        }
+        */
+    // Calculate sky gradient
+    float skyGradientT = pow(smoothstep(0.0, 0.4, ray.direction.y), 0.35);
+    float groundToSkyT = smoothstep(-0.01, 0.0, ray.direction.y);
+    vec3 skyGradient = mix(skyColorHorizon, skyColorZenith, skyGradientT);
+    float sun = pow(max(0.0, dot(ray.direction, normalize(sunDirection))), sunFocus) * sunIntensity;
+    
+    // Combine ground, sky, and sun
+    vec3 composite = mix(groundColor, skyGradient, groundToSkyT) + sun * float(groundToSkyT >= 1.0);
+    return composite;
+}
 
 float rand(vec2 co) {
     return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
@@ -55,18 +100,6 @@ vec3 randomHemisphereDirection(vec3 normal, vec2 seed) {
     return normalize(randVec + randomUnitVector(seed));
 }
 
-// Ray structure
-// Ray structure e come quelli di fisica dove l'origine è il punto di partenza e la direzione è la direzione del raggio
-// direction è normalizzato cioè la lunghezza è 1
-struct Ray {
-    vec3 origin;
-    vec3 direction;
-
-    // Function to get point at distance t along the ray
-    vec3 at(float t) {
-        return origin + t * direction;
-    }
-};
 
 
 struct RayTracingMaterial {
@@ -102,64 +135,93 @@ float intersectSphere(Ray ray, Sphere sphere) {
     }
 }
 
+struct HitInfo {
+    bool hit;
+    float dst;
+    vec3 hitPoint;
+    vec3 normal;
+    RayTracingMaterial material;
+};
+
+
+HitInfo RayCollision(Ray ray, Sphere Sphere[MAX_SPHERES]) {
+    HitInfo hit;
+    hit.hit = false;
+    hit.dst = 1e30;
+
+    for (int i = 0; i < numSpheres; i++) {
+        float t = intersectSphere(ray, Sphere[i]);
+        if (t > 0.0 && t < hit.dst) {
+            hit.hit = true;
+            hit.dst = t;
+            hit.hitPoint = ray.at(t);
+            hit.normal = normalize(hit.hitPoint - Sphere[i].center);
+            hit.material = Sphere[i].material;
+        }
+    }
+    return hit;
+}
+
+vec3 Trace(Ray ray, Sphere Sphere[MAX_SPHERES] , vec2 seed) {
+    vec3 incominglight = vec3(0.0);
+    vec3 rayColor = vec3(1.0);
+
+    for (int depth = 0; depth <= maxDepth; depth++) {
+        HitInfo hit = RayCollision(ray, Sphere);
+        
+        if (hit.hit) {
+            ray.origin = hit.hitPoint + hit.normal * 0.0001;
+            ray.direction = randomHemisphereDirection(hit.normal, seed);
+
+            RayTracingMaterial material = hit.material;
+            vec3 emmitedLight = material.emissionColour * material.emissionStrength;
+            incominglight += rayColor * emmitedLight;
+            rayColor *= material.colour;
+        }else{
+            incominglight = GetEnvironmentLight(ray);
+            incominglight = vec3(0.0);
+        }
+    }
+    return incominglight;
+}
 
 
 void main() {
     vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / resolution.y;
 
-    //uint rngState = uint(uint(randomSeed) * uint(resolution.x) * uint(1973) + uint(resolution.y) * uint(9277) + uint(frameCount) * uint(26699)) | uint(1);
-    
-
     vec3 RO = vec3(0.0, 0.0, 0.0); // Ray Origin
     vec3 RD = normalize(vec3(uv, -1.0)); // Ray Direction
     Ray ray = Ray(RO, RD);
-    
-    vec3 color = vec3(0.0);
-    vec3 throughput = vec3(1.0);
 
-    for (int depth = 0; depth < maxDepth; depth++) {
-        float closestT = 1e30; // Very large number
-        int hitIndex = -1;
-        // Find closest sphere intersection
-        for (int i = 0; i < numSpheres; i++) {
-            float t = intersectSphere(ray, Sphere(sphereCenters[i], sphereRadii[i] , RayTracingMaterial(sphereColors[i], sphereEmissionColors[i], sphereSpecularColors[i], sphereEmissionStrengths[i], sphereSmoothness[i], sphereSpecularProbs[i])));
-            if (t > 0.0 && t < closestT) {
-                closestT = t;
-                hitIndex = i;
-            }
-        }
-        
-        if (hitIndex == -1) {
-            // Apply background color with accumulated throughput
-            float t = (uv.y + 1.0) * 0.5;
-            vec3 HitColor = mix(vec3(1.0, 1.0, 1.0), vec3(0.5, 0.7, 1.0), t);
-            color += throughput*1.1 * HitColor;
-            break;
-        }
-        
-        // Calculate surface interaction
-        vec3 hitPoint = ray.at(closestT);
-        vec3 normal = normalize(hitPoint - sphereCenters[hitIndex]);
-        
-        // Update color throughput
-        throughput *= 0.4 * sphereColors[hitIndex];
-        
-        //specular reflection
-        vec3 specular = reflect(ray.direction, normal);
 
-        // Diffuse reflection
-        vec2 seed = uv * (float(depth) + time);
-        vec3 diffuse = randomHemisphereDirection(normal, seed);
-        vec3 newDir = mix(diffuse, specular, sphereSmoothness[hitIndex]);
-
-        ray = Ray(hitPoint + normal * 0.0001, newDir);
+    Sphere sphere[MAX_SPHERES];
+    for (int i = 0; i < MAX_SPHERES; i++) {
+        sphere[i] = Sphere(sphereCenters[i], sphereRadii[i], RayTracingMaterial(sphereColors[i], sphereEmissionColors[i], sphereSpecularColors[i], sphereEmissionStrengths[i], sphereSmoothness[i], sphereSpecularProbs[i]));
     }
 
-    vec2 texCoord = gl_FragCoord.xy / resolution;
+    int rayperpixel = 5;
+    vec3 color;
+
+    for (int i = 0; i <= rayperpixel; i++) {
+        vec2 seed = uv * (randomN + time * 3545 + i);
+        color =+ Trace(ray, sphere, seed); /*
+        color = pow(color, vec3(1.0 / 2));
+        vec3 accumulatedColor = texelFetch(accumulatedTex, ivec2(gl_FragCoord.xy), 0).rgb;
+        vec3 finalColor = mix(accumulatedColor, color, 1.0 / (frameCount + 1.0));
+        FragColor = vec4(finalColor, 1.0);
+        */
+    }
+
+    color /= float(rayperpixel);
+
+    //gamma correction
+    color = pow(color, vec3(1.0/2));
+
+    // multiple importance sampling
+    float a = 1.0 / (frameCount + 1.0);
     ivec2 fragCoord = ivec2(gl_FragCoord.xy);
     vec3 accumulatedColor = texelFetch(accumulatedTex, fragCoord, 0).rgb;
-    color = pow(color, vec3(1.0/2));
-    float a = 1.0 / (frameCount + 1.0);
     vec3 finalColor = mix(accumulatedColor, color, a);
+
     FragColor = vec4(finalColor, 1.0);
 }
