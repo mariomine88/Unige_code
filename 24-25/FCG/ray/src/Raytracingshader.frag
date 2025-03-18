@@ -32,42 +32,26 @@ int hitSphereIndex = -1;
 #define maxDepth 10
 
 
-uint pcg_hash(inout uint state){
-    state = state * 747796405u + 2891336453u;
-    uint word = ((state >> ((state >> 28u) + 4u)) ^ state) * 277803737u;
-    return (word >> 22u) ^ word;
-}
-
-float randomValue(inout uint state){
-    return float(pcg_hash(state)) / 4294967295.0;
-}
-
-
-// Random number generator functions from 0 to 1
-float RandomValueNormalDistribution(inout uint state){
-	// Thanks to https://stackoverflow.com/a/6178290
-	float theta = 2 * 3.1415926 * randomValue(state);
-	float rho = sqrt(-2 * log(randomValue(state)));
-	return rho * cos(theta);
-}
-
-vec3 randomUnitVector(inout uint state)
-{
-    vec3 p;
-    normalize(vec3(RandomValueNormalDistribution(state), RandomValueNormalDistribution(state), RandomValueNormalDistribution(state)));
-    return p;
+float rand(vec2 co) {
+    return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
 }
 
 // Simpler version for random hemisphere direction
-vec3 randomHemisphereDirection(vec3 normal) {
+vec3 randomHemisphereDirection(vec3 normal, vec2 seed) {
     // Create a random direction
-    vec3 randVec = randomUnitVector(Gstate);
+    vec3 randVec = vec3(
+        rand(seed) * 2.0 - 1.0,
+        rand(seed + vec2(1.0, 2.0)) * 2.0 - 1.0,
+        rand(seed + vec2(3.0, 4.0)) * 2.0 - 1.0
+    );
+    
     // Normalize and ensure it's in the correct hemisphere
+    randVec = normalize(randVec);
     if (dot(randVec, normal) < 0.0) {
         randVec = -randVec;
     }
     
-    return normalize(randVec + randomUnitVector(Gstate));
+    return normalize(randVec);
 }
 
 // Ray structure
@@ -156,19 +140,14 @@ void main() {
         // Update color throughput
         throughput *= 0.4 * sphereColors[hitIndex];
         
+        //specular reflection
+        vec3 specular = reflect(ray.direction, normal);
 
-        // Generate new ray direction with in base of surface properties
-        vec3 newDir;
-        float threshold = randomValue(Gstate);
-        if (sphereSmoothness[hitIndex] > threshold) {
-            // specular reflection
-            newDir = ray.direction - 2.0 * dot(ray.direction, normal) * normal;
-        } else {
-            // lambertian reflection
-            newDir = randomHemisphereDirection(normal);
-        }
+        // Diffuse reflection
+        vec2 seed = uv * (float(depth) + time);
+        vec3 diffuse = randomHemisphereDirection(normal, seed);
+        vec3 newDir = mix(diffuse, specular, sphereSmoothness[hitIndex]);
 
-        // Update ray
         ray = Ray(hitPoint + normal * 0.0001, newDir);
     }
 

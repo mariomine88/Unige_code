@@ -77,10 +77,10 @@ int main() {
     std::vector<Sphere> spheres{
         {vec3(0.0f, 0.0f, -3.0f), 1.0f, 
             Material(vec3(1.0f, 0.2f, 0.2f), vec3(1.0f, 0.1f, 0.1f), 
-                    vec3(1.0f, 1.0f, 1.0f), 0.2f, 7.0f, 0.1f)},
+                    vec3(1.0f, 1.0f, 1.0f), 0.2f, 5.0f, 0.1f)},
         {vec3(2.0f, 0.0f, -3.0f), 0.7f,
             Material(vec3(0.2f, 0.4f, 1.0f), vec3(0.0f, 0.0f, 0.0f),
-                    vec3(1.0f, 1.0f, 1.0f), 0.0f, 5.0f, 0.8f)},
+                    vec3(1.0f, 1.0f, 1.0f), 0.1f, 0.0f, 0.8f)},
         {vec3(0.0f, -101.0f, -3.0f), 100.0f,
             Material(vec3(0.2f, 0.8f, 0.2f), vec3(0.1f, 0.6f, 0.1f),
                     vec3(0.8f, 1.0f, 0.8f), 0.4f, 3.0f, 0.2f)}
