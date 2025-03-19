@@ -47,7 +47,7 @@ int main() {
     // Create main window with anti-aliasing
     sf::RenderWindow window(sf::VideoMode::getFullscreenModes().front(), 
                           "GLSL Shader Demo", sf::State::Fullscreen, settings);
-    window.setFramerateLimit(120);
+    window.setFramerateLimit(60);
 
     // Load shader
     sf::Shader shader;
@@ -79,6 +79,9 @@ int main() {
         {vec3(4.0f, .5f, -4.0f), 1.0f, 
             Material(vec3(1.0f, 1.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f), 
                vec3(1.0f, 1.0f, 1.0f), 0.0f, 0.0f, 0.0f , 1.3f)},
+               {vec3(4.0f, .5f, -4.0f), 0.7f, 
+                Material(vec3(1.0f, 1.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f), 
+                   vec3(1.0f, 1.0f, 1.0f), 0.0f, 0.0f, 0.0f , 1.0f)},
         {vec3(1.5f, 0.0f, -4.0f), 1.0f, 
             Material(vec3(1.0f, 1.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f), 
                 vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.0f, 0.5f, 0.0f)},

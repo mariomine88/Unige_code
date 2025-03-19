@@ -134,6 +134,42 @@ vec3 GetEnvironmentLight(Ray ray) {
     return mix(groundColor, skyGradient, groundToSkyT) + sun * float(groundToSkyT >= 1.0);
 }
 
+Ray Refract(Ray ray, HitInfo hit, inout uint state) {
+    RayTracingMaterial mat = hit.material;
+    float eta = mat.ir;
+    vec3 normal = hit.normal;
+
+    // Determine if the ray is inside the material
+    if (dot(ray.direction, normal) > 0.0) {
+        normal = -normal; // Flip normal to face incoming ray
+    } else {
+        eta = 1.0 / eta; // Adjust eta for entering the material
+    }
+
+    // Calculate the refracted direction
+    vec3 refracted = refract(ray.direction, normal, eta);
+
+    // Compute cosine of the incidence angle (adjusted for hemisphere)
+    float cos_theta = min(abs(dot(normalize(ray.direction), normal)), 1.0);
+    // Schlick's approximation for Fresnel reflectance
+    float R0 = pow((1.0 - eta) / (1.0 + eta), 2.0);
+    float reflectance = R0 + (1.0 - R0) * pow(1.0 - cos_theta, 5.0);
+
+    // Use a random value to decide between reflection and refraction
+    float random = randomValue(state); // Assume this generates a random value between 0 and 1
+
+    // Check for total internal reflection or use Schlick's reflectance
+    if (refracted == vec3(0.0) || random < reflectance) {
+        ray.direction = reflect(ray.direction, normal);
+    } else {
+    ray.direction = refracted;
+    }
+
+    // Adjust the ray origin to prevent self-intersection
+    ray.origin = hit.hitPoint - normal * 0.0001;
+    return ray;
+}
+
 vec3 Trace(Ray ray, Sphere spheres[MAX_SPHERES], inout uint state) {
     vec3 incomingLight = vec3(0.0);
     vec3 rayColor = vec3(1.0);
@@ -155,42 +191,9 @@ vec3 Trace(Ray ray, Sphere spheres[MAX_SPHERES], inout uint state) {
         }
         RayTracingMaterial mat = hit.material;
 
-        if(mat.ir > 0.0) {
-            float eta = mat.ir;
-            vec3 normal = hit.normal;
-
-            // Determine if the ray is inside the material
-            if (dot(ray.direction, normal) > 0.0) {
-                normal = -normal; // Flip normal to face incoming ray
-            } else {
-                eta = 1.0 / eta; // Adjust eta for entering the material
-            }
-
-            // Calculate the refracted direction
-            vec3 refracted = refract(ray.direction, normal, eta);
-
-            // Compute cosine of the incidence angle (adjusted for hemisphere)
-            float cos_theta = min(abs(dot(normalize(ray.direction), normal)), 1.0);
-            // Schlick's approximation for Fresnel reflectance
-            float R0 = pow((1.0 - eta) / (1.0 + eta), 2.0);
-            float reflectance = R0 + (1.0 - R0) * pow(1.0 - cos_theta, 5.0);
-
-            // Use a random value to decide between reflection and refraction
-            float random = randomValue(state); // Assume this generates a random value between 0 and 1
-
-            // Check for total internal reflection or use Schlick's reflectance
-            if (refracted == vec3(0.0) || random < reflectance) {
-                ray.direction = reflect(ray.direction, normal);
-            } else {
-                ray.direction = refracted;
-            }
-
-            // Adjust the ray origin to prevent self-intersection
-            ray.origin = hit.hitPoint - normal * 0.0001;
-            incomingLight += rayColor * mat.emissionColour * mat.emissionStrength;
-            bool isSpecularBounce = randomValue(state) < mat.specularProbability;
-            float specularBlend = mat.smoothness * float(isSpecularBounce);
-            rayColor *= mix(mat.colour, mat.specularColour, float(isSpecularBounce));
+        if(mat.ir >= 1.0) {
+            ray = Refract(ray, hit, state);
+            rayColor *= mat.colour;
             continue;
         } 
 
