@@ -14,12 +14,13 @@ struct Material {
     float emissionStrength;
     float smoothness;
     float specularProbability;
+    float ir;
 
     Material(const vec3& col, const vec3& emission = vec3(0,0,0), 
             const vec3& specular = vec3(1,1,1), float emitStrength = 0.0f,
-            float smooth = 0.0f, float specProb = 0.0f)
+            float smooth = 0.0f, float specProb = 0.0f , float ir = 0.0f)
         : colour(col), emissionColour(emission), specularColour(specular),
-          emissionStrength(emitStrength), smoothness(smooth), specularProbability(specProb) {}
+          emissionStrength(emitStrength), smoothness(smooth), specularProbability(specProb) , ir(ir) {}
 };
 
 struct Sphere {
@@ -75,27 +76,27 @@ int main() {
 
     // Setup scene (unchanged)
     std::vector<Sphere> spheres{
-        {vec3(4.0f, 0.0f, -4.0f), 1.0f, 
+        {vec3(4.0f, .5f, -4.0f), 1.0f, 
             Material(vec3(1.0f, 1.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f), 
-               vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.0f, 1.0f)},
+               vec3(1.0f, 1.0f, 1.0f), 0.0f, 0.0f, 0.0f , 1.3f)},
         {vec3(1.5f, 0.0f, -4.0f), 1.0f, 
             Material(vec3(1.0f, 1.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f), 
-                vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.0f, 0.4f)},
+                vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.0f, 0.5f, 0.0f)},
         {vec3(-1.5f, 0.0f, -4.0f), 1.0f, 
-            Material(vec3(1.0f, 1.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f), 
-                vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.0f, 0.15f)},
+            Material(vec3(1.0f, .0f, .0f), vec3(1.0f, 1.0f, 1.0f), 
+                vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.0f, 0.5f , 0.0f)},
         {vec3(-4.0f, 0.0f, -4.0f), 1.0f, 
-            Material(vec3(1.0f, 1.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f), 
-                vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.0f, 0.02f)},
+            Material(vec3(.0f, 1.0f, .0f), vec3(1.0f, 1.0f, 1.0f), 
+                vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.0f, 1.0f, 0.0f)},
         {vec3(0.0f, -101.0f, -3.0f), 100.0f,
-            Material(vec3(.0f, .0f, 1.0f), vec3(1.0f, 1.0f, 1.0f),
-                vec3(0.8f, 1.0f, 0.8f), 0.0f, 0.0f, 0.0f)},
+            Material(vec3(1.0f, 0.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f),
+                vec3(0.8f, 1.0f, 0.8f), 0.0f, 0.0f, 0.0f , 0.0f)},
         {vec3(0.0f, 5.0f, -4.0f), 3.0f,
             Material(vec3(0.2f, 0.2f, 0.8f), vec3(1.0f, 1.0f, 1.0f),
-                vec3(0.0f, 1.0f, 1.0f), 1.0f, 1.0f, 0.0f)},
-        {vec3(0.0f, 70.0f, -30.0f), 50.f,
+                vec3(0.0f, 1.0f, 1.0f), 1.0f, 1.0f, 0.0f , 0.0f)},
+        {vec3(-.5f, 0.0f, -3.0f), 0.7f,
             Material(vec3(0.2f, 0.2f, 0.8f), vec3(1.0f, 1.0f, 1.0f),
-                vec3(0.0f, 1.0f, 1.0f), 0.0f, 0.0f, 0.0f)}
+                vec3(0.0f, 1.0f, 1.0f), 0.0f, 0.0f, 0.0f , 1.3f)},
         
     };
 
@@ -118,13 +119,13 @@ int main() {
         shader.setUniform("time", clock.getElapsedTime().asSeconds());
         shader.setUniform("resolution", sf::Vector2f(window.getSize()));
         shader.setUniform("numSpheres", static_cast<int>(spheres.size()));
-        shader.setUniform("frameCount", static_cast<float>(frameCount - 1));
+        shader.setUniform("frameCount", static_cast<int>(frameCount - 1));
         shader.setUniform("randomSeed", static_cast<int>(dist(rng)));
 
         std::vector<sf::Glsl::Vec3> sphereCenters;
         std::vector<float> sphereRadii;
         std::vector<sf::Glsl::Vec3> sphereColors, sphereEmissionColors, sphereSpecularColors;
-        std::vector<float> sphereEmissionStrengths, sphereSmoothness, sphereSpecularProbs;
+        std::vector<float> sphereEmissionStrengths, sphereSmoothness, sphereSpecularProbs, sphereIRs;
 
         for (const auto& sphere : spheres) {
             sphereCenters.emplace_back(sphere.center.x, sphere.center.y, sphere.center.z);
@@ -139,6 +140,7 @@ int main() {
             sphereEmissionStrengths.push_back(sphere.material.emissionStrength);
             sphereSmoothness.push_back(sphere.material.smoothness);
             sphereSpecularProbs.push_back(sphere.material.specularProbability);
+            sphereIRs.push_back(sphere.material.ir);
         }
 
         shader.setUniformArray("sphereCenters", sphereCenters.data(), sphereCenters.size());
@@ -149,6 +151,7 @@ int main() {
         shader.setUniformArray("sphereEmissionStrengths", sphereEmissionStrengths.data(), sphereEmissionStrengths.size());
         shader.setUniformArray("sphereSmoothness", sphereSmoothness.data(), sphereSmoothness.size());
         shader.setUniformArray("sphereSpecularProbs", sphereSpecularProbs.data(), sphereSpecularProbs.size());
+        shader.setUniformArray("sphereIRs", sphereIRs.data(), sphereIRs.size());
 
         auto& prevTex = useFirstTexture ? accumTex0 : accumTex1;
         auto& currTex = useFirstTexture ? accumTex1 : accumTex0;

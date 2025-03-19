@@ -8,8 +8,8 @@ uniform float time;
 uniform vec2 resolution;
 uniform int numSpheres;
 uniform sampler2D accumulatedTex;
-uniform float frameCount;
-uniform uint randomN;
+uniform int frameCount;
+uniform int randomSeed;
 
 #define MAX_SPHERES 30
 uniform vec3 sphereCenters[MAX_SPHERES];
@@ -20,6 +20,7 @@ uniform vec3 sphereSpecularColors[MAX_SPHERES];
 uniform float sphereEmissionStrengths[MAX_SPHERES];
 uniform float sphereSmoothness[MAX_SPHERES];
 uniform float sphereSpecularProbs[MAX_SPHERES];
+uniform float sphereIRs[MAX_SPHERES];
 
 // Constants
 #define maxDepth 40
@@ -53,6 +54,7 @@ struct RayTracingMaterial {
     float emissionStrength;
     float smoothness;
     float specularProbability;
+    float ir;
 };
 
 struct Sphere {
@@ -110,7 +112,7 @@ HitInfo RayCollision(Ray ray, Sphere spheres[MAX_SPHERES]) {
 
     for(int i = 0; i < numSpheres; i++) {
         float t = intersectSphere(ray, spheres[i]);
-        if(t > 0.0 && t < hit.dst) {
+        if(t > 0.00001 && t < hit.dst) {
             hit.hit = true;
             hit.dst = t;
             hit.hitPoint = ray.at(t);
@@ -152,7 +154,46 @@ vec3 Trace(Ray ray, Sphere spheres[MAX_SPHERES], inout uint state) {
             rayColor /= 1.0 - q;
         }
         RayTracingMaterial mat = hit.material;
-        
+
+        if(mat.ir > 0.0) {
+            float eta = mat.ir;
+            vec3 normal = hit.normal;
+
+            // Determine if the ray is inside the material
+            if (dot(ray.direction, normal) > 0.0) {
+                normal = -normal; // Flip normal to face incoming ray
+            } else {
+                eta = 1.0 / eta; // Adjust eta for entering the material
+            }
+
+            // Calculate the refracted direction
+            vec3 refracted = refract(ray.direction, normal, eta);
+
+            // Compute cosine of the incidence angle (adjusted for hemisphere)
+            float cos_theta = min(abs(dot(normalize(ray.direction), normal)), 1.0);
+            // Schlick's approximation for Fresnel reflectance
+            float R0 = pow((1.0 - eta) / (1.0 + eta), 2.0);
+            float reflectance = R0 + (1.0 - R0) * pow(1.0 - cos_theta, 5.0);
+
+            // Use a random value to decide between reflection and refraction
+            float random = randomValue(state); // Assume this generates a random value between 0 and 1
+
+            // Check for total internal reflection or use Schlick's reflectance
+            if (refracted == vec3(0.0) || random < reflectance) {
+                ray.direction = reflect(ray.direction, normal);
+            } else {
+                ray.direction = refracted;
+            }
+
+            // Adjust the ray origin to prevent self-intersection
+            ray.origin = hit.hitPoint - normal * 0.0001;
+            incomingLight += rayColor * mat.emissionColour * mat.emissionStrength;
+            bool isSpecularBounce = randomValue(state) < mat.specularProbability;
+            float specularBlend = mat.smoothness * float(isSpecularBounce);
+            rayColor *= mix(mat.colour, mat.specularColour, float(isSpecularBounce));
+            continue;
+        } 
+
         // Add emitted light at every bounce, scaled by accumulated color
         incomingLight += rayColor * mat.emissionColour * mat.emissionStrength;
 
@@ -170,9 +211,8 @@ vec3 Trace(Ray ray, Sphere spheres[MAX_SPHERES], inout uint state) {
         //Update ray color with proper material response
         rayColor *= mix(mat.colour, mat.specularColour, float(isSpecularBounce));
 
-        ray.origin = hit.hitPoint + hit.normal * 0.0001;
+        ray.origin = hit.hitPoint + hit.normal * 0.0001;  
     }
-    
     return incomingLight;
 }
 
@@ -182,10 +222,10 @@ void main() {
     vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / resolution.y;
     
     // Initialize PCG state
-    uint state = uint(randomN) + 
-               uint(fragCoord.x) * 1973u + 
-               uint(fragCoord.y) * 9277u + 
-               uint(frameCount) * 26699u;
+    uint state = uint(randomSeed) + uint(time) * 1000u +
+                uint(fragCoord.x) * 1973u + 
+                uint(fragCoord.y) * 9277u + 
+                uint(frameCount) * 26699u;
 
     Ray ray = Ray(vec3(0.0), normalize(vec3(uv, -1.0)));
 
@@ -200,7 +240,8 @@ void main() {
                 sphereSpecularColors[i],
                 sphereEmissionStrengths[i],
                 sphereSmoothness[i],
-                sphereSpecularProbs[i]
+                sphereSpecularProbs[i],
+                sphereIRs[i]
             )
         );
     }
@@ -210,7 +251,7 @@ void main() {
     
     // Multiple samples per frame
     for(int i = 0; i < samplesPerFrame; i++) {
-        //ray.direction = normalize(ray.direction + randomInUnitSphere(state) * 0.001);
+        ray.direction = normalize(ray.direction + randomInUnitSphere(state) * 0.0001);
         color += Trace(ray, spheres, state);
     }
     color /= float(samplesPerFrame);
