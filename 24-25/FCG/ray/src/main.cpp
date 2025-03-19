@@ -47,11 +47,11 @@ int main() {
     // Create main window with anti-aliasing
     sf::RenderWindow window(sf::VideoMode::getFullscreenModes().front(), 
                           "GLSL Shader Demo", sf::State::Fullscreen, settings);
-    window.setFramerateLimit(60);
+    window.setFramerateLimit(30);
 
     // Load shader
     sf::Shader shader;
-    if (!shader.loadFromFile("../src/Raytracingshader2.frag", sf::Shader::Type::Fragment)) {
+    if (!shader.loadFromFile("../src/Raytracingshader.frag", sf::Shader::Type::Fragment)) {
         return -1;
     }
 
@@ -74,34 +74,55 @@ int main() {
     // Create fullscreen quad
     sf::RectangleShape fullscreenQuad(sf::Vector2f(window.getSize()));
 
-    // Setup scene (unchanged)
-    std::vector<Sphere> spheres{
-        {vec3(4.0f, .5f, -4.0f), 1.0f, 
-            Material(vec3(1.0f, 1.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f), 
-               vec3(1.0f, 1.0f, 1.0f), 0.0f, 0.0f, 0.0f , 1.3f)},
-               {vec3(4.0f, .5f, -4.0f), 0.7f, 
-                Material(vec3(1.0f, 1.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f), 
-                   vec3(1.0f, 1.0f, 1.0f), 0.0f, 0.0f, 0.0f , 1.0f)},
-        {vec3(1.5f, 0.0f, -4.0f), 1.0f, 
-            Material(vec3(1.0f, 1.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f), 
-                vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.0f, 0.5f, 0.0f)},
-        {vec3(-1.5f, 0.0f, -4.0f), 1.0f, 
-            Material(vec3(1.0f, .0f, .0f), vec3(1.0f, 1.0f, 1.0f), 
-                vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.0f, 0.5f , 0.0f)},
-        {vec3(-4.0f, 0.0f, -4.0f), 1.0f, 
-            Material(vec3(.0f, 1.0f, .0f), vec3(1.0f, 1.0f, 1.0f), 
-                vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.0f, 1.0f, 0.0f)},
-        {vec3(0.0f, -101.0f, -3.0f), 100.0f,
-            Material(vec3(1.0f, 0.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f),
-                vec3(0.8f, 1.0f, 0.8f), 0.0f, 0.0f, 0.0f , 0.0f)},
-        {vec3(0.0f, 5.0f, -4.0f), 3.0f,
-            Material(vec3(0.2f, 0.2f, 0.8f), vec3(1.0f, 1.0f, 1.0f),
-                vec3(0.0f, 1.0f, 1.0f), 1.0f, 1.0f, 0.0f , 0.0f)},
-        {vec3(-.5f, 0.0f, -3.0f), 0.7f,
-            Material(vec3(0.2f, 0.2f, 0.8f), vec3(1.0f, 1.0f, 1.0f),
-                vec3(0.0f, 1.0f, 1.0f), 0.0f, 0.0f, 0.0f , 1.3f)},
-        
-    };
+    // In main(), replace your spheres definition with:
+    std::vector<Sphere> spheres;
+    
+    // Add ground sphere (large sphere to act as ground)
+    spheres.push_back({
+        vec3(0.0f, -1000.0f, 0.0f), 1000.0f,
+        Material(vec3(0.5f, 0.5f, 0.5f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+    });
+    
+    // Add the three large special spheres
+    // Lambertian sphere
+    spheres.push_back({
+        vec3(-4.0f, 1.0f, 0.0f), 1.0f,
+        Material(vec3(0.4f, 0.2f, 0.1f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+    });
+
+    spheres.push_back({
+        vec3(-4.0f, 1.0f, -3.0f), .3f,
+        Material(vec3(0.4f, 0.2f, 0.1f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+    });
+
+    // Glass sphere
+    spheres.push_back({
+        vec3(0.0f, 1.0f, 0.0f), 1.0f,
+        Material(vec3(1.0f, 1.0f, 1.0f), vec3(0, 0, 0), vec3(1, 1, 1), 0.0f, 1.0f, 0.0f, 1.5f)
+    });
+
+    spheres.push_back({
+        vec3(0.0f, 1.0f, 0.0f), .5f,
+        Material(vec3(1.0f, 0.0f, 0.0f), vec3(0, 0, 0), vec3(1, 1, 1), 0.0f, 1.0f, 0.0f, 1.f)
+    });
+
+
+    spheres.push_back({
+        vec3(0.0f, 1.0f, 0.0f), .7f,
+        Material(vec3(1.0f, 1.0f, 1.0f), vec3(0, 0, 0), vec3(1, 1, 1), 0.0f, 1.0f, 0.0f, 1.f)
+    });
+    
+    // Metal sphere
+    spheres.push_back({
+        vec3(4.0f, 1.0f, -1.0f), 1.0f,
+        Material(vec3(0.7f, 0.6f, 0.5f), vec3(0, 0, 0), vec3(1, 1, 1), 0.0f, 1.0f, 1.0f, 0.0f)
+    });
+
+    //light source
+    spheres.push_back({
+        vec3(0.0f, 2.0f, 4.0f), 2.0f,
+        Material(vec3(0.7f, 0.6f, 0.5f), vec3(1, .8, 0.0), vec3(1, 1, 1), 3.0f, 0.0f, 1.0f, 0.0f)
+    });
 
     sf::Clock clock;
     bool useFirstTexture = true;

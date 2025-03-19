@@ -3,139 +3,56 @@
 
 out vec4 FragColor;
 
+// Uniforms
 uniform float time;
 uniform vec2 resolution;
 uniform int numSpheres;
-
 uniform sampler2D accumulatedTex;
-uniform float frameCount;
+uniform int frameCount;
+uniform int randomSeed;
 
-uniform int randomN;
-
-// Define maximum number of spheres (must match C++ code)
-#define MAX_SPHERES 30
+#define MAX_SPHERES 80
 uniform vec3 sphereCenters[MAX_SPHERES];
 uniform float sphereRadii[MAX_SPHERES];
-
-// Material properties
 uniform vec3 sphereColors[MAX_SPHERES];
 uniform vec3 sphereEmissionColors[MAX_SPHERES];
 uniform vec3 sphereSpecularColors[MAX_SPHERES];
 uniform float sphereEmissionStrengths[MAX_SPHERES];
 uniform float sphereSmoothness[MAX_SPHERES];
 uniform float sphereSpecularProbs[MAX_SPHERES];
+uniform float sphereIRs[MAX_SPHERES];
 
-// Variables to track closest intersection
-int hitSphereIndex = -1;
-#define maxDepth 5  // Reduced from 50 for better performance
+// Constants
+#define maxDepth 40
+#define samplesPerFrame 30
+#define PI 3.14159265358979323846
 
-// Ray structure
-// Ray structure e come quelli di fisica dove l'origine è il punto di partenza e la direzione è la direzione del raggio
-// direction è normalizzato cioè la lunghezza è 1
+
+//camera settings
+uniform float cameraFov = 20.0; // Field of view in degrees
+uniform vec3 lookfrom = vec3(13, 2, 5);   // Point camera is looking from
+uniform vec3 lookat = vec3(0,1,0);  // Point camera is looking at
+uniform vec3 vup = vec3(0,1,0);     // Camera-relative "up" direction
+
+// Environment settings
+uniform bool environmentEnabled = true;
+uniform vec3 skyColorHorizon = vec3(0.7, 0.8, 1.0); 
+uniform vec3 skyColorZenith = vec3(0.3, 0.5, 0.8);
+uniform vec3 groundColor = vec3(0.4, 0.3, 0.2);
+uniform vec3 sunDirection = vec3(0.0, 0.7, -0.7);
+uniform float sunFocus = 128.0;
+uniform float sunIntensity = 1.0;
+
+
+// Ray tracing structures
 struct Ray {
     vec3 origin;
     vec3 direction;
 
-    // Function to get point at distance t along the ray
     vec3 at(float t) {
         return origin + t * direction;
     }
 };
-
-// Environment settings
-bool environmentEnabled = true;
-vec3 skyColorHorizon = vec3(0.7, 0.8, 1.0); 
-vec3 skyColorZenith = vec3(0.3, 0.5, 0.8);
-vec3 groundColor = vec3(0.4, 0.3, 0.2);
-vec3 sunDirection = vec3(0.0, 0.7, -0.7);
-float sunFocus = 128.0;
-float sunIntensity = 1.0;
-
-vec3 GetEnvironmentLight(Ray ray) {
-    if (!environmentEnabled) {
-        return vec3(0.0);
-    }
-    
-    // Calculate sky gradient
-    float skyGradientT = pow(smoothstep(0.0, 0.4, ray.direction.y), 0.35);
-    float groundToSkyT = smoothstep(-0.01, 0.0, ray.direction.y);
-    vec3 skyGradient = mix(skyColorHorizon, skyColorZenith, skyGradientT);
-    float sun = pow(max(0.0, dot(ray.direction, normalize(sunDirection))), sunFocus) * sunIntensity;
-    
-    // Combine ground, sky, and sun
-    vec3 composite = mix(groundColor, skyGradient, groundToSkyT) + sun * float(groundToSkyT >= 1.0);
-    return composite;
-}
-
-// PCG Random Number Generator
-// Based on the PCG implementation by Mark Jarzynski and Marc Olano
-uint pcg(uint seed) {
-    uint state = seed * 747796405u + 2891336453u;
-    uint word = ((state >> ((state >> 28u) + 4u)) ^ state) * 277803737u;
-    return (word >> 22u) ^ word;
-}
-
-float pcgFloat(uvec2 seed) {
-    // Combine both parts of the seed
-    uint s = pcg(seed.x ^ pcg(seed.y));
-    // Convert to float between 0 and 1
-    return float(s) / 4294967295.0;
-}
-
-// Random unit vector using PCG
-vec3 randomUnitVector(vec2 seed) {
-    // Use frameCount and randomN to advance the seed
-    uvec2 pcgSeed = uvec2(
-        floatBitsToUint(seed.x * (randomN + 1u) + time),
-        floatBitsToUint(seed.y * (randomN + 2u) + time * 1000.0)
-    );
-    
-    // Generate 3 random values between -1 and 1
-    float x = pcgFloat(pcgSeed) * 2.0 - 1.0;
-    float y = pcgFloat(pcgSeed + uvec2(16u, 23u)) * 2.0 - 1.0;
-    float z = pcgFloat(pcgSeed + uvec2(32u, 45u)) * 2.0 - 1.0;
-    
-    return normalize(vec3(x, y, z));
-}
-
-// Improved hemisphere direction generator
-vec3 randomHemisphereDirection(vec3 normal, vec2 seed) {
-    vec3 randVec = randomUnitVector(seed);
-    
-    // Ensure it's in the correct hemisphere
-    if (dot(randVec, normal) < 0.0) {
-        randVec = -randVec;
-    }
-    
-    // Create a more accurate cosine-weighted distribution
-    uvec2 pcgSeed = uvec2(
-        floatBitsToUint(seed.x * (randomN + 3u) + time * 2.5),
-        floatBitsToUint(seed.y * (randomN + 4u) + time * 3500.0)
-    );
-    
-    float a = pcgFloat(pcgSeed);
-    float b = pcgFloat(pcgSeed + uvec2(5u, 7u));
-    
-    float phi = 2.0 * 3.14159265359 * a;
-    float cosTheta = sqrt(1.0 - b);
-    float sinTheta = sqrt(b);
-    
-    // Create coordinate system around normal
-    vec3 tangent, bitangent;
-    if (abs(normal.x) > abs(normal.y)) {
-        tangent = normalize(cross(normal, vec3(0.0, 1.0, 0.0)));
-    } else {
-        tangent = normalize(cross(normal, vec3(1.0, 0.0, 0.0)));
-    }
-    bitangent = cross(normal, tangent);
-    
-    // Construct the direction
-    return normalize(
-        tangent * cos(phi) * sinTheta +
-        bitangent * sin(phi) * sinTheta +
-        normal * cosTheta
-    );
-}
 
 struct RayTracingMaterial {
     vec3 colour;
@@ -144,6 +61,7 @@ struct RayTracingMaterial {
     float emissionStrength;
     float smoothness;
     float specularProbability;
+    float ir;
 };
 
 struct Sphere {
@@ -151,22 +69,6 @@ struct Sphere {
     float radius;
     RayTracingMaterial material;
 };
-
-// Ray-sphere intersection function
-float intersectSphere(Ray ray, Sphere sphere) {
-    vec3 oc = ray.origin - sphere.center;
-    float a = dot(ray.direction, ray.direction);
-    float h = dot(oc, ray.direction);
-    float c = dot(oc, oc) - sphere.radius * sphere.radius;
-    float discriminant = h*h - a*c;
-    
-    if (discriminant < 0.0) {
-        return -1.0;
-    } else {
-        float t = (h - sqrt(discriminant)) / a;
-        return (t > 0.0) ? t : -1.0; // Return -1 for intersections behind the ray
-    }
-}
 
 struct HitInfo {
     bool hit;
@@ -176,131 +78,214 @@ struct HitInfo {
     RayTracingMaterial material;
 };
 
-HitInfo RayCollision(Ray ray, Sphere Sphere[MAX_SPHERES]) {
+// PCG Random Number Generator
+uint pcg_hash(inout uint state) {
+    state = state * 747796405u + 2891336453u;
+    uint word = ((state >> ((state >> 28u) + 4u)) ^ state) * 277803737u;
+    return (word >> 22u) ^ word;
+}
+
+// Random number functions from 0 to 1
+float randomValue(inout uint state) {
+    return float(pcg_hash(state)) / 4294967295.0;
+}
+
+// Random value in normal distribution (with mean=0 and sd=1)
+float RandomValueNormalDistribution(inout uint state){
+    float theta = 2 * 3.1415926 * randomValue(state);
+	float rho = sqrt(-2 * log(randomValue(state)));
+	return rho * cos(theta);
+}
+
+vec3 randomInUnitSphere(inout uint state) {
+    return normalize(vec3(RandomValueNormalDistribution(state), RandomValueNormalDistribution(state), RandomValueNormalDistribution(state)));
+} 
+
+float intersectSphere(Ray ray, Sphere sphere) {
+    vec3 oc = ray.origin - sphere.center;
+    float a = dot(ray.direction, ray.direction);
+    float b = 2.0 * dot(oc, ray.direction);
+    float c = dot(oc, oc) - sphere.radius * sphere.radius;
+    float discriminant = b * b - 4.0 * a * c;
+    
+    if(discriminant < 0.0) return -1.0;
+    return (-b - sqrt(discriminant)) / (2.0 * a);
+}
+
+HitInfo RayCollision(Ray ray, Sphere spheres[MAX_SPHERES]) {
     HitInfo hit;
     hit.hit = false;
     hit.dst = 1e30;
 
-    for (int i = 0; i < numSpheres; i++) {
-        float t = intersectSphere(ray, Sphere[i]);
-        if (t > 0.0 && t < hit.dst) {
+    for(int i = 0; i < numSpheres; i++) {
+        float t = intersectSphere(ray, spheres[i]);
+        if(t > 0.00001 && t < hit.dst) {
             hit.hit = true;
             hit.dst = t;
             hit.hitPoint = ray.at(t);
-            hit.normal = normalize(hit.hitPoint - Sphere[i].center);
-            hit.material = Sphere[i].material;
+            hit.normal = normalize(hit.hitPoint - spheres[i].center);
+            hit.material = spheres[i].material;
         }
     }
     return hit;
 }
 
-vec3 Trace(Ray ray, Sphere Sphere[MAX_SPHERES], vec2 seed) {
+vec3 GetEnvironmentLight(Ray ray) {
+    if(!environmentEnabled) return vec3(0.0);
+    
+    float skyGradientT = pow(smoothstep(0.0, 0.4, ray.direction.y), 0.35);
+    float groundToSkyT = smoothstep(-0.01, 0.0, ray.direction.y);
+    vec3 skyGradient = mix(skyColorHorizon, skyColorZenith, skyGradientT);
+    float sun = pow(max(0.0, dot(ray.direction, normalize(sunDirection))), sunFocus) * sunIntensity;
+    
+    return mix(groundColor, skyGradient, groundToSkyT) + sun * float(groundToSkyT >= 1.0);
+}
+
+Ray Refract(Ray ray, HitInfo hit, inout uint state) {
+    RayTracingMaterial mat = hit.material;
+    float eta = mat.ir;
+    vec3 normal = hit.normal;
+
+    // Determine if the ray is inside the material
+    if (dot(ray.direction, normal) > 0.0) {
+        normal = -normal; // Flip normal to face incoming ray
+    } else {
+        eta = 1.0 / eta; // Adjust eta for entering the material
+    }
+
+    // Calculate the refracted direction
+    vec3 refracted = refract(ray.direction, normal, eta);
+
+    // Compute cosine of the incidence angle (adjusted for hemisphere)
+    float cos_theta = min(abs(dot(normalize(ray.direction), normal)), 1.0);
+    // Schlick's approximation for Fresnel reflectance
+    float R0 = pow((1.0 - eta) / (1.0 + eta), 2.0);
+    float reflectance = R0 + (1.0 - R0) * pow(1.0 - cos_theta, 5.0);
+
+    // Use a random value to decide between reflection and refraction
+    float random = randomValue(state); // Assume this generates a random value between 0 and 1
+
+    // Check for total internal reflection or use Schlick's reflectance
+    if (refracted == vec3(0.0) || random < reflectance) {
+        ray.direction = reflect(ray.direction, normal);
+    } else {
+    ray.direction = refracted;
+    }
+
+    // Adjust the ray origin to prevent self-intersection
+    ray.origin = hit.hitPoint - normal * 0.0001;
+    return ray;
+}
+
+vec3 Trace(Ray ray, Sphere spheres[MAX_SPHERES], inout uint state) {
     vec3 incomingLight = vec3(0.0);
     vec3 rayColor = vec3(1.0);
 
-    for (int depth = 0; depth < maxDepth; depth++) {
-        HitInfo hit = RayCollision(ray, Sphere);
+    for(int depth = 0; depth < maxDepth; depth++) {
+        HitInfo hit = RayCollision(ray, spheres);
         
-        if (hit.hit) {
-            // Update ray for next bounce
-            ray.origin = hit.hitPoint + hit.normal * 0.001;
-            
-            // Material properties
-            RayTracingMaterial material = hit.material;
-            vec3 emittedLight = material.emissionColour * material.emissionStrength;
-            
-            // Russian roulette for material selection
-            uvec2 pcgSeed = uvec2(
-                floatBitsToUint(seed.x + float(depth) + time * 5.0),
-                floatBitsToUint(seed.y + float(depth) * 2.0 + time * 7.0)
-            );
-            
-            float materialSample = pcgFloat(pcgSeed);
-            
-            // Handle specular reflection
-            if (materialSample < material.specularProbability) {
-                // Specular reflection
-                vec3 reflected = reflect(ray.direction, hit.normal);
-                // Add some randomness based on smoothness
-                vec3 randomDir = randomUnitVector(seed + vec2(float(depth), float(depth) * 2.0));
-                ray.direction = normalize(mix(randomDir, reflected, material.smoothness));
-                
-                // Update throughput with specular color
-                rayColor *= material.specularColour;
-            } else {
-                // Diffuse reflection
-                ray.direction = randomHemisphereDirection(hit.normal, seed + vec2(float(depth) * 3.0, float(depth) * 4.0));
-                
-                // Update throughput with diffuse color
-                rayColor *= material.colour;
-            }
-            
-            // Add emitted light from this surface to accumulated light
-            incomingLight += rayColor * emittedLight;
-            
-            // Russian roulette path termination
-            if (depth > 2) {
-                float maxComponent = max(max(rayColor.r, rayColor.g), rayColor.b);
-                if (pcgFloat(pcgSeed + uvec2(71u, 89u)) > maxComponent) {
-                    break; // Terminate path
-                }
-                // Compensate for termination probability
-                rayColor /= maxComponent;
-            }
-        } else {
-            // Ray hit nothing, add environment light and terminate
+        if(!hit.hit) {
             incomingLight += rayColor * GetEnvironmentLight(ray);
             break;
         }
+
+        // Russian Roulette termination
+        // more dark the ray is, more likely to terminate
+        if(depth > 10) {
+            float q = max(0.05, 1.0 - length(rayColor));
+            if(randomValue(state) < q) break;
+            rayColor /= 1.0 - q;
+        }
+        RayTracingMaterial mat = hit.material;
+
+        if(mat.ir >= 1.0) {
+            ray = Refract(ray, hit, state);
+            rayColor *= mat.colour;
+            continue;
+        } 
+
+        // Add emitted light at every bounce, scaled by accumulated color
+        incomingLight += rayColor * mat.emissionColour * mat.emissionStrength;
+
+        // Combined specular probability and smoothness
+        bool isSpecularBounce = randomValue(state) < mat.specularProbability;
+        float specularBlend = mat.smoothness * float(isSpecularBounce);
+        
+        //Calculate reflection directions
+        vec3 diffuseDir = normalize(hit.normal + randomInUnitSphere(state));
+        vec3 specularDir = reflect(ray.direction, hit.normal);
+        
+        //Blend directions based on material properties
+        ray.direction = normalize(mix(diffuseDir, specularDir, specularBlend));
+        
+        //Update ray color with proper material response
+        rayColor *= mix(mat.colour, mat.specularColour, float(isSpecularBounce));
+
+        ray.origin = hit.hitPoint + hit.normal * 0.0001;  
     }
-    
     return incomingLight;
 }
 
+
 void main() {
+    ivec2 fragCoord = ivec2(gl_FragCoord.xy);
     vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / resolution.y;
 
-    // Create the initial ray
-    vec3 RO = vec3(0.0, 0.0, 0.0);
-    vec3 RD = normalize(vec3(uv, -1.0));
-    Ray ray = Ray(RO, RD);
+    // Calculate camera basis vectors
+    float focal_length = length(lookfrom - lookat);
+    vec3 w = normalize(lookfrom - lookat);  // Camera forward vector (points backwards)
+    vec3 u = normalize(cross(vup, w));      // Camera right vector
+    vec3 v = cross(w, u);                   // Camera up vector (true up)
+    
+    // FOV calculations
+    float theta = radians(cameraFov);
+    float h = tan(theta / 2.0);
+    float viewport_height = 2.0 * h;
 
-    // Setup scene objects
-    Sphere sphere[MAX_SPHERES];
-    for (int i = 0; i < MAX_SPHERES; i++) {
-        sphere[i] = Sphere(
-            sphereCenters[i], 
-            sphereRadii[i], 
+    // Scale UV coordinates based on FOV
+    uv *= viewport_height / 2.0;
+
+    Ray ray = Ray(lookfrom, normalize(vec3(-w + u * uv.x + v * uv.y)));
+
+
+    // Initialize PCG state
+    uint state = uint(randomSeed) + uint(time) * 1000u +
+                uint(fragCoord.x) * 1973u + 
+                uint(fragCoord.y) * 9277u + 
+                uint(frameCount) * 26699u;
+
+
+    Sphere spheres[MAX_SPHERES];  
+    for(int i = 0; i < MAX_SPHERES; i++) {
+        spheres[i] = Sphere(
+            sphereCenters[i],
+            sphereRadii[i],
             RayTracingMaterial(
-                sphereColors[i], 
-                sphereEmissionColors[i], 
-                sphereSpecularColors[i], 
-                sphereEmissionStrengths[i], 
-                sphereSmoothness[i], 
-                sphereSpecularProbs[i]
+                sphereColors[i],
+                sphereEmissionColors[i],
+                sphereSpecularColors[i],
+                sphereEmissionStrengths[i],
+                sphereSmoothness[i],
+                sphereSpecularProbs[i],
+                sphereIRs[i]
             )
         );
     }
 
-    // Multiple samples per pixel for anti-aliasing
-    int raysPerPixel = 5;
+    // Temporal accumulation
     vec3 color = vec3(0.0);
     
-    for (int i = 0; i < raysPerPixel; i++) {
-        vec2 seed = uv * (float(randomN) + time * 3545.0 + float(i));
-        color += Trace(ray, sphere, seed); // Fixed += operator (was =+)
+    // Multiple samples per frame
+    for(int i = 0; i < samplesPerFrame; i++) {
+        color += Trace(ray, spheres, state);
     }
-
-    color /= float(raysPerPixel);
+    color /= float(samplesPerFrame);
 
     // Gamma correction
-    color = pow(color, vec3(1.0/2.2)); // Using 2.2 for standard gamma
-
-    // Progressive accumulation with previous frames
-    float a = 1.0 / (frameCount + 1.0);
-    ivec2 fragCoord = ivec2(gl_FragCoord.xy);
-    vec3 accumulatedColor = texelFetch(accumulatedTex, fragCoord, 0).rgb;
-    vec3 finalColor = mix(accumulatedColor, color, a);
-
-    FragColor = vec4(finalColor, 1.0);
+    color = pow(color, vec3(1.0/2.2));
+    
+    // Blend with accumulated result
+    float weight = 1.0 / (frameCount + 1.0 );
+    vec3 accumulated = texelFetch(accumulatedTex, fragCoord, 0).rgb *(1.0 - weight) + color * weight;
+    FragColor = vec4(accumulated, 1.0);
 }
