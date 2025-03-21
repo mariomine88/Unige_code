@@ -11,7 +11,7 @@ uniform sampler2D accumulatedTex;
 uniform int frameCount;
 uniform int randomSeed;
 
-#define MAX_SPHERES 80
+#define MAX_SPHERES 30
 uniform vec3 sphereCenters[MAX_SPHERES];
 uniform float sphereRadii[MAX_SPHERES];
 uniform vec3 sphereColors[MAX_SPHERES];
@@ -29,8 +29,8 @@ uniform float sphereIRs[MAX_SPHERES];
 
 
 //camera settings
-uniform float cameraFov = 90.0; // Field of view in degrees
-uniform vec3 lookfrom = vec3(0, 1, 5);   // Point camera is looking from
+uniform float cameraFov = 20.0; // Field of view in degrees
+uniform vec3 lookfrom = vec3(0, 5, -15);   // Point camera is looking from
 uniform vec3 lookat = vec3(0,1,0);  // Point camera is looking at
 uniform vec3 vup = vec3(0,1,0);     // Camera-relative "up" direction
 
@@ -223,6 +223,56 @@ vec3 Trace(Ray ray, Sphere spheres[MAX_SPHERES], inout uint state) {
 }
 
 
+vec3 spatialFilter(ivec2 center) {
+    vec3 filtered = vec3(0.0);
+    float totalWeight = 0.0;
+    
+    vec3 centerColor = texelFetch(accumulatedTex, center, 0).rgb;
+    float centerLum = dot(centerColor, vec3(0.2126, 0.7152, 0.0722)); // Luminance calculation
+    
+    // Bilateral filter parameters
+    const float sigmaSpatial = 1.0;  // Spatial Gaussian sigma (pixel distance)
+    const float sigmaRange = 0.15;   // Range Gaussian sigma (color difference)
+    
+    // Precomputed 3x3 spatial weights for sigma = 1.0
+    const float spatialWeights[9] = float[9](
+        0.3679, 0.6065, 0.3679,    // Top row (y = -1)
+        0.6065, 1.0000, 0.6065,    // Middle row (y = 0)
+        0.3679, 0.6065, 0.3679     // Bottom row (y = 1)
+    );
+    
+    int idx = 0;
+    for(int y = -1; y <= 1; y++) {
+        for(int x = -1; x <= 1; x++) {
+            ivec2 sampleCoord = center + ivec2(x, y);
+            
+            // Skip out-of-bounds pixels
+            if(sampleCoord.x < 0 || sampleCoord.y < 0 || 
+               sampleCoord.x >= int(resolution.x) || sampleCoord.y >= int(resolution.y)) {
+                idx++;
+                continue;
+            }
+            
+            vec3 pixelColor = texelFetch(accumulatedTex, sampleCoord, 0).rgb;
+            float pixelLum = dot(pixelColor, vec3(0.2126, 0.7152, 0.0722));
+            float lumDiff = pixelLum - centerLum;
+            
+            // Calculate range weight using luminance difference
+            float rangeWeight = exp(-(lumDiff * lumDiff) / (2.0 * sigmaRange * sigmaRange));
+            
+            // Combine spatial and range weights
+            float weight = spatialWeights[idx] * rangeWeight;
+            
+            filtered += pixelColor * weight;
+            totalWeight += weight;
+            idx++;
+        }
+    }
+    
+    // Normalize and return filtered color
+    return filtered / max(totalWeight, 0.001);
+}
+
 void main() {
     ivec2 fragCoord = ivec2(gl_FragCoord.xy);
     vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / resolution.y;
@@ -281,7 +331,8 @@ void main() {
     color = pow(color, vec3(1.0/2.2));
     
     // Blend with accumulated result
-    float weight = 1.0 / (frameCount + 1.0 );
-    vec3 accumulated = texelFetch(accumulatedTex, fragCoord, 0).rgb *(1.0 - weight) + color * weight;
+    vec3 accumulated = spatialFilter(fragCoord);
+    float alpha = max(1.0 / float(frameCount + 1), 0.01);
+    accumulated = mix(accumulated, color, alpha);
     FragColor = vec4(accumulated, 1.0);
 }

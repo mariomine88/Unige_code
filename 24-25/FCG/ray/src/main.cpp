@@ -1,6 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <random>
+#include <filesystem>
+#include <chrono>
+#include <iostream>
 
 struct vec3 {
     float x, y, z;
@@ -47,7 +50,7 @@ int main() {
     // Create main window with anti-aliasing
     sf::RenderWindow window(sf::VideoMode::getFullscreenModes().front(), 
                           "GLSL Shader Demo", sf::State::Fullscreen, settings);
-    window.setFramerateLimit(30);
+    window.setFramerateLimit(60);
 
     // Load shader
     sf::Shader shader;
@@ -83,36 +86,71 @@ int main() {
         Material(vec3(0.5f, .5f, 0.5f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
     });
 
+    // Main light source
     spheres.push_back({
-        vec3(0.0f, 10.0f, 0.0f), 6.0f,
-        Material(vec3(0.5f, .5f, 0.5f), vec3(1.f, 1.f, 1.f), vec3(0, 0, 0), 1.0f, 0.0f, 0.0f, 0.0f)
-    });
-    
-    // Add the three large special spheres
-    // Lambertian sphere
-    spheres.push_back({
-        vec3(-5.0f, 1.0f, 0.0f), 1.0f,
-        Material(vec3(1.0f, 1.0f, 1.0f), vec3(0, 0, 0), vec3(0.3f, 1.0f, 0.3f), 0.0f, 1.0f, 1.0f, 0.0f)
+        vec3(0.0f, 15.0f, 0.0f), 5.0f,
+        Material(vec3(0.5f, 0.5f, 0.5f), vec3(1.0f, 0.9f, 0.7f), vec3(0, 0, 0), 10.0f, 0.0f, 0.0f, 0.0f)
     });
 
+    // Colored accent lights
     spheres.push_back({
-        vec3(-2.5f, 1.0f, 0.0f), 1.0f,
-        Material(vec3(1.0f, 1.0f, 1.0f), vec3(0, 0, 0), vec3(0.3f, 1.0f, 0.3f), 0.0f, 1.0f, .75f, 0.0f)
+        vec3(-10.0f, 8.0f, -10.0f), 2.0f,
+        Material(vec3(0.0f, 0.0f, 0.0f), vec3(0.2f, 0.8f, 1.0f), vec3(0, 0, 0), 1.5f, 0.0f, 0.0f, 0.0f)
+    });
+    spheres.push_back({
+        vec3(10.0f, 8.0f, -10.0f), 2.0f,
+        Material(vec3(0.0f, 0.0f, 0.0f), vec3(1.0f, 0.3f, 0.1f), vec3(0, 0, 0), 1.5f, 0.0f, 0.0f, 0.0f)
     });
 
+    // Perfectly reflective metallic sphere (mirror)
     spheres.push_back({
-        vec3(0.0f, 1.0f, 0.0f), 1.0f,
-        Material(vec3(1.0f, 1.0f, 1.0f), vec3(0, 0, 0), vec3(0.3f, 1.0f, 0.3f), 0.0f, 1.0f, .5f, 0.0f)
+        vec3(-4.0f, 2.0f, 5.0f), 2.0f,
+        Material(vec3(0.8f, 0.8f, 0.9f), vec3(0, 0, 0), vec3(0.9f, 0.9f, 1.0f), 0.0f, 1.0f, 1.0f, 0.0f)
     });
 
+    // Brushed metal sphere (less smooth)
     spheres.push_back({
-        vec3(2.5f, 1.0f, 0.0f), 1.0f,
-        Material(vec3(1.0f, 1.0f, 1.0f), vec3(0, 0, 0), vec3(0.3f, 1.0f, 0.3f), 0.0f, 1.0f, .25f, 0.0f)
+        vec3(4.0f, 2.0f, 5.0f), 2.0f,
+        Material(vec3(0.9f, 0.6f, 0.3f), vec3(0, 0, 0), vec3(0.9f, 0.8f, 0.6f), 0.0f, 0.6f, 0.9f, 0.0f)
     });
 
+    // Glass sphere (transparent with refractive index of 1.5)
     spheres.push_back({
-        vec3(5.0f, 1.0f, 0.0f), 1.0f,
-        Material(vec3(1.0f, 1.0f, 1.0f), vec3(0, 0, 0), vec3(0.3f, 1.0f, 0.3f), 0.0f, 1.0f, .0f, 0.0f)
+        vec3(0.0f, 4.0f, 0.0f), 4.0f,
+        Material(vec3(1.0f, 1.0f, 1.0f), vec3(0, 0, 0), vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.0f, 0.0f, 1.5f)
+    });
+
+    // Nested colored glass sphere inside the bigger glass sphere
+    spheres.push_back({
+        vec3(0.0f, 4.0f, 0.0f), 2.0f,
+        Material(vec3(0.1f, 0.8f, 0.5f), vec3(0, 0, 0), vec3(0.1f, 0.8f, 0.5f), 0.0f, 1.0f, 0.0f, 2.0f)
+    });
+
+    // Row of small diffuse spheres with different colors
+    for (int i = 0; i < 5; i++) {
+        float x = -6.0f + i * 3.0f;
+        spheres.push_back({
+            vec3(x, 1.0f, -3.0f), 1.0f,
+            Material(vec3(0.9f, 0.2f + i * 0.15f, 0.1f + i * 0.2f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+        });
+    }
+
+    // Diamond-like sphere with high refractive index
+    spheres.push_back({
+        vec3(-3.0f, 1.0f, -6.0f), 1.0f,
+        Material(vec3(0.99f, 0.99f, 0.99f), vec3(0, 0, 0), vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.0f, 0.0f, 2.4f)
+    });
+
+    // Water-like sphere with lower refractive index
+    spheres.push_back({
+        vec3(3.0f, 1.0f, -6.0f), 1.0f,
+        Material(vec3(0.4f, 0.7f, 0.9f), vec3(0, 0, 0), vec3(0.4f, 0.7f, 0.9f), 0.0f, 0.9f, 0.0f, 1.33f)
+    });
+
+    // Glowing sphere with emission
+    spheres.push_back({
+        vec3(0.0f, 1.0f, -9.0f), 1.0f,
+        Material(vec3(1.0f, 0.3f, 0.0f), vec3(1.0f, 0.6f, 0.0f), vec3(0, 0, 0), 0.8f, 0.0f, 0.0f, 0.0f)
     });
 
 
@@ -134,6 +172,29 @@ int main() {
                     accumTex0.display();
                     accumTex1.clear(sf::Color::Black);
                     accumTex1.display();
+                }
+                if (keyPressed.scancode == sf::Keyboard::Scancode::S) {
+                    // Create screenshots directory if it doesn't exist
+                    std::filesystem::path screenshotsDir = "../renders";
+                    if (!std::filesystem::exists(screenshotsDir)) {
+                        std::filesystem::create_directory(screenshotsDir);
+                    }
+                    
+                    // Get current texture
+                    const auto& texToSave = useFirstTexture ? accumTex0 : accumTex1;
+                    
+                    // Generate filename with timestamp
+                    auto now = std::chrono::system_clock::now();
+                    auto timestamp = std::chrono::duration_cast<std::chrono::seconds>(
+                        now.time_since_epoch()).count();
+                    std::string filename = "../renders/render" + 
+                                          std::to_string(timestamp) + ".png";
+                    
+                    // Save screenshot
+                    if (!texToSave.getTexture().copyToImage().saveToFile(filename)) {
+                        std::cerr << "Failed to save screenshot to: " << filename << std::endl;
+                    }
+                    std::cout << "Screenshot saved to: " << filename << std::endl;
                 }
             }
         );
