@@ -80,49 +80,41 @@ int main() {
     // Add ground sphere (large sphere to act as ground)
     spheres.push_back({
         vec3(0.0f, -1000.0f, 0.0f), 1000.0f,
-        Material(vec3(0.5f, 0.5f, 0.5f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+        Material(vec3(0.5f, .5f, 0.5f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+    });
+
+    spheres.push_back({
+        vec3(0.0f, 10.0f, 0.0f), 6.0f,
+        Material(vec3(0.5f, .5f, 0.5f), vec3(1.f, 1.f, 1.f), vec3(0, 0, 0), 1.0f, 0.0f, 0.0f, 0.0f)
     });
     
     // Add the three large special spheres
     // Lambertian sphere
     spheres.push_back({
-        vec3(-4.0f, 1.0f, 0.0f), 1.0f,
-        Material(vec3(0.4f, 0.2f, 0.1f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+        vec3(-5.0f, 1.0f, 0.0f), 1.0f,
+        Material(vec3(1.0f, 1.0f, 1.0f), vec3(0, 0, 0), vec3(0.3f, 1.0f, 0.3f), 0.0f, 1.0f, 1.0f, 0.0f)
     });
 
     spheres.push_back({
-        vec3(-4.0f, 1.0f, -3.0f), .3f,
-        Material(vec3(0.4f, 0.2f, 0.1f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+        vec3(-2.5f, 1.0f, 0.0f), 1.0f,
+        Material(vec3(1.0f, 1.0f, 1.0f), vec3(0, 0, 0), vec3(0.3f, 1.0f, 0.3f), 0.0f, 1.0f, .75f, 0.0f)
     });
 
-    // Glass sphere
     spheres.push_back({
         vec3(0.0f, 1.0f, 0.0f), 1.0f,
-        Material(vec3(1.0f, 1.0f, 1.0f), vec3(0, 0, 0), vec3(1, 1, 1), 0.0f, 1.0f, 0.0f, 1.5f)
+        Material(vec3(1.0f, 1.0f, 1.0f), vec3(0, 0, 0), vec3(0.3f, 1.0f, 0.3f), 0.0f, 1.0f, .5f, 0.0f)
     });
 
     spheres.push_back({
-        vec3(0.0f, 1.0f, 0.0f), .5f,
-        Material(vec3(1.0f, 0.0f, 0.0f), vec3(0, 0, 0), vec3(1, 1, 1), 0.0f, 1.0f, 0.0f, 1.f)
+        vec3(2.5f, 1.0f, 0.0f), 1.0f,
+        Material(vec3(1.0f, 1.0f, 1.0f), vec3(0, 0, 0), vec3(0.3f, 1.0f, 0.3f), 0.0f, 1.0f, .25f, 0.0f)
     });
 
-
     spheres.push_back({
-        vec3(0.0f, 1.0f, 0.0f), .7f,
-        Material(vec3(1.0f, 1.0f, 1.0f), vec3(0, 0, 0), vec3(1, 1, 1), 0.0f, 1.0f, 0.0f, 1.f)
-    });
-    
-    // Metal sphere
-    spheres.push_back({
-        vec3(4.0f, 1.0f, -1.0f), 1.0f,
-        Material(vec3(0.7f, 0.6f, 0.5f), vec3(0, 0, 0), vec3(1, 1, 1), 0.0f, 1.0f, 1.0f, 0.0f)
+        vec3(5.0f, 1.0f, 0.0f), 1.0f,
+        Material(vec3(1.0f, 1.0f, 1.0f), vec3(0, 0, 0), vec3(0.3f, 1.0f, 0.3f), 0.0f, 1.0f, .0f, 0.0f)
     });
 
-    //light source
-    spheres.push_back({
-        vec3(0.0f, 2.0f, 4.0f), 2.0f,
-        Material(vec3(0.7f, 0.6f, 0.5f), vec3(1, .8, 0.0), vec3(1, 1, 1), 3.0f, 0.0f, 1.0f, 0.0f)
-    });
 
     sf::Clock clock;
     bool useFirstTexture = true;
@@ -136,6 +128,13 @@ int main() {
             [&](const sf::Event::KeyPressed& keyPressed) {
                 if (keyPressed.scancode == sf::Keyboard::Scancode::Escape)
                     window.close();
+                if (keyPressed.scancode == sf::Keyboard::Scancode::Space) {
+                    frameCount = 0;
+                    accumTex0.clear(sf::Color::Black);
+                    accumTex0.display();
+                    accumTex1.clear(sf::Color::Black);
+                    accumTex1.display();
+                }
             }
         );
 

@@ -23,19 +23,19 @@ uniform float sphereSpecularProbs[MAX_SPHERES];
 uniform float sphereIRs[MAX_SPHERES];
 
 // Constants
-#define maxDepth 40
+#define maxDepth 10
 #define samplesPerFrame 30
 #define PI 3.14159265358979323846
 
 
 //camera settings
-uniform float cameraFov = 20.0; // Field of view in degrees
-uniform vec3 lookfrom = vec3(13, 2, 5);   // Point camera is looking from
+uniform float cameraFov = 90.0; // Field of view in degrees
+uniform vec3 lookfrom = vec3(0, 1, 5);   // Point camera is looking from
 uniform vec3 lookat = vec3(0,1,0);  // Point camera is looking at
 uniform vec3 vup = vec3(0,1,0);     // Camera-relative "up" direction
 
 // Environment settings
-uniform bool environmentEnabled = true;
+uniform bool environmentEnabled = false;
 uniform vec3 skyColorHorizon = vec3(0.7, 0.8, 1.0); 
 uniform vec3 skyColorZenith = vec3(0.3, 0.5, 0.8);
 uniform vec3 groundColor = vec3(0.4, 0.3, 0.2);
@@ -91,14 +91,14 @@ float randomValue(inout uint state) {
 }
 
 // Random value in normal distribution (with mean=0 and sd=1)
-float RandomValueNormalDistribution(inout uint state){
+float randomValueNormalDistribution(inout uint state){
     float theta = 2 * 3.1415926 * randomValue(state);
 	float rho = sqrt(-2 * log(randomValue(state)));
 	return rho * cos(theta);
 }
 
-vec3 randomInUnitSphere(inout uint state) {
-    return normalize(vec3(RandomValueNormalDistribution(state), RandomValueNormalDistribution(state), RandomValueNormalDistribution(state)));
+vec3 randomUnitVector(inout uint state) {
+    return normalize(vec3(randomValueNormalDistribution(state), randomValueNormalDistribution(state), randomValueNormalDistribution(state)));
 } 
 
 float intersectSphere(Ray ray, Sphere sphere) {
@@ -169,11 +169,11 @@ Ray Refract(Ray ray, HitInfo hit, inout uint state) {
     if (refracted == vec3(0.0) || random < reflectance) {
         ray.direction = reflect(ray.direction, normal);
     } else {
-    ray.direction = refracted;
+        ray.direction = refracted;
+        normal = -normal; // Flip normal for refraction
     }
 
-    // Adjust the ray origin to prevent self-intersection
-    ray.origin = hit.hitPoint - normal * 0.0001;
+    ray.origin = hit.hitPoint + normal * 0.0001;
     return ray;
 }
 
@@ -191,10 +191,11 @@ vec3 Trace(Ray ray, Sphere spheres[MAX_SPHERES], inout uint state) {
 
         // Russian Roulette termination
         // more dark the ray is, more likely to terminate
-        if(depth > 10) {
-            float q = max(0.05, 1.0 - length(rayColor));
-            if(randomValue(state) < q) break;
-            rayColor /= 1.0 - q;
+        if(depth > 3) {
+            float p = max(incomingLight.x, max(incomingLight.y, incomingLight.z));
+            if (randomValue(state) >= p) break;
+            // Add the energy we 'lose' by randomly terminating paths
+            incomingLight *= 1.0f / p;
         }
         RayTracingMaterial mat = hit.material;
 
@@ -204,24 +205,19 @@ vec3 Trace(Ray ray, Sphere spheres[MAX_SPHERES], inout uint state) {
             continue;
         } 
 
-        // Add emitted light at every bounce, scaled by accumulated color
-        incomingLight += rayColor * mat.emissionColour * mat.emissionStrength;
-
-        // Combined specular probability and smoothness
-        bool isSpecularBounce = randomValue(state) < mat.specularProbability;
-        float specularBlend = mat.smoothness * float(isSpecularBounce);
-        
         //Calculate reflection directions
-        vec3 diffuseDir = normalize(hit.normal + randomInUnitSphere(state));
+        vec3 diffuseDir = normalize(hit.normal + randomUnitVector(state));
         vec3 specularDir = reflect(ray.direction, hit.normal);
-        
-        //Blend directions based on material properties
-        ray.direction = normalize(mix(diffuseDir, specularDir, specularBlend));
-        
+
+        bool isSpecularBounce = mat.specularProbability >= randomValue(state);
+        ray.direction = normalize(mix(diffuseDir, specularDir, mat.smoothness * mat.smoothness* float(isSpecularBounce)));
+        ray.origin = hit.hitPoint + hit.normal * 0.0001;  
+
         //Update ray color with proper material response
         rayColor *= mix(mat.colour, mat.specularColour, float(isSpecularBounce));
 
-        ray.origin = hit.hitPoint + hit.normal * 0.0001;  
+        // Add emitted light at every bounce, scaled by accumulated color
+        incomingLight += rayColor * mat.emissionColour * mat.emissionStrength;
     }
     return incomingLight;
 }
