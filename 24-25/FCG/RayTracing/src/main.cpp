@@ -82,79 +82,15 @@ int main() {
     // In main(), replace your spheres definition with:
     std::vector<Sphere> spheres;
     
+    //---------------------add spheres here---------------------//
+
     // Add ground sphere (large sphere to act as ground)
     spheres.push_back({
         vec3(0.0f, -1000.0f, 0.0f), 1000.0f,
         Material(vec3(0.5f, .5f, 0.5f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
     });
 
-    // Main light source
-    spheres.push_back({
-        vec3(0.0f, 15.0f, 0.0f), 5.0f,
-        Material(vec3(0.5f, 0.5f, 0.5f), vec3(1.0f, 0.9f, 0.7f), vec3(0, 0, 0), 10.0f, 0.0f, 0.0f, 0.0f)
-    });
-
-    // Colored accent lights
-    spheres.push_back({
-        vec3(-10.0f, 8.0f, -10.0f), 2.0f,
-        Material(vec3(1.0f, 0.9f, 0.7f), vec3(1.0f, 0.0f, 0.0f), vec3(0, 0, 0), 2.f, 0.0f, 0.0f, 0.0f)
-    });
-    spheres.push_back({
-        vec3(10.0f, 8.0f, -10.0f), 2.0f,
-        Material(vec3(1.0f, 0.9f, 0.7f), vec3(.0f, 0.f, 1.0f), vec3(0, 0, 0), 2.0f, 0.0f, 0.0f, 0.0f)
-    });
-
-    // Perfectly reflective metallic sphere (mirror)
-    spheres.push_back({
-        vec3(-7.0f, 2.0f, 5.0f), 2.0f,
-        Material(vec3(0.8f, 0.8f, 0.9f), vec3(0, 0, 0), vec3(0.9f, 0.9f, 1.0f), 0.0f, 1.0f, 1.0f, 0.0f)
-    });
-
-    // Brushed metal sphere (less smooth)
-    spheres.push_back({
-        vec3(7.0f, 2.0f, 5.0f), 2.0f,
-        Material(vec3(0.9f, 0.6f, 0.3f), vec3(0, 0, 0), vec3(0.9f, 0.8f, 0.6f), 0.0f, 0.6f, 0.9f, 0.0f)
-    });
-
-    // Glass sphere (transparent with refractive index of 1.5)
-    spheres.push_back({
-        vec3(0.0f, 4.0f, 0.0f), 4.0f,
-        Material(vec3(1.0f, 1.0f, 1.0f), vec3(0, 0, 0), vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.0f, 0.0f, 1.5f)
-    });
-
-    // Nested colored glass sphere inside the bigger glass sphere
-    spheres.push_back({
-        vec3(0.0f, 4.0f, 0.0f), 2.0f,
-        Material(vec3(0.1f, 0.8f, 0.5f), vec3(0, 0, 0), vec3(0.1f, 0.8f, 0.5f), 0.0f, 1.0f, 0.0f, 2.0f)
-    });
-
-    // Row of small diffuse spheres with different colors
-    for (int i = 0; i < 5; i++) {
-        float x = -6.0f + i * 3.0f;
-        spheres.push_back({
-            vec3(x, 1.0f, -5.0f), 1.0f,
-            Material(vec3(0.9f, 0.2f + i * 0.15f, 0.1f + i * 0.2f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
-        });
-    }
-
-    // Diamond-like sphere with high refractive index
-    spheres.push_back({
-        vec3(-3.0f, 1.0f, -7.0f), 1.0f,
-        Material(vec3(0.99f, 0.99f, 0.99f), vec3(0, 0, 0), vec3(1.0f, 1.0f, 1.0f), 0.0f, 1.0f, 0.0f, 2.4f)
-    });
-
-    // Water-like sphere with lower refractive index
-    spheres.push_back({
-        vec3(3.0f, 1.0f, -7.0f), 1.0f,
-        Material(vec3(0.4f, 0.7f, 0.9f), vec3(0, 0, 0), vec3(0.4f, 0.7f, 0.9f), 0.0f, 0.9f, 0.0f, 1.33f)
-    });
-
-    // Glowing sphere with emission
-    spheres.push_back({
-        vec3(0.0f, 1.0f, -9.0f), 1.0f,
-        Material(vec3(1.0f, 0.3f, 0.0f), vec3(1.0f, 0.6f, 0.0f), vec3(0, 0, 0), 0.8f, 0.0f, 0.0f, 0.0f)
-    });
-
+   //--------------------------------------------------------------//
 
     std::vector<sf::Glsl::Vec3> sphereCenters;
     std::vector<float> sphereRadii;

@@ -35,7 +35,7 @@ uniform vec3 lookat = vec3(0, 2.5f, -2);  // Point camera is looking at
 uniform vec3 vup = vec3(0,1,0);     // Camera-relative "up" direction
 
 // Environment settings
-uniform bool environmentEnabled = false;
+uniform bool environmentEnabled = true;
 uniform vec3 skyColorHorizon = vec3(0.7, 0.8, 1.0); 
 uniform vec3 skyColorZenith = vec3(0.3, 0.5, 0.8);
 uniform vec3 groundColor = vec3(0.4, 0.3, 0.2);
