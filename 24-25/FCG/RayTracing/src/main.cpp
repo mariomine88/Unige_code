@@ -87,7 +87,33 @@ int main() {
     // Add ground sphere (large sphere to act as ground)
     spheres.push_back({
         vec3(0.0f, -1000.0f, 0.0f), 1000.0f,
-        Material(vec3(0.5f, .5f, 0.5f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+        Material(vec3(0.5f, 0.5f, 0.5f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+    });
+    
+    // add line of spheres
+    spheres.push_back({
+        vec3(-5.0f, 1.0f, 0.0f), 1.0f,
+        Material(vec3(1.0f, 0.0f, 0.0f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+    });
+    
+    spheres.push_back({
+        vec3(-2.5f, 1.0f, 0.0f), 1.0f,
+        Material(vec3(.5f, .5f, 0.0f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+    });
+    
+    spheres.push_back({
+        vec3(0.0f, 1.0f, 0.0f), 1.0f,
+        Material(vec3(0.0f, 1.0f, 0.0f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+    });
+
+    spheres.push_back({
+        vec3(2.5f, 1.0f, 0.0f), 1.0f,
+        Material(vec3(0.0f, .5f, .5f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+    });
+
+    spheres.push_back({
+        vec3(5.0f, 1.0f, 0.0f), 1.0f,
+        Material(vec3(0.0f, 0.0f, 1.0f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
     });
 
    //--------------------------------------------------------------//

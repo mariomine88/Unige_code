@@ -30,8 +30,8 @@ uniform float sphereIRs[MAX_SPHERES];
 
 //camera settings
 uniform float cameraFov = 90.0; // Field of view in degrees
-uniform vec3 lookfrom = vec3(0, 6, -15);   // Point camera is looking from
-uniform vec3 lookat = vec3(0, 2.5f, -2);  // Point camera is looking at
+uniform vec3 lookfrom = vec3(0, 1, 6);   // Point camera is looking from
+uniform vec3 lookat = vec3(0, 1 , 0);  // Point camera is looking at
 uniform vec3 vup = vec3(0,1,0);     // Camera-relative "up" direction
 
 // Environment settings
@@ -333,7 +333,7 @@ void main() {
     // Blend with accumulated result
     vec3 accumulated;
     if (environmentEnabled) {
-        vec3 accumulated = texelFetch(accumulatedTex, fragCoord, 0).rgb;
+        accumulated = texelFetch(accumulatedTex, fragCoord, 0).rgb;
     } else{
         accumulated = spatialFilter(fragCoord);
     }
