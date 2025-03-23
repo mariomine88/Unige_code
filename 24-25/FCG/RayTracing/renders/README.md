@@ -1,49 +1,50 @@
-## Set up
+# Setup del Renderer
 
-Per fare un render dobbiamo fare il setup, dobbiamo settare la telecamera e la scena.
+Questo documento illustra i passaggi necessari per configurare una scena 3D, inclusi la telecamera, gli oggetti e i materiali, utilizzando un approccio basato su ray tracing.
 
-### Configurazione della telecamera
+## Configurazione della Telecamera
 
-Per la telecamera nelle shader dobbiamo impostare:
-- `lookfrom`: la posizione della telecamera che metteremo a `vec3(0, 1, 6)`
-- `lookat`: la coordinata che guarda sarà al centro del render che mettiamo a `vec3(0, 1, 0)`
-- `cameraFov`: l'angolo di visuale che lasceremo principale a 70 gradi
+Per impostare correttamente la telecamera negli shader, definire i seguenti parametri:
+- **Posizione (`lookfrom`)**: `vec3(0, 1, 6)` (posizione iniziale della telecamera).
+- **Punto di interesse (`lookat`)**: `vec3(0, 1, 0)` (centro della scena).
+- **Campo visivo (`cameraFov`)**: `70` gradi (angolo di visuale predefinito).
 
-### Configurazione della scena
+## Configurazione della Scena
 
-Per il setting della scena dobbiamo andare nel codice C++ e settare le sfere in un array.
-Ogni sfera ha 3 parametri:
-1. Posizione (`vec3`)
-2. Raggio (dimensione)
-3. Materiale
+La scena viene costruita tramite codice C++, dove le sfere sono organizzate in un array. Ogni sfera è definita da:
+1. **Posizione** (`vec3`).
+2. **Raggio** (dimensione).
+3. **Materiale** (proprietà ottiche).
 
-Il materiale ha diversi parametri in questo ordine:
-- `albedo`: colore diffuso (vec3, valori tra 0 e 1)
-- `specular`: colore speculare (vec3, valori tra 0 e 1)
-- `emission`: emissione di luce (vec3, valori tra 0 e 1 per il colore, ma l'intensità può essere maggiore di 1)
-- `roughness`: rugosità della superficie (valori tra 0 e 1)
-- `metallic`: metallicità (valori tra 0 e 1)
-- `ior`: indice di rifrazione (deve essere maggiore di 1 per funzionare correttamente, tipicamente 1.3-2.5)
+### Parametri del Materiale
+Ogni materiale include le seguenti proprietà in ordine:
+- **Albedo**: Colore diffuso (`vec3`, valori tra 0 e 1).
+- **Colore Emissione**:  Colore Luce emessa (`vec3`, colore tra 0-1,).
+- **intensità Emissioni**: intensità Luce emessa ( intensità può superare 1).
+- **smoothness**: Rugosità della superficie (1 = liscio, 0 = ruvido).
+- **Metallic**: Metallicità (0 = non metallico, 1 = totalmente riflettente).
+- **IOR** (Indice di Rifrazione): Valore tipico tra 1.3 e 2.5 (deve essere >1).
 
-Prima, mettiamo una sfera molto grande e grigia che sarà il nostro terreno:
-
+### Esempio: Terreno
+Una sfera di raggio elevato simula un terreno:
 ```cpp
 spheres.push_back({
-    vec3(0.0f, -1000.0f, 0.0f), 1000.0f,
-    Material(vec3(0.5f, 0.5f, 0.5f))
+    vec3(0.0f, -1000.0f, 0.0f), // Posizione
+    1000.0f, // Raggio
+    Material(vec3(0.5f, 0.5f, 0.5f)) // Materiale grigio
 });
 ```
 
 ### Aggiunta di sfere colorate
 
-Per creare una scena più interessante, possiamo aggiungere una serie di sfere colorate disposte in fila. Ecco un esempio di come creare cinque sfere con colori dell'arcobaleno:
+Per creare una scena più interessante, possiamo aggiungere una serie di sfere colorate disposte in fila. Ecco un esempio di come creare cinque sfere con colori diversi:
 
 ```cpp
 // Aggiungiamo una fila di sfere colorate
-// Sfera rossa
+// Sfera Rossa
 spheres.push_back({
     vec3(-5.0f, 1.0f, 0.0f), 1.0f,
-    Material(vec3(1.0f, 0.0f, 0.0f))
+    Material(vec3(1.0f, 0.0f, 0.0f)) 
 });
 
 // Sfera gialla
@@ -78,12 +79,14 @@ possiamo vederer il primo render 01render.png
 
 ## spiegazione del codice
 
-Il nostro shader ha il compito di calcolare il colore che deve avere ogni pixel. Per farlo, ogni pixel lancia dei molteplici raggi che interagiscono con l'ambiente.
+Lo shader calcola il colore di ogni pixel lanciando multipli raggi e mediando i risultati:
 
-    for(int i = 0; i < samplesPerFrame; i++) {
-        color += Trace(ray, spheres, state);
-    }
-    color /= float(samplesPerFrame);
+```frag
+for (int i = 0; i < samplesPerFrame; i++) {
+    color += Trace(ray, spheres, state);
+}
+color /= float(samplesPerFrame);
+```
 
 la funzione `Trace` segue il percorso di un raggio attraverso la scena, calcolando l'interazione con gli oggetti e restituendo il colore finale del raggio.
 
@@ -99,33 +102,33 @@ la funzione `Trace` segue il percorso di un raggio attraverso la scena, calcolan
 
 Ora a ogni sfera aggiungiamo la riflessione.
 
-Dobbiamo capire come impostare un materiale:
-```
-Material(vec3(1.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, 0.0f), 0.0f, 1.0f, 0.0f)
+```cpp
+// Aggiungiamo una riflessione a ogni sfera
+Material(vec3(1.0f, 1.0f, 1.0f), vec3(0.0f, 0.0f, 0.0f), 0.0f,1.0f 1.0f, 0.0f)
 ```
 
-1. albedo: colore diffuso (valori RGB tra 0 e 1)
-2. specular: colore speculare (valori RGB tra 0 e 1)
-3. emission: colore emissivo (valori RGB tra 0 e 1, ma l'intensità può essere >1)
-4. roughness: rugosità della superficie (0 = liscio, 1 = ruvido)
-5. metallic: probabilità di riflessione (0 = non metallico, 1 = completamente metallico)
-6. ior: indice di rifrazione (deve essere >1, tipicamente 1.3-2.5)
-
-Quindi settiamo la sfera con la riflessione mettendo il roughness a 0 (liscio) e la metallicità a 1 (completamente riflettente).
-Andando da sinistra verso destra decrementiamo la metallicità: 1, 0.75, 0.5, 0.25, 0.
+Quindi settiamo la sfera con la riflessione, mettendo il Metallic a 1.
+Andando da sinistra verso destra decrementiamo la smoothness: 1, 0.75, 0.5, 0.25, 0.
 
 Otteniamo il render 02render.png
 
 ## Capiamo la differenza tra rugosità e metallicità
 
-Se mettiamo la metallicità a 1 e la rugosità a 0 (superficie liscia) e poi verso destra decrementiamo la metallicità (1, 0.75, 0.5, 0.25, 0), osserviamo come cambia la riflessione.
+Se mettiamo la smoothness a 1 (superficie liscia) a tutte le sfere.
+Andando da sinistra verso destra decrementiamo la Metallic: 1, 0.75, 0.5, 0.25, 0.
 
-La rugosità determina quanto è liscia la superficie e quindi quanto è chiara la riflessione. La metallicità invece determina la probabilità che un raggio venga riflesso piuttosto che diffuso dalla superficie. La rugosità crea un mix tra raggio riflesso in modo speculare e raggio riflesso in modo diffuso.
+Otteniamo il render 03render.png
+
+La smoothness determina quanto è liscia la superficie e quindi quanto è chiara la riflessione. 
+La smoothness crea un mix tra raggio riflesso in modo speculare e raggio riflesso in modo diffuso.
+
+La metallicità invece determina la probabilità che un raggio venga riflesso perfetamente  dalla superficie. 
+la metallicità sceglie se il raggio riflesso sarà speculare o diffuso.
 
 
 ### Aggiunta di rifrazione
 
-Ora aggiungiamo la rifrazione, che è la capacità di un materiale di far passare la luce attraverso di esso, cioè materiali diafani come il vetro.
+Ora aggiungiamo la rifrazione, che è la capacità di un materiale di far passare la luce attraverso di esso, cioè materiali dielettrici.
 
 L'indice di rifrazione (ior) rappresenta la velocità della luce nel vuoto diviso per la velocità della luce nel materiale. Questo è l'ultimo parametro del materiale. L'ior deve essere maggiore di 1 per funzionare correttamente. Esempi tipici:
 - Aria: ~1.0
@@ -150,20 +153,21 @@ Nel render 05render.png abbiamo messo tutte le sfere con indice di rifrazione 1.
 ### Aggiunta di luce emissiva
 
 Ora mettiamo solo una sfera con luce emissiva:
-```
+```cpp
 Material(vec3(1.0f, 1.f, 1.f), vec3(0.0f, 0.0f, 0.0f), vec3(1.0f, 1.0f, 1.0f), 0.0f, 0.0f, 0.0f, 5.0f)
 ```
 Con colore bianco e intensità 5 (notare che per l'emissione l'intensità può superare 1).
 Disattiviamo anche la luce ambiente: `uniform bool environmentEnabled = false;`
 
-Se guardiamo il render 06render.png vediamo che la luce emessa illumina la scena, ma il render è molto rumoroso perché per un pixel ci sono 50 campionamenti e c'è una buona probabilità che nessun raggio colpisca la sfera emissiva, rendendo il pixel nero. Invece i pixel intorno hanno colpito la sfera, rendendo l'immagine molto rumorosa, caratteristica del ray tracing. Per risolvere questo problema possiamo usare il denoising, che comprende vari algoritmi per ridurre il rumore in un'immagine. Un approccio è conoscere la posizione della luce e favorire i raggi che vanno verso di essa.
+Se guardiamo il render 06render.png vediamo che la luce emessa illumina la scena, ma il render è molto rumoroso perché per un pixel ci sono solo 50 campionamenti e c'è una buona probabilità che nessun raggio colpisca la sfera emissiva, rendendo il pixel nero. Invece i pixel intorno hanno colpito la sfera, rendendo l'immagine molto rumorosa, caratteristica del ray tracing. Per risolvere questo problema possiamo usare vari metodi di denoising, che comprende vari algoritmi per ridurre il rumore in un'immagine. 
+Come icrementare il numero di campionamenti per pixel, ma questo aumenta il tempo di rendering.
+Un approccio è conoscere la posizione della luce e favorire i raggi che vanno verso di essa.
 
-Ho implementato spatialFilter che prende i pixel vicini e li media per ridurre il rumore, anche se ciò aumenta il blur dell'immagine. Da qui in poi usiamo questo filtro, come si vede nel render 06_1render.png.
-
+Ho implementato spatialFilter che prende i pixel vicini e li media per ridurre il rumore, anche se ciò aumenta il blur dell'immagine. Da qui in poi usiamo questo filtro quando disativiamo la lucce del ambiente, come si vede nel render 06_1render.png.
 
 ### Aggiunta di più luci emissive
 
 Ora mettiamo più luci emissive e otteniamo il render 07render.png. Se rendiamo il terreno riflettente otteniamo il render 07_1render.png.
 
 ## Conclusioni
-Combinando tutti questi elementi otteniamo i render 08render.png e 09render.png.
+Combinando tutti questi elementi otteniamo i render 08render.png e 09render.png e 10render.png.

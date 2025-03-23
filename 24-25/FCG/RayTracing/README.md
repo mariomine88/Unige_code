@@ -18,7 +18,8 @@ La mia implementazione include un sistema di materiali basato sulla fisica che c
 Riflessione diffusa
 Riflessione speculare
 Emissione (sorgenti luminose)
-Levigatezza variabile
+smoothness
+Metallicità
 Indice di rifrazione per materiali trasparenti
 
 Gli oggetti della scena sono rappresentati da sfere.
