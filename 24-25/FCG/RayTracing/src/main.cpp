@@ -14,16 +14,14 @@ struct vec3 {
 struct Material {
     vec3 colour;
     vec3 emissionColour;
-    vec3 specularColour;
-    float emissionStrength;
     float smoothness;
+    float emissionStrength;
     float specularProbability;
     float ir;
 
-    Material(const vec3& col, const vec3& emission = vec3(0,0,0), 
-            const vec3& specular = vec3(1,1,1), float emitStrength = 0.0f,
-            float smooth = 0.0f, float specProb = 0.0f , float ir = 0.0f)
-        : colour(col), emissionColour(emission), specularColour(specular),
+    Material(const vec3& col, const vec3& emission = vec3(0,0,0), float emitStrength = 0.0f,float smooth = 0.0f,
+             float specProb = 1.0f , float ir = 0.0f)
+        : colour(col), emissionColour(emission),
           emissionStrength(emitStrength), smoothness(smooth), specularProbability(specProb) , ir(ir) {}
 };
 
@@ -87,40 +85,46 @@ int main() {
     // Add ground sphere (large sphere to act as ground)
     spheres.push_back({
         vec3(0.0f, -1000.0f, 0.0f), 1000.0f,
-        Material(vec3(0.5f, 0.5f, 0.5f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+        Material(vec3(0.5f, 0.5f, 0.5f))
     });
+
     
-    // add line of spheres
+    // Aggiungiamo una fila di sfere colorate
+    // Sfera rossa
     spheres.push_back({
         vec3(-5.0f, 1.0f, 0.0f), 1.0f,
-        Material(vec3(1.0f, 0.0f, 0.0f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+        Material(vec3(1.0f, 0.0f, 0.0f))
     });
-    
+
+    // Sfera gialla
     spheres.push_back({
         vec3(-2.5f, 1.0f, 0.0f), 1.0f,
-        Material(vec3(.5f, .5f, 0.0f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+        Material(vec3(0.5f, 0.5f, 0.0f))
     });
-    
+
+    // Sfera verde
     spheres.push_back({
         vec3(0.0f, 1.0f, 0.0f), 1.0f,
-        Material(vec3(0.0f, 1.0f, 0.0f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+        Material(vec3(0.0f, 1.0f, 0.0f))
     });
 
+    // Sfera ciano
     spheres.push_back({
         vec3(2.5f, 1.0f, 0.0f), 1.0f,
-        Material(vec3(0.0f, .5f, .5f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+        Material(vec3(0.0f, 0.5f, 0.5f))
     });
 
+    // Sfera blu
     spheres.push_back({
         vec3(5.0f, 1.0f, 0.0f), 1.0f,
-        Material(vec3(0.0f, 0.0f, 1.0f), vec3(0, 0, 0), vec3(0, 0, 0), 0.0f, 0.0f, 0.0f, 0.0f)
+        Material(vec3(0.0f, 0.0f, 1.0f))
     });
 
-   //--------------------------------------------------------------//
+    //--------------------------------------------------------------//
 
     std::vector<sf::Glsl::Vec3> sphereCenters;
     std::vector<float> sphereRadii;
-    std::vector<sf::Glsl::Vec3> sphereColors, sphereEmissionColors, sphereSpecularColors;
+    std::vector<sf::Glsl::Vec3> sphereColors, sphereEmissionColors;
     std::vector<float> sphereEmissionStrengths, sphereSmoothness, sphereSpecularProbs, sphereIRs;
 
     for (const auto& sphere : spheres) {
@@ -130,11 +134,8 @@ int main() {
         sphereEmissionColors.emplace_back(sphere.material.emissionColour.x, 
                                         sphere.material.emissionColour.y, 
                                         sphere.material.emissionColour.z);
-        sphereSpecularColors.emplace_back(sphere.material.specularColour.x, 
-                                        sphere.material.specularColour.y, 
-                                        sphere.material.specularColour.z);
-        sphereEmissionStrengths.push_back(sphere.material.emissionStrength);
         sphereSmoothness.push_back(sphere.material.smoothness);
+        sphereEmissionStrengths.push_back(sphere.material.emissionStrength);
         sphereSpecularProbs.push_back(sphere.material.specularProbability);
         sphereIRs.push_back(sphere.material.ir);
     }
@@ -143,7 +144,6 @@ int main() {
     shader.setUniformArray("sphereRadii", sphereRadii.data(), sphereRadii.size());
     shader.setUniformArray("sphereColors", sphereColors.data(), sphereColors.size());
     shader.setUniformArray("sphereEmissionColors", sphereEmissionColors.data(), sphereEmissionColors.size());
-    shader.setUniformArray("sphereSpecularColors", sphereSpecularColors.data(), sphereSpecularColors.size());
     shader.setUniformArray("sphereEmissionStrengths", sphereEmissionStrengths.data(), sphereEmissionStrengths.size());
     shader.setUniformArray("sphereSmoothness", sphereSmoothness.data(), sphereSmoothness.size());
     shader.setUniformArray("sphereSpecularProbs", sphereSpecularProbs.data(), sphereSpecularProbs.size());

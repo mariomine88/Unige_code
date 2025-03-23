@@ -16,20 +16,19 @@ uniform vec3 sphereCenters[MAX_SPHERES];
 uniform float sphereRadii[MAX_SPHERES];
 uniform vec3 sphereColors[MAX_SPHERES];
 uniform vec3 sphereEmissionColors[MAX_SPHERES];
-uniform vec3 sphereSpecularColors[MAX_SPHERES];
 uniform float sphereEmissionStrengths[MAX_SPHERES];
 uniform float sphereSmoothness[MAX_SPHERES];
 uniform float sphereSpecularProbs[MAX_SPHERES];
 uniform float sphereIRs[MAX_SPHERES];
 
 // Constants
-#define maxDepth 20
+#define maxDepth 30
 #define samplesPerFrame 50
 #define PI 3.14159265358979323846
 
 
 //camera settings
-uniform float cameraFov = 90.0; // Field of view in degrees
+uniform float cameraFov = 70.0; // Field of view in degrees
 uniform vec3 lookfrom = vec3(0, 1, 6);   // Point camera is looking from
 uniform vec3 lookat = vec3(0, 1 , 0);  // Point camera is looking at
 uniform vec3 vup = vec3(0,1,0);     // Camera-relative "up" direction
@@ -57,7 +56,6 @@ struct Ray {
 struct RayTracingMaterial {
     vec3 colour;
     vec3 emissionColour;
-    vec3 specularColour;
     float emissionStrength;
     float smoothness;
     float specularProbability;
@@ -210,11 +208,11 @@ vec3 Trace(Ray ray, Sphere spheres[MAX_SPHERES], inout uint state) {
         vec3 specularDir = reflect(ray.direction, hit.normal);
 
         bool isSpecularBounce = mat.specularProbability >= randomValue(state);
-        ray.direction = normalize(mix(diffuseDir, specularDir, mat.smoothness * mat.smoothness* float(isSpecularBounce)));
+        ray.direction = normalize(mix(diffuseDir, specularDir, mat.smoothness * float(isSpecularBounce)));
         ray.origin = hit.hitPoint + hit.normal * 0.0001;  
 
         //Update ray color with proper material response
-        rayColor *= mix(mat.colour, mat.specularColour, float(isSpecularBounce));
+        rayColor *= mat.colour;
 
         // Add emitted light at every bounce, scaled by accumulated color
         incomingLight += rayColor * mat.emissionColour * mat.emissionStrength;
@@ -309,7 +307,6 @@ void main() {
             RayTracingMaterial(
                 sphereColors[i],
                 sphereEmissionColors[i],
-                sphereSpecularColors[i],
                 sphereEmissionStrengths[i],
                 sphereSmoothness[i],
                 sphereSpecularProbs[i],
