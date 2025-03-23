@@ -18,12 +18,12 @@ Ogni sfera ha 3 parametri:
 3. Materiale
 
 Il materiale ha diversi parametri in questo ordine:
-- `albedo`: colore diffuso (vec3)
-- `specular`: colore speculare (vec3)
-- `emission`: emissione di luce (vec3)
-- `roughness`: rugosità della superficie
-- `metallic`: metallicità
-- `ior`: indice di rifrazione
+- `albedo`: colore diffuso (vec3, valori tra 0 e 1)
+- `specular`: colore speculare (vec3, valori tra 0 e 1)
+- `emission`: emissione di luce (vec3, valori tra 0 e 1 per il colore, ma l'intensità può essere maggiore di 1)
+- `roughness`: rugosità della superficie (valori tra 0 e 1)
+- `metallic`: metallicità (valori tra 0 e 1)
+- `ior`: indice di rifrazione (deve essere maggiore di 1 per funzionare correttamente, tipicamente 1.3-2.5)
 
 Prima, mettiamo una sfera molto grande e grigia che sarà il nostro terreno:
 
@@ -87,75 +87,83 @@ Il nostro shader ha il compito di calcolare il colore che deve avere ogni pixel.
 
 la funzione `Trace` segue il percorso di un raggio attraverso la scena, calcolando l'interazione con gli oggetti e restituendo il colore finale del raggio.
 
-1 calcosa se il raggio interseca con una sfera HitInfo hit = RayCollision(ray, spheres); 
-2 se non interseca con nessuna sfera ritorna il colore di sfondo
-3 se interseca con una sfera salviamo i dati dell'intersezione in hit
-4 calcoliamo il colore della sfera in base al materiale
-5 calcoliamo la direzione del raggio riflesso
-in cuesto casso essendo una sferra difusione quindi il raggio riflessso sarà casuale
+1. Calcola se il raggio interseca con una sfera `HitInfo hit = RayCollision(ray, spheres);` 
+2. Se non interseca con nessuna sfera ritorna il colore di sfondo
+3. Se interseca con una sfera salviamo i dati dell'intersezione in hit
+4. Calcoliamo il colore della sfera in base al materiale
+5. Calcoliamo la direzione del raggio riflesso
+   In questo caso essendo una sfera diffusiva, il raggio riflesso sarà casuale
 
 
 ### Aggiunta di riflessione
 
-ora a ogni sfera aggiungiamo la riflessione
+Ora a ogni sfera aggiungiamo la riflessione.
 
-dobiame capire come impostare un materiale 
-Material(vec3(1.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, 0.0f), 0.0f, 0.0f, 1.0f, 0.0f)
-1. albedo: colore diffuso
-2. emissione: colore
-3. smoothness: rugosità della superficie
-4. emissione strength
-5. probalita riflessione
-6. indice di rifrazione
-quindi setiamo la sfera con la riflessione mettendo il smoothness a 1 e la probabilità di riflessione a 1
-quindi adando da sinitra verso destra dencrementiamo di riflessione 1 0.75 0.5 0.25 0
+Dobbiamo capire come impostare un materiale:
+```
+Material(vec3(1.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, 0.0f), 0.0f, 1.0f, 0.0f)
+```
 
-otteniamo il render 02render.png
+1. albedo: colore diffuso (valori RGB tra 0 e 1)
+2. specular: colore speculare (valori RGB tra 0 e 1)
+3. emission: colore emissivo (valori RGB tra 0 e 1, ma l'intensità può essere >1)
+4. roughness: rugosità della superficie (0 = liscio, 1 = ruvido)
+5. metallic: probabilità di riflessione (0 = non metallico, 1 = completamente metallico)
+6. ior: indice di rifrazione (deve essere >1, tipicamente 1.3-2.5)
 
-## capimo la diferrenza tra riflessione e probabilità di riflessione
+Quindi settiamo la sfera con la riflessione mettendo il roughness a 0 (liscio) e la metallicità a 1 (completamente riflettente).
+Andando da sinistra verso destra decrementiamo la metallicità: 1, 0.75, 0.5, 0.25, 0.
 
-se mettiamo la probabilità di riflessione a 1 e la riflessione a a 1 e poi verso destra dencrementiamo la probabilità di riflessione 1 0.75 0.5 0.25 0
+Otteniamo il render 02render.png
 
-la riflessione è la quantità di luce riflessa dalla superficie, mentre la probabilità di riflessione è la probabilità che un raggio incidente venga riflesso dalla superficie. smoothness e un mix tra il ragio riflessso e il raggio rifratto
+## Capiamo la differenza tra rugosità e metallicità
+
+Se mettiamo la metallicità a 1 e la rugosità a 0 (superficie liscia) e poi verso destra decrementiamo la metallicità (1, 0.75, 0.5, 0.25, 0), osserviamo come cambia la riflessione.
+
+La rugosità determina quanto è liscia la superficie e quindi quanto è chiara la riflessione. La metallicità invece determina la probabilità che un raggio venga riflesso piuttosto che diffuso dalla superficie. La rugosità crea un mix tra raggio riflesso in modo speculare e raggio riflesso in modo diffuso.
 
 
 ### Aggiunta di rifrazione
 
-ora aggiungiamo la rifrazione che e la capacità di un materiale di far passare la luce attraverso di esso 
-cioe materiali diofani come il vetro
+Ora aggiungiamo la rifrazione, che è la capacità di un materiale di far passare la luce attraverso di esso, cioè materiali diafani come il vetro.
 
-e l'indice di rifrazione e la velocità della luce nel vuoto diviso per la velocità della luce nel materiale che e l'utimo parametro ora metiamo tutte le shere biange e metiamo una riflesione incrementale da1.25 a 1.5 a 1.75 a 2 a 2.5
+L'indice di rifrazione (ior) rappresenta la velocità della luce nel vuoto diviso per la velocità della luce nel materiale. Questo è l'ultimo parametro del materiale. L'ior deve essere maggiore di 1 per funzionare correttamente. Esempi tipici:
+- Aria: ~1.0
+- Acqua: ~1.33
+- Vetro: ~1.5-1.7
+- Diamante: ~2.4
 
-otteniamo il render 04render.png
+Ora mettiamo tutte le sfere bianche e impostiamo un indice di rifrazione incrementale: 1.25, 1.5, 1.75, 2.0, 2.5.
 
-esendo trasparenti possiamo meterci dentro una sfera 
-nell render 05render.png la abbiamo messo tutte le sfrere con ir indice di rifrazione a 1.5
+Otteniamo il render 04render.png
 
-la prima la abbiamo colorata di rosso e notiamo che la luce passa attraverso la sfera e la colora di rosso
+Essendo trasparenti, possiamo mettere una sfera dentro l'altra.
+Nel render 05render.png abbiamo messo tutte le sfere con indice di rifrazione 1.5:
 
-la seconda la secondo le abbiamo messo una sferra vuota cio ir di 1,0 
-
-la terza la abbiamo messo una sfera con un indice di rifrazione di 1,0 colorata di verde e come se avese la parte interna colorata di verde
-
-la quarta la abbiamo messo una sfera dentro
-
-la quinta la abbiamo messo una sfera reflitente
+- La prima l'abbiamo colorata di rosso e notiamo che la luce passa attraverso la sfera e si colora di rosso
+- Nella seconda abbiamo messo una sfera vuota, cioè con ior di 1.0
+- Nella terza abbiamo messo una sfera con un indice di rifrazione di 1.0 colorata di verde, come se avesse la parte interna colorata di verde
+- Nella quarta abbiamo messo una sfera dentro un'altra
+- Nella quinta abbiamo messo una sfera riflettente
 
 
 ### Aggiunta di luce emissiva
 
-ora mettiamo solo una sfera con luce emissiva
-vec3(1.0f, 1.f, 1.f), vec3(1.0f, 1.0f, 1.0f), 5.0f colore bianco e intensita 5
-e disativiamo la luce ambiente uniform bool environmentEnabled = false;
+Ora mettiamo solo una sfera con luce emissiva:
+```
+Material(vec3(1.0f, 1.f, 1.f), vec3(0.0f, 0.0f, 0.0f), vec3(1.0f, 1.0f, 1.0f), 0.0f, 0.0f, 0.0f, 5.0f)
+```
+Con colore bianco e intensità 5 (notare che per l'emissione l'intensità può superare 1).
+Disattiviamo anche la luce ambiente: `uniform bool environmentEnabled = false;`
 
-se guarsiamo i render 06render.png vediamo che la luce emessa dalla  e illumina la scena ma e moto noisi il render perche per un pixel ci sono 50 campionamenti e c' una buona probabilità che il nessun raggio colpisca la sfera emissiva cosi rendendo il pixel nero ma quelli intoeno alquni la ganno colpita quindi qusta rene l'immagine molto noisi carateristica del ray tracing, per risolvere questo problema possiamo usare il denoising, che sono vari algoritmi che riducono il rumore in un immagine, uno e saper la poszione della luce e favorire i raggi che vanno verso la luce
-io ho implementato spatialFilter che prende i pixel vicini e li media per ridurre il rumore ma aumenta il blur dell'immagine da ira in poi usiamo qello si vede nel render 06_1render.png
+Se guardiamo il render 06render.png vediamo che la luce emessa illumina la scena, ma il render è molto rumoroso perché per un pixel ci sono 50 campionamenti e c'è una buona probabilità che nessun raggio colpisca la sfera emissiva, rendendo il pixel nero. Invece i pixel intorno hanno colpito la sfera, rendendo l'immagine molto rumorosa, caratteristica del ray tracing. Per risolvere questo problema possiamo usare il denoising, che comprende vari algoritmi per ridurre il rumore in un'immagine. Un approccio è conoscere la posizione della luce e favorire i raggi che vanno verso di essa.
+
+Ho implementato spatialFilter che prende i pixel vicini e li media per ridurre il rumore, anche se ciò aumenta il blur dell'immagine. Da qui in poi usiamo questo filtro, come si vede nel render 06_1render.png.
 
 
+### Aggiunta di più luci emissive
 
-### Aggiunta più luce emissiva
+Ora mettiamo più luci emissive e otteniamo il render 07render.png. Se rendiamo il terreno riflettente otteniamo il render 07_1render.png.
 
-ora mettiamo piu luce emissiva e otteniamo il render 07render.png e se mettiamo la terra riflettente otteniamo il render 07_1render.png
-
-## conclusioni
-se mettamo tutto insieme oteniamo il render 08render.png e 09render.png
+## Conclusioni
+Combinando tutti questi elementi otteniamo i render 08render.png e 09render.png.
