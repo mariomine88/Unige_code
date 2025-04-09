@@ -73,6 +73,7 @@ struct HitInfo {
     float dst;
     vec3 hitPoint;
     vec3 normal;
+    bool inside;
     RayTracingMaterial material;
 };
 
@@ -122,6 +123,7 @@ HitInfo RayCollision(Ray ray, Sphere spheres[MAX_SPHERES]) {
             hit.dst = t;
             hit.hitPoint = ray.at(t);
             hit.normal = normalize(hit.hitPoint - spheres[i].center);
+            hit.inside = dot(ray.direction, hit.normal) < 0.0;
             hit.material = spheres[i].material;
         }
     }
@@ -145,7 +147,7 @@ Ray Refract(Ray ray, HitInfo hit, inout uint state) {
     vec3 normal = hit.normal;
 
     // Determine if the ray is inside the material
-    if (dot(ray.direction, normal) > 0.0) {
+    if (!hit.inside) {
         normal = -normal; // Flip normal to face incoming ray
     } else {
         eta = 1.0 / eta; // Adjust eta for entering the material
@@ -310,7 +312,8 @@ void main() {
                 sphereEmissionStrengths[i],
                 sphereSmoothness[i],
                 sphereSpecularProbs[i],
-                sphereIRs[i]
+                sphereIRs[i],
+                vec3(1, 0, 0) // Placeholder for refraction color
             )
         );
     }
