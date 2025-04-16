@@ -9,8 +9,8 @@ public class RWext extends RWbasic {
     
     // Metodo per i lettori per iniziare la lettura
     private synchronized void beginRead() throws InterruptedException {
-        // Aspetta solo se c'è uno scrittore attivo
-        while (writerActive) {
+        // Aspetta se c'è uno scrittore attivo
+        while (writerActive || !valueUnread) {
             wait();
         }
         // Incrementa il contatore dei lettori attivi
@@ -21,17 +21,8 @@ public class RWext extends RWbasic {
     private synchronized void endRead() {
         // Decrementa il contatore dei lettori attivi
         activeReaders--;
-        
-        // Se questo lettore ha letto un valore non ancora letto, marcalo come letto
-        if (valueUnread) {
-            valueUnread = false;
-            notifyAll(); // Notifica eventuali scrittori in attesa
-        }
-        
-        // Se non ci sono più lettori, notifica tutti i thread in attesa
-        if (activeReaders == 0) {
-            notifyAll();
-        }
+        valueUnread = false;
+        notifyAll();
     }
     
     // Ridefinizione del metodo read per utilizzare il pattern begin/end
@@ -58,19 +49,18 @@ public class RWext extends RWbasic {
             while (activeReaders > 0 || writerActive || valueUnread) {
                 wait();
             }
-            
+            // Imposta il flag dello scrittore attivo
             writerActive = true;
             
             // Esegue l'operazione di scrittura
             super.write();
-            
-            // Imposta il flag che indica che c'è un nuovo valore non ancora letto
-            valueUnread = true;
+
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         } finally {
             // Cancella il flag dello scrittore attivo e notifica i thread in attesa
             writerActive = false;
+            valueUnread = true; // Marca il valore come non ancora letto
             notifyAll();
         }
     }
