@@ -1,0 +1,34 @@
+Rank,Player,Team,Clean Sheets,Goals Conceded,Minutes,Matches,Country
+1,Yann Sommer,Internazionale,19.0,19.0,3060,34,SUI
+2,Vanja Milinkovic-Savic,Torino,18.0,31.0,3240,36,SRB
+3,Wojciech Szczesny,Juventus,15.0,30.0,3150,35,POL
+4,Lukasz Skorupski,Bologna,13.0,29.0,2880,32,POL
+5,Michele Di Gregorio,Monza,12.0,35.0,2874,33,ITA
+6,Mike Maignan,Milan,10.0,34.0,2609,29,FRA
+7,Ivan Provedel,Lazio,9.0,33.0,2699,30,ITA
+8,Marco Carnesecchi,Atalanta,8.0,30.0,2426,27,ITA
+9,Pietro Terracciano,Fiorentina,8.0,35.0,2970,33,ITA
+10,Josep Martinez,Genoa,8.0,43.0,3239,36,ESP
+11,Lorenzo Montipo,Verona,8.0,49.0,3330,37,ITA
+12,Wladimiro Falcone,Lecce,7.0,54.0,3420,38,ITA
+13,Juan Musso,Atalanta,6.0,12.0,990,11,ARG
+14,Rui Patricio,Roma,6.0,27.0,2070,23,POR
+15,Mile Svilar,Roma,5.0,19.0,1350,15,SRB
+16,Maduka Okoye,Udinese,5.0,25.0,1890,21,NGA
+17,Elia Caprile,Empoli,5.0,27.0,2070,23,ITA
+18,Alex Meret,Napoli,5.0,40.0,2774,31,ITA
+19,Federico Ravaglia,Bologna,4.0,3.0,536,6,ITA
+20,Christos Mandas,Lazio,4.0,6.0,721,9,GRE
+21,Etrit Berisha,Empoli,4.0,25.0,1260,14,ALB
+22,Marco Silvestri,Udinese,4.0,28.0,1530,17,ITA
+23,Stefano Turati,Frosinone,4.0,58.0,2745,31,ITA
+24,Simone Scuffet,Cagliari,3.0,55.0,2789,31,ITA
+25,Andrea Consigli,Sassuolo,3.0,68.0,3150,35,ITA
+26,Emil Audero,Internazionale,2.0,3.0,337,4,ITA
+27,Marco Sportiello,Milan,2.0,11.0,630,7,ITA
+27,Michele Cerofolini,Frosinone,2.0,11.0,675,8,ITA
+29,Boris Radunovic,Cagliari,2.0,12.0,630,7,SRB
+30,Mattia Perin,Juventus,1.0,1.0,225,3,ITA
+31,Pierluigi Gollini,Napoli,1.0,8.0,630,7,ITA
+32,Benoit Costil,Salernitana,1.0,29.0,1170,13,FRA
+33,Guillermo Ochoa,Salernitana,1.0,44.0,1890,21,MEX
