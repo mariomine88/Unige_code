@@ -1,20 +1,13 @@
 package server;
 public class LimitedFifoServer extends Server {
-    private final int queueCapacity;
     
     public LimitedFifoServer(int port, int queueCapacity) {
-        super(port);
-        this.queueCapacity = queueCapacity;
-    }
-    
-    @Override
-    protected StringQueue createQueue() {
-        return new StringQueue(queueCapacity); // Limited queue
+        super(port, new StringQueue(queueCapacity)); // Limited queue
     }
     
     public static void main(String[] args) {
         int port = 8080; // Default port
-        int capacity = 10; // Default capacity
+        int capacity = 5; // Default capacity
         
         if (args.length > 0) {
             try {
@@ -28,10 +21,11 @@ public class LimitedFifoServer extends Server {
             try {
                 capacity = Integer.parseInt(args[1]);
             } catch (NumberFormatException e) {
-                System.err.println("Invalid capacity. Using default capacity 10.");
+                System.err.println("Invalid capacity. Using default capacity 5.");
             }
         }
         
+        System.out.println("Server started on port " + port + " with capacity " + capacity);
         LimitedFifoServer server = new LimitedFifoServer(port, capacity);
         server.start();
     }

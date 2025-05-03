@@ -42,6 +42,7 @@ public class ClientHandler implements Runnable {
     }
     
     private void handleProducer(BufferedReader in, PrintWriter out) throws IOException, InterruptedException {
+        stringQueue.waitForSpace(); 
         out.println("okprod");
         String message = in.readLine();
         System.out.println("Received message from producer: " + message);

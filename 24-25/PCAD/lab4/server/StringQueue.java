@@ -25,6 +25,22 @@ public class StringQueue {
         this.limited = true;
     }
 
+    public void waitForSpace() throws InterruptedException {
+        if (!limited) {
+            return; // No need to wait if the queue is unlimited
+        }
+        lock.lock();
+        try {
+            // If the queue is limited, wait for space to be available and print the current size
+            System.out.println("Queue capacity: " + capacity + ", Current size: " + queue.size());
+            while (limited && queue.size() >= capacity) {
+                notFull.await(); // Wait until there is space
+            }
+        } finally {
+            lock.unlock();
+        }
+    }
+
     public void add(String message) throws InterruptedException {
         lock.lock();
         try {

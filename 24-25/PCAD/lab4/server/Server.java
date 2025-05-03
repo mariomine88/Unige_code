@@ -11,18 +11,15 @@ public abstract class Server {
     protected final ExecutorService threadPool;
     protected volatile boolean running = true;
 
-    public Server(int port) {
+    public Server(int port ,StringQueue queue) {
         this.port = port;
-        this.queue = createQueue();
+        this.queue = queue;
         this.threadPool = Executors.newCachedThreadPool();
     }
 
-    // Factory method to be implemented by subclasses
-    protected abstract StringQueue createQueue();
 
     public void start() {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
-            System.out.println("Server started on port " + port);
             
             while (running) {
                 Socket clientSocket = serverSocket.accept();
