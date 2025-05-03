@@ -1,7 +1,7 @@
 package server;
-public class LimitedFifoServer extends Server {
+public class LimitedServer extends Server {
     
-    public LimitedFifoServer(int port, int queueCapacity) {
+    public LimitedServer(int port, int queueCapacity) {
         super(port, new StringQueue(queueCapacity)); // Limited queue
     }
     
@@ -26,7 +26,7 @@ public class LimitedFifoServer extends Server {
         }
         
         System.out.println("Server started on port " + port + " with capacity " + capacity);
-        LimitedFifoServer server = new LimitedFifoServer(port, capacity);
+        LimitedServer server = new LimitedServer(port, capacity);
         server.start();
     }
 }

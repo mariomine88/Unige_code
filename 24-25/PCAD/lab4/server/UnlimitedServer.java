@@ -1,7 +1,7 @@
 package server;
-public class UnlimitedFifoServer extends Server {
+public class UnlimitedServer extends Server {
     
-    public UnlimitedFifoServer(int port) {
+    public UnlimitedServer(int port) {
         super(port ,new StringQueue()); // Unlimited queue
     }
     
@@ -17,7 +17,7 @@ public class UnlimitedFifoServer extends Server {
         }
         
         System.out.println("Server started on port " + port + " with unlimited capacity");
-        UnlimitedFifoServer server = new UnlimitedFifoServer(port);
+        UnlimitedServer server = new UnlimitedServer(port);
         server.start();
     }
 }
