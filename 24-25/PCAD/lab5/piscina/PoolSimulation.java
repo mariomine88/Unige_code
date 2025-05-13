@@ -16,7 +16,7 @@ public class PoolSimulation {
         System.out.println("Numero di clienti: " + numClients);
         
         // Creare e avviare i thread dei clienti
-        for (int i = 0; i < numClients; i++) {
+        for (int i = 1; i <= numClients; i++) {
             new ClienteMigliorato(i, spogliatoi, armadietti).start();
             // Piccolo ritardo tra l'arrivo di ogni cliente
             try {
