@@ -1,0 +1,381 @@
+Match Number,Round Number,Date,Location,Home Team,Away Team,Result
+1,1,19/09/2020 18:00,Artemio Franchi,Fiorentina,Torino,1 - 0
+2,1,19/09/2020 20:45,Marcantonio Bentegodi,Hellas Verona,Roma,0 - 0
+3,1,20/09/2020 12:30,Ennio Tardini,Parma,Napoli,0 - 2
+4,1,20/09/2020 15:00,Luigi Ferraris,Genoa,Crotone,4 - 1
+5,1,20/09/2020 18:00,Mapei Stadium,Sassuolo,Cagliari,1 - 1
+6,1,20/09/2020 20:45,Allianz Stadium,Juventus,Sampdoria,3 - 0
+7,1,21/09/2020 20:45,Giuseppe Meazza,Milan,Bologna,2 - 0
+11,2,26/09/2020 15:00,Olimpico Grande Torino,Torino,Atalanta,2 - 4
+12,2,26/09/2020 18:00,Sardegna Arena,Cagliari,Lazio,0 - 2
+13,2,26/09/2020 18:00,Luigi Ferraris,Sampdoria,Benevento,2 - 3
+14,2,26/09/2020 20:45,Giuseppe Meazza,Inter,Fiorentina,4 - 3
+15,2,27/09/2020 12:30,Orogel Stadium,Spezia,Sassuolo,1 - 4
+16,2,27/09/2020 15:00,Marcantonio Bentegodi,Hellas Verona,Udinese,1 - 0
+17,2,27/09/2020 18:00,Diego Armando Maradona,Napoli,Genoa,6 - 0
+18,2,27/09/2020 18:00,Ezio Scida,Crotone,Milan,0 - 2
+19,2,27/09/2020 20:45,Olimpico,Roma,Juventus,2 - 2
+20,2,28/09/2020 20:45,Renato Dall'Ara,Bologna,Parma,4 - 1
+8,2,30/09/2020 18:00,Ciro Vigorito,Benevento,Inter,2 - 5
+10,2,30/09/2020 18:00,Stadio Friuli,Udinese,Spezia,0 - 2
+9,2,30/09/2020 20:45,Olimpico,Lazio,Atalanta,1 - 4
+21,3,02/10/2020 20:45,Artemio Franchi,Fiorentina,Sampdoria,1 - 2
+22,3,03/10/2020 15:00,Mapei Stadium,Sassuolo,Crotone,4 - 1
+24,3,03/10/2020 20:45,Stadio Friuli,Udinese,Roma,0 - 1
+25,3,04/10/2020 12:30,Gewiss Stadium,Atalanta,Cagliari,5 - 2
+26,3,04/10/2020 15:00,Ciro Vigorito,Benevento,Bologna,1 - 0
+27,3,04/10/2020 15:00,Olimpico,Lazio,Inter,1 - 1
+28,3,04/10/2020 15:00,Ennio Tardini,Parma,Hellas Verona,1 - 0
+29,3,04/10/2020 18:00,Giuseppe Meazza,Milan,Spezia,3 - 0
+31,4,17/10/2020 15:00,Diego Armando Maradona,Napoli,Atalanta,4 - 1
+32,4,17/10/2020 18:00,Giuseppe Meazza,Inter,Milan,1 - 2
+33,4,17/10/2020 18:00,Luigi Ferraris,Sampdoria,Lazio,3 - 0
+34,4,17/10/2020 20:45,Ezio Scida,Crotone,Juventus,1 - 1
+35,4,18/10/2020 12:30,Renato Dall'Ara,Bologna,Sassuolo,3 - 4
+36,4,18/10/2020 15:00,Orogel Stadium,Spezia,Fiorentina,2 - 2
+37,4,18/10/2020 15:00,Olimpico Grande Torino,Torino,Cagliari,2 - 3
+38,4,18/10/2020 18:00,Stadio Friuli,Udinese,Parma,3 - 2
+39,4,18/10/2020 20:45,Olimpico,Roma,Benevento,5 - 2
+40,4,19/10/2020 20:45,Marcantonio Bentegodi,Hellas Verona,Genoa,0 - 0
+49,5,23/10/2020 20:45,Mapei Stadium,Sassuolo,Torino,3 - 3
+41,5,24/10/2020 15:00,Gewiss Stadium,Atalanta,Sampdoria,1 - 3
+45,5,24/10/2020 18:00,Luigi Ferraris,Genoa,Inter,0 - 2
+47,5,24/10/2020 20:45,Olimpico,Lazio,Bologna,2 - 1
+43,5,25/10/2020 12:30,Sardegna Arena,Cagliari,Crotone,4 - 2
+42,5,25/10/2020 15:00,Ciro Vigorito,Benevento,Napoli,1 - 2
+48,5,25/10/2020 15:00,Ennio Tardini,Parma,Spezia,2 - 2
+44,5,25/10/2020 18:00,Artemio Franchi,Fiorentina,Udinese,3 - 2
+46,5,25/10/2020 20:45,Allianz Stadium,Juventus,Hellas Verona,1 - 1
+50,5,26/10/2020 20:45,Giuseppe Meazza,Milan,Roma,3 - 3
+52,6,31/10/2020 15:00,Ezio Scida,Crotone,Atalanta,1 - 2
+54,6,31/10/2020 18:00,Giuseppe Meazza,Inter,Parma,2 - 2
+51,6,31/10/2020 20:45,Renato Dall'Ara,Bologna,Cagliari,3 - 2
+60,6,01/11/2020 12:30,Stadio Friuli,Udinese,Milan,1 - 2
+58,6,01/11/2020 15:00,Orogel Stadium,Spezia,Juventus,1 - 4
+59,6,01/11/2020 15:00,Olimpico Grande Torino,Torino,Lazio,3 - 4
+55,6,01/11/2020 18:00,Diego Armando Maradona,Napoli,Sassuolo,0 - 2
+56,6,01/11/2020 18:00,Olimpico,Roma,Fiorentina,2 - 0
+57,6,01/11/2020 20:45,Luigi Ferraris,Sampdoria,Genoa,1 - 1
+53,6,02/11/2020 20:45,Marcantonio Bentegodi,Hellas Verona,Benevento,3 - 1
+23,6,04/11/2020 17:00,Luigi Ferraris,Genoa,Torino,1 - 2
+69,7,06/11/2020 20:45,Mapei Stadium,Sassuolo,Udinese,0 - 0
+65,7,07/11/2020 15:00,Sardegna Arena,Cagliari,Sampdoria,2 - 0
+63,7,07/11/2020 18:00,Ciro Vigorito,Benevento,Spezia,0 - 3
+68,7,07/11/2020 20:45,Ennio Tardini,Parma,Fiorentina,0 - 0
+61,7,08/11/2020 12:30,Olimpico,Lazio,Juventus,1 - 1
+62,7,08/11/2020 15:00,Gewiss Stadium,Atalanta,Inter,1 - 1
+66,7,08/11/2020 15:00,Luigi Ferraris,Genoa,Roma,1 - 3
+70,7,08/11/2020 15:00,Olimpico Grande Torino,Torino,Crotone,0 - 0
+64,7,08/11/2020 18:00,Renato Dall'Ara,Bologna,Napoli,0 - 1
+67,7,08/11/2020 20:45,Giuseppe Meazza,Milan,Hellas Verona,2 - 2
+71,8,21/11/2020 15:00,Ezio Scida,Crotone,Lazio,0 - 2
+78,8,21/11/2020 18:00,Orogel Stadium,Spezia,Atalanta,0 - 0
+75,8,21/11/2020 20:45,Allianz Stadium,Juventus,Cagliari,2 - 0
+72,8,22/11/2020 12:30,Artemio Franchi,Fiorentina,Benevento,0 - 1
+73,8,22/11/2020 15:00,Marcantonio Bentegodi,Hellas Verona,Sassuolo,0 - 2
+74,8,22/11/2020 15:00,Giuseppe Meazza,Inter,Torino,4 - 2
+76,8,22/11/2020 15:00,Olimpico,Roma,Parma,3 - 0
+77,8,22/11/2020 15:00,Luigi Ferraris,Sampdoria,Bologna,1 - 2
+79,8,22/11/2020 18:00,Stadio Friuli,Udinese,Genoa,1 - 0
+80,8,22/11/2020 20:45,Diego Armando Maradona,Napoli,Milan,1 - 3
+89,9,28/11/2020 15:00,Mapei Stadium,Sassuolo,Inter,0 - 3
+82,9,28/11/2020 18:00,Ciro Vigorito,Benevento,Juventus,1 - 1
+81,9,28/11/2020 20:45,Gewiss Stadium,Atalanta,Hellas Verona,0 - 2
+86,9,29/11/2020 12:30,Olimpico,Lazio,Udinese,1 - 3
+83,9,29/11/2020 15:00,Renato Dall'Ara,Bologna,Crotone,1 - 0
+87,9,29/11/2020 15:00,Giuseppe Meazza,Milan,Fiorentina,2 - 0
+84,9,29/11/2020 18:00,Sardegna Arena,Cagliari,Spezia,2 - 2
+88,9,29/11/2020 20:45,Diego Armando Maradona,Napoli,Roma,4 - 0
+90,9,30/11/2020 18:30,Olimpico Grande Torino,Torino,Sampdoria,2 - 2
+85,9,30/11/2020 20:45,Luigi Ferraris,Genoa,Parma,1 - 2
+98,10,05/12/2020 15:00,Orogel Stadium,Spezia,Lazio,1 - 2
+100,10,05/12/2020 18:00,Allianz Stadium,Juventus,Torino,2 - 1
+94,10,05/12/2020 20:45,Giuseppe Meazza,Inter,Bologna,3 - 1
+93,10,06/12/2020 12:30,Marcantonio Bentegodi,Hellas Verona,Cagliari,1 - 1
+95,10,06/12/2020 15:00,Ennio Tardini,Parma,Benevento,0 - 0
+96,10,06/12/2020 15:00,Olimpico,Roma,Sassuolo,0 - 0
+91,10,06/12/2020 18:00,Ezio Scida,Crotone,Napoli,0 - 4
+97,10,06/12/2020 20:45,Luigi Ferraris,Sampdoria,Milan,1 - 2
+92,10,07/12/2020 20:45,Artemio Franchi,Fiorentina,Genoa,1 - 1
+109,11,11/12/2020 20:45,Mapei Stadium,Sassuolo,Benevento,1 - 0
+104,11,12/12/2020 15:00,Ezio Scida,Crotone,Spezia,4 - 1
+110,11,12/12/2020 18:00,Olimpico Grande Torino,Torino,Udinese,2 - 3
+106,11,12/12/2020 20:45,Olimpico,Lazio,Hellas Verona,1 - 2
+103,11,13/12/2020 12:30,Sardegna Arena,Cagliari,Inter,1 - 3
+101,11,13/12/2020 15:00,Gewiss Stadium,Atalanta,Fiorentina,3 - 0
+102,11,13/12/2020 15:00,Renato Dall'Ara,Bologna,Roma,1 - 5
+108,11,13/12/2020 15:00,Diego Armando Maradona,Napoli,Sampdoria,2 - 1
+105,11,13/12/2020 18:00,Luigi Ferraris,Genoa,Juventus,1 - 3
+107,11,13/12/2020 20:45,Giuseppe Meazza,Milan,Parma,2 - 2
+119,12,15/12/2020 18:30,Stadio Friuli,Udinese,Crotone,0 - 0
+111,12,15/12/2020 20:45,Ciro Vigorito,Benevento,Lazio,1 - 1
+115,12,16/12/2020 18:30,Allianz Stadium,Juventus,Atalanta,1 - 1
+112,12,16/12/2020 20:45,Artemio Franchi,Fiorentina,Sassuolo,1 - 1
+113,12,16/12/2020 20:45,Luigi Ferraris,Genoa,Milan,2 - 2
+114,12,16/12/2020 20:45,Marcantonio Bentegodi,Hellas Verona,Sampdoria,1 - 2
+116,12,16/12/2020 20:45,Ennio Tardini,Parma,Cagliari,0 - 0
+118,12,16/12/2020 20:45,Alberto Picco,Spezia,Bologna,2 - 2
+120,12,16/12/2020 20:45,Giuseppe Meazza,Inter,Napoli,1 - 0
+117,12,17/12/2020 20:45,Olimpico,Roma,Torino,3 - 2
+124,13,19/12/2020 15:00,Artemio Franchi,Fiorentina,Hellas Verona,1 - 1
+128,13,19/12/2020 18:00,Luigi Ferraris,Sampdoria,Crotone,3 - 1
+127,13,19/12/2020 20:45,Ennio Tardini,Parma,Juventus,0 - 4
+130,13,20/12/2020 12:30,Olimpico Grande Torino,Torino,Bologna,1 - 1
+122,13,20/12/2020 15:00,Ciro Vigorito,Benevento,Genoa,2 - 0
+123,13,20/12/2020 15:00,Sardegna Arena,Cagliari,Udinese,1 - 1
+125,13,20/12/2020 15:00,Giuseppe Meazza,Inter,Spezia,2 - 1
+129,13,20/12/2020 15:00,Mapei Stadium,Sassuolo,Milan,1 - 2
+121,13,20/12/2020 18:00,Gewiss Stadium,Atalanta,Roma,4 - 1
+126,13,20/12/2020 20:45,Olimpico,Lazio,Napoli,2 - 0
+132,14,22/12/2020 18:30,Ezio Scida,Crotone,Parma,2 - 1
+134,14,22/12/2020 20:45,Allianz Stadium,Juventus,Fiorentina,0 - 3
+133,14,23/12/2020 18:30,Marcantonio Bentegodi,Hellas Verona,Inter,1 - 2
+131,14,23/12/2020 20:45,Renato Dall'Ara,Bologna,Atalanta,2 - 2
+135,14,23/12/2020 20:45,Giuseppe Meazza,Milan,Lazio,3 - 2
+136,14,23/12/2020 20:45,Diego Armando Maradona,Napoli,Torino,1 - 1
+137,14,23/12/2020 20:45,Olimpico,Roma,Cagliari,3 - 2
+138,14,23/12/2020 20:45,Luigi Ferraris,Sampdoria,Sassuolo,2 - 3
+139,14,23/12/2020 20:45,Alberto Picco,Spezia,Genoa,1 - 2
+140,14,23/12/2020 20:45,Stadio Friuli,Udinese,Benevento,0 - 2
+146,15,03/01/2021 12:30,Giuseppe Meazza,Inter,Crotone,6 - 2
+141,15,03/01/2021 15:00,Gewiss Stadium,Atalanta,Sassuolo,5 - 1
+143,15,03/01/2021 15:00,Sardegna Arena,Cagliari,Napoli,1 - 4
+144,15,03/01/2021 15:00,Artemio Franchi,Fiorentina,Bologna,0 - 0
+145,15,03/01/2021 15:00,Luigi Ferraris,Genoa,Lazio,1 - 1
+148,15,03/01/2021 15:00,Ennio Tardini,Parma,Torino,0 - 3
+149,15,03/01/2021 15:00,Olimpico,Roma,Sampdoria,1 - 0
+150,15,03/01/2021 15:00,Alberto Picco,Spezia,Hellas Verona,0 - 1
+142,15,03/01/2021 18:00,Ciro Vigorito,Benevento,Milan,0 - 2
+147,15,03/01/2021 20:45,Allianz Stadium,Juventus,Udinese,4 - 1
+153,16,06/01/2021 12:30,Sardegna Arena,Cagliari,Benevento,1 - 2
+151,16,06/01/2021 15:00,Gewiss Stadium,Atalanta,Parma,3 - 0
+152,16,06/01/2021 15:00,Renato Dall'Ara,Bologna,Udinese,2 - 2
+154,16,06/01/2021 15:00,Ezio Scida,Crotone,Roma,1 - 3
+155,16,06/01/2021 15:00,Olimpico,Lazio,Fiorentina,2 - 1
+157,16,06/01/2021 15:00,Luigi Ferraris,Sampdoria,Inter,2 - 1
+158,16,06/01/2021 15:00,Mapei Stadium,Sassuolo,Genoa,2 - 1
+159,16,06/01/2021 15:00,Olimpico Grande Torino,Torino,Hellas Verona,1 - 1
+156,16,06/01/2021 18:00,Diego Armando Maradona,Napoli,Spezia,1 - 2
+160,16,06/01/2021 20:45,Giuseppe Meazza,Milan,Juventus,1 - 3
+162,17,09/01/2021 15:00,Ciro Vigorito,Benevento,Atalanta,1 - 4
+164,17,09/01/2021 18:00,Luigi Ferraris,Genoa,Bologna,2 - 0
+167,17,09/01/2021 20:45,Giuseppe Meazza,Milan,Torino,2 - 0
+161,17,10/01/2021 12:30,Olimpico,Roma,Inter,2 - 2
+165,17,10/01/2021 15:00,Marcantonio Bentegodi,Hellas Verona,Crotone,2 - 1
+168,17,10/01/2021 15:00,Ennio Tardini,Parma,Lazio,0 - 2
+170,17,10/01/2021 15:00,Stadio Friuli,Udinese,Napoli,1 - 2
+163,17,10/01/2021 18:00,Artemio Franchi,Fiorentina,Cagliari,1 - 0
+166,17,10/01/2021 20:45,Allianz Stadium,Juventus,Sassuolo,3 - 1
+169,17,11/01/2021 20:45,Alberto Picco,Spezia,Sampdoria,2 - 1
+175,18,15/01/2021 20:45,Olimpico,Lazio,Roma,3 - 0
+172,18,16/01/2021 15:00,Renato Dall'Ara,Bologna,Hellas Verona,1 - 0
+179,18,16/01/2021 18:00,Olimpico Grande Torino,Torino,Spezia,0 - 0
+177,18,16/01/2021 20:45,Luigi Ferraris,Sampdoria,Udinese,2 - 1
+176,18,17/01/2021 12:30,Diego Armando Maradona,Napoli,Fiorentina,6 - 0
+174,18,17/01/2021 15:00,Ezio Scida,Crotone,Benevento,4 - 1
+178,18,17/01/2021 15:00,Mapei Stadium,Sassuolo,Parma,1 - 1
+171,18,17/01/2021 18:00,Gewiss Stadium,Atalanta,Genoa,0 - 0
+180,18,17/01/2021 20:45,Giuseppe Meazza,Inter,Juventus,2 - 0
+173,18,18/01/2021 20:45,Sardegna Arena,Cagliari,Milan,0 - 2
+99,18,20/01/2021 15:00,Stadio Friuli,Udinese,Atalanta,1 - 1
+181,19,22/01/2021 20:45,Ciro Vigorito,Benevento,Torino,2 - 2
+189,19,23/01/2021 15:00,Olimpico,Roma,Spezia,4 - 3
+187,19,23/01/2021 18:00,Giuseppe Meazza,Milan,Atalanta,0 - 3
+190,19,23/01/2021 18:00,Stadio Friuli,Udinese,Inter,0 - 0
+182,19,23/01/2021 20:45,Artemio Franchi,Fiorentina,Crotone,2 - 1
+185,19,24/01/2021 12:30,Allianz Stadium,Juventus,Bologna,2 - 0
+183,19,24/01/2021 15:00,Luigi Ferraris,Genoa,Cagliari,1 - 0
+184,19,24/01/2021 15:00,Marcantonio Bentegodi,Hellas Verona,Napoli,3 - 1
+186,19,24/01/2021 18:00,Olimpico,Lazio,Sassuolo,2 - 1
+188,19,24/01/2021 20:45,Ennio Tardini,Parma,Sampdoria,0 - 2
+200,20,29/01/2021 20:45,Olimpico Grande Torino,Torino,Fiorentina,1 - 1
+192,20,30/01/2021 15:00,Renato Dall'Ara,Bologna,Milan,1 - 2
+198,20,30/01/2021 18:00,Luigi Ferraris,Sampdoria,Juventus,0 - 2
+195,20,30/01/2021 20:45,Giuseppe Meazza,Inter,Benevento,4 - 0
+199,20,31/01/2021 12:30,Alberto Picco,Spezia,Udinese,0 - 1
+191,20,31/01/2021 15:00,Gewiss Stadium,Atalanta,Lazio,1 - 3
+193,20,31/01/2021 15:00,Sardegna Arena,Cagliari,Sassuolo,1 - 1
+194,20,31/01/2021 15:00,Ezio Scida,Crotone,Genoa,0 - 3
+196,20,31/01/2021 18:00,Diego Armando Maradona,Napoli,Parma,2 - 0
+197,20,31/01/2021 20:45,Olimpico,Roma,Hellas Verona,3 - 1
+203,21,05/02/2021 20:45,Artemio Franchi,Fiorentina,Inter,0 - 2
+201,21,06/02/2021 15:00,Gewiss Stadium,Atalanta,Torino,3 - 3
+208,21,06/02/2021 15:00,Mapei Stadium,Sassuolo,Spezia,1 - 2
+210,21,06/02/2021 18:00,Allianz Stadium,Juventus,Roma,2 - 0
+204,21,06/02/2021 20:45,Luigi Ferraris,Genoa,Napoli,2 - 1
+202,21,07/02/2021 12:30,Ciro Vigorito,Benevento,Sampdoria,1 - 1
+206,21,07/02/2021 15:00,Giuseppe Meazza,Milan,Crotone,4 - 0
+209,21,07/02/2021 15:00,Stadio Friuli,Udinese,Hellas Verona,2 - 0
+207,21,07/02/2021 18:00,Ennio Tardini,Parma,Bologna,0 - 3
+205,21,07/02/2021 20:45,Olimpico,Lazio,Cagliari,1 - 0
+211,22,12/02/2021 20:45,Renato Dall'Ara,Bologna,Benevento,1 - 1
+219,22,13/02/2021 15:00,Olimpico Grande Torino,Torino,Genoa,0 - 0
+220,22,13/02/2021 18:00,Diego Armando Maradona,Napoli,Juventus,1 - 0
+218,22,13/02/2021 20:45,Alberto Picco,Spezia,Milan,2 - 0
+216,22,14/02/2021 12:30,Olimpico,Roma,Udinese,3 - 0
+212,22,14/02/2021 15:00,Sardegna Arena,Cagliari,Atalanta,0 - 1
+217,22,14/02/2021 15:00,Luigi Ferraris,Sampdoria,Fiorentina,2 - 1
+213,22,14/02/2021 18:00,Ezio Scida,Crotone,Sassuolo,1 - 2
+215,22,14/02/2021 20:45,Giuseppe Meazza,Inter,Lazio,3 - 1
+214,22,15/02/2021 20:45,Marcantonio Bentegodi,Hellas Verona,Parma,2 - 1
+225,23,19/02/2021 18:30,Artemio Franchi,Fiorentina,Spezia,3 - 0
+224,23,19/02/2021 20:45,Sardegna Arena,Cagliari,Torino,0 - 1
+228,23,20/02/2021 15:00,Olimpico,Lazio,Sampdoria,1 - 0
+226,23,20/02/2021 18:00,Luigi Ferraris,Genoa,Hellas Verona,2 - 2
+230,23,20/02/2021 20:45,Mapei Stadium,Sassuolo,Bologna,1 - 1
+229,23,21/02/2021 12:30,Ennio Tardini,Parma,Udinese,2 - 2
+221,23,21/02/2021 15:00,Giuseppe Meazza,Milan,Inter,0 - 3
+222,23,21/02/2021 18:00,Gewiss Stadium,Atalanta,Napoli,4 - 2
+223,23,21/02/2021 20:45,Ciro Vigorito,Benevento,Roma,0 - 0
+227,23,22/02/2021 20:45,Allianz Stadium,Juventus,Crotone,3 - 0
+238,24,27/02/2021 15:00,Alberto Picco,Spezia,Parma,2 - 2
+231,24,27/02/2021 18:00,Renato Dall'Ara,Bologna,Lazio,2 - 0
+233,24,27/02/2021 20:45,Marcantonio Bentegodi,Hellas Verona,Juventus,1 - 1
+237,24,28/02/2021 12:30,Luigi Ferraris,Sampdoria,Atalanta,0 - 2
+232,24,28/02/2021 15:00,Ezio Scida,Crotone,Cagliari,0 - 2
+234,24,28/02/2021 15:00,Giuseppe Meazza,Inter,Genoa,3 - 0
+240,24,28/02/2021 15:00,Stadio Friuli,Udinese,Fiorentina,1 - 0
+235,24,28/02/2021 18:00,Diego Armando Maradona,Napoli,Benevento,2 - 0
+236,24,28/02/2021 20:45,Olimpico,Roma,Milan,1 - 2
+246,25,02/03/2021 20:45,Allianz Stadium,Juventus,Spezia,3 - 0
+250,25,03/03/2021 18:30,Mapei Stadium,Sassuolo,Napoli,3 - 3
+241,25,03/03/2021 20:45,Gewiss Stadium,Atalanta,Crotone,5 - 1
+242,25,03/03/2021 20:45,Ciro Vigorito,Benevento,Hellas Verona,0 - 3
+243,25,03/03/2021 20:45,Sardegna Arena,Cagliari,Bologna,1 - 0
+244,25,03/03/2021 20:45,Artemio Franchi,Fiorentina,Roma,1 - 2
+245,25,03/03/2021 20:45,Luigi Ferraris,Genoa,Sampdoria,1 - 1
+248,25,03/03/2021 20:45,Giuseppe Meazza,Milan,Udinese,1 - 1
+249,25,04/03/2021 20:45,Ennio Tardini,Parma,Inter,1 - 2
+259,26,06/03/2021 15:00,Alberto Picco,Spezia,Benevento,1 - 1
+260,26,06/03/2021 18:00,Stadio Friuli,Udinese,Sassuolo,2 - 0
+251,26,06/03/2021 20:45,Allianz Stadium,Juventus,Lazio,3 - 1
+257,26,07/03/2021 12:30,Olimpico,Roma,Genoa,1 - 0
+252,26,07/03/2021 15:00,Ezio Scida,Crotone,Torino,4 - 2
+253,26,07/03/2021 15:00,Artemio Franchi,Fiorentina,Parma,3 - 3
+254,26,07/03/2021 15:00,Marcantonio Bentegodi,Hellas Verona,Milan,0 - 2
+258,26,07/03/2021 18:00,Luigi Ferraris,Sampdoria,Cagliari,2 - 2
+256,26,07/03/2021 20:45,Diego Armando Maradona,Napoli,Bologna,3 - 1
+255,26,08/03/2021 20:45,Giuseppe Meazza,Inter,Atalanta,1 - 0
+266,27,12/03/2021 15:00,Olimpico,Lazio,Crotone,3 - 2
+261,27,12/03/2021 20:45,Gewiss Stadium,Atalanta,Spezia,3 - 1
+268,27,13/03/2021 15:00,Mapei Stadium,Sassuolo,Hellas Verona,3 - 2
+262,27,13/03/2021 18:00,Ciro Vigorito,Benevento,Fiorentina,1 - 4
+265,27,13/03/2021 20:45,Luigi Ferraris,Genoa,Udinese,1 - 1
+263,27,14/03/2021 12:30,Renato Dall'Ara,Bologna,Sampdoria,3 - 1
+267,27,14/03/2021 15:00,Ennio Tardini,Parma,Roma,2 - 0
+269,27,14/03/2021 15:00,Olimpico Grande Torino,Torino,Inter,1 - 2
+264,27,14/03/2021 18:00,Sardegna Arena,Cagliari,Juventus,1 - 3
+270,27,14/03/2021 20:45,Giuseppe Meazza,Milan,Napoli,0 - 1
+239,27,17/03/2021 15:00,Olimpico Grande Torino,Torino,Sassuolo,3 - 2
+276,28,19/03/2021 20:45,Ennio Tardini,Parma,Genoa,1 - 2
+271,28,20/03/2021 15:00,Ezio Scida,Crotone,Bologna,2 - 3
+279,28,20/03/2021 18:00,Alberto Picco,Spezia,Cagliari,2 - 1
+273,28,21/03/2021 12:30,Marcantonio Bentegodi,Hellas Verona,Atalanta,0 - 2
+275,28,21/03/2021 15:00,Allianz Stadium,Juventus,Benevento,0 - 1
+278,28,21/03/2021 15:00,Luigi Ferraris,Sampdoria,Torino,1 - 0
+280,28,21/03/2021 15:00,Stadio Friuli,Udinese,Lazio,0 - 1
+272,28,21/03/2021 18:00,Artemio Franchi,Fiorentina,Milan,2 - 3
+277,28,21/03/2021 20:45,Olimpico,Roma,Napoli,0 - 2
+287,29,03/04/2021 12:30,Giuseppe Meazza,Milan,Sampdoria,1 - 1
+281,29,03/04/2021 15:00,Gewiss Stadium,Atalanta,Udinese,3 - 2
+282,29,03/04/2021 15:00,Ciro Vigorito,Benevento,Parma,2 - 2
+284,29,03/04/2021 15:00,Sardegna Arena,Cagliari,Hellas Verona,0 - 2
+285,29,03/04/2021 15:00,Luigi Ferraris,Genoa,Fiorentina,1 - 1
+286,29,03/04/2021 15:00,Olimpico,Lazio,Spezia,2 - 1
+288,29,03/04/2021 15:00,Diego Armando Maradona,Napoli,Crotone,4 - 3
+289,29,03/04/2021 15:00,Mapei Stadium,Sassuolo,Roma,2 - 2
+290,29,03/04/2021 18:00,Olimpico Grande Torino,Torino,Juventus,2 - 2
+283,29,03/04/2021 20:45,Renato Dall'Ara,Bologna,Inter,0 - 1
+30,29,07/04/2021 18:45,Allianz Stadium,Juventus,Napoli,2 - 1
+274,29,07/04/2021 18:45,Giuseppe Meazza,Inter,Sassuolo,2 - 1
+299,30,10/04/2021 15:00,Alberto Picco,Spezia,Crotone,3 - 2
+296,30,10/04/2021 18:00,Ennio Tardini,Parma,Milan,1 - 3
+300,30,10/04/2021 20:45,Stadio Friuli,Udinese,Torino,0 - 1
+294,30,11/04/2021 12:30,Giuseppe Meazza,Inter,Cagliari,1 - 0
+293,30,11/04/2021 15:00,Marcantonio Bentegodi,Hellas Verona,Lazio,0 - 1
+295,30,11/04/2021 15:00,Allianz Stadium,Juventus,Genoa,3 - 1
+298,30,11/04/2021 15:00,Luigi Ferraris,Sampdoria,Napoli,0 - 2
+297,30,11/04/2021 18:00,Olimpico,Roma,Bologna,1 - 0
+292,30,11/04/2021 20:45,Artemio Franchi,Fiorentina,Atalanta,2 - 3
+291,30,12/04/2021 20:45,Ciro Vigorito,Benevento,Sassuolo,0 - 1
+304,31,17/04/2021 15:00,Ezio Scida,Crotone,Udinese,1 - 2
+307,31,17/04/2021 15:00,Luigi Ferraris,Sampdoria,Hellas Verona,3 - 1
+308,31,17/04/2021 18:00,Mapei Stadium,Sassuolo,Fiorentina,3 - 1
+303,31,17/04/2021 20:45,Sardegna Arena,Cagliari,Parma,4 - 3
+306,31,18/04/2021 12:30,Giuseppe Meazza,Milan,Genoa,2 - 1
+301,31,18/04/2021 15:00,Gewiss Stadium,Atalanta,Juventus,1 - 0
+302,31,18/04/2021 15:00,Renato Dall'Ara,Bologna,Spezia,4 - 1
+305,31,18/04/2021 15:00,Olimpico,Lazio,Benevento,5 - 3
+309,31,18/04/2021 18:00,Olimpico Grande Torino,Torino,Roma,3 - 1
+310,31,18/04/2021 20:45,Diego Armando Maradona,Napoli,Inter,1 - 1
+314,32,20/04/2021 20:45,Marcantonio Bentegodi,Hellas Verona,Fiorentina,1 - 2
+316,32,21/04/2021 18:30,Giuseppe Meazza,Milan,Sassuolo,1 - 2
+311,32,21/04/2021 20:45,Renato Dall'Ara,Bologna,Torino,1 - 1
+312,32,21/04/2021 20:45,Ezio Scida,Crotone,Sampdoria,0 - 1
+313,32,21/04/2021 20:45,Luigi Ferraris,Genoa,Benevento,2 - 2
+315,32,21/04/2021 20:45,Allianz Stadium,Juventus,Parma,3 - 1
+319,32,21/04/2021 20:45,Alberto Picco,Spezia,Inter,1 - 1
+320,32,21/04/2021 20:45,Stadio Friuli,Udinese,Cagliari,0 - 1
+318,32,22/04/2021 18:30,Olimpico,Roma,Atalanta,1 - 1
+317,32,22/04/2021 20:45,Diego Armando Maradona,Napoli,Lazio,5 - 2
+325,33,24/04/2021 15:00,Luigi Ferraris,Genoa,Spezia,2 - 0
+328,33,24/04/2021 18:00,Ennio Tardini,Parma,Crotone,3 - 4
+329,33,24/04/2021 20:45,Mapei Stadium,Sassuolo,Sampdoria,1 - 0
+322,33,25/04/2021 12:30,Ciro Vigorito,Benevento,Udinese,2 - 4
+324,33,25/04/2021 15:00,Artemio Franchi,Fiorentina,Juventus,1 - 1
+326,33,25/04/2021 15:00,Giuseppe Meazza,Inter,Hellas Verona,1 - 0
+323,33,25/04/2021 18:00,Sardegna Arena,Cagliari,Roma,3 - 2
+321,33,25/04/2021 20:45,Gewiss Stadium,Atalanta,Bologna,5 - 0
+330,33,26/04/2021 18:30,Olimpico Grande Torino,Torino,Napoli,0 - 2
+327,33,26/04/2021 20:45,Olimpico,Lazio,Milan,3 - 0
+333,34,01/05/2021 15:00,Marcantonio Bentegodi,Hellas Verona,Spezia,1 - 1
+332,34,01/05/2021 18:00,Ezio Scida,Crotone,Inter,0 - 2
+335,34,01/05/2021 20:45,Giuseppe Meazza,Milan,Benevento,2 - 0
+334,34,02/05/2021 12:30,Olimpico,Lazio,Genoa,4 - 3
+331,34,02/05/2021 15:00,Renato Dall'Ara,Bologna,Fiorentina,3 - 3
+336,34,02/05/2021 15:00,Diego Armando Maradona,Napoli,Cagliari,1 - 1
+338,34,02/05/2021 15:00,Mapei Stadium,Sassuolo,Atalanta,1 - 1
+340,34,02/05/2021 18:00,Stadio Friuli,Udinese,Juventus,1 - 2
+337,34,02/05/2021 20:45,Luigi Ferraris,Sampdoria,Roma,2 - 0
+339,34,03/05/2021 20:45,Olimpico Grande Torino,Torino,Parma,1 - 0
+348,35,08/05/2021 15:00,Alberto Picco,Spezia,Napoli,1 - 4
+349,35,08/05/2021 15:00,Stadio Friuli,Udinese,Bologna,1 - 1
+345,35,08/05/2021 18:00,Giuseppe Meazza,Inter,Sampdoria,5 - 1
+342,35,08/05/2021 20:45,Artemio Franchi,Fiorentina,Lazio,2 - 0
+343,35,09/05/2021 12:30,Luigi Ferraris,Genoa,Sassuolo,1 - 2
+341,35,09/05/2021 15:00,Ciro Vigorito,Benevento,Cagliari,1 - 3
+344,35,09/05/2021 15:00,Marcantonio Bentegodi,Hellas Verona,Torino,1 - 1
+346,35,09/05/2021 15:00,Ennio Tardini,Parma,Atalanta,2 - 5
+347,35,09/05/2021 18:00,Olimpico,Roma,Crotone,5 - 0
+350,35,09/05/2021 20:45,Allianz Stadium,Juventus,Milan,0 - 3
+356,36,11/05/2021 20:45,Diego Armando Maradona,Napoli,Udinese,5 - 1
+353,36,12/05/2021 18:30,Sardegna Arena,Cagliari,Fiorentina,0 - 0
+351,36,12/05/2021 20:45,Gewiss Stadium,Atalanta,Benevento,2 - 0
+352,36,12/05/2021 20:45,Renato Dall'Ara,Bologna,Genoa,0 - 2
+355,36,12/05/2021 20:45,Olimpico,Lazio,Parma,1 - 0
+357,36,12/05/2021 20:45,Luigi Ferraris,Sampdoria,Spezia,2 - 2
+358,36,12/05/2021 20:45,Mapei Stadium,Sassuolo,Juventus,1 - 3
+359,36,12/05/2021 20:45,Olimpico Grande Torino,Torino,Milan,0 - 7
+360,36,12/05/2021 20:45,Giuseppe Meazza,Inter,Roma,3 - 1
+354,36,13/05/2021 20:45,Ezio Scida,Crotone,Hellas Verona,2 - 1
+363,37,15/05/2021 15:00,Luigi Ferraris,Genoa,Atalanta,3 - 4
+368,37,15/05/2021 15:00,Alberto Picco,Spezia,Torino,4 - 1
+370,37,15/05/2021 18:00,Allianz Stadium,Juventus,Inter,3 - 2
+367,37,15/05/2021 20:45,Olimpico,Roma,Lazio,2 - 0
+362,37,16/05/2021 12:30,Artemio Franchi,Fiorentina,Napoli,0 - 2
+361,37,16/05/2021 15:00,Ciro Vigorito,Benevento,Crotone,1 - 1
+369,37,16/05/2021 15:00,Stadio Friuli,Udinese,Sampdoria,0 - 1
+366,37,16/05/2021 18:00,Ennio Tardini,Parma,Sassuolo,1 - 3
+365,37,16/05/2021 20:45,Giuseppe Meazza,Milan,Cagliari,0 - 0
+364,37,17/05/2021 20:45,Marcantonio Bentegodi,Hellas Verona,Bologna,2 - 2
+247,37,18/05/2021 20:30,Olimpico,Lazio,Torino,0 - 0
+371,38,23/05/2021 18:00,Gewiss Stadium,Atalanta,Milan,0 - 2
+372,38,23/05/2021 18:00,Renato Dall'Ara,Bologna,Juventus,1 - 4
+373,38,23/05/2021 18:00,Sardegna Arena,Cagliari,Genoa,0 - 1
+374,38,23/05/2021 18:00,Ezio Scida,Crotone,Fiorentina,0 - 0
+375,38,23/05/2021 18:00,Giuseppe Meazza,Inter,Udinese,5 - 1
+376,38,23/05/2021 18:00,Diego Armando Maradona,Napoli,Hellas Verona,1 - 1
+377,38,23/05/2021 18:00,Luigi Ferraris,Sampdoria,Parma,3 - 0
+378,38,23/05/2021 18:00,Mapei Stadium,Sassuolo,Lazio,2 - 0
+379,38,23/05/2021 18:00,Alberto Picco,Spezia,Roma,2 - 2
+380,38,23/05/2021 18:00,Olimpico Grande Torino,Torino,Benevento,1 - 1

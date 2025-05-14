@@ -1,0 +1,381 @@
+Match Number,Round Number,Date,Location,Home Team,Away Team,Result
+6,1,13/08/2022 18:30,San Siro,Milan,Udinese,4 - 2
+9,1,13/08/2022 18:30,Luigi Ferraris,Sampdoria,Atalanta,0 - 2
+5,1,13/08/2022 20:45,Via del mare,Lecce,Inter,1 - 2
+7,1,13/08/2022 20:45,Brianteo,Monza,Torino,1 - 2
+1,1,14/08/2022 18:30,Artemio Franchi,Fiorentina,Cremonese,3 - 2
+4,1,14/08/2022 18:30,Olimpico,Lazio,Bologna,2 - 1
+8,1,14/08/2022 20:45,Arechi,Salernitana,Roma,0 - 1
+10,1,14/08/2022 20:45,Alberto Picco,Spezia,Empoli,1 - 0
+2,1,15/08/2022 18:30,Marcantonio Bentegodi,Hellas Verona,Napoli,2 - 5
+3,1,15/08/2022 20:45,Juventus Stadium,Juventus,Sassuolo,3 - 0
+19,2,20/08/2022 18:30,Olimpico Grande Torino,Torino,Lazio,0 - 0
+20,2,20/08/2022 18:30,Friuli,Udinese,Salernitana,0 - 0
+14,2,20/08/2022 20:45,San Siro,Inter,Spezia,3 - 0
+18,2,20/08/2022 20:45,Città del Tricolore,Sassuolo,Lecce,1 - 0
+13,2,21/08/2022 18:30,Carlo Castellani,Empoli,Fiorentina,0 - 0
+15,2,21/08/2022 18:30,Diego Armando Maradona,Napoli,Monza,4 - 0
+11,2,21/08/2022 20:45,Atleti Azzurri d'Italia,Atalanta,Milan,1 - 1
+12,2,21/08/2022 20:45,Renato Dall'Ara,Bologna,Hellas Verona,1 - 1
+16,2,22/08/2022 18:30,Olimpico,Roma,Cremonese,1 - 0
+17,2,22/08/2022 20:45,Luigi Ferraris,Sampdoria,Juventus,0 - 0
+28,3,26/08/2022 18:30,Brianteo,Monza,Udinese,1 - 2
+25,3,26/08/2022 20:45,Olimpico,Lazio,Inter,3 - 1
+21,3,27/08/2022 18:30,Giovanni Zini,Cremonese,Torino,1 - 2
+24,3,27/08/2022 18:30,Juventus Stadium,Juventus,Roma,1 - 1
+27,3,27/08/2022 20:45,San Siro,Milan,Bologna,2 - 0
+30,3,27/08/2022 20:45,Alberto Picco,Spezia,Sassuolo,2 - 2
+23,3,28/08/2022 18:30,Marcantonio Bentegodi,Hellas Verona,Atalanta,0 - 1
+29,3,28/08/2022 18:30,Arechi,Salernitana,Sampdoria,4 - 0
+22,3,28/08/2022 20:45,Artemio Franchi,Fiorentina,Napoli,0 - 0
+26,3,28/08/2022 20:45,Via del mare,Lecce,Empoli,1 - 1
+39,4,30/08/2022 18:30,Città del Tricolore,Sassuolo,Milan,0 - 0
+34,4,30/08/2022 20:45,San Siro,Inter,Cremonese,3 - 1
+37,4,30/08/2022 20:45,Olimpico,Roma,Monza,3 - 0
+33,4,31/08/2022 18:30,Carlo Castellani,Empoli,Hellas Verona,1 - 1
+38,4,31/08/2022 18:30,Luigi Ferraris,Sampdoria,Lazio,1 - 1
+40,4,31/08/2022 18:30,Friuli,Udinese,Fiorentina,1 - 0
+35,4,31/08/2022 20:45,Juventus Stadium,Juventus,Spezia,2 - 0
+36,4,31/08/2022 20:45,Diego Armando Maradona,Napoli,Lecce,1 - 1
+31,4,01/09/2022 20:45,Atleti Azzurri d'Italia,Atalanta,Torino,3 - 1
+32,4,01/09/2022 20:45,Renato Dall'Ara,Bologna,Salernitana,1 - 1
+42,5,03/09/2022 15:00,Artemio Franchi,Fiorentina,Juventus,1 - 1
+45,5,03/09/2022 18:00,San Siro,Milan,Inter,3 - 2
+44,5,03/09/2022 20:45,Olimpico,Lazio,Napoli,1 - 2
+41,5,04/09/2022 12:30,Giovanni Zini,Cremonese,Sassuolo,0 - 0
+48,5,04/09/2022 15:00,Alberto Picco,Spezia,Bologna,2 - 2
+43,5,04/09/2022 18:00,Marcantonio Bentegodi,Hellas Verona,Sampdoria,2 - 1
+50,5,04/09/2022 20:45,Friuli,Udinese,Roma,4 - 0
+46,5,05/09/2022 18:30,Brianteo,Monza,Atalanta,0 - 2
+47,5,05/09/2022 18:30,Arechi,Salernitana,Empoli,2 - 2
+49,5,05/09/2022 20:45,Olimpico Grande Torino,Torino,Lecce,1 - 0
+58,6,10/09/2022 15:00,Diego Armando Maradona,Napoli,Spezia,1 - 0
+54,6,10/09/2022 18:00,San Siro,Inter,Torino,1 - 0
+59,6,10/09/2022 20:45,Luigi Ferraris,Sampdoria,Milan,1 - 2
+51,6,11/09/2022 12:30,Atleti Azzurri d'Italia,Atalanta,Cremonese,1 - 1
+52,6,11/09/2022 15:00,Renato Dall'Ara,Bologna,Fiorentina,2 - 1
+57,6,11/09/2022 15:00,Via del mare,Lecce,Monza,1 - 1
+60,6,11/09/2022 15:00,Città del Tricolore,Sassuolo,Udinese,1 - 3
+56,6,11/09/2022 18:00,Olimpico,Lazio,Hellas Verona,2 - 0
+55,6,11/09/2022 20:45,Juventus Stadium,Juventus,Salernitana,2 - 2
+53,6,12/09/2022 20:45,Carlo Castellani,Empoli,Roma,1 - 2
+67,7,16/09/2022 20:45,Arechi,Salernitana,Lecce,1 - 2
+61,7,17/09/2022 15:00,Renato Dall'Ara,Bologna,Empoli,0 - 1
+68,7,17/09/2022 18:00,Alberto Picco,Spezia,Sampdoria,2 - 1
+69,7,17/09/2022 20:45,Olimpico Grande Torino,Torino,Sassuolo,0 - 1
+70,7,18/09/2022 12:30,Friuli,Udinese,Inter,3 - 1
+62,7,18/09/2022 15:00,Giovanni Zini,Cremonese,Lazio,0 - 4
+63,7,18/09/2022 15:00,Artemio Franchi,Fiorentina,Hellas Verona,2 - 0
+65,7,18/09/2022 15:00,Brianteo,Monza,Juventus,1 - 0
+66,7,18/09/2022 18:00,Olimpico,Roma,Atalanta,0 - 1
+64,7,18/09/2022 20:45,San Siro,Milan,Napoli,1 - 2
+78,8,01/10/2022 15:00,Diego Armando Maradona,Napoli,Torino,3 - 1
+74,8,01/10/2022 18:00,San Siro,Inter,Roma,1 - 2
+72,8,01/10/2022 20:45,Carlo Castellani,Empoli,Milan,1 - 3
+76,8,02/10/2022 12:30,Olimpico,Lazio,Spezia,4 - 0
+77,8,02/10/2022 15:00,Via del mare,Lecce,Cremonese,1 - 1
+79,8,02/10/2022 15:00,Luigi Ferraris,Sampdoria,Monza,0 - 3
+80,8,02/10/2022 15:00,Città del Tricolore,Sassuolo,Salernitana,5 - 0
+71,8,02/10/2022 18:00,Atleti Azzurri d'Italia,Atalanta,Fiorentina,1 - 0
+75,8,02/10/2022 20:45,Juventus Stadium,Juventus,Bologna,3 - 0
+73,8,03/10/2022 20:45,Marcantonio Bentegodi,Hellas Verona,Udinese,1 - 2
+88,9,08/10/2022 15:00,Città del Tricolore,Sassuolo,Inter,1 - 2
+84,9,08/10/2022 18:00,San Siro,Milan,Juventus,2 - 0
+81,9,08/10/2022 20:45,Renato Dall'Ara,Bologna,Sampdoria,1 - 1
+89,9,09/10/2022 12:30,Olimpico Grande Torino,Torino,Empoli,1 - 1
+85,9,09/10/2022 15:00,Brianteo,Monza,Spezia,2 - 0
+87,9,09/10/2022 15:00,Arechi,Salernitana,Hellas Verona,2 - 1
+90,9,09/10/2022 15:00,Friuli,Udinese,Atalanta,2 - 2
+82,9,09/10/2022 18:00,Giovanni Zini,Cremonese,Napoli,1 - 4
+86,9,09/10/2022 20:45,Olimpico,Roma,Lecce,2 - 1
+83,9,10/10/2022 20:45,Artemio Franchi,Fiorentina,Lazio,0 - 4
+92,10,15/10/2022 15:00,Carlo Castellani,Empoli,Monza,1 - 0
+100,10,15/10/2022 18:00,Olimpico Grande Torino,Torino,Juventus,0 - 1
+91,10,15/10/2022 20:45,Atleti Azzurri d'Italia,Atalanta,Sassuolo,2 - 1
+94,10,16/10/2022 12:30,San Siro,Inter,Salernitana,2 - 0
+95,10,16/10/2022 15:00,Olimpico,Lazio,Udinese,0 - 0
+99,10,16/10/2022 15:00,Alberto Picco,Spezia,Cremonese,2 - 2
+97,10,16/10/2022 18:00,Diego Armando Maradona,Napoli,Bologna,3 - 2
+93,10,16/10/2022 20:45,Marcantonio Bentegodi,Hellas Verona,Milan,1 - 2
+98,10,17/10/2022 18:30,Luigi Ferraris,Sampdoria,Roma,0 - 1
+96,10,17/10/2022 20:45,Via del mare,Lecce,Fiorentina,1 - 1
+105,11,21/10/2022 20:45,Juventus Stadium,Juventus,Empoli,4 - 0
+108,11,22/10/2022 15:00,Arechi,Salernitana,Spezia,1 - 0
+106,11,22/10/2022 18:00,San Siro,Milan,Monza,4 - 1
+104,11,22/10/2022 20:45,Artemio Franchi,Fiorentina,Inter,3 - 4
+110,11,23/10/2022 12:30,Friuli,Udinese,Torino,1 - 2
+102,11,23/10/2022 15:00,Renato Dall'Ara,Bologna,Lecce,2 - 0
+101,11,23/10/2022 18:00,Atleti Azzurri d'Italia,Atalanta,Lazio,0 - 2
+107,11,23/10/2022 20:45,Olimpico,Roma,Napoli,0 - 1
+103,11,24/10/2022 18:30,Giovanni Zini,Cremonese,Sampdoria,0 - 1
+109,11,24/10/2022 20:45,Città del Tricolore,Sassuolo,Hellas Verona,2 - 1
+118,12,29/10/2022 15:00,Diego Armando Maradona,Napoli,Sassuolo,4 - 0
+116,12,29/10/2022 18:00,Via del mare,Lecce,Juventus,0 - 1
+114,12,29/10/2022 20:45,San Siro,Inter,Sampdoria,3 - 0
+112,12,30/10/2022 12:30,Carlo Castellani,Empoli,Atalanta,0 - 2
+111,12,30/10/2022 15:00,Giovanni Zini,Cremonese,Udinese,0 - 0
+119,12,30/10/2022 15:00,Alberto Picco,Spezia,Fiorentina,1 - 2
+115,12,30/10/2022 18:00,Olimpico,Lazio,Salernitana,1 - 3
+120,12,30/10/2022 20:45,Olimpico Grande Torino,Torino,Milan,2 - 1
+113,12,31/10/2022 18:30,Marcantonio Bentegodi,Hellas Verona,Roma,1 - 3
+117,12,31/10/2022 20:45,Brianteo,Monza,Bologna,1 - 2
+130,13,04/11/2022 20:45,Friuli,Udinese,Lecce,1 - 1
+123,13,05/11/2022 15:00,Carlo Castellani,Empoli,Sassuolo,1 - 0
+128,13,05/11/2022 15:00,Arechi,Salernitana,Cremonese,2 - 2
+121,13,05/11/2022 18:00,Atleti Azzurri d'Italia,Atalanta,Napoli,1 - 2
+125,13,05/11/2022 20:45,San Siro,Milan,Spezia,2 - 1
+122,13,06/11/2022 12:30,Renato Dall'Ara,Bologna,Torino,2 - 1
+126,13,06/11/2022 15:00,Brianteo,Monza,Hellas Verona,2 - 0
+129,13,06/11/2022 15:00,Luigi Ferraris,Sampdoria,Fiorentina,0 - 2
+127,13,06/11/2022 18:00,Olimpico,Roma,Lazio,0 - 1
+124,13,06/11/2022 20:45,Juventus Stadium,Juventus,Inter,2 - 0
+137,14,08/11/2022 18:30,Diego Armando Maradona,Napoli,Empoli,2 - 0
+139,14,08/11/2022 18:30,Alberto Picco,Spezia,Udinese,1 - 1
+131,14,08/11/2022 20:45,Giovanni Zini,Cremonese,Milan,0 - 0
+136,14,09/11/2022 18:30,Via del mare,Lecce,Atalanta,2 - 1
+138,14,09/11/2022 18:30,Città del Tricolore,Sassuolo,Roma,1 - 1
+132,14,09/11/2022 20:45,Artemio Franchi,Fiorentina,Salernitana,2 - 1
+134,14,09/11/2022 20:45,San Siro,Inter,Bologna,6 - 1
+140,14,09/11/2022 20:45,Olimpico Grande Torino,Torino,Sampdoria,2 - 0
+133,14,10/11/2022 18:30,Marcantonio Bentegodi,Hellas Verona,Juventus,0 - 1
+135,14,10/11/2022 20:45,Olimpico,Lazio,Monza,1 - 0
+143,15,11/11/2022 20:45,Carlo Castellani,Empoli,Cremonese,2 - 0
+148,15,12/11/2022 15:00,Diego Armando Maradona,Napoli,Udinese,3 - 2
+150,15,12/11/2022 18:00,Luigi Ferraris,Sampdoria,Lecce,0 - 2
+142,15,12/11/2022 20:45,Renato Dall'Ara,Bologna,Sassuolo,3 - 0
+141,15,13/11/2022 12:30,Atleti Azzurri d'Italia,Atalanta,Inter,2 - 3
+144,15,13/11/2022 15:00,Marcantonio Bentegodi,Hellas Verona,Spezia,1 - 2
+147,15,13/11/2022 15:00,Brianteo,Monza,Salernitana,3 - 0
+149,15,13/11/2022 15:00,Olimpico,Roma,Torino,1 - 1
+146,15,13/11/2022 18:00,San Siro,Milan,Fiorentina,2 - 1
+145,15,13/11/2022 20:45,Juventus Stadium,Juventus,Lazio,3 - 0
+156,16,04/01/2023 12:30,Arechi,Salernitana,Milan,1 - 2
+157,16,04/01/2023 12:30,Città del Tricolore,Sassuolo,Sampdoria,1 - 2
+158,16,04/01/2023 14:30,Alberto Picco,Spezia,Atalanta,2 - 2
+159,16,04/01/2023 14:30,Olimpico Grande Torino,Torino,Hellas Verona,1 - 1
+154,16,04/01/2023 16:30,Via del mare,Lecce,Lazio,2 - 1
+155,16,04/01/2023 16:30,Olimpico,Roma,Bologna,1 - 0
+151,16,04/01/2023 18:30,Giovanni Zini,Cremonese,Juventus,0 - 1
+152,16,04/01/2023 18:30,Artemio Franchi,Fiorentina,Monza,1 - 1
+153,16,04/01/2023 20:45,San Siro,Inter,Napoli,1 - 0
+160,16,04/01/2023 20:45,Friuli,Udinese,Empoli,1 - 1
+162,17,07/01/2023 15:00,Artemio Franchi,Fiorentina,Sassuolo,2 - 1
+164,17,07/01/2023 18:00,Juventus Stadium,Juventus,Udinese,1 - 0
+167,17,07/01/2023 20:45,Brianteo,Monza,Inter,2 - 2
+168,17,08/01/2023 12:30,Arechi,Salernitana,Torino,1 - 1
+165,17,08/01/2023 15:00,Olimpico,Lazio,Empoli,2 - 2
+170,17,08/01/2023 15:00,Alberto Picco,Spezia,Lecce,0 - 0
+169,17,08/01/2023 18:00,Luigi Ferraris,Sampdoria,Napoli,0 - 2
+166,17,08/01/2023 20:45,San Siro,Milan,Roma,2 - 2
+163,17,09/01/2023 18:30,Marcantonio Bentegodi,Hellas Verona,Cremonese,2 - 0
+161,17,09/01/2023 20:45,Renato Dall'Ara,Bologna,Atalanta,1 - 2
+176,18,13/01/2023 20:45,Diego Armando Maradona,Napoli,Juventus,5 - 1
+172,18,14/01/2023 15:00,Giovanni Zini,Cremonese,Monza,2 - 3
+175,18,14/01/2023 18:00,Via del mare,Lecce,Milan,2 - 2
+174,18,14/01/2023 20:45,San Siro,Inter,Hellas Verona,1 - 0
+178,18,15/01/2023 12:30,Città del Tricolore,Sassuolo,Lazio,0 - 2
+179,18,15/01/2023 15:00,Olimpico Grande Torino,Torino,Spezia,0 - 1
+180,18,15/01/2023 15:00,Friuli,Udinese,Bologna,1 - 2
+171,18,15/01/2023 18:00,Atleti Azzurri d'Italia,Atalanta,Salernitana,8 - 2
+177,18,15/01/2023 20:45,Olimpico,Roma,Fiorentina,2 - 0
+173,18,16/01/2023 20:45,Carlo Castellani,Empoli,Sampdoria,1 - 0
+183,19,21/01/2023 15:00,Marcantonio Bentegodi,Hellas Verona,Lecce,2 - 0
+188,19,21/01/2023 18:00,Arechi,Salernitana,Napoli,0 - 2
+182,19,21/01/2023 20:45,Artemio Franchi,Fiorentina,Torino,0 - 1
+189,19,22/01/2023 12:30,Luigi Ferraris,Sampdoria,Udinese,0 - 1
+187,19,22/01/2023 15:00,Brianteo,Monza,Sassuolo,1 - 1
+190,19,22/01/2023 18:00,Alberto Picco,Spezia,Roma,0 - 2
+185,19,22/01/2023 20:45,Juventus Stadium,Juventus,Atalanta,3 - 3
+181,19,23/01/2023 18:30,Renato Dall'Ara,Bologna,Cremonese,1 - 1
+184,19,23/01/2023 20:45,San Siro,Inter,Empoli,0 - 1
+186,19,24/01/2023 20:45,Olimpico,Lazio,Milan,4 - 0
+192,20,27/01/2023 18:30,Renato Dall'Ara,Bologna,Spezia,2 - 0
+197,20,27/01/2023 20:45,Via del mare,Lecce,Salernitana,1 - 2
+194,20,28/01/2023 15:00,Carlo Castellani,Empoli,Torino,2 - 2
+193,20,28/01/2023 18:00,Giovanni Zini,Cremonese,Inter,1 - 2
+191,20,28/01/2023 20:45,Atleti Azzurri d'Italia,Atalanta,Sampdoria,2 - 0
+198,20,29/01/2023 12:30,San Siro,Milan,Sassuolo,2 - 5
+195,20,29/01/2023 15:00,Juventus Stadium,Juventus,Monza,0 - 2
+196,20,29/01/2023 18:00,Olimpico,Lazio,Fiorentina,1 - 1
+199,20,29/01/2023 20:45,Diego Armando Maradona,Napoli,Roma,2 - 1
+200,20,30/01/2023 20:45,Friuli,Udinese,Hellas Verona,1 - 1
+201,21,04/02/2023 15:00,Giovanni Zini,Cremonese,Lecce,0 - 2
+206,21,04/02/2023 18:00,Olimpico,Roma,Empoli,2 - 0
+208,21,04/02/2023 20:45,Città del Tricolore,Sassuolo,Atalanta,1 - 0
+209,21,05/02/2023 12:30,Alberto Picco,Spezia,Napoli,0 - 3
+210,21,05/02/2023 15:00,Olimpico Grande Torino,Torino,Udinese,1 - 0
+202,21,05/02/2023 18:00,Artemio Franchi,Fiorentina,Bologna,1 - 2
+204,21,05/02/2023 20:45,San Siro,Inter,Milan,1 - 0
+203,21,06/02/2023 18:30,Marcantonio Bentegodi,Hellas Verona,Lazio,1 - 1
+205,21,06/02/2023 20:45,Brianteo,Monza,Sampdoria,2 - 2
+207,21,07/02/2023 20:45,Arechi,Salernitana,Juventus,0 - 3
+217,22,10/02/2023 20:45,San Siro,Milan,Torino,1 - 0
+212,22,11/02/2023 15:00,Carlo Castellani,Empoli,Spezia,2 - 2
+216,22,11/02/2023 18:00,Via del mare,Lecce,Roma,1 - 1
+215,22,11/02/2023 20:45,Olimpico,Lazio,Atalanta,0 - 2
+220,22,12/02/2023 12:30,Friuli,Udinese,Sassuolo,2 - 2
+211,22,12/02/2023 15:00,Renato Dall'Ara,Bologna,Monza,0 - 1
+214,22,12/02/2023 18:00,Juventus Stadium,Juventus,Fiorentina,1 - 0
+218,22,12/02/2023 20:45,Diego Armando Maradona,Napoli,Cremonese,3 - 0
+213,22,13/02/2023 18:30,Marcantonio Bentegodi,Hellas Verona,Salernitana,1 - 0
+219,22,13/02/2023 20:45,Luigi Ferraris,Sampdoria,Inter,0 - 0
+228,23,17/02/2023 20:45,Città del Tricolore,Sassuolo,Napoli,0 - 2
+227,23,18/02/2023 15:00,Luigi Ferraris,Sampdoria,Bologna,1 - 2
+224,23,18/02/2023 18:00,Brianteo,Monza,Milan,0 - 1
+223,23,18/02/2023 20:45,San Siro,Inter,Udinese,3 - 1
+221,23,19/02/2023 12:30,Atleti Azzurri d'Italia,Atalanta,Lecce,1 - 2
+222,23,19/02/2023 15:00,Artemio Franchi,Fiorentina,Empoli,1 - 1
+226,23,19/02/2023 15:00,Arechi,Salernitana,Lazio,0 - 2
+229,23,19/02/2023 18:00,Alberto Picco,Spezia,Juventus,0 - 2
+225,23,19/02/2023 20:45,Olimpico,Roma,Hellas Verona,1 - 0
+230,23,20/02/2023 20:45,Olimpico Grande Torino,Torino,Cremonese,2 - 2
+233,24,25/02/2023 18:00,Carlo Castellani,Empoli,Napoli,0 - 2
+237,24,25/02/2023 20:45,Via del mare,Lecce,Sassuolo,0 - 1
+231,24,26/02/2023 12:30,Renato Dall'Ara,Bologna,Inter,1 - 0
+239,24,26/02/2023 15:00,Arechi,Salernitana,Monza,3 - 0
+240,24,26/02/2023 18:00,Friuli,Udinese,Spezia,2 - 2
+238,24,26/02/2023 20:45,San Siro,Milan,Atalanta,2 - 0
+234,24,27/02/2023 18:30,Marcantonio Bentegodi,Hellas Verona,Fiorentina,0 - 3
+236,24,27/02/2023 20:45,Olimpico,Lazio,Sampdoria,1 - 0
+232,24,28/02/2023 18:30,Giovanni Zini,Cremonese,Roma,2 - 1
+235,24,28/02/2023 20:45,Juventus Stadium,Juventus,Torino,4 - 2
+245,25,03/03/2023 20:45,Diego Armando Maradona,Napoli,Lazio,0 - 1
+244,25,04/03/2023 15:00,Brianteo,Monza,Empoli,2 - 1
+241,25,04/03/2023 18:00,Atleti Azzurri d'Italia,Atalanta,Udinese,0 - 0
+242,25,04/03/2023 20:45,Artemio Franchi,Fiorentina,Milan,2 - 1
+249,25,05/03/2023 12:30,Alberto Picco,Spezia,Hellas Verona,0 - 0
+247,25,05/03/2023 15:00,Luigi Ferraris,Sampdoria,Salernitana,0 - 0
+243,25,05/03/2023 18:00,San Siro,Inter,Lecce,2 - 0
+246,25,05/03/2023 20:45,Olimpico,Roma,Juventus,1 - 0
+248,25,06/03/2023 18:30,Città del Tricolore,Sassuolo,Cremonese,3 - 2
+250,25,06/03/2023 20:45,Olimpico Grande Torino,Torino,Bologna,1 - 0
+260,26,10/03/2023 20:45,Alberto Picco,Spezia,Inter,2 - 1
+253,26,11/03/2023 15:00,Carlo Castellani,Empoli,Udinese,0 - 1
+258,26,11/03/2023 18:00,Diego Armando Maradona,Napoli,Atalanta,2 - 0
+251,26,11/03/2023 20:45,Renato Dall'Ara,Bologna,Lazio,0 - 0
+256,26,12/03/2023 12:30,Via del mare,Lecce,Torino,0 - 2
+252,26,12/03/2023 15:00,Giovanni Zini,Cremonese,Fiorentina,0 - 2
+254,26,12/03/2023 15:00,Marcantonio Bentegodi,Hellas Verona,Monza,1 - 1
+259,26,12/03/2023 18:00,Olimpico,Roma,Sassuolo,3 - 4
+255,26,12/03/2023 20:45,Juventus Stadium,Juventus,Sampdoria,4 - 2
+257,26,13/03/2023 20:45,San Siro,Milan,Salernitana,1 - 1
+268,27,17/03/2023 18:30,Città del Tricolore,Sassuolo,Spezia,1 - 0
+261,27,17/03/2023 20:45,Atleti Azzurri d'Italia,Atalanta,Empoli,2 - 1
+265,27,18/03/2023 15:00,Brianteo,Monza,Cremonese,1 - 1
+266,27,18/03/2023 18:00,Arechi,Salernitana,Bologna,2 - 2
+270,27,18/03/2023 20:45,Friuli,Udinese,Milan,3 - 1
+267,27,19/03/2023 12:30,Luigi Ferraris,Sampdoria,Hellas Verona,3 - 1
+262,27,19/03/2023 15:00,Artemio Franchi,Fiorentina,Lecce,1 - 0
+269,27,19/03/2023 15:00,Olimpico Grande Torino,Torino,Napoli,0 - 4
+264,27,19/03/2023 18:00,Olimpico,Lazio,Roma,1 - 0
+263,27,19/03/2023 20:45,San Siro,Inter,Juventus,0 - 1
+272,28,01/04/2023 15:00,Giovanni Zini,Cremonese,Atalanta,1 - 3
+274,28,01/04/2023 18:00,San Siro,Inter,Fiorentina,0 - 1
+275,28,01/04/2023 20:45,Juventus Stadium,Juventus,Hellas Verona,1 - 0
+271,28,02/04/2023 12:30,Renato Dall'Ara,Bologna,Udinese,3 - 0
+276,28,02/04/2023 15:00,Brianteo,Monza,Lazio,0 - 2
+280,28,02/04/2023 15:00,Alberto Picco,Spezia,Salernitana,1 - 1
+278,28,02/04/2023 18:00,Olimpico,Roma,Sampdoria,3 - 0
+277,28,02/04/2023 20:45,Diego Armando Maradona,Napoli,Milan,0 - 4
+273,28,03/04/2023 19:30,Carlo Castellani,Empoli,Lecce,1 - 0
+279,28,03/04/2023 20:45,Città del Tricolore,Sassuolo,Torino,1 - 1
+287,29,07/04/2023 17:00,Arechi,Salernitana,Inter,1 - 1
+285,29,07/04/2023 19:00,Via del mare,Lecce,Napoli,1 - 2
+286,29,07/04/2023 21:00,San Siro,Milan,Empoli,0 - 0
+290,29,08/04/2023 12:30,Friuli,Udinese,Monza,2 - 2
+282,29,08/04/2023 14:30,Artemio Franchi,Fiorentina,Spezia,1 - 1
+281,29,08/04/2023 16:30,Atleti Azzurri d'Italia,Atalanta,Bologna,0 - 2
+288,29,08/04/2023 16:30,Luigi Ferraris,Sampdoria,Cremonese,2 - 3
+283,29,08/04/2023 18:30,Marcantonio Bentegodi,Hellas Verona,Sassuolo,2 - 1
+289,29,08/04/2023 18:30,Olimpico Grande Torino,Torino,Roma,0 - 1
+284,29,08/04/2023 20:45,Olimpico,Lazio,Juventus,2 - 1
+292,30,14/04/2023 18:30,Giovanni Zini,Cremonese,Empoli,1 - 0
+299,30,14/04/2023 20:45,Alberto Picco,Spezia,Lazio,0 - 3
+291,30,15/04/2023 15:00,Renato Dall'Ara,Bologna,Milan,1 - 1
+296,30,15/04/2023 18:00,Diego Armando Maradona,Napoli,Hellas Verona,0 - 0
+294,30,15/04/2023 20:45,San Siro,Inter,Monza,0 - 1
+300,30,16/04/2023 15:00,Olimpico Grande Torino,Torino,Salernitana,1 - 1
+298,30,16/04/2023 18:00,Città del Tricolore,Sassuolo,Juventus,1 - 0
+297,30,16/04/2023 20:45,Olimpico,Roma,Udinese,3 - 0
+295,30,17/04/2023 00:30,Via del mare,Lecce,Sampdoria,1 - 1
+293,30,17/04/2023 20:45,Artemio Franchi,Fiorentina,Atalanta,1 - 1
+303,31,21/04/2023 20:45,Marcantonio Bentegodi,Hellas Verona,Bologna,2 - 1
+308,31,22/04/2023 15:00,Arechi,Salernitana,Sassuolo,3 - 0
+305,31,22/04/2023 18:00,Olimpico,Lazio,Torino,0 - 1
+309,31,22/04/2023 20:45,Luigi Ferraris,Sampdoria,Spezia,1 - 1
+302,31,23/04/2023 12:30,Carlo Castellani,Empoli,Inter,0 - 3
+307,31,23/04/2023 15:00,Brianteo,Monza,Fiorentina,3 - 2
+310,31,23/04/2023 15:00,Friuli,Udinese,Cremonese,3 - 0
+306,31,23/04/2023 18:00,San Siro,Milan,Lecce,2 - 0
+304,31,23/04/2023 20:45,Juventus Stadium,Juventus,Napoli,0 - 1
+301,31,24/04/2023 20:45,Atleti Azzurri d'Italia,Atalanta,Roma,3 - 1
+315,32,28/04/2023 18:30,Via del mare,Lecce,Udinese,1 - 0
+319,32,28/04/2023 20:45,Alberto Picco,Spezia,Monza,0 - 2
+317,32,29/04/2023 18:00,Olimpico,Roma,Milan,1 - 1
+320,32,29/04/2023 20:45,Olimpico Grande Torino,Torino,Atalanta,1 - 2
+314,32,30/04/2023 12:30,San Siro,Inter,Lazio,3 - 1
+312,32,30/04/2023 15:00,Giovanni Zini,Cremonese,Hellas Verona,1 - 1
+316,32,30/04/2023 15:00,Diego Armando Maradona,Napoli,Salernitana,1 - 1
+318,32,30/04/2023 15:00,Città del Tricolore,Sassuolo,Empoli,2 - 1
+313,32,30/04/2023 18:00,Artemio Franchi,Fiorentina,Sampdoria,5 - 0
+311,32,30/04/2023 20:45,Renato Dall'Ara,Bologna,Juventus,1 - 1
+321,33,03/05/2023 18:00,Atleti Azzurri d'Italia,Atalanta,Spezia,3 - 2
+324,33,03/05/2023 18:00,Juventus Stadium,Juventus,Lecce,2 - 1
+328,33,03/05/2023 18:00,Arechi,Salernitana,Fiorentina,3 - 3
+329,33,03/05/2023 18:00,Luigi Ferraris,Sampdoria,Torino,0 - 2
+323,33,03/05/2023 21:00,Marcantonio Bentegodi,Hellas Verona,Inter,0 - 6
+325,33,03/05/2023 21:00,Olimpico,Lazio,Sassuolo,2 - 0
+326,33,03/05/2023 21:00,San Siro,Milan,Cremonese,1 - 1
+327,33,03/05/2023 21:00,Brianteo,Monza,Roma,1 - 1
+322,33,04/05/2023 20:45,Carlo Castellani,Empoli,Bologna,3 - 1
+330,33,04/05/2023 20:45,Friuli,Udinese,Napoli,1 - 1
+335,34,06/05/2023 15:00,San Siro,Milan,Lazio,2 - 0
+337,34,06/05/2023 18:00,Olimpico,Roma,Inter,0 - 2
+332,34,06/05/2023 20:45,Giovanni Zini,Cremonese,Spezia,2 - 0
+331,34,07/05/2023 12:30,Atleti Azzurri d'Italia,Atalanta,Juventus,0 - 2
+339,34,07/05/2023 15:00,Olimpico Grande Torino,Torino,Monza,1 - 1
+336,34,07/05/2023 18:00,Diego Armando Maradona,Napoli,Fiorentina,1 - 0
+334,34,07/05/2023 20:45,Via del mare,Lecce,Hellas Verona,0 - 1
+333,34,08/05/2023 18:30,Carlo Castellani,Empoli,Salernitana,2 - 1
+340,34,08/05/2023 18:30,Friuli,Udinese,Sampdoria,2 - 0
+338,34,08/05/2023 20:45,Città del Tricolore,Sassuolo,Bologna,1 - 1
+346,35,12/05/2023 20:45,Olimpico,Lazio,Lecce,2 - 2
+348,35,13/05/2023 15:00,Arechi,Salernitana,Atalanta,1 - 0
+350,35,13/05/2023 18:00,Alberto Picco,Spezia,Milan,2 - 0
+344,35,13/05/2023 20:45,San Siro,Inter,Sassuolo,4 - 2
+343,35,14/05/2023 12:30,Marcantonio Bentegodi,Hellas Verona,Torino,0 - 1
+342,35,14/05/2023 15:00,Artemio Franchi,Fiorentina,Udinese,2 - 0
+347,35,14/05/2023 15:00,Brianteo,Monza,Napoli,2 - 0
+341,35,14/05/2023 18:00,Renato Dall'Ara,Bologna,Roma,0 - 0
+345,35,14/05/2023 20:45,Juventus Stadium,Juventus,Cremonese,2 - 0
+349,35,15/05/2023 20:45,Luigi Ferraris,Sampdoria,Empoli,1 - 1
+358,36,19/05/2023 20:45,Città del Tricolore,Sassuolo,Monza,1 - 2
+352,36,20/05/2023 15:00,Giovanni Zini,Cremonese,Bologna,1 - 5
+351,36,20/05/2023 18:00,Atleti Azzurri d'Italia,Atalanta,Hellas Verona,3 - 1
+355,36,20/05/2023 20:45,San Siro,Milan,Sampdoria,5 - 1
+354,36,21/05/2023 12:30,Via del mare,Lecce,Spezia,0 - 0
+359,36,21/05/2023 15:00,Olimpico Grande Torino,Torino,Fiorentina,1 - 1
+356,36,21/05/2023 18:00,Diego Armando Maradona,Napoli,Inter,3 - 1
+360,36,21/05/2023 20:45,Friuli,Udinese,Lazio,0 - 1
+353,36,22/05/2023 20:45,Carlo Castellani,Empoli,Juventus,4 - 1
+357,36,22/05/2023 20:45,Olimpico,Roma,Salernitana,2 - 2
+369,37,26/05/2023 20:45,Luigi Ferraris,Sampdoria,Sassuolo,2 - 2
+368,37,27/05/2023 15:00,Arechi,Salernitana,Udinese,3 - 2
+370,37,27/05/2023 15:00,Alberto Picco,Spezia,Torino,0 - 4
+362,37,27/05/2023 18:00,Artemio Franchi,Fiorentina,Roma,2 - 1
+364,37,27/05/2023 20:45,San Siro,Inter,Atalanta,3 - 2
+363,37,28/05/2023 12:30,Marcantonio Bentegodi,Hellas Verona,Empoli,1 - 1
+361,37,28/05/2023 15:00,Renato Dall'Ara,Bologna,Napoli,2 - 2
+367,37,28/05/2023 15:00,Brianteo,Monza,Lecce,0 - 1
+366,37,28/05/2023 18:00,Olimpico,Lazio,Cremonese,3 - 2
+365,37,28/05/2023 20:45,Juventus Stadium,Juventus,Milan,0 - 1
+378,38,02/06/2023 20:30,Città del Tricolore,Sassuolo,Fiorentina,1 - 3
+379,38,03/06/2023 18:30,Olimpico Grande Torino,Torino,Inter,0 - 1
+372,38,03/06/2023 21:00,Giovanni Zini,Cremonese,Salernitana,2 - 0
+373,38,03/06/2023 21:00,Carlo Castellani,Empoli,Lazio,0 - 2
+376,38,04/06/2023 18:30,Diego Armando Maradona,Napoli,Sampdoria,2 - 0
+371,38,04/06/2023 21:00,Atleti Azzurri d'Italia,Atalanta,Monza,5 - 2
+374,38,04/06/2023 21:00,Via del mare,Lecce,Bologna,2 - 3
+375,38,04/06/2023 21:00,San Siro,Milan,Hellas Verona,3 - 1
+377,38,04/06/2023 21:00,Olimpico,Roma,Spezia,2 - 1
+380,38,04/06/2023 21:00,Friuli,Udinese,Juventus,0 - 1
