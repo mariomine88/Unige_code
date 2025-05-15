@@ -15,19 +15,14 @@ public class Elfo implements Runnable {
             while (true) {
                 // Lavoro sui giocattoli
                 System.out.println("L'elfo " + id + " sta costruendo giocattoli");
-                Thread.sleep(2000);
-                
+                // Simula il tempo di costruzione dei giocattoli
+                Thread.sleep((long) (Math.random() * 5000));
+
                 // L'elfo incontra un problema
                 System.out.println("L'elfo " + id + " ha bisogno dell'aiuto di Babbo Natale");
                 
                 // Ottieni aiuto da Babbo Natale
                 scenario.ElfoNeedsHelp(id);
-                
-                // Essere aiutato da Babbo Natale
-                Thread.sleep(5000);
-                
-                // Terminato di ricevere aiuto
-                scenario.ElfoGetsHelp(id);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();

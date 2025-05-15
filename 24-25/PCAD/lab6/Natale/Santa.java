@@ -24,10 +24,10 @@ public class Santa implements Runnable {
                 } else {
                     // Aiuta gli elfi con i loro problemi di fabbricazione di giocattoli
                     System.out.println("Babbo Natale sta aiutando gli elfi");
-                    Thread.sleep(3000); // Tempo per aiutare gli elfi
+                    Thread.sleep(2000); // Tempo per aiutare gli elfi
                     scenario.finishHelpingElfi();
                 }
-                
+
                 System.out.println("Babbo Natale e tornato a dormire");
             }
         } catch (InterruptedException e) {

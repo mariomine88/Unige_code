@@ -15,7 +15,7 @@ public class Renna implements Runnable {
             while (true) {
                 // Tempo di vacanza
                 System.out.println("La renna " + id + " e in vacanza");
-                Thread.sleep(4000);
+                Thread.sleep(2000 + (long) (Math.random() * 4000)); // Simula il tempo di vacanza
                 
                 // La renna ritorna dalle vacanze
                 System.out.println("La renna " + id + " e tornata dalle vacanze, ora sta aspettando");
