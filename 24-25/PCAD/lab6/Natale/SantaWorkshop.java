@@ -2,7 +2,7 @@ package Natale;
 
 public class SantaWorkshop {
     private static final int NUM_Renna  = 9;
-    private static final int NUM_ELVES = 4;
+    private static final int NUM_ELVES = 6;
 
     public static void main(String[] args) {
         // creamo la classe Scenario

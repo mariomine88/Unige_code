@@ -15,7 +15,7 @@ public class Renna implements Runnable {
             while (true) {
                 // Tempo di vacanza
                 System.out.println("La renna " + id + " e in vacanza");
-                Thread.sleep(3000);
+                Thread.sleep(4000);
                 
                 // La renna ritorna dalle vacanze
                 System.out.println("La renna " + id + " e tornata dalle vacanze, ora sta aspettando");

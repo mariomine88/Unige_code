@@ -24,7 +24,7 @@ public class Elfo implements Runnable {
                 scenario.ElfoNeedsHelp(id);
                 
                 // Essere aiutato da Babbo Natale
-                Thread.sleep(1000);
+                Thread.sleep(5000);
                 
                 // Terminato di ricevere aiuto
                 scenario.ElfoGetsHelp(id);

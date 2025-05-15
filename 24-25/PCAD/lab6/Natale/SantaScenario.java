@@ -9,6 +9,7 @@ public class SantaScenario {
     private Semaphore ElfoSemaphore = new Semaphore(0);
     private Semaphore mutexElves = new Semaphore(1);
     private Semaphore mutexRenna = new Semaphore(1);
+    private Semaphore elfCanWakeSanta = new Semaphore(1); 
     
     // Semafori per il controllo dei gruppi
     private Semaphore ElfoTurn = new Semaphore(3); 
@@ -31,20 +32,27 @@ public class SantaScenario {
         return helpingRenna;
     }
 
-    // Babbo Natale finisce di aiutare
-    public void finishHelping() throws InterruptedException {
-        if (helpingRenna) {
-            // Rilascia tutte le renne per consegnare i regali
-            RennaSemaphore.release(9);
-            waitingRenna = 0;
-            helpingRenna = false;
-        } else {
-            // Rilascia gli elfi
-            ElfoSemaphore.release(3);
-            helpFinished.acquire(3); // Attendi che tutti gli elfi abbiano finito
-            waitingElves -= 3;
-            ElfoTurn.release(3); // Consenti al prossimo gruppo di elfi
-        }
+
+    // Babbo Natale finisce di aiutare le renne
+    public void finishHelpingRenna() throws InterruptedException {
+        System.out.println("Babbo Natale ha consegnato i regali");
+        System.out.println("Babbo Natale ha aiutato le renne");
+        // Rilascia tutte le renne per consegnare i regali
+        RennaSemaphore.release(9);
+        waitingRenna = 0;
+        helpingRenna = false;
+        elfCanWakeSanta.release();
+    }
+
+    // Babbo Natale finisce di aiutare gli elfi
+    public void finishHelpingElfi() throws InterruptedException {
+        System.out.println("Babbo Natale ha aiutato gli elfi");
+        // Rilascia gli elfi
+        ElfoSemaphore.release(3);
+        helpFinished.acquire(3); // Attendi che tutti gli elfi abbiano finito
+        waitingElves -= 3;
+        ElfoTurn.release(3); // Consenti al prossimo gruppo di elfi
+        elfCanWakeSanta.release();
     }
 
     // La renna ritorna dalle vacanze
@@ -54,6 +62,7 @@ public class SantaScenario {
         
         if (waitingRenna == 9) {
             System.out.println("Tutte le renne sono tornate! Svegliamo Babbo Natale");
+            elfCanWakeSanta.acquire();
             helpingRenna = true;
             santaSemaphore.release();
         }
@@ -72,12 +81,9 @@ public class SantaScenario {
         
         if (waitingElves == 3) {
             // Se tutte le renne non sono tornate, sveglia Babbo Natale
-            mutexRenna.acquire();
-            if (!helpingRenna) {
-                System.out.println("Tre elfi stanno svegliando Babbo Natale!");
-                santaSemaphore.release();
-            }
-            mutexRenna.release();
+            elfCanWakeSanta.acquire();
+            System.out.println("Tre elfi stanno svegliando Babbo Natale!");
+            santaSemaphore.release();
         }
         mutexElves.release();
         

@@ -19,16 +19,15 @@ public class Santa implements Runnable {
                 if (scenario.helpRenna()) {
                     // Aiuta le renne a preparare la slitta
                     System.out.println("Babbo Natale sta preparando la slitta con le renne");
-                    Thread.sleep(1000); // Tempo per preparare la slitta
-                    System.out.println("I regali sono stati consegnati!");
+                    Thread.sleep(3000); // Tempo per preparare la slitta
+                    scenario.finishHelpingRenna();
                 } else {
                     // Aiuta gli elfi con i loro problemi di fabbricazione di giocattoli
                     System.out.println("Babbo Natale sta aiutando gli elfi");
-                    Thread.sleep(1000); // Tempo per aiutare gli elfi
+                    Thread.sleep(3000); // Tempo per aiutare gli elfi
+                    scenario.finishHelpingElfi();
                 }
                 
-                // Finisce di aiutare e torna a dormire
-                scenario.finishHelping();
                 System.out.println("Babbo Natale e tornato a dormire");
             }
         } catch (InterruptedException e) {
