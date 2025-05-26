@@ -1,13 +1,12 @@
 #version 300 es
 
-
 precision highp float;
 out vec4 fragColor;
 uniform vec2 u_resolution;
 uniform float u_time;
 
 
-bool environmentEnabled = false;
+bool environmentEnabled = true;
 vec3 skyColorHorizon = vec3(0.7, 0.8, 1.0); 
 vec3 skyColorZenith = vec3(0.3, 0.5, 0.8);
 vec3 groundColor = vec3(0.4, 0.3, 0.2);
