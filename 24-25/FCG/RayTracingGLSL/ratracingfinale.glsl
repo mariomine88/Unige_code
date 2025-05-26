@@ -1,6 +1,8 @@
 #version 300 es
 
 precision highp float;
+uniform sampler2D previousFrame; // Previous accumulated frame
+uniform int frameCount;          // Current frame count (0 for first frame)
 out vec4 fragColor;
 uniform vec2 u_resolution;
 uniform float u_time;
@@ -18,7 +20,7 @@ const int numSpheres = 2;
 
 //camera settings
 float cameraFov = 70.0; // Field of view in degrees
-vec3 lookfrom = vec3(0, 1, 6);   // Point camera is looking from
+vec3 lookfrom = vec3(0, 1, 3);   // Point camera is looking from
 vec3 lookat = vec3(0, 1 , 0);  // Point camera is looking at
 vec3 vup = vec3(0,1,0);     // Camera-relative "up" direction
 
@@ -61,8 +63,8 @@ struct HitInfo {
 
 
 Sphere spheres[numSpheres] = Sphere[](
-    Sphere(vec3(0.0, 1.0, 0.0), 1.0, Material(vec3(0.8, 0.2, 0.2), vec3(0.87f, 0.11f, 0.11f), 1.0, 0.5, 0.5, 1.5)),
-    Sphere(vec3(0.0, 3.0, 0.0), 1.0, Material(vec3(0.8, 0.2, 0.2), vec3(0.0f), 1.0, 0.5, 0.5, 1.5))
+    Sphere(vec3(0.0, 1.0, 0.0), 1.0, Material(vec3(0.8, 0.2, 0.2), vec3(0.87f, 0.11f, 0.11f), 1.0, 0.5, 0.5, 0.0)),
+    Sphere(vec3(0.0, 3.0, 0.0), 1.0, Material(vec3(0.8, 0.2, 0.2), vec3(0.0f), 1.0, 0.5, 0.5, 1.3))
 );
 
 
@@ -133,6 +135,44 @@ vec3 GetEnvironmentLight(Ray ray) {
     return mix(groundColor, skyGradient, groundToSkyT) + sun * float(groundToSkyT >= 1.0);
 }
 
+Ray Refract(Ray ray, HitInfo hit, inout uint state) {
+    Material mat = hit.material;
+    float eta = mat.ir;
+    vec3 normal = hit.normal;
+
+    // Determine if the ray is inside the material
+    if (hit.inside) {
+        normal = -normal; // Flip normal to face incoming ray
+    } else {
+        eta = 1.0 / eta; // Adjust eta for entering the material
+    }
+
+    // Calculate the refracted direction
+    vec3 refracted = refract(ray.dir, normal, eta);
+
+    // Compute cosine of the incidence angle (adjusted for hemisphere)
+    float cos_theta = min(abs(dot(normalize(ray.dir), normal)), 1.0);
+    // Schlick's approximation for Fresnel reflectance
+    float R0 = pow((1.0 - eta) / (1.0 + eta), 2.0);
+    float reflectance = R0 + (1.0 - R0) * pow(1.0 - cos_theta, 5.0);
+
+    // Use a random value to decide between reflection and refraction
+    float random = randomValue(state); // Assume this generates a random value between 0 and 1
+
+    // Check for total internal reflection or use Schlick's reflectance
+    if (refracted == vec3(0.0) || random < reflectance) {
+        vec3 specularDir = reflect(ray.dir, normal);
+        vec3 diffuseDir = normalize(hit.normal + randomUnitVector(state));
+        ray.dir = normalize(mix(diffuseDir, specularDir, mat.smoothness));    
+    } else {
+        ray.dir = refracted;
+        normal = -normal; // Flip normal for refraction
+    }
+
+    ray.ori = hit.hitPoint + normal * 0.0001;
+    return ray;
+}
+
 
 vec3 Trace(Ray ray, inout uint state) {
     vec3 incomingLight = vec3(0.0);
@@ -155,6 +195,13 @@ vec3 Trace(Ray ray, inout uint state) {
             incomingLight *= 1.0f / p;
         }
         Material mat = hit.material;
+
+        // Handle refractive materials (glass, water, etc.)
+        if(mat.ir >= 1.0) {
+            ray = Refract(ray, hit, state);
+            rayColor *= mat.colour;
+            continue;
+        } 
 
         //Calculate reflection directions
         vec3 diffuseDir = normalize(hit.normal + randomUnitVector(state));
@@ -213,6 +260,17 @@ void main()
 
     // Apply gamma correction
     color = pow(color, vec3(1.0/2.0)); // Gamma 2.0
+
+    if (frameCount > 0) {
+        // Get the previous accumulated result
+        vec2 texCoord = gl_FragCoord.xy / u_resolution.xy;
+        vec3 previousColor = texture(previousFrame, texCoord).rgb;
+        
+        // Blend with current frame using progressive weight
+        float blendWeight = 1.0 / float(frameCount + 1);
+        color = mix(previousColor, color, blendWeight);
+        // Alternative formula: color = previousColor * (1.0 - blendWeight) + color * blendWeight;
+    }
 
     fragColor = vec4(color, 1.0f);
 }
