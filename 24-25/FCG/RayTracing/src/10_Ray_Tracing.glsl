@@ -252,7 +252,7 @@ void main() {
     // Perform multiple samples per pixel for anti-aliasing and soft shadows
     for (int index = 0; index < samplesPerPixel; ++index) {
         // Apply a small random offset to the ray for anti-aliasing
-        vec3 offset = 0.007 * cross(direction, randomUnitVector(state));
+        vec3 offset = 0.005 * cross(direction, randomUnitVector(state));
         
         // Create a ray from camera position with slightly offset direction
         Ray ray = Ray(lookfrom + offset, direction);

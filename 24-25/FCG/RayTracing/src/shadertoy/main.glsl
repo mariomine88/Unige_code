@@ -35,7 +35,7 @@ vec3 randomUnitVector(inout uint state) {
     return normalize(p);
 }
 
-float intersect(Ray ray, Sphere s) {
+float intersectSphere(Ray ray, Sphere s) {
     vec3 oc = ray.ori - s.center;
     float a = dot(ray.dir, ray.dir);
     float b = 2.0 * dot(oc, ray.dir);
@@ -53,7 +53,7 @@ HitInfo RayCollision(Ray ray) {
     hit.dst = 1e30;
     
     for(int i=0; i<MAX_SPHERES; i++) {
-        float t = intersect(ray, spheres[i]);
+        float t = intersectSphere(ray, spheres[i]);
         if(t > 0.0001 && t < hit.dst) {
             hit.hit = true;
             hit.dst = t;
@@ -165,6 +165,7 @@ vec3 Trace(Ray ray, inout uint state) {
         
         // Mix between diffuse and specular based on material smoothness
         ray.dir = normalize(mix(diffuseDir, specularDir, mat.smoothness * float(isSpecularBounce)));
+        rayColor *= (isSpecularBounce) ? mat.colour : vec3(1.0);
         ray.ori = hit.point + hit.normal * 0.001;
         
         // Update ray color with material response
@@ -212,7 +213,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     // Perform multiple samples per pixel for anti-aliasing and soft shadows
     for (int index = 0; index < SAMPLES_PER_FRAME; ++index) {
         // Apply a small random offset to the ray for anti-aliasing
-        vec3 offset = 0.001 * cross(direction, randomUnitVector(state));
+        vec3 offset = 0.005 * cross(direction, randomUnitVector(state));
         
         // Create a ray from camera position with slightly offset direction
         Ray ray = Ray(lookfrom + offset, direction);
