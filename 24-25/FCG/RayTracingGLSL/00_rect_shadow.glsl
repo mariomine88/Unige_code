@@ -16,12 +16,12 @@ uniform vec2 u_resolution;
     const vec3 POV = vec3( 0.0 , 0.0 , 0.0 ); // Point of View
 
 // parametri generali dello shader
+    const vec3 COLORE_OGGETTO = vec3( 1.0, 0.0, 0.0);
     const vec3 COLORE_SFONDO = vec3( 0.2, 0.5, 1.0);
     const vec3 ROSSO = vec3( 1.0, 0.2, 0.2);
     const vec3 GIALLO = vec3( 0.7, 0.7, 0.0);
     const vec3 VERDE = vec3( 0.0, 0.8, 0.2);
     float MAX_DIST = 100.0; // da questa distanza in poi solo sfondo
-    float EPSILON = 0.001;
 
 // struttura per i materiali
 struct Materiale {
@@ -45,53 +45,21 @@ struct Sfera {
     Materiale mat;
 };
 
-// struttura per un piano (PRIMITIVA di rendering)
-struct Piano {
-  vec3 punto;
-  vec3 normale; 
-  Materiale mat;
-};
-
 // scena
-const Materiale BACKGROUND = Materiale(COLORE_SFONDO,vec3(0.0),vec3(0.0),0.0);
-const Materiale m1 = Materiale(ROSSO*0.3,ROSSO*0.7,vec3(0.4),50.0);
-const Materiale m2 = Materiale(VERDE*0.3,VERDE*0.7,vec3(0.4),50.0);
-const Materiale m3 = Materiale(GIALLO*0.3,GIALLO*0.7,vec3(0.4),50.0);
+const Materiale BACKGROUND = Materiale(vec3(0.0),COLORE_SFONDO,vec3(0.0),0.0);
+const Materiale m1 = Materiale(vec3(0.2),ROSSO*0.7,vec3(0.4),50.0);
+const Materiale m2 = Materiale(vec3(0.2),VERDE*0.7,vec3(0.4),50.0);
 Sfera sferaUno = Sfera( vec3(0.0,0.0,5.0) , 0.5, m1 );
-Sfera sferaDue = Sfera( vec3(-0.1,0.4,4.8) , 0.3, m2 );
-Piano pianoUno = Piano( vec3(0.0,-0.35,0.0) , vec3(0.0,1.0,0.0), m3 );
+Sfera sferaDue = Sfera( vec3(0.2,0.3,5.8) , 0.5, m2 );
 // luci
-vec3 pos_luce     = vec3(5.0,5.0,-3.0);
+vec3 pos_luce     = vec3(5.0,5,0.0);
 vec3 colore_luce     = vec3(1.0);
-vec3 luce_ambiente = vec3(0.5);
+vec3 luce_ambiente = vec3(0.3, 0.28, 0.15);
 
 
-// il raggio r interseca il piano p? (entro kMax di distanza)
-// Se sì sovrascrive: mat materiale del punto colpito,
-// parametro di intersezione kMax e sua normale nor
-bool intersect( in Raggio r , in Piano p , 
-                inout float kMax, inout Materiale mat, inout vec3 nor ) {
-  // punti su r: punti q esprimibili come  q = r.pos + k * r.dir  
-  // punti su p: punti q t.c.  dot(q - p.punto , p.normale) == 0
-  // cerchiamo un punto (se esiste) sia su r che su p, cioè
-  // cerchiamo un k>0 t.c. 
-  // dot(r.pos + k * r.dir - p.punto , p.normale) == 0
-  
-  float dn = dot( p.normale , r.dir );
-  if (dn == 0.0 ) return false; // piano parallelo a raggio
-  float k = dot (p.punto - r.pos, p.normale) / dn;
-  if (k>kMax) return false; // occlusione!
-  if (k<0.0) return false; // intersezione c'e' ma DIETRO la partenza del raggio
-  kMax = k;
-  mat = p.mat;
-  nor = p.normale;
-  return true;
-}
-
-// il raggio r interseca la sfera s? se sì sovrascrive:
-// parametro di intersezione kMax, la normale n e il materiale mat
-bool intersect( in Raggio r, in Sfera s, 
-                inout float kMax, inout Materiale mat, inout vec3 nor ) {
+// il raggio r interseca la sfera s? se sì:
+// restituisce il parametro di intersezione k, la normale n e il materiale mat
+bool intersect( in Raggio r, in Sfera s, inout float kMax, inout Materiale mat, inout vec3 nor ) {
   vec3 d = s.centro-r.pos; 
   float a = 1.0;
   float b = -2.0*dot(d , r.dir );
@@ -125,10 +93,9 @@ Raggio raggio_primario( vec2 p ){
 void intersect_scene( in Raggio r, out float k, out Materiale mat, out vec3 nor ) {
   k = MAX_DIST;
   mat = BACKGROUND;
-  nor = vec3(0,0,0.0);
+  nor = vec3(0,0,-1.0);
   intersect( r, sferaUno , k , mat , nor ); 
   intersect( r, sferaDue , k , mat , nor );
-  intersect( r, pianoUno , k , mat , nor );
   // ora se k < 100 allora ho colpito qualcosa: 
   // mat è il suo materiale e nor è la sua normale
 }
@@ -140,8 +107,7 @@ vec3 ray_cast( vec2 clip_pos ){
   vec3 n; float k;
 	Materiale mat; 
   intersect_scene( r, k, mat, n); 
-  if (k<MAX_DIST) {
-  vec3 punto_colpito = r.pos + (k-EPSILON)*r.dir;
+  vec3 punto_colpito = r.pos + k*r.dir;
   vec3 verso_luce = normalize(pos_luce - punto_colpito);
   vec3 verso_occhio = normalize(POV-punto_colpito);
   // equazione dell'illuminazione
@@ -150,17 +116,8 @@ vec3 ray_cast( vec2 clip_pos ){
  	col = mat.amb*luce_ambiente +
           mat.diff*colore_luce*lambert +
           mat.spec*specular;
-  // calcolo ombra con raggio secondario
-  r = Raggio( punto_colpito, verso_luce );
-  k = MAX_DIST;
-  Materiale dummy;
-  intersect_scene(r, k, dummy, n);
-  if (k<MAX_DIST) // il raggio secondario ha colpito un oggetto
-    col *= 0.7;
-    // col = mat.amb*luce_ambiente;
-  } else col = COLORE_SFONDO;
-
-  col = clamp(col,0.0,1.0);  
+  col = clamp(col,0.0,1.0);
+  
   return col;
 }
 

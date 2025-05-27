@@ -1,5 +1,16 @@
 #version 300 es
 
+/*
+{
+  "textures": [
+    {
+      "name": "u_texture",
+      "path": "https://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73909/world.topo.bathy.200412.3x5400x2700.jpg"
+    }
+  ]
+}
+*/
+
 precision highp float;
 uniform sampler2D previousFrame; // Previous accumulated frame
 uniform int frameCount;          // Current frame count (0 for first frame)
@@ -7,6 +18,7 @@ out vec4 fragColor;
 uniform vec2 u_resolution;
 uniform float u_time;
 
+uniform sampler2D u_texture; // Texture for the scene
 
 bool environmentEnabled = true;
 vec3 skyColorHorizon = vec3(0.7, 0.8, 1.0); 
@@ -16,11 +28,12 @@ vec3 sundir = vec3(1.0, 0.7, 0.7);
 float sunFocus = 128.0;
 float sunIntensity = 1.0;
 
-const int numSpheres = 2;
+const int numSpheres = 1;
+const int numTriangles = 1; 
 
 //camera settings
-float cameraFov = 70.0; // Field of view in degrees
-vec3 lookfrom = vec3(0, 1, 3);   // Point camera is looking from
+float cameraFov = 90.0; // Field of view in degrees
+vec3 lookfrom = vec3(0, 1, 5);   // Point camera is looking from
 vec3 lookat = vec3(0, 1 , 0);  // Point camera is looking at
 vec3 vup = vec3(0,1,0);     // Camera-relative "up" direction
 
@@ -43,6 +56,7 @@ struct Material {
     float smoothness;
     float specularProbability;
     float ir;
+    bool useTexture; 
 };
 
 struct Sphere {
@@ -51,6 +65,14 @@ struct Sphere {
     Material material;
 };
 
+struct triangale {
+    vec3 v0;
+    vec3 v1;
+    vec3 v2;
+    Material material;
+};
+
+
 struct HitInfo {
     bool hit;
     float dst;
@@ -58,17 +80,28 @@ struct HitInfo {
     vec3 normal;
     bool inside;
     Material material;
+    vec2 uv;
 };
 
 
 
 Sphere spheres[numSpheres] = Sphere[](
-    Sphere(vec3(0.0, 1.0, 0.0), 1.0, Material(vec3(0.8, 0.2, 0.2), vec3(0.87f, 0.11f, 0.11f), 1.0, 0.5, 0.5, 0.0)),
-    Sphere(vec3(0.0, 3.0, 0.0), 1.0, Material(vec3(0.8, 0.2, 0.2), vec3(0.0f), 1.0, 0.5, 0.5, 1.3))
+    // No spheres in this example
+    Sphere(vec3(0.0, 0.0, 0.0), 2.0, Material(vec3(0.8, 0.2, 0.2), vec3(0.87f, 0.11f, 0.11f), 1.0, 0.5, 0.5, 0.0,true))
+    
+);
+
+triangale triangles[numTriangles] = triangale[](
+    triangale(vec3(10.0, 10.0, 10.0),vec3(11.0, 11.0, 11.0), vec3(11.0, 11.0, 11.0), Material(vec3(0.8, 0.2, 0.2), vec3(0.87f, 0.11f, 0.11f), 1.0, 0.5, 0.5, 0.0 ,false))
 );
 
 
-
+vec2 getSphereUV(vec3 point, vec3 center) {
+    vec3 dir = normalize(point - center);
+    float u = 0.5 + atan(dir.z, dir.x) / (2.0 * 3.14159);
+    float v = 0.5 - asin(dir.y) / 3.14159;
+    return vec2(u, v);
+}
 
 // PCG Random Number Generator
 uint pcg_hash(inout uint state) {
@@ -104,6 +137,36 @@ float intersectSphere(Ray ray, Sphere sphere) {
     return (-b - sqrt(discriminant)) / (2.0 * a);
 }
 
+float intersectTriangle(Ray ray, triangale triangle) {
+    vec3 v0 = triangle.v0;
+    vec3 v1 = triangle.v1;
+    vec3 v2 = triangle.v2;
+    // Moller-Trumbore intersection algorithm
+    vec3 edge1 = v1 - v0;
+    vec3 edge2 = v2 - v0;
+    vec3 h = cross(ray.dir, edge2);
+    float a = dot(edge1, h);
+    
+    // If a is near zero, ray is parallel to triangle
+    if (abs(a) < 1e-8) return -1.0; // Ray is parallel to triangle
+    
+    float f = 1.0 / a;
+    vec3 s = ray.ori - v0;
+    float u = f * dot(s, h);
+    
+    if (u < 0.0 || u > 1.0) return -1.0; // Outside triangle
+    
+    vec3 q = cross(s, edge1);
+    float v = f * dot(ray.dir, q);
+    
+    if (v < 0.0 || u + v > 1.0) return -1.0; // Outside triangle
+    
+    float t = f * dot(edge2, q);
+    
+    if (t > 1e-8) return t; // Intersection
+    else return -1.0; // No intersection
+}
+
 HitInfo RayCollision(Ray ray, Sphere spheres[numSpheres]) {
     HitInfo hit;
     hit.hit = false;
@@ -118,6 +181,25 @@ HitInfo RayCollision(Ray ray, Sphere spheres[numSpheres]) {
             hit.normal = normalize(hit.hitPoint - spheres[i].center);
             hit.inside = dot(ray.dir, hit.normal) < 0.0;
             hit.material = spheres[i].material;
+            hit.uv = getSphereUV(hit.hitPoint, spheres[i].center);
+       
+        }
+    }
+    // Check for triangle intersections
+    for(int i = 0; i < numTriangles; i++) {
+        float t = intersectTriangle(ray, triangles[i]);
+        if(t > 0.00001 && t < hit.dst) {
+            hit.hit = true;
+            hit.dst = t;
+            hit.hitPoint = ray.ori + t * ray.dir;
+            vec3 v0 = triangles[i].v0;
+            vec3 v1 = triangles[i].v1;
+            vec3 v2 = triangles[i].v2;
+            vec3 edge1 = v1 - v0;
+            vec3 edge2 = v2 - v0;
+            hit.normal = normalize(cross(edge1, edge2));
+            hit.inside = dot(ray.dir, hit.normal) < 0.0;
+            hit.material = triangles[i].material;
         }
     }
     return hit;
@@ -203,6 +285,12 @@ vec3 Trace(Ray ray, inout uint state) {
             continue;
         } 
 
+        if(mat.useTexture) {
+            rayColor *= texture(u_texture, hit.uv).rgb;
+        } else {
+            rayColor *= mat.colour;
+        }
+
         //Calculate reflection directions
         vec3 diffuseDir = normalize(hit.normal + randomUnitVector(state));
         vec3 specularDir = reflect(ray.dir, hit.normal);
@@ -223,6 +311,12 @@ vec3 Trace(Ray ray, inout uint state) {
 
 void main()
 {
+    if (gl_FragCoord.x < 200.0 && gl_FragCoord.y < 200.0) {
+    vec2 debugUV = gl_FragCoord.xy / 200.0;
+    fragColor = texture(u_texture, debugUV);
+    return;
+    }
+
     vec2 uv = (gl_FragCoord.xy * 2.0 - u_resolution.xy) / u_resolution.y;
     // Calculate camera basis vectors
     float focal_length = length(lookfrom - lookat);
@@ -249,7 +343,7 @@ void main()
     // Perform multiple samples per pixel for anti-aliasing and soft shadows
     for (int index = 0; index < samplesPerFrame; ++index) {
         // Apply a small random offset to the ray for anti-aliasing
-        vec3 offset = 0.001 * cross(direction, randomUnitVector(state));
+        vec3 offset = 0.01 * cross(direction, randomUnitVector(state));
         
         // Create a ray from camera position with slightly offset direction
         Ray ray = Ray(lookfrom + offset, direction);
