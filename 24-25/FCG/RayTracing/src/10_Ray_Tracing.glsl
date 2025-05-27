@@ -122,7 +122,9 @@ vec3 GetEnvironmentLight(Ray ray) {
     vec3 sunDirection = vec3(0.0, 0.7, -0.7);
     float sunFocus = 128.0;
     float sunIntensity = 10.0;
-    if (!environmentLight) return vec3(0);
+
+    // Calculate sky gradient based on ray direction
+    // Smoothstep for sky gradient transition
     float skyGradientT = pow(smoothstep(0.0, 0.4, ray.dir.y), 0.35);
     float groundToSkyT = smoothstep(-0.01, 0.0, ray.dir.y);
     vec3 skyGradient = mix(skyColorHorizon, skyColorZenith, skyGradientT);

@@ -9,6 +9,13 @@ int maxDepth = 10;
 int samplesPerPixel = 50; // increse for better quality but slower performance 
 bool environmentLight = true; // Enable or disable environment light
 
+
+//camera settings
+float cameraFov = 90.0; // Field of view in degrees
+vec3 lookfrom = vec3(0.0, 1.0, 2.0);   // Point camera is looking from
+vec3 lookat = vec3(0, 1 , 0);  // Point camera is looking at
+vec3 vup = vec3(0,1,0);     // Camera-relative "up" direction
+
 // Ray structure: origin and direction
 struct Ray {
     vec3 ori;
@@ -205,8 +212,20 @@ void main() {
     // Convert screen coordinates to normalized device coordinates
     vec2 uv = (gl_FragCoord.xy * 2.0 - u_resolution.xy) / u_resolution.y;
 
-    vec3 lookfrom = vec3(0.0, 1.0, 2.0); // Camera position
-    vec3 direction = normalize(vec3(uv, -1.0)); // Ray direction
+    // Calculate camera basis vectors
+    vec3 w = normalize(lookfrom - lookat);  // Camera forward vector (points backwards)
+    vec3 u = normalize(cross(vup, w));      // Camera right vector
+    vec3 v = cross(w, u);                   // Camera up vector (true up)
+
+    // FOV calculations
+    float theta = radians(cameraFov);
+    float h = tan(theta / 2.0);
+    float viewport_height = 2.0 * h;
+
+    // Scale UV coordinates based on FOV
+    uv *= viewport_height / 2.0;
+
+    vec3 direction = normalize(vec3(-w + u * uv.x + v * uv.y));
 
     // Initialize random state for ray tracing
     uint state = uint(u_time) * 1000u + uint(gl_FragCoord.x) * 1973u + uint(gl_FragCoord.y) * 9277u;
@@ -215,7 +234,7 @@ void main() {
     // Perform multiple samples per pixel for anti-aliasing and soft shadows
     for (int index = 0; index < samplesPerPixel; ++index) {
         // Apply a small random offset to the ray for anti-aliasing
-        vec3 offset = 0.007 * cross(direction, randomUnitVector(state));
+        vec3 offset = 0.005 * cross(direction, randomUnitVector(state));
         
         // Create a ray from camera position with slightly offset direction
         Ray ray = Ray(lookfrom + offset, direction);
