@@ -138,16 +138,16 @@ Nel render 05render.png abbiamo messo tutte le sfere con indice di rifrazione 1.
 
 Ora mettiamo solo una sfera con luce emissiva:
 ```cpp
-Material(vec3(1.0f, 1.f, 1.f), vec3(0.0f, 0.0f, 0.0f), vec3(1.0f, 1.0f, 1.0f), 0.0f, 0.0f, 0.0f, 5.0f)
+Material(vec3(1.000,1.000,1.000), vec3(1.000,1.000,1.000), 10.0, 0.5, 1.0, 0.0,vec3(0.0))
 ```
-Con colore bianco e intensità 5 (notare che per l'emissione l'intensità può superare 1).
-Disattiviamo anche la luce ambiente: `uniform bool environmentEnabled = false;`
+Con colore bianco e intensità 10 (notare che per l'emissione l'intensità può superare 1).
+Disattiviamo anche la luce ambiente: `bool environmentLight = false;`
 
 Se guardiamo il render 06render.png vediamo che la luce emessa illumina la scena, ma il render è molto rumoroso perché per un pixel ci sono solo 50 campionamenti e c'è una buona probabilità che nessun raggio colpisca la sfera emissiva, rendendo il pixel nero. Invece i pixel intorno hanno colpito la sfera, rendendo l'immagine molto rumorosa, caratteristica del ray tracing. Per risolvere questo problema possiamo usare vari metodi di denoising, che comprende vari algoritmi per ridurre il rumore in un'immagine. 
 Come icrementare il numero di campionamenti per pixel, ma questo aumenta il tempo di rendering.
+O con l'accumulo di più immagini, ma questo richiede più tempo e memoria, rendendoli inpraticatico per immagini in tempo reale.
 Un approccio è conoscere la posizione della luce e favorire i raggi che vanno verso di essa.
-
-Ho implementato spatialFilter che prende i pixel vicini e li media per ridurre il rumore, anche se ciò aumenta il blur dell'immagine. Da qui in poi usiamo questo filtro quando disativiamo la lucce del ambiente, come si vede nel render 06_1render.png.
+alti come spatialFilter che prende i pixel vicini e li media per ridurre il rumore, anche se ciò aumenta il blur dell'immagine. 
 
 ### Aggiunta di più luci emissive
 

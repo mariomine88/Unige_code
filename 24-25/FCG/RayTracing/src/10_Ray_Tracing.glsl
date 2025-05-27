@@ -10,7 +10,7 @@ int samplesPerPixel = 50; // increse for better quality but slower performance
 bool environmentLight = true; // Enable or disable environment light
 
 //camera settings
-float cameraFov = 70.0; // Field of view in degrees
+float cameraFov = 90.0; // Field of view in degrees
 vec3 lookfrom = vec3(0.0, 1.0, 2.0);   // Point camera is looking from
 vec3 lookat = vec3(0, 1 , 0);  // Point camera is looking at
 vec3 vup = vec3(0,1,0);     // Camera-relative "up" direction
@@ -115,11 +115,20 @@ HitInfo RayCollision(Ray ray, Sphere spheres[numSpheres]) {
 
 // Simple sky gradient for background
 vec3 GetEnvironmentLight(Ray ray) {
-    if (!environmentLight) return vec3(0.0); // Return black if environment light is disabled
-    vec3 skyColorHorizon = vec3(0.37f, 0.5f, 0.84f); 
-    vec3 skyColorZenith = vec3(0.6f, 0.63f, 0.71f);  
+    if (!environmentLight) return vec3(0);
+    vec3 skyColorHorizon = vec3(0.7, 0.8, 1.0); 
+    vec3 skyColorZenith = vec3(0.3, 0.5, 0.8);
+    vec3 groundColor = vec3(0.4, 0.3, 0.2);
+    vec3 sunDirection = vec3(0.0, 0.7, -0.7);
+    float sunFocus = 128.0;
+    float sunIntensity = 10.0;
+    if (!environmentLight) return vec3(0);
+    float skyGradientT = pow(smoothstep(0.0, 0.4, ray.dir.y), 0.35);
+    float groundToSkyT = smoothstep(-0.01, 0.0, ray.dir.y);
+    vec3 skyGradient = mix(skyColorHorizon, skyColorZenith, skyGradientT);
+    float sun = pow(max(0.0, dot(ray.dir, normalize(sunDirection))), sunFocus) * sunIntensity;
     
-    return mix(skyColorHorizon, skyColorZenith, ray.dir.y);
+    return mix(groundColor, skyGradient, groundToSkyT) + sun * float(groundToSkyT >= 1.0);
 }
 
 Ray Refract(Ray ray, HitInfo hit, inout uint state) {

@@ -68,11 +68,19 @@ HitInfo RayCollision(Ray ray) {
 
 vec3 GetEnvironmentLight(Ray ray) {
     if (!environmentLight) return vec3(0);
-    vec3 skyColorHorizon = vec3(0.788,0.859,0.992); 
-    vec3 skyColorZenith = vec3(0.376,0.620,0.984);
+    vec3 skyColorHorizon = vec3(0.7, 0.8, 1.0); 
+    vec3 skyColorZenith = vec3(0.3, 0.5, 0.8);
+    vec3 groundColor = vec3(0.4, 0.3, 0.2);
+    vec3 sunDirection = vec3(0.0, 0.7, -0.7);
+    float sunFocus = 128.0;
+    float sunIntensity = 5.0;
+    if (!environmentLight) return vec3(0);
     float skyGradientT = pow(smoothstep(0.0, 0.4, ray.dir.y), 0.35);
+    float groundToSkyT = smoothstep(-0.01, 0.0, ray.dir.y);
+    vec3 skyGradient = mix(skyColorHorizon, skyColorZenith, skyGradientT);
+    float sun = pow(max(0.0, dot(ray.dir, normalize(sunDirection))), sunFocus) * sunIntensity;
     
-    return mix(skyColorHorizon, skyColorZenith, skyGradientT);
+    return mix(groundColor, skyGradient, groundToSkyT) + sun * float(groundToSkyT >= 1.0);
 }
 
 Ray Refract(Ray ray, HitInfo hit, inout uint state) {
@@ -204,7 +212,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     // Perform multiple samples per pixel for anti-aliasing and soft shadows
     for (int index = 0; index < SAMPLES_PER_FRAME; ++index) {
         // Apply a small random offset to the ray for anti-aliasing
-        vec3 offset = 0.01 * cross(direction, randomUnitVector(state));
+        vec3 offset = 0.001 * cross(direction, randomUnitVector(state));
         
         // Create a ray from camera position with slightly offset direction
         Ray ray = Ray(lookfrom + offset, direction);
