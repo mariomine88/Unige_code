@@ -31,7 +31,7 @@ struct HitInfo {
     Material material;
 };
 
-// Scene setup: one red sphere
+// Scene setup:
 const int numSpheres = 2;
 Sphere spheres[numSpheres] = Sphere[](
     Sphere(vec3(0.0, 1.0, 0.0), 1.0, Material(vec3(0.8, 0.2, 0.2))),
