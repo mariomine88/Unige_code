@@ -1,5 +1,7 @@
-uniform float time;
-uniform vec2 resolution;
+precision mediump float;
+
+uniform float u_time ;
+uniform vec2 u_resolution ;
 
 float sdSphere(vec3 p, float r) {
     return length(p) - r;
@@ -10,26 +12,25 @@ float sdBox(vec3 p, vec3 b) {
     return length(max(d, 0.0)) + min(max(d.x, max(d.y, d.z)), 0.0);
 }
 
-float smin(float a, float b, float k) {
+float smoothMin(float a, float b, float k) {
     float h = clamp(0.5 + 0.5 * (b - a) / k, 0.0, 1.0);
     return mix(b, a, h) - k * h * (1.0 - h);
 }
 
 float map(vec3 p) {
-    vec3 sferepos = vec3(sin(time)*3, 0.0, 0.0); // sphere position
+    vec3 sferepos = vec3(sin(u_time)*3.0, 0.0, 0.0); // sphere position
 
     float Sphere = sdSphere(p - sferepos, 1.0); // sphere
     float Box = sdBox(p, vec3(1.0)); // box
 
     float ground = p.y +1.0; // ground
 
-    return min(ground, smin(Sphere, Box, 2));
+    return min(ground, smoothMin(Sphere, Box, 2.0));
 }
 
 
-
 void main() {
-    vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / resolution.y;
+    vec2 uv = (gl_FragCoord.xy * 2.0 - u_resolution.xy) / u_resolution.y;
 
     vec3 ro = vec3(0.0, 0.0, -3.0);         // ray origin
     vec3 rd = normalize(vec3(uv, 1.0));     // ray direction

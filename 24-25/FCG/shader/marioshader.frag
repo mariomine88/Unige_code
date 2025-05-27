@@ -1,5 +1,7 @@
-uniform float time;
-uniform vec2 resolution;
+precision mediump float;
+
+uniform float u_time ;
+uniform vec2 u_resolution ;
 
 vec3 palette(float t) {
     vec3 a = vec3(0.5, 0.5, 0.5);
@@ -11,7 +13,7 @@ vec3 palette(float t) {
 }
 
 void main() {
-    vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / resolution.y;
+    vec2 uv = (gl_FragCoord.xy * 2.0 - u_resolution .xy) / u_resolution .y;
     vec2 uv0 = uv;
     vec3 finalColor = vec3(0.0);
     
@@ -21,10 +23,10 @@ void main() {
         float d = length(uv);
         
         // Modified color calculation with time-based animation
-        vec3 col = palette(length(uv0) - time/2.0 + i*0.4);
+        vec3 col = palette(length(uv0) - u_time /2.0 + i*0.4);
         
         // Wave pattern generation
-        d = sin(d * 8.0 - time) / 8.0;
+        d = sin(d * 8.0 - u_time ) / 8.0;
         d = abs(d);
         d = pow(0.02 / d, 1.0);  // Adjusted to match original intensity
         

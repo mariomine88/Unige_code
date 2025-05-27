@@ -1,5 +1,7 @@
-uniform float time;
-uniform vec2 resolution;
+precision mediump float;
+
+uniform float u_time ;
+uniform vec2 u_resolution ;
 
 vec3 palette(float t) {
     vec3 a = vec3(0.5, 0.5, 0.5);
@@ -11,16 +13,16 @@ vec3 palette(float t) {
 }
 
 void main() {
-    vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / resolution.y;
+    vec2 uv = (gl_FragCoord.xy * 2.0 - u_resolution.xy) / u_resolution.y;
     vec2 uv0 = uv;
     vec3 finalColor = vec3(0.0);
     
     for (float i = 0.0; i < 4.0; i++) {
         uv = fract(uv * 1.5) - 0.5;
         float d = length(uv) * exp(-length(uv0));
-        vec3 col = palette(length(uv0) + i*0.4 + time*0.4);
+        vec3 col = palette(length(uv0) + i*0.4 + u_time*0.4);
         
-        d = sin(d*8. + time)/8.;
+        d = sin(d*8. + u_time)/8.;
         d = abs(d);
         d = pow(0.01 / d, 1.2);
         
