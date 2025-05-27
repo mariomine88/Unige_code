@@ -243,7 +243,7 @@ void main()
     // Initialize PCG state
     uint state = uint(u_time) * 1000u +
                 uint(gl_FragCoord.x) * 1973u + 
-                uint(gl_FragCoord.y) * 9277u ;
+                uint(gl_FragCoord.y) * 9277u;
 
     vec3 color = vec3(0.0);
     // Perform multiple samples per pixel for anti-aliasing and soft shadows
