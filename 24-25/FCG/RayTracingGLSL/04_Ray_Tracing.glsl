@@ -3,13 +3,10 @@
 precision highp float;
 out vec4 fragColor;
 uniform vec2 u_resolution;
-uniform sampler2D previousFrame; // Previous accumulated frame
-uniform int frameCount;          // Current frame count (0 for first frame)
 uniform float u_time;
 
-
 int maxDepth = 10;
-int samplesPerPixel = 10;
+int samplesPerPixel = 10; // increse for better quality but slower performance
 
 // Ray structure: origin and direction
 struct Ray {
@@ -131,9 +128,8 @@ vec3 Trace(Ray ray,inout uint state) {
     return incomingLight; 
 }
 
-// Fragment shader entry point
-void main()
-{
+
+void main() {
     // Convert screen coordinates to normalized device coordinates
     vec2 uv = (gl_FragCoord.xy * 2.0 - u_resolution.xy) / u_resolution.y;
 
@@ -143,12 +139,11 @@ void main()
     // Initialize random state for ray tracing
     uint state = uint(u_time) * 1000u + uint(gl_FragCoord.x) * 1973u + uint(gl_FragCoord.y) * 9277u;
 
-    
     vec3 color = vec3(0.0);
     // Perform multiple samples per pixel for anti-aliasing and soft shadows
     for (int index = 0; index < samplesPerPixel; ++index) {
         // Apply a small random offset to the ray for anti-aliasing
-        vec3 offset = 0.005 * cross(direction, randomUnitVector(state));
+        vec3 offset = 0.007 * cross(direction, randomUnitVector(state));
         
         // Create a ray from camera position with slightly offset direction
         Ray ray = Ray(lookfrom + offset, direction);

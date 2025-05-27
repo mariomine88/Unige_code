@@ -114,9 +114,8 @@ vec3 Trace(Ray ray) {
     return incomingLight;
 }
 
-// Fragment shader entry point
-void main()
-{
+
+void main(){
     // Convert screen coordinates to normalized device coordinates
     vec2 uv = (gl_FragCoord.xy * 2.0 - u_resolution.xy) / u_resolution.y;
 
