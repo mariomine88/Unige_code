@@ -7,7 +7,7 @@ uniform float u_time;
 
 int maxDepth = 10;
 int samplesPerPixel = 50; // increse for better quality but slower performance 
-bool environmentLight = false; // Enable or disable environment light
+bool environmentLight = true; // Enable or disable environment light
 
 // Ray structure: origin and direction
 struct Ray {
@@ -22,6 +22,8 @@ struct Material {
     float emissionStrength;
     float smoothness; // Controls surface roughness: 0.0 = rough/diffuse, 1.0 = mirror-like
     float specularProbability; // Probability of specular reflection (0.0 to 1.0)
+    float ir; // Index of refraction for transparent materials
+    
 };
 
 
@@ -38,14 +40,15 @@ struct HitInfo {
     float dst;
     vec3 hitPoint;
     vec3 normal;
+    bool inside; // True if ray is inside the material
     Material material;
 };
 
 // Scene setup: 
 const int numSpheres = 2;
 Sphere spheres[numSpheres] = Sphere[](
-    Sphere(vec3(0.0, 1.0, 0.0), 1.0, Material(vec3(0.8, 0.2, 0.2) , vec3(0.84f, 0.83f, 0.02f), 10.0 ,0.0 ,0.0)),
-    Sphere(vec3(0.0, -1000.0, 0.0), 1000.0, Material(vec3(0.3725, 0.2902, 0.0745), vec3(0.0), 0.0 ,1.5, .8))
+    Sphere(vec3(0.0, 1.0, 0.0), 1.0, Material(vec3(0.8, 0.2, 0.2) , vec3(0.84f, 0.83f, 0.02f), 0.0 ,0.0 ,0.0 ,1.3)),
+    Sphere(vec3(0.0, -1000.0, 0.0), 1000.0, Material(vec3(0.3725, 0.2902, 0.0745), vec3(0.0), 0.0 ,1.5, .8,0.0))
 );
 
 // PCG Random Number Generator
@@ -98,6 +101,7 @@ HitInfo RayCollision(Ray ray, Sphere spheres[numSpheres]) {
             hit.hitPoint = ray.ori + t * ray.dir;
             hit.normal = normalize(hit.hitPoint - spheres[i].center);
             hit.material = spheres[i].material;
+            hit.inside = dot(ray.dir, hit.normal) < 0.0;
         }
     }
     return hit;
@@ -106,10 +110,48 @@ HitInfo RayCollision(Ray ray, Sphere spheres[numSpheres]) {
 // Simple sky gradient for background
 vec3 GetEnvironmentLight(Ray ray) {
     if (!environmentLight) return vec3(0.0); // Return black if environment light is disabled
-    vec3 skyColorHorizon = vec3(0.24f, 0.35f, 0.62f); 
+    vec3 skyColorHorizon = vec3(0.37f, 0.5f, 0.84f); 
     vec3 skyColorZenith = vec3(0.6f, 0.63f, 0.71f);  
     
     return mix(skyColorHorizon, skyColorZenith, ray.dir.y);
+}
+
+Ray Refract(Ray ray, HitInfo hit, inout uint state) {
+    Material mat = hit.material;
+    float eta = mat.ir;
+    vec3 normal = hit.normal;
+
+    // Determine if the ray is inside the material
+    if (!hit.inside) {
+        normal = -normal; // Flip normal to face incoming ray
+    } else {
+        eta = 1.0 / eta; // Adjust eta for entering the material
+    }
+
+    // Calculate the refracted direction
+    vec3 refracted = refract(ray.dir, normal, eta);
+
+    // Compute cosine of the incidence angle (adjusted for hemisphere)
+    float cos_theta = min(abs(dot(normalize(ray.dir), normal)), 1.0);
+    // Schlick's approximation for Fresnel reflectance
+    float R0 = pow((1.0 - eta) / (1.0 + eta), 2.0);
+    float reflectance = R0 + (1.0 - R0) * pow(1.0 - cos_theta, 5.0);
+
+    // Use a random value to decide between reflection and refraction
+    float random = randomValue(state); // Assume this generates a random value between 0 and 1
+
+    // Check for total internal reflection or use Schlick's reflectance
+    if (refracted == vec3(0.0) || random < reflectance) {
+        vec3 specularDir = reflect(ray.dir, normal);
+        vec3 diffuseDir = normalize(hit.normal + randomUnitVector(state));
+        ray.dir = normalize(mix(diffuseDir, specularDir, mat.smoothness));    
+    } else {
+        ray.dir = refracted;
+        normal = -normal; // Flip normal for refraction
+    }
+
+    ray.ori = hit.hitPoint + normal * 0.0001;
+    return ray;
 }
 
 // Main ray tracing function
@@ -125,6 +167,14 @@ vec3 Trace(Ray ray,inout uint state) {
             break;
         }
         Material mat = hit.material;
+
+        // Handle refractive materials (glass, water, etc.)
+        if(mat.ir >= 1.0) {
+            ray = Refract(ray, hit, state);
+            rayColor *= mat.colour;
+            continue;
+        } 
+
         //Calculate ray directions
         vec3 diffuseDir = normalize(hit.normal + randomUnitVector(state));
         vec3 specularDir = reflect(ray.dir, hit.normal);
@@ -168,7 +218,7 @@ void main() {
     }
 
     // Apply gamma correction
-    color = pow(color, vec3(1.0/2.2)); 
+    color = pow(color, vec3(1.0/2.4)); 
     // Output final color
     fragColor = vec4(color,1.0f);
 }
