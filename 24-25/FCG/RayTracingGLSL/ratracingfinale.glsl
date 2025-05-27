@@ -30,8 +30,8 @@ int samplesPerFrame = 50;
 
 
 struct Ray {
-    vec3 ori; // punto di origine del raggio
-    vec3 dir; // versore (vettore a norma 1)
+    vec3 ori;
+    vec3 dir; 
 };
 
 

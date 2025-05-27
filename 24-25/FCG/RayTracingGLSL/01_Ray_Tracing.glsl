@@ -1,47 +1,16 @@
 #version 300 es
 
-
 precision highp float;
-out vec4 fragColor;
 uniform vec2 u_resolution;
-uniform float u_time;
-
-
-bool environmentEnabled = false;
-vec3 skyColorHorizon = vec3(0.7, 0.8, 1.0); 
-vec3 skyColorZenith = vec3(0.3, 0.5, 0.8);
-vec3 groundColor = vec3(0.4, 0.3, 0.2);
-vec3 sundir = vec3(1.0, 0.7, 0.7);
-float sunFocus = 128.0;
-float sunIntensity = 1.0;
-
-const int numSpheres = 2;
-
-//camera settings
-float cameraFov = 70.0; // Field of view in degrees
-vec3 lookfrom = vec3(0, 1, 6);   // Point camera is looking from
-vec3 lookat = vec3(0, 1 , 0);  // Point camera is looking at
-vec3 vup = vec3(0,1,0);     // Camera-relative "up" direction
-
-
-int maxDepth = 30;
-int samplesPerFrame = 50;
-
+out vec4 fragColor;
 
 struct Ray {
-    vec3 ori; // punto di origine del raggio
-    vec3 dir; // versore (vettore a norma 1)
+    vec3 ori;
+    vec3 dir; 
 };
 
-
-// struttura per i materiali
 struct Material {
     vec3 colour;
-    vec3 emissionColour;
-    float emissionStrength;
-    float smoothness;
-    float specularProbability;
-    float ir;
 };
 
 struct Sphere {
@@ -55,42 +24,13 @@ struct HitInfo {
     float dst;
     vec3 hitPoint;
     vec3 normal;
-    bool inside;
     Material material;
 };
 
-
-
+const int numSpheres = 1;
 Sphere spheres[numSpheres] = Sphere[](
-    Sphere(vec3(0.0, 1.0, 0.0), 1.0, Material(vec3(0.8, 0.2, 0.2), vec3(0.87f, 0.11f, 0.11f), 1.0, 0.5, 0.5, 1.5)),
-    Sphere(vec3(0.0, 3.0, 0.0), 1.0, Material(vec3(0.8, 0.2, 0.2), vec3(0.0f), 1.0, 0.5, 0.5, 1.5))
+    Sphere(vec3(0.0, 1.0, 0.0), 1.0, Material(vec3(0.8, 0.2, 0.2)))
 );
-
-
-
-
-// PCG Random Number Generator
-uint pcg_hash(inout uint state) {
-    state = state * 747796405u + 2891336453u;
-    uint word = ((state >> ((state >> 28u) + 4u)) ^ state) * 277803737u;
-    return (word >> 22u) ^ word;
-}
-
-// Random number functions from 0 to 1
-float randomValue(inout uint state) {
-    return float(pcg_hash(state)) / 4294967295.0;
-}
-
-// Random value in normal distribution (with mean=0 and sd=1)
-float randomValueNormalDistribution(inout uint state){
-    float theta = 2.0 * 3.1415926 * randomValue(state);
-	float rho = sqrt(-2.0 * log(randomValue(state)));
-	return rho * cos(theta);
-}
-
-vec3 randomUnitVector(inout uint state) {
-    return normalize(vec3(randomValueNormalDistribution(state), randomValueNormalDistribution(state), randomValueNormalDistribution(state)));
-} 
 
 float intersectSphere(Ray ray, Sphere sphere) {
     vec3 oc = ray.ori - sphere.center;
@@ -115,7 +55,6 @@ HitInfo RayCollision(Ray ray, Sphere spheres[numSpheres]) {
             hit.dst = t;
             hit.hitPoint = ray.ori + t * ray.dir;
             hit.normal = normalize(hit.hitPoint - spheres[i].center);
-            hit.inside = dot(ray.dir, hit.normal) < 0.0;
             hit.material = spheres[i].material;
         }
     }
@@ -124,52 +63,20 @@ HitInfo RayCollision(Ray ray, Sphere spheres[numSpheres]) {
 
 
 vec3 GetEnvironmentLight(Ray ray) {
-    if(!environmentEnabled) return vec3(0.0);
+    vec3 skyColorHorizon = vec3(0.2, 0.5, 1.0);
+    vec3 skyColorZenith = vec3(0.1, 0.2, 0.5);
     
-    float skyGradientT = pow(smoothstep(0.0, 0.4, ray.dir.y), 0.35);
-    float groundToSkyT = smoothstep(-0.01, 0.0, ray.dir.y);
-    vec3 skyGradient = mix(skyColorHorizon, skyColorZenith, skyGradientT);
-    float sun = pow(max(0.0, dot(ray.dir, normalize(sundir))), sunFocus) * sunIntensity;
-    
-    return mix(groundColor, skyGradient, groundToSkyT) + sun * float(groundToSkyT >= 1.0);
+    return mix(skyColorHorizon, skyColorZenith, ray.dir.y);
 }
 
-
-vec3 Trace(Ray ray, inout uint state) {
+vec3 Trace(Ray ray) {
     vec3 incomingLight = vec3(0.0);
-    vec3 rayColor = vec3(1.0);
 
-    for(int depth = 0; depth < maxDepth; depth++) {
-        HitInfo hit = RayCollision(ray, spheres);
-        
-        if(!hit.hit) {
-            incomingLight += rayColor * GetEnvironmentLight(ray);
-            break;
-        }
-
-        // Russian Roulette termination
-        // more dark the ray is, more likely to terminate
-        if(depth > 3) {
-            float p = max(incomingLight.x, max(incomingLight.y, incomingLight.z));
-            if (randomValue(state) >= p) break;
-            // Add the energy we 'lose' by randomly terminating paths
-            incomingLight *= 1.0f / p;
-        }
-        Material mat = hit.material;
-
-        //Calculate reflection directions
-        vec3 diffuseDir = normalize(hit.normal + randomUnitVector(state));
-        vec3 specularDir = reflect(ray.dir, hit.normal);
-
-        bool isSpecularBounce = mat.specularProbability >= randomValue(state);
-        ray.dir = normalize(mix(diffuseDir, specularDir, mat.smoothness * float(isSpecularBounce)));
-        ray.ori = hit.hitPoint + hit.normal * 0.0001;  
-
-        //Update ray color with proper material response
-        rayColor *= mat.colour;
-
-        // Add emitted light at every bounce, scaled by accumulated color
-        incomingLight += rayColor * mat.emissionColour * mat.emissionStrength;
+    HitInfo hit = RayCollision(ray, spheres);
+    if (hit.hit){
+        incomingLight = hit.material.colour;
+    } else {
+        incomingLight = GetEnvironmentLight(ray);
     }
     return incomingLight;
 }
@@ -178,42 +85,10 @@ vec3 Trace(Ray ray, inout uint state) {
 void main()
 {
     vec2 uv = (gl_FragCoord.xy * 2.0 - u_resolution.xy) / u_resolution.y;
-    // Calculate camera basis vectors
-    float focal_length = length(lookfrom - lookat);
-    vec3 w = normalize(lookfrom - lookat);  // Camera forward vector (points backwards)
-    vec3 u = normalize(cross(vup, w));      // Camera right vector
-    vec3 v = cross(w, u);                   // Camera up vector (true up)
 
-    // FOV calculations
-    float theta = radians(cameraFov);
-    float h = tan(theta / 2.0);
-    float viewport_height = 2.0 * h;
+    Ray ray;
+    ray.ori = vec3(0.0, 0.0, 5.0); // Camera position
+    ray.dir = normalize(vec3(uv, -1.0)); // Ray direction
 
-    // Scale UV coordinates based on FOV
-    uv *= viewport_height / 2.0;
-
-    vec3 direction = normalize(vec3(-w + u * uv.x + v * uv.y));
-
-    // Initialize PCG state
-    uint state = uint(u_time) * 1000u +
-                uint(gl_FragCoord.x) * 1973u + 
-                uint(gl_FragCoord.y) * 9277u ;
-
-    vec3 color = vec3(0.0);
-    // Perform multiple samples per pixel for anti-aliasing and soft shadows
-    for (int index = 0; index < samplesPerFrame; ++index) {
-        // Apply a small random offset to the ray for anti-aliasing
-        vec3 offset = 0.01 * cross(direction, randomUnitVector(state));
-        
-        // Create a ray from camera position with slightly offset direction
-        Ray ray = Ray(lookfrom + offset, direction);
-        
-        // Accumulate path traced color and average across samples
-        color += Trace(ray, state) / float(samplesPerFrame);
-    }
-
-    // Apply gamma correction
-    color = pow(color, vec3(1.0/2.0)); // Gamma 2.0
-
-    fragColor = vec4(color, 1.0f);
+    fragColor = vec4(Trace(ray),1.0f);
 }
