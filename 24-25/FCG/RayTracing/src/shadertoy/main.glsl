@@ -1,8 +1,6 @@
-#define PI 3.14159265359
-
 struct Ray {
-    vec3 origin;
-    vec3 direction;
+    vec3 ori;
+    vec3 dir;
 };
 
 struct HitInfo {
@@ -11,35 +9,36 @@ struct HitInfo {
     vec3 point;
     vec3 normal;
     bool inside;
-    Material mat;
+    Material material;
 };
 
 // PCG Random Number Generator
-uint hash(inout uint state) {
+uint pcg_hash(inout uint state) {
     state = state * 747796405u + 2891336453u;
     uint word = ((state >> ((state >> 28u) + 4u)) ^ state) * 277803737u;
     return (word >> 22u) ^ word;
 }
 
-float rand(inout uint state) {
-    return float(hash(state)) / 4294967295.0;
+float randomValue(inout uint state) {
+    return float(pcg_hash(state)) / 4294967295.0;
 }
 
-// Random value in normal distribution (with mean=0 and sd=1)
-float randomValueNormalDistribution(inout uint state){
-    float theta = 2.0 * 3.1415926 * rand(state);
-	float rho = sqrt(-2.0 * log(rand(state)));
-	return rho * cos(theta);
-}
 
+// Generate a random unit vector 
 vec3 randomUnitVector(inout uint state) {
-    return normalize(vec3(randomValueNormalDistribution(state), randomValueNormalDistribution(state), randomValueNormalDistribution(state)));
-} 
+    // Generate random point in unit sphere using rejection sampling
+    vec3 p;
+    do {
+        p = 2.0 * vec3(randomValue(state), randomValue(state), randomValue(state)) - 1.0;
+    } while (dot(p, p) >= 1.0);
+    
+    return normalize(p);
+}
 
 float intersect(Ray ray, Sphere s) {
-    vec3 oc = ray.origin - s.center;
-    float a = dot(ray.direction, ray.direction);
-    float b = 2.0 * dot(oc, ray.direction);
+    vec3 oc = ray.ori - s.center;
+    float a = dot(ray.dir, ray.dir);
+    float b = 2.0 * dot(oc, ray.dir);
     float c = dot(oc, oc) - s.radius * s.radius;
     float discriminant = b * b - 4.0 * a * c;
     if(discriminant < 0.0) return -1.0;
@@ -48,114 +47,123 @@ float intersect(Ray ray, Sphere s) {
 }
 
 
-HitInfo trace(Ray ray) {
+HitInfo RayCollision(Ray ray) {
     HitInfo hit;
     hit.hit = false;
     hit.dst = 1e30;
     
     for(int i=0; i<MAX_SPHERES; i++) {
         float t = intersect(ray, spheres[i]);
-        if(t > 0.001 && t < hit.dst) {
+        if(t > 0.0001 && t < hit.dst) {
             hit.hit = true;
             hit.dst = t;
-            hit.point = ray.origin + t * ray.direction;
+            hit.point = ray.ori + t * ray.dir;
             hit.normal = normalize(hit.point - spheres[i].center);
-            hit.inside = dot(ray.direction, hit.normal) > 0.0;
-            hit.mat = spheres[i].mat;
+            hit.inside = dot(ray.dir, hit.normal) < 0.0;
+            hit.material = spheres[i].material;
         }
     }
     return hit;
 }
 
-vec3 sky(Ray ray) {
-    if (!skyToggle) return vec3(0);
+vec3 GetEnvironmentLight(Ray ray) {
+    if (!environmentLight) return vec3(0);
     vec3 skyColorHorizon = vec3(0.788,0.859,0.992); 
     vec3 skyColorZenith = vec3(0.376,0.620,0.984);
-    float skyGradientT = pow(smoothstep(0.0, 0.4, ray.direction.y), 0.35);
+    float skyGradientT = pow(smoothstep(0.0, 0.4, ray.dir.y), 0.35);
     
     return mix(skyColorHorizon, skyColorZenith, skyGradientT);
 }
 
 Ray Refract(Ray ray, HitInfo hit, inout uint state) {
-    Material mat = hit.mat;
+    Material mat = hit.material;
     float eta = mat.ir;
     vec3 normal = hit.normal;
 
     // Determine if the ray is inside the material
-    if (hit.inside) {
+    if (!hit.inside) {
         normal = -normal; // Flip normal to face incoming ray
     } else {
         eta = 1.0 / eta; // Adjust eta for entering the material
     }
 
     // Calculate the refracted direction
-    vec3 refracted = refract(ray.direction, normal, eta);
+    vec3 refracted = refract(ray.dir, normal, eta);
 
     // Compute cosine of the incidence angle (adjusted for hemisphere)
-    float cos_theta = min(abs(dot(normalize(ray.direction), normal)), 1.0);
+    float cos_theta = min(abs(dot(normalize(ray.dir), normal)), 1.0);
     // Schlick's approximation for Fresnel reflectance
     float R0 = pow((1.0 - eta) / (1.0 + eta), 2.0);
     float reflectance = R0 + (1.0 - R0) * pow(1.0 - cos_theta, 5.0);
 
     // Use a random value to decide between reflection and refraction
-    float random = rand(state); // Assume this generates a random value between 0 and 1
+    float random = randomValue(state); // Assume this generates a random value between 0 and 1
 
     // Check for total internal reflection or use Schlick's reflectance
     if (refracted == vec3(0.0) || random < reflectance) {
-        vec3 specularDir = reflect(ray.direction, normal);
+        vec3 specularDir = reflect(ray.dir, normal);
         vec3 diffuseDir = normalize(hit.normal + randomUnitVector(state));
-        ray.direction = normalize(mix(diffuseDir, specularDir, hit.mat.smoothness));    
+        ray.dir = normalize(mix(diffuseDir, specularDir, mat.smoothness));    
     } else {
-        ray.direction = refracted;
+        ray.dir = refracted;
         normal = -normal; // Flip normal for refraction
     }
 
-    ray.origin = hit.point + normal * 0.0001;
+    ray.ori = hit.point + normal * 0.0001;
     return ray;
 }
 
-vec3 tracePath(Ray ray, inout uint state) {
+vec3 Trace(Ray ray, inout uint state) {
     vec3 rayColor = vec3(1.0);
     vec3 incomingLight = vec3(0.0);
     
     for(int depth=0; depth<MAX_DEPTH; depth++) {
-        HitInfo hit = trace(ray);
+        HitInfo hit = RayCollision(ray);
         if(!hit.hit) {
-            incomingLight += rayColor * sky(ray);
+            incomingLight += rayColor * GetEnvironmentLight(ray);
             break;
         }
         
         // Russian Roulette termination (after a few bounces)
         if(depth > 3) {
             float p = max(rayColor.x, max(rayColor.y, rayColor.z));
-            if(rand(state) >= p) break;
+            if(randomValue(state) >= p) break;
             // Add the energy we 'lose' by randomly terminating paths
             rayColor *= 1.0 / p;
         }
+
+        Material mat = hit.material;
         
         // Handle refractive materials (glass, water, etc.)
-        if(hit.mat.ir >= 1.0) {
+        if(mat.ir >= 1.0) {
             ray = Refract(ray, hit, state);
-            rayColor *= hit.mat.colour;
+            if (hit.inside) {
+                // If inside a transparent material, apply absorption color
+                // Apply absorption color for transparent materials
+                rayColor *= exp(-mat.absorptionColour * hit.dst);
+            } else {
+                // If outside, apply the material color
+                rayColor *= mat.colour;
+            }
             continue;
         } 
         
         // Calculate reflection directions
         vec3 diffuseDir = normalize(hit.normal + randomUnitVector(state));
-        vec3 specularDir = reflect(ray.direction, hit.normal);
+        vec3 specularDir = reflect(ray.dir, hit.normal);
         
         // Determine if this bounce is specular based on material properties
-        bool isSpecularBounce = hit.mat.specularProb >= rand(state);
+        bool isSpecularBounce = mat.specularProbability >= randomValue(state);
         
         // Mix between diffuse and specular based on material smoothness
-        ray.direction = normalize(mix(diffuseDir, specularDir, hit.mat.smoothness * float(isSpecularBounce)));
-        ray.origin = hit.point + hit.normal * 0.001;
+        ray.dir = normalize(mix(diffuseDir, specularDir, mat.smoothness * float(isSpecularBounce)));
+        ray.ori = hit.point + hit.normal * 0.001;
         
         // Update ray color with material response
-        rayColor *= hit.mat.colour;
+        rayColor *= mat.colour;
         
         // Add emitted light at every bounce, scaled by accumulated color
-        incomingLight += rayColor * hit.mat.emission * hit.mat.emissionStrength;
+        incomingLight += rayColor * mat.emissionColour * mat.emissionStrength;
     }
     
     return incomingLight;
@@ -188,8 +196,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     
     // ----- Random State Initialization -----
     // Create unique random seed for each pixel and frame
-    uint state = uint(iTime) * 563u + uint(iFrame)*26699u + 
-                 uint(fragCoord.x)*456u + uint(fragCoord.y)*789u;
+    uint state = uint(iTime) * 563u + uint(iFrame)*26699u + uint(fragCoord.x)*456u + uint(fragCoord.y)*789u;
     
     // ----- Sampling & Integration -----
     vec3 color = vec3(0.0);
@@ -203,7 +210,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
         Ray ray = Ray(lookfrom + offset, direction);
         
         // Accumulate path traced color and average across samples
-        color += tracePath(ray, state) / float(SAMPLES_PER_FRAME);
+        color += Trace(ray, state) / float(SAMPLES_PER_FRAME);
     }
     
     // Apply gamma correction (convert from linear to sRGB color space)

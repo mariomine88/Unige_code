@@ -24,16 +24,15 @@ Ogni materiale include le seguenti proprietà in ordine:
 - **smoothness**: Rugosità della superficie (1 = liscio, 0 = ruvido).
 - **Metallic**: Metallicità (0 = non metallico, 1 = totalmente riflettente).
 - **IOR** (Indice di Rifrazione): Valore tipico tra 1.3 e 2.5 (deve essere >1).
+- **Assorbimento della luce**: Colore che assorbe la luce (valori tra 0 e 1).
+
 
 ### Esempio: Terreno
 Una sfera di raggio elevato simula un terreno:
 ```cpp
-spheres.push_back({
-    vec3(0.0f, -1000.0f, 0.0f), // Posizione
-    1000.0f, // Raggio
-    Material(vec3(0.5f, 0.5f, 0.5f)) // Materiale grigio
-});
-```
+spheres[0] = Sphere(vec3(0,-1000,0), 1000.0, 
+        Material(vec3(0.5), vec3(0), 0.0, 0.0, 0.0, 0.0 , vec3(0.0, 0.0, 0.0)));
+    
 
 ### Aggiunta di sfere colorate
 
@@ -41,35 +40,26 @@ Per creare una scena più interessante, possiamo aggiungere una serie di sfere c
 
 ```cpp
 // Aggiungiamo una fila di sfere colorate
-// Sfera Rossa
-spheres.push_back({
-    vec3(-5.0f, 1.0f, 0.0f), 1.0f,
-    Material(vec3(1.0f, 0.0f, 0.0f)) 
-});
 
-// Sfera gialla
-spheres.push_back({
-    vec3(-2.5f, 1.0f, 0.0f), 1.0f,
-    Material(vec3(0.5f, 0.5f, 0.0f))
-});
+//red
+spheres[1] = Sphere(vec3(-5,1,0), 1.0, 
+    Material(vec3(1,0,0), vec3(0), 0.0, 0.0, 0.0, 0.0,vec3(0.0)));
 
-// Sfera verde
-spheres.push_back({
-    vec3(0.0f, 1.0f, 0.0f), 1.0f,
-    Material(vec3(0.0f, 1.0f, 0.0f))
-});
+// Yellow 
+spheres[2] = Sphere(vec3(-2.5,1,0), 1.0, 
+    Material(vec3(0.5,0.5,0), vec3(0), 0.0, 0.0, 0.0, 0.0,vec3(0.0)));
 
-// Sfera ciano
-spheres.push_back({
-    vec3(2.5f, 1.0f, 0.0f), 1.0f,
-    Material(vec3(0.0f, 0.5f, 0.5f))
-});
+// Green
+spheres[3] = Sphere(vec3(0,1,0), 1.0, 
+    Material(vec3(0,1,0), vec3(0), 10.0, 0.0, 0.0, 0.0,vec3(0.0)));
 
-// Sfera blu
-spheres.push_back({
-    vec3(5.0f, 1.0f, 0.0f), 1.0f,
-    Material(vec3(0.0f, 0.0f, 1.0f))
-});
+// Cyan
+spheres[4] = Sphere(vec3(2.5,1,0), 1.0, 
+    Material(vec3(0,0.5,0.5), vec3(0), 0.0, 0.0, 0.0, 0.0,vec3(0.0)));
+
+// Blue
+spheres[5] = Sphere(vec3(5,1,0), 1.0, 
+    Material(vec3(0,0,1), vec3(0), 0.0, 0.0, 0.0, 0.0,vec3(0.0)));
 ```
 
 Questo creerà una fila orizzontale di 5 sfere colorate (rossa, gialla, verde, ciano e blu) allineate sull'asse X, tutte alla stessa altezza (y=1) e profondità (z=0).
@@ -81,12 +71,6 @@ possiamo vederer il primo render 01render.png
 
 Lo shader calcola il colore di ogni pixel lanciando multipli raggi e mediando i risultati:
 
-```frag
-for (int i = 0; i < samplesPerFrame; i++) {
-    color += Trace(ray, spheres, state);
-}
-color /= float(samplesPerFrame);
-```
 
 la funzione `Trace` segue il percorso di un raggio attraverso la scena, calcolando l'interazione con gli oggetti e restituendo il colore finale del raggio.
 
