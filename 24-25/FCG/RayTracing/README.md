@@ -13,7 +13,7 @@ attraverso la scena (ray tracing).
 
 ## introduzione all codice
 
-sono partrito dall codice esempio di rect_shadow che ho modificato per creare un il mio ray tracer.
+sono partrito dall codice esempio di multiple.glsl che ho modificato per creare un il mio ray tracer.
 
 Il nostro shader ha il compito di calcolare il colore che deve avere ogni pixel. Per farlo, ogni pixel lancia dei molteplici raggi che interagiscono con l'ambiente. 
 Facendone la media dei campioni, determiniamo il colore finale del pixel.
@@ -50,3 +50,7 @@ Funzione Trace per seguire il percorso della luce nella scena
 
 Nella cartella renders sono presenti diversi rendering prodotti in shadertoy, accompagnati da spiegazioni dettagliate. Questi esempi illustrano progressivamente il funzionamento del ray tracer, mostrando le varie caratteristiche implementate come riflessione, rifrazione, emissione luminosa e altri effetti fisici. Le immagini permettono di comprendere visivamente come i concetti teorici vengono applicati nel codice.
 
+## source
+https://raytracing.github.io/books/RayTracingInOneWeekend.html
+https://blog.demofox.org/2020/05/25/casual-shadertoy-path-tracing-1-basic-camera-diffuse-emissive/
+https://youtu.be/Qz0KTGYJtUk?si=Z5etLgMJ3N6XAAhz
