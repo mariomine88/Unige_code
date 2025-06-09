@@ -1,0 +1,173 @@
+ciocolatini
+
+int cioc = 0;
+mutex = l;
+conditional_mutex =past,mang;
+
+pasticiere
+while (1){
+    lock(l);
+    if (cioc > 0) cond_wait(l,past)
+
+    cioc =+5;
+    cond_broadcast(mang)
+
+    unlock(l)
+}
+
+mangioni 
+while (1){
+    lock(l);
+    if (cioc > 0) 
+        cioc--;
+    else{
+        cond_signal(past);
+        cond_wait(l,mang);
+    }
+    unlock(l);
+}
+
+
+bus
+
+
+int primo = 0, secondo = 0;
+bool fermata;
+mutex m;
+condition turisti, fine_giro;
+semaphore vuoto = 0;
+
+// Processo bus
+bus() {
+    while(1) {
+        lock(m);
+        fermata = true;
+        cond_broadcast(turisti);
+        unlock(m);
+        
+        sleep(100);
+        
+        lock(m);
+        fermata = false;
+        unlock(m);
+        
+        sleep(500);
+        
+        lock(m);
+        cond_broadcast(fine_giro);
+        unlock(m);
+        
+        vuoto.wait();
+    }
+}
+
+// Processo turista
+turista() {
+    while(1) {
+        lock(m);
+        while(!fermata || (primo >= 10 && secondo >= 15))
+            cond_wait(m, turisti);
+        
+        if(primo < 10) primo++;
+        else secondo++;
+        unlock(m);
+        
+        lock(m);
+        cond_wait(m, fine_giro);
+        
+        if(primo > 0) primo--;
+        else secondo--;
+        
+        if(primo == 0 && secondo == 0)
+            vuoto.signal();
+        unlock(m);
+        
+    }
+}
+
+
+
+// Sistema due recipienti A e B
+int A = 0, B = 0;
+int cap_A = 5, cap_B = 3; // capacità dei recipienti
+mutex m;
+condition produttori, consumatori;
+
+// Processo produttore
+produttore() {
+    while(1) {
+        lock(m);
+        
+        // Se A e B sono pieni, aspetta
+        while(A >= cap_A && B >= cap_B)
+            cond_wait(m, produttori);
+        
+        // Se A è pieno ma non B, aggiungi a B
+        // altrimenti aggiungi a A
+        if(A >= cap_A && B < cap_B) {
+            B++;
+        } else {
+            A++;
+        }
+        
+        // Sveglia i consumatori
+        cond_broadcast(consumatori);
+        unlock(m);
+    }
+}
+
+// Processo consumatore
+consumatore() {
+    while(1) {
+        lock(m);
+        
+        // Se A e B sono vuoti, aspetta
+        while(A == 0 && B == 0)
+            cond_wait(m, consumatori);
+        
+        // Se B non è vuoto, ritira da B
+        // altrimenti ritira da A
+        if(B > 0) {
+            B--;
+        } else {
+            A--;
+        }
+        
+        cond_broadcast(produttori);
+        unlock(m);
+        
+    }
+}
+
+tratoria 
+semaphore salaattesa = 5;
+semaphore tavolo = 1;
+
+cliente() {
+    salaattesa.wait();
+    tavolo.wait();
+    salaattesa.signal();
+    mangia();
+    tavolo.signal();
+}
+
+paruchiere
+
+semaphore sedie = n;
+semaphore poltrona = 1:
+semaphore begin_cut =0;
+semaphore end_cut = 0;
+
+client() {
+    sedie.wait();
+    poltrona.wait();
+    sedie.signal();
+    begin_cut.signal();
+    end_cut.wait();
+    poltrona.signal();
+}
+
+barbier{
+    begin_cut.wait();
+    end_cut.signal();
+}
