@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.UnityTechnologies.com.unity.template.urpblank.launcher-mergeReleaseResources-20:/values-mo/values-mo.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Mario\\.gradle\\caches\\9.1.0\\transforms\\3e30de4ded6a1821eac733d7d719fb73\\workspace\\transformed\\jetified-core-1.45.0\\res\\values-mo\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "190,238,291,433,577",
+                        "endColumns": "47,52,141,143,107",
+                        "endOffsets": "237,290,432,576,684"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,107,164,310,458",
+                        "endColumns": "51,56,145,147,111",
+                        "endOffsets": "102,159,305,453,565"
+                    }
+                }
+            ]
+        }
+    ]
+}

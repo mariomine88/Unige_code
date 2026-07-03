@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.UnityTechnologies.com.unity.template.urpblank.launcher-release-22:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.UnityTechnologies.com.unity.template.urpblank.launcher-main-23:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.UnityTechnologies.com.unity.template.urpblank.launcher-release-22:/mipmap-anydpi-v26_app_icon_round.xml.flat",
+        "source": "com.UnityTechnologies.com.unity.template.urpblank.launcher-main-23:/mipmap-anydpi-v26/app_icon_round.xml"
+    },
+    {
+        "merged": "com.UnityTechnologies.com.unity.template.urpblank.launcher-release-22:/mipmap-mdpi_ic_launcher_background.png.flat",
+        "source": "com.UnityTechnologies.com.unity.template.urpblank.launcher-main-23:/mipmap-mdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.UnityTechnologies.com.unity.template.urpblank.launcher-release-22:/mipmap-mdpi_app_icon.png.flat",
+        "source": "com.UnityTechnologies.com.unity.template.urpblank.launcher-main-23:/mipmap-mdpi/app_icon.png"
+    },
+    {
+        "merged": "com.UnityTechnologies.com.unity.template.urpblank.launcher-release-22:/mipmap-anydpi-v26_app_icon.xml.flat",
+        "source": "com.UnityTechnologies.com.unity.template.urpblank.launcher-main-23:/mipmap-anydpi-v26/app_icon.xml"
+    }
+]

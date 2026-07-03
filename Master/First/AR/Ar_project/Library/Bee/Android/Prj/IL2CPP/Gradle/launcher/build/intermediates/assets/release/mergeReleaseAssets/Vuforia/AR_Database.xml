@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="the_great_wave_off_kanagawa" size="1.000000 0.690537" />
+    <ImageTarget name="starry-night-1093721_640" size="1.000000 0.618020" />
+    <ImageTarget name="meltingtime" size="1.000000 0.723000" />
+    <ImageTarget name="poppyfield" size="1.000000 0.625000" />
+    <ImageTarget name="mona_lisa" size="1.000000 1.512000" />
+  </Tracking>
+</QCARConfig>

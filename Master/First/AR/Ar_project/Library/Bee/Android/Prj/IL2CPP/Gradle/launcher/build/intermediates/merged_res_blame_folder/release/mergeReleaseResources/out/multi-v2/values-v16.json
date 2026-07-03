@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.UnityTechnologies.com.unity.template.urpblank.launcher-mergeReleaseResources-20:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Mario\\.gradle\\caches\\9.1.0\\transforms\\9661b0ba661a170c3bd79b5ef59efda8\\workspace\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mario\\.gradle\\caches\\9.1.0\\transforms\\066c12c00859d02386bf97d2cf6432de\\workspace\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                }
+            ]
+        }
+    ]
+}

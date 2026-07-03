@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.UnityTechnologies.com.unity.template.urpblank.launcher-mergeReleaseResources-20:/values-v31/values-v31.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Mario\\Documents\\UNIGE\\Unige_code\\Master\\First\\AR\\Ar_project\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\build\\intermediates\\packaged_res\\release\\packageReleaseResources\\values-v31\\values-v31.xml",
+                    "from": {
+                        "startLines": "2,9",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,618",
+                        "endLines": "8,15",
+                        "endColumns": "10,10",
+                        "endOffsets": "613,1178"
+                    }
+                }
+            ]
+        }
+    ]
+}
