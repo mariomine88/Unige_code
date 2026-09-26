@@ -1,0 +1,250 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <mpi.h>
+#include <omp.h>
+
+// SUMMA algorithm for distributed matrix multiplication C = A * B
+// Column-major storage, square matrices n x n
+// 2D Cartesian grid of processes N x N, block size b = n / N
+// Local block multiplication parallelized with OpenMP
+
+int main(int argc, char *argv[]) {
+    int rank, size;
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+    if (argc < 2) {
+        if (rank == 0) printf("Usage: %s <n>\n", argv[0]);
+        MPI_Finalize();
+        return 1;
+    }
+    int n = atoi(argv[1]);
+
+    // Grid dimension must be a perfect square
+    int N = (int) sqrt((double) size);
+    if (N * N != size) {
+        if (rank == 0) printf("Error: number of processes (%d) must be a perfect square\n", size);
+        MPI_Finalize();
+        return 1;
+    }
+    if (n % N != 0) {
+        if (rank == 0) printf("Error: n (%d) must be divisible by grid dimension (%d)\n", n, N);
+        MPI_Finalize();
+        return 1;
+    }
+    int b = n / N;  // block size
+
+    // ---------- Create 2D Cartesian topology ----------
+    int dims[2] = {N, N};
+    int periods[2] = {0, 0};
+    int reorder = 0;  // keep original ranks so rank 0 == (0,0)
+    MPI_Comm cart_comm;
+    MPI_Cart_create(MPI_COMM_WORLD, 2, dims, periods, reorder, &cart_comm);
+
+    int my_coords[2];
+    MPI_Cart_coords(cart_comm, rank, 2, my_coords);
+    int my_row = my_coords[0];
+    int my_col = my_coords[1];
+
+    // Row and column sub-communicators
+    int remain_row[2] = {0, 1};  // fix row, vary column
+    int remain_col[2] = {1, 0};  // fix column, vary row
+    MPI_Comm row_comm, col_comm;
+    MPI_Cart_sub(cart_comm, remain_row, &row_comm);
+    MPI_Cart_sub(cart_comm, remain_col, &col_comm);
+
+    // ---------- Local buffers ----------
+    double *A_local = (double*) calloc(b * b, sizeof(double));
+    double *B_local = (double*) calloc(b * b, sizeof(double));
+    double *C_local = (double*) calloc(b * b, sizeof(double));
+    double *A_panel = (double*) malloc(b * b * sizeof(double));
+    double *B_panel = (double*) malloc(b * b * sizeof(double));
+
+    // ---------- Global matrices on P0 ----------
+    double *A = NULL, *B = NULL, *C = NULL;
+    if (rank == 0) {
+        A = (double*) malloc((size_t)n * n * sizeof(double));
+        B = (double*) malloc((size_t)n * n * sizeof(double));
+        C = (double*) calloc((size_t)n * n, sizeof(double));
+        srand(42);
+        for (size_t i = 0; i < (size_t)n * n; i++) {
+            A[i] = (double)rand() / RAND_MAX * 2.0 - 1.0;
+            B[i] = (double)rand() / RAND_MAX * 2.0 - 1.0;
+        }
+    }
+
+    // ---------- Derived type for extracting b x b blocks ----------
+    // From a column-major buffer with n rows and b columns:
+    // b blocks of b contiguous doubles, stride n
+    MPI_Datatype block_type;
+    MPI_Type_vector(b, b, n, MPI_DOUBLE, &block_type);
+    MPI_Type_commit(&block_type);
+
+    double t_start = MPI_Wtime();
+
+    // ---------- Initial distribution ----------
+    double *A_colblock = (double*) malloc(b * n * sizeof(double));
+    double *B_colblock = (double*) malloc(b * n * sizeof(double));
+
+    // Step 1: P0 sends column-blocks to first row (row 0)
+    if (rank == 0) {
+        for (int j = 0; j < N; j++) {
+            if (j == 0) {
+                for (int i = 0; i < b * n; i++) {
+                    A_colblock[i] = A[i];
+                    B_colblock[i] = B[i];
+                }
+            } else {
+                int dest_coords[2] = {0, j};
+                int dest_rank;
+                MPI_Cart_rank(cart_comm, dest_coords, &dest_rank);
+                MPI_Send(&A[j * b * n], b * n, MPI_DOUBLE, dest_rank, 0, cart_comm);
+                MPI_Send(&B[j * b * n], b * n, MPI_DOUBLE, dest_rank, 1, cart_comm);
+            }
+        }
+    } else if (my_row == 0) {
+        MPI_Recv(A_colblock, b * n, MPI_DOUBLE, 0, 0, cart_comm, MPI_STATUS_IGNORE);
+        MPI_Recv(B_colblock, b * n, MPI_DOUBLE, 0, 1, cart_comm, MPI_STATUS_IGNORE);
+    }
+
+    // Step 2: Row 0 distributes square blocks down its column
+    if (my_row == 0) {
+        for (int i = 0; i < N; i++) {
+            if (i == 0) {
+                // Copy top block into local buffer
+                for (int c = 0; c < b; c++) {
+                    for (int r = 0; r < b; r++) {
+                        A_local[c * b + r] = A_colblock[c * n + r];
+                        B_local[c * b + r] = B_colblock[c * n + r];
+                    }
+                }
+            } else {
+                int dest_coords[2] = {i, my_col};
+                int dest_rank;
+                MPI_Cart_rank(cart_comm, dest_coords, &dest_rank);
+                MPI_Send(&A_colblock[i * b], 1, block_type, dest_rank, 2, cart_comm);
+                MPI_Send(&B_colblock[i * b], 1, block_type, dest_rank, 3, cart_comm);
+            }
+        }
+    } else {
+        MPI_Recv(A_local, b * b, MPI_DOUBLE, MPI_ANY_SOURCE, 2, cart_comm, MPI_STATUS_IGNORE);
+        MPI_Recv(B_local, b * b, MPI_DOUBLE, MPI_ANY_SOURCE, 3, cart_comm, MPI_STATUS_IGNORE);
+    }
+
+    // ---------- SUMMA iterations ----------
+    for (int k = 0; k < N; k++) {
+        // Preserve own A_local, B_local in panels
+        for (int i = 0; i < b * b; i++) {
+            A_panel[i] = A_local[i];
+            B_panel[i] = B_local[i];
+        }
+
+        // Broadcast A_ik along row (root = process (my_row, k), rank k in row_comm)
+        MPI_Bcast(A_panel, b * b, MPI_DOUBLE, k, row_comm);
+
+        // Broadcast B_kj along column (root = process (k, my_col), rank k in col_comm)
+        MPI_Bcast(B_panel, b * b, MPI_DOUBLE, k, col_comm);
+
+        // Local update: C_local += A_panel * B_panel (column-major, OpenMP)
+        #pragma omp parallel for
+        for (int j = 0; j < b; j++) {
+            for (int l = 0; l < b; l++) {
+                double bval = B_panel[j * b + l];
+                for (int i = 0; i < b; i++) {
+                    C_local[j * b + i] += A_panel[l * b + i] * bval;
+                }
+            }
+        }
+    }
+
+    double t_end = MPI_Wtime();
+
+    // ---------- Gather results to P0 ----------
+    if (rank == 0) {
+        // Place own C_local
+        for (int j = 0; j < b; j++) {
+            for (int i = 0; i < b; i++) {
+                C[(my_col * b + j) * n + (my_row * b + i)] = C_local[j * b + i];
+            }
+        }
+        // Receive from other processes
+        for (int r = 1; r < size; r++) {
+            int coords[2];
+            MPI_Cart_coords(cart_comm, r, 2, coords);
+            int pr = coords[0], pc = coords[1];
+            double *buf = (double*) malloc(b * b * sizeof(double));
+            MPI_Recv(buf, b * b, MPI_DOUBLE, r, 4, cart_comm, MPI_STATUS_IGNORE);
+            for (int j = 0; j < b; j++) {
+                for (int i = 0; i < b; i++) {
+                    C[(pc * b + j) * n + (pr * b + i)] = buf[j * b + i];
+                }
+            }
+            free(buf);
+        }
+    } else {
+        MPI_Send(C_local, b * b, MPI_DOUBLE, 0, 4, cart_comm);
+    }
+
+    // ---------- Verification and metrics on P0 ----------
+    if (rank == 0) {
+        // Sequential reference
+        double *C_ref = (double*) malloc((size_t)n * n * sizeof(double));
+        double t_seq_start = MPI_Wtime();
+        for (int j = 0; j < n; j++) {
+            for (int i = 0; i < n; i++) {
+                double sum = 0.0;
+                for (int k = 0; k < n; k++) {
+                    sum += A[k * n + i] * B[j * n + k];
+                }
+                C_ref[j * n + i] = sum;
+            }
+        }
+        double t_seq_end = MPI_Wtime();
+        double Tseq = t_seq_end - t_seq_start;
+
+        double max_err = 0.0;
+        for (size_t i = 0; i < (size_t)n * n; i++) {
+            double diff = fabs(C[i] - C_ref[i]);
+            if (diff > max_err) max_err = diff;
+        }
+
+        double Tpar = t_end - t_start;
+        double gflops_par = (2.0 * n * n * n) / (Tpar * 1e9);
+        double gflops_seq = (2.0 * n * n * n) / (Tseq * 1e9);
+        double speedup = Tseq / Tpar;
+        int nthreads = omp_get_max_threads();
+        double efficiency = speedup / (size * nthreads);
+
+        printf("=== SUMMA results ===\n");
+        printf("n = %d, grid = %dx%d, block size = %d\n", n, N, N, b);
+        printf("MPI processes = %d, OpenMP threads = %d\n", size, nthreads);
+        printf("Tseq   = %.6f s  (GFLOPS_seq = %.2f)\n", Tseq, gflops_seq);
+        printf("Tpar   = %.6f s  (GFLOPS_par = %.2f)\n", Tpar, gflops_par);
+        printf("Speedup = %.2f\n", speedup);
+        printf("Efficiency = %.2f\n", efficiency);
+        printf("Max error = %.2e\n", max_err);
+
+        free(C_ref);
+        free(C);
+        free(A);
+        free(B);
+    }
+
+    free(A_local);
+    free(B_local);
+    free(C_local);
+    free(A_panel);
+    free(B_panel);
+    free(A_colblock);
+    free(B_colblock);
+
+    MPI_Type_free(&block_type);
+    MPI_Comm_free(&row_comm);
+    MPI_Comm_free(&col_comm);
+    MPI_Comm_free(&cart_comm);
+
+    MPI_Finalize();
+    return 0;
+}

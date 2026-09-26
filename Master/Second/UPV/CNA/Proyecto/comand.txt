@@ -1,0 +1,12 @@
+ssh -l mmbiberi@alumno.upv.es kahan.dsic.upv.es
+mpicc -Wall -O3 -o 1_matrix_mpi ~/W/UPV/CNA/Proyecto/1_matrix_mpi.c -lm
+sbatch ~/W/UPV/CNA/Proyecto/script/run_p1.sh
+
+squeue
+ls slurm-*.out
+cat slurm-
+
+mpicc -Wall -fopenmp -O3 -o matrix_mpi_omp ~/W/UPV/CNA/Proyecto/2_matrix_mpi_omp.c -lm
+mpicc -Wall -fopenmp -O3 -o matrix_summa ~/W/UPV/CNA/Proyecto/3_matrix_summa.c -lm
+mpicc -Wall -fopenmp -O3 -march=native -o matrix_summa_blocked ~/W/UPV/CNA/Proyecto/4_matrix_summa_blocked.c -lm
+mpicc -Wall -fopenmp -O3 -mavx2 -mfma -DUSE_SIMD_OWN matrix_summa_blocked ~/W/UPV/CNA/Proyecto/5_matrix_summa_simd.c -lm
