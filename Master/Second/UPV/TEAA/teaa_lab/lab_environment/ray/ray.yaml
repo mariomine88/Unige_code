@@ -1,0 +1,12 @@
+name: ray
+dependencies:
+    - numpy
+    - pandas
+    - matplotlib
+    - scikit-learn
+    - pillow
+    - plotly
+    - jupyter
+    - pyarrow
+#    - ray[all]
+

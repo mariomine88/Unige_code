@@ -1,0 +1,52 @@
+apiVersion: ray.io/v1
+kind: RayCluster
+metadata:
+  name: ray-cluster
+spec:
+  headGroupSpec:
+    rayStartParams:
+      dashboard-host: "0.0.0.0"
+    template:
+      spec:
+        containers:
+          - name: ray-head
+            image: rayproject/ray-ml:latest
+            resources:
+              requests:
+                cpu: "1"
+                memory: "16Gi"
+              limits:
+                cpu: "1"
+                memory: "16Gi"
+            volumeMounts:
+              - mountPath: /data
+                name: nfs-volume
+        volumes:
+          - name: nfs-volume
+            persistentVolumeClaim:
+              claimName: nfs-pvc
+  workerGroupSpecs:
+    - groupName: worker-group
+      replicas: 5
+      minReplicas: 1
+      maxReplicas: 5
+      rayStartParams: {}
+      template:
+        spec:
+          containers:
+            - name: ray-worker
+              image: rayproject/ray-ml:latest
+              resources:
+                requests:
+                  cpu: "14"
+                  memory: "80Gi"
+                limits:
+                  cpu: "14"
+                  memory: "80Gi"
+              volumeMounts:
+                - mountPath: /data
+                  name: nfs-volume
+          volumes:
+            - name: nfs-volume
+              persistentVolumeClaim:
+                claimName: nfs-pvc
